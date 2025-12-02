@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="bg-dark text-white p-3">
+    <h1>Task Manager</h1>
+  </header>
+  <main class="container">
+    <article class="row">
+      <h2>Task List</h2>
+      <section id="task-section" class="col-md-6">
+        <ul id="task-list" class="list-group"></ul>
+      </section>
+      <section id="add-task-section" class="col-md-6">
+        <input id="task-input" type="text" class="form-control" placeholder="Enter a task">
+        <select id="priority-select" class="form-control mt-2" title="Select Priority">
+          <option value="low">Low Priority</option>
+          <option value="medium">Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
+        <input id="due-date-input" type="date" class="form-control mt-2 title" title="Select Due Date">
+        <button id="add-task-btn" class="btn btn-primary mt-2">Add Task</button>
+      </section>
+    </article>
+  </main>
+  <footer class="bg-dark text-white p-3 mt-3">
+    <p>&copy; 2025 Task Manager</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

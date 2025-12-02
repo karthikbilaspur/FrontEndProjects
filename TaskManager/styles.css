@@ -1,0 +1,128 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+article {
+  background-color: #f0f0f0;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.task.done {
+  text-decoration: line-through;
+  color: #666;
+}
+
+/* Media Queries */
+
+/* Extra Small Devices (phones, 320px and up) */
+@media only screen and (min-width: 320px) {
+  main {
+    padding: 10px;
+  }
+  article {
+    padding: 10px;
+  }
+  #task-list {
+    font-size: 14px;
+  }
+}
+
+/* Small Devices (phones, 480px and up) */
+@media only screen and (min-width: 480px) {
+  main {
+    padding: 15px;
+  }
+  article {
+    padding: 15px;
+  }
+  #task-list {
+    font-size: 16px;
+  }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  main {
+    padding: 20px;
+  }
+  article {
+    padding: 20px;
+  }
+  #task-list {
+    font-size: 18px;
+  }
+}
+
+/* Large Devices (desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+  main {
+    padding: 25px;
+  }
+  article {
+    padding: 25px;
+  }
+  #task-list {
+    font-size: 20px;
+  }
+}
+
+/* Extra Large Devices (large desktops, 1280px and up) */
+@media only screen and (min-width: 1280px) {
+  main {
+    padding: 30px;
+  }
+  article {
+    padding: 30px;
+  }
+  #task-list {
+    font-size: 22px;
+  }
+}
+/* Ultra Large Devices (larger desktops, 1600px and up) */
+@media only screen and (min-width: 1600px) {
+  main {
+    padding: 35px;
+  }
+  article {
+    padding: 35px;
+  }
+  #task-list {
+    font-size: 24px;
+  }
+}
