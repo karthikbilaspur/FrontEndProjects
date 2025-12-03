@@ -1,0 +1,152 @@
+$primary-color: #333;
+$secondary-color: #fff;
+$box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+.gallery-container {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  background-color: #ccc;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thumbnail {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: $box-shadow;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+  }
+
+  .lightbox-video {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 5px;
+    box-shadow: $box-shadow;
+  }
+
+  .lightbox-caption {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: $secondary-color;
+    font-size: 18px;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 40px;
+    color: $secondary-color;
+    cursor: pointer;
+  }
+
+  .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: $secondary-color;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .prev-button {
+    left: 20px;
+  }
+
+  .next-button {
+    right: 20px;
+  }
+
+  .zoom-button {
+    top: 20px;
+    left: 20px;
+  }
+
+  .rotate-button {
+    top: 20px;
+    right: 20px;
+  }
+}
+
+.social-sharing {
+  margin-top: 20px;
+}
+
+.share-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.slideshow-controls {
+  margin-top: 20px;
+}
+
+#slideshow-speed {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+}
+
+@media only screen and (max-width: 768px) {
+  .gallery {
+    flex-direction: column;
+  }
+  .thumbnail {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <section class="gallery-container">
+    <h1>Image Gallery</h1>
+    <div class="filter-container">
+      <button class="filter-button active" data-filter="all">All</button>
+      <button class="filter-button" data-filter="nature">Nature</button>
+      <button class="filter-button" data-filter="city">City</button>
+      <button class="filter-button" data-filter="people">People</button>
+    </div>
+    <div class="gallery">
+      <img src="image1.jpg" alt="Image 1" class="thumbnail" data-caption="Image 1 caption" data-filter="nature">
+      <img src="image2.jpg" alt="Image 2" class="thumbnail" data-caption="Image 2 caption" data-filter="city">
+      <img src="image3.jpg" alt="Image 3" class="thumbnail" data-caption="Image 3 caption" data-filter="people">
+      <video src="video1.mp4" alt="Video 1" class="thumbnail" data-caption="Video 1 caption" data-filter="nature"></video>
+      <!-- Add more images and videos here -->
+    </div>
+    <div class="social-sharing">
+      <button class="share-button" data-url="https://www.facebook.com/sharer/sharer.php?u=">Share on Facebook</button>
+      <button class="share-button" data-url="https://twitter.com/intent/tweet?url=">Share on Twitter</button>
+    </div>
+    <div class="slideshow-controls">
+      <label for="slideshow-speed">Slideshow Speed (ms):</label>
+      <input id="slideshow-speed" type="number" value="3000">
+    </div>
+  </section>
+
+  <div id="lightbox" class="lightbox">
+    <span id="close-lightbox" class="close">&times;</span>
+    <img id="lightbox-image" class="lightbox-image">
+    <video id="lightbox-video" class="lightbox-video" controls></video>
+    <div id="lightbox-caption" class="lightbox-caption"></div>
+    <button id="prev-image" class="nav-button prev-button">&#10094;</button>
+    <button id="next-image" class="nav-button next-button">&#10095;</button>
+    <button id="zoom-in" class="nav-button zoom-button">+</button>
+    <button id="zoom-out" class="nav-button zoom-button">-</button>
+    <button id="rotate-left" class="nav-button rotate-button">&#8592;</button>
+    <button id="rotate-right" class="nav-button rotate-button">&#8594;</button>
+  </div>
+
+  <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2025 Image Gallery. All rights reserved.</p>
+  </footer>
+</body>
+</html>
