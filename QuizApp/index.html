@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#" id="home-link">Home</a></li>
+                <li><a href="#" id="about-link">About</a></li>
+                <li><a href="#" id="contact-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="selection-container" id="selection-container">
+            <h2>Select Quiz Type</h2>
+            <button id="frontend-btn" aria-label="Start Frontend Quiz">Frontend</button>
+            <button id="backend-btn" aria-label="Start Backend Quiz">Backend</button>
+            <button id="both-btn" aria-label="Start Both Quiz">Both</button>
+        </section>
+        <section class="quiz-container" aria-hidden="true" id="quiz-container">
+            <h2 id="question"></h2>
+            <ul id="options" role="radiogroup" aria-label="Question Options"></ul>
+            <p id="result" role="alert"></p>
+            <div class="pagination">
+                <span id="page-info"></span>
+            </div>
+            <div class="footer">
+                <button id="prev-btn" style="display: none;">Previous</button>
+                <button id="next-btn" style="display: none;">Next</button>
+            </div>
+        </section>
+        <section class="score-container" aria-hidden="true" id="score-container">
+            <h2>Your Score</h2>
+            <p id="score"></p>
+            <button id="restart-btn">Restart</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Quiz App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

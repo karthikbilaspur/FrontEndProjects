@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "question": "What does HTML stand for?",
+      "options": ["HyperText Markup Language", "HyperText Machine Language", "HyperText Making Language", "Hyper Transfer Markup Language"],
+      "answer": "HyperText Markup Language",
+      "difficulty": "easy"
+    },
+    {
+      "question": "Which of the following is a CSS framework?",
+      "options": ["React", "Angular", "Vue", "Bootstrap"],
+      "answer": "Bootstrap",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the purpose of the 'this' keyword in JavaScript?",
+      "options": ["To refer to the global object", "To refer to the current object", "To refer to the parent object", "To refer to the child object"],
+      "answer": "To refer to the current object",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between null and undefined in JavaScript?",
+      "options": ["null is an object, undefined is a primitive", "null is a primitive, undefined is an object", "null represents a deliberate absence of value, undefined represents an uninitialized variable", "null represents an uninitialized variable, undefined represents a deliberate absence of value"],
+      "answer": "null represents a deliberate absence of value, undefined represents an uninitialized variable",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the box model in CSS?",
+      "options": ["To calculate the size of an element", "To calculate the position of an element", "To calculate the layout of an element", "To calculate the style of an element"],
+      "answer": "To calculate the size of an element",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is a closure in JavaScript?",
+      "options": ["A function that has access to its own scope", "A function that has access to its parent scope", "A function that has access to the global scope", "A function that returns another function"],
+      "answer": "A function that has access to its own scope",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the difference between == and === in JavaScript?",
+      "options": ["== checks for value equality, === checks for reference equality", "== checks for reference equality, === checks for value equality", "== checks for loose equality, === checks for strict equality", "== checks for strict equality, === checks for loose equality"],
+      "answer": "== checks for loose equality, === checks for strict equality",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the purpose of the async/await syntax in JavaScript?",
+      "options": ["To handle synchronous code", "To handle asynchronous code", "To handle promises", "To handle callbacks"],
+      "answer": "To handle asynchronous code",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the difference between a library and a framework?",
+      "options": ["A library is a collection of functions, a framework is a collection of libraries", "A library is a collection of libraries, a framework is a collection of functions", "A library provides a set of functionalities, a framework provides a structure", "A library provides a structure, a framework provides a set of functionalities"],
+      "answer": "A library provides a set of functionalities, a framework provides a structure",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the CSS selector :nth-child()?",
+      "options": ["To select the first child element", "To select the last child element", "To select a specific child element", "To select all child elements"],
+      "answer": "To select a specific child element",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between a GET request and a POST request?",
+      "options": ["A GET request is used to retrieve data, a POST request is used to send data", "A GET request is used to send data, a POST request is used to retrieve data", "A GET request is used to update data, a POST request is used to delete data", "A GET request is used to delete data, a POST request is used to update data"],
+      "answer": "A GET request is used to retrieve data, a POST request is used to send data",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the purpose of the JavaScript event loop?",
+      "options": ["To handle synchronous code", "To handle asynchronous code", "To handle promises", "To handle callbacks"],
+      "answer": "To handle asynchronous code",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the difference between a promise and an observable?",
+      "options": ["A promise handles a single value, an observable handles multiple values", "A promise handles multiple values, an observable handles a single value", "A promise is used for synchronous code, an observable is used for asynchronous code", "A promise is used for asynchronous code, an observable is used for synchronous code"],
+      "answer": "A promise handles a single value, an observable handles multiple values",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the purpose of the CSS property 'flexbox'?",
+      "options": ["To layout elements in a grid", "To layout elements in a row or column", "To layout elements in a table", "To layout elements in a block"],
+      "answer": "To layout elements in a row or column",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between a class and an interface in JavaScript?",
+      "options": ["A class is used to define a blueprint, an interface is used to define a contract", "A class is used to define a contract, an interface is used to define a blueprint", "A class is used to define a function, an interface is used to define a variable", "A class is used to define a variable, an interface is used to define a function"],
+      "answer": "A class is used to define a blueprint, an interface is used to define a contract",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the purpose of the JavaScript method 'map()'?",
+      "options": ["To iterate over an array and return a new array", "To iterate over an object and return a new object", "To iterate over a string and return a new string", "To iterate over a number and return a new number"],
+      "answer": "To iterate over an array and return a new array",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between a shallow copy and a deep copy?",
+      "options": ["A shallow copy copies the reference, a deep copy copies the value", "A shallow copy copies the value, a deep copy copies the reference", "A shallow copy is used for objects, a deep copy is used for arrays", "A shallow copy is used for arrays, a deep copy is used for objects"],
+      "answer": "A shallow copy copies the reference, a deep copy copies the value",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the CSS property 'position'?",
+      "options": ["To position an element relative to its parent", "To position an element relative to the viewport", "To position an element relative to the document", "To position an element relative to itself"],
+      "answer": "To position an element relative to its parent",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between a var and a let in JavaScript?",
+      "options": ["var is function scoped, let is block scoped", "var is block scoped, let is function scoped", "var is used for constants, let is used for variables", "var is used for variables, let is used for constants"],
+      "answer": "var is function scoped, let is block scoped",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the JavaScript method 'reduce()'? ",
+      "options": ["To iterate over an array and return a single value", "To iterate over an object and return a single value", "To iterate over a string and return a single value", "To iterate over a number and return a single value"],
+      "answer": "To iterate over an array and return a single value",
+      "difficulty": "hard"
+    }
+  ]
+}

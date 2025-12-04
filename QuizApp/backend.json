@@ -1,0 +1,124 @@
+{
+  "questions": [
+    {
+      "question": "What is the purpose of the 'require' function in Node.js?",
+      "options": ["To import a module", "To export a module", "To create a new module", "To delete a module"],
+      "answer": "To import a module",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the difference between '==' and '===' in JavaScript?",
+      "options": ["== checks for value equality, === checks for reference equality", "== checks for reference equality, === checks for value equality", "== checks for loose equality, === checks for strict equality", "== checks for strict equality, === checks for loose equality"],
+      "answer": "== checks for loose equality, === checks for strict equality",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the purpose of the 'npm install' command?",
+      "options": ["To install a package", "To uninstall a package", "To update a package", "To list all packages"],
+      "answer": "To install a package",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the difference between a GET request and a POST request?",
+      "options": ["A GET request is used to retrieve data, a POST request is used to send data", "A GET request is used to send data, a POST request is used to retrieve data", "A GET request is used to update data, a POST request is used to delete data", "A GET request is used to delete data, a POST request is used to update data"],
+      "answer": "A GET request is used to retrieve data, a POST request is used to send data",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the 'express' framework in Node.js?",
+      "options": ["To create a web server", "To create a database", "To create a REST API", "To create a frontend application"],
+      "answer": "To create a web server",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between a promise and an observable?",
+      "options": ["A promise handles a single value, an observable handles multiple values", "A promise handles multiple values, an observable handles a single value", "A promise is used for synchronous code, an observable is used for asynchronous code", "A promise is used for asynchronous code, an observable is used for synchronous code"],
+      "answer": "A promise handles a single value, an observable handles multiple values",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the 'async/await' syntax in JavaScript?",
+      "options": ["To handle synchronous code", "To handle asynchronous code", "To handle promises", "To handle callbacks"],
+      "answer": "To handle asynchronous code",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between a shallow copy and a deep copy?",
+      "options": ["A shallow copy copies the reference, a deep copy copies the value", "A shallow copy copies the value, a deep copy copies the reference", "A shallow copy is used for objects, a deep copy is used for arrays", "A shallow copy is used for arrays, a deep copy is used for objects"],
+      "answer": "A shallow copy copies the reference, a deep copy copies the value",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the 'mongoose' library in Node.js?",
+      "options": ["To interact with a MongoDB database", "To interact with a MySQL database", "To interact with a PostgreSQL database", "To interact with a Redis database"],
+      "answer": "To interact with a MongoDB database",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the difference between a class and an interface in JavaScript?",
+      "options": ["A class is used to define a blueprint, an interface is used to define a contract", "A class is used to define a contract, an interface is used to define a blueprint", "A class is used to define a function, an interface is used to define a variable", "A class is used to define a variable, an interface is used to define a function"],
+      "answer": "A class is used to define a blueprint, an interface is used to define a contract",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the purpose of the 'passport' library in Node.js?",
+      "options": ["To handle authentication", "To handle authorization", "To handle sessions", "To handle cookies"],
+      "answer": "To handle authentication",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the difference between a JWT token and a session token?",
+      "options": ["A JWT token is stateless, a session token is stateful", "A JWT token is stateful, a session token is stateless", "A JWT token is used for authentication, a session token is used for authorization", "A JWT token is used for authorization, a session token is used for authentication"],
+      "answer": "A JWT token is stateless, a session token is stateful",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the purpose of the 'socket.io' library in Node.js?",
+      "options": ["To handle real-time communication", "To handle HTTP requests", "To handle WebSocket connections", "To handle TCP connections"],
+      "answer": "To handle real-time communication",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the difference between a TCP connection and a UDP connection?",
+      "options": ["A TCP connection is reliable, a UDP connection is unreliable", "A TCP connection is unreliable, a UDP connection is reliable", "A TCP connection is used for real-time communication, a UDP connection is used for file transfer", "A TCP connection is used for file transfer, a UDP connection is used for real-time communication"],
+      "answer": "A TCP connection is reliable, a UDP connection is unreliable",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the purpose of the 'dotenv' library in Node.js?",
+      "options": ["To load environment variables", "To load configuration files", "To load dependencies", "To load modules"],
+      "answer": "To load environment variables",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the difference between a microservice and a monolithic architecture?",
+      "options": ["A microservice is a single application, a monolithic architecture is a collection of applications", "A microservice is a collection of applications, a monolithic architecture is a single application", "A microservice is used for small applications, a monolithic architecture is used for large applications", "A microservice is used for large applications, a monolithic architecture is used for small applications"],
+      "answer": "A microservice is a collection of applications, a monolithic architecture is a single application",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the purpose of the 'jest' library in Node.js?",
+      "options": ["To write unit tests", "To write integration tests", "To write end-to-end tests", "To write functional tests"],
+      "answer": "To write unit tests",
+      "difficulty": "medium"
+    },
+    {
+      "question": "What is the difference between a stub and a mock?",
+      "options": ["A stub is used to replace a dependency, a mock is used to verify behavior", "A stub is used to verify behavior, a mock is used to replace a dependency", "A stub is used for unit tests, a mock is used for integration tests", "A stub is used for integration tests, a mock is used for unit tests"],
+      "answer": "A stub is used to replace a dependency, a mock is used to verify behavior",
+      "difficulty": "hard"
+    },
+    {
+      "question": "What is the purpose of the 'prettier' library in Node.js?",
+      "options": ["To format code", "To lint code", "To compile code", "To bundle code"],
+      "answer": "To format code",
+      "difficulty": "easy"
+    },
+    {
+      "question": "What is the difference between a CI/CD pipeline and a CD pipeline?",
+      "options": ["A CI/CD pipeline is used for continuous integration and continuous deployment, a CD pipeline is used for continuous deployment", "A CI/CD pipeline is used for continuous deployment, a CD pipeline is used for continuous integration and continuous deployment", "A CI/CD pipeline is used for large applications, a CD pipeline is used for small applications", "A CI/CD pipeline is used for small applications, a CD pipeline is used for large applications"],
+      "answer": "A CI/CD pipeline is used for continuous integration and continuous deployment, a CD pipeline is used for continuous deployment",
+      "difficulty": "hard"
+    }
+  ]
+}
