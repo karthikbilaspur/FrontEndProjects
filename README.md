@@ -1,4 +1,5 @@
-Here are 30 HTML, CSS, and JavaScript project ideas for 30 days:
+# Here are 30 HTML, CSS, and JavaScript project ideas for 30 days
+
 Day 1-5: Beginner Projects
 Personal Profile Page: Create a simple webpage with your name, bio, and social media links.
 To-Do List App: Build a basic to-do list app with add, remove, and mark as done features.
