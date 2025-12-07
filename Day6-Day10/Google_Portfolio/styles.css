@@ -1,0 +1,333 @@
+/* Global Styles */
+
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+/* Navbar Styles */
+
+.navbar {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    color: #337ab7;
+}
+
+.nav-link {
+    color: #666;
+}
+
+.nav-link:hover {
+    color: #333;
+}
+
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-item:last-child {
+    border-bottom: none;
+}
+
+/* Hero Section Styles */
+
+.hero {
+    background-image: linear-gradient(to bottom, #337ab7, #23527c);
+    color: #fff;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.btn-primary {
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.btn-primary:hover {
+    background-color: #23527c;
+    border-color: #23527c;
+}
+
+/* Search Bar Styles */
+
+.search-bar {
+    padding: 20px 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.search-bar form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    width: 50%;
+    height: 40px;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+}
+
+.search-bar button[type="submit"] {
+    height: 40px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 0 4px 4px 0;
+}
+
+/* About Section Styles */
+
+#about-section {
+    padding: 50px 0;
+}
+
+#about-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Skills Section Styles */
+
+#skills-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+#skills-section h2 {
+    margin-bottom: 20px;
+}
+
+#skills-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#skills-section li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+#skills-section li:last-child {
+    border-bottom: none;
+}
+
+/* Experience Section Styles */
+
+#experience-section {
+    padding: 50px 0;
+}
+
+#experience-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Portfolio Section Styles */
+
+#portfolio-section {
+    padding: 50px 0;
+    background-color: #f8f9fa;
+}
+
+#portfolio-section h2 {
+    margin-bottom: 20px;
+}
+
+.card {
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Contact Section Styles */
+
+#contact-section {
+    padding: 50px 0;
+}
+
+#contact-section h2 {
+    margin-bottom: 20px;
+}
+
+#contact-section form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact-section label {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+#contact-section input[type="text"], #contact-section input[type="email"], #contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#contact-section button[type="submit"] {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+}
+
+/* Footer Styles */
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+
+footer h5 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 16px;
+    color: #666;
+}
+
+footer a {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #23527c;
+    text-decoration: underline;
+}
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .search-bar input[type="text"] {
+        width: 100%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 576px to 768px) */
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+    .hero h1 {
+        font-size: 40px;
+    }
+    .hero p {
+        font-size: 18px;
+    }
+    .search-bar input[type="text"] {
+        width: 80%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px to 992px) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .hero h1 {
+        font-size: 44px;
+    }
+    .hero p {
+        font-size: 20px;
+    }
+    .search-bar input[type="text"] {
+        width: 60%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px to 1200px) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    .hero h1 {
+        font-size: 48px;
+    }
+    .hero p {
+        font-size: 22px;
+    }
+    .search-bar input[type="text"] {
+        width: 50%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .hero h1 {
+        font-size: 52px;
+    }
+    .hero p {
+        font-size: 24px;
+    }
+    .search-bar input[type="text"] {
+        width: 40%;
+    }
+}
