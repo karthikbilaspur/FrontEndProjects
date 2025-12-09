@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+ 
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -43,28 +44,52 @@
     </section>
     <section id="jobs" class="mt-5">
       <h1>Job List</h1>
-      <ul class="list-group job-list">
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <input type="text" id="search-input" placeholder="Search jobs..." class="form-control">
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <select id="location-filter" class="form-select">
+            <option value="">Location</option>
+            <option value="New York, NY">New York, NY</option>
+            <option value="San Francisco, CA">San Francisco, CA</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <select id="industry-filter" class="form-select">
+            <option value="">Industry</option>
+            <option value="Software">Software</option>
+            <option value="Finance">Finance</option>
+          </select>
+        </div>
+        <div class="col-md-4">
+          <button id="search-btn" class="btn btn-primary">Search</button>
+        </div>
+      </div>
+      <div class="accordion" id="jobAccordion">
         <!-- job listings will be populated here -->
-      </ul>
+      </div>
     </section>
     <section id="post-job" class="mt-5">
       <h1>Post a Job</h1>
       <form id="post-job-form">
-        <div class="mb-a3">
+        <div class="mb-3">
           <label for="jobTitle" class="form-label">Job Title</label>
-          <input type="text" class="form-control" id="jobTitle" placeholder="Job Title">
+          <input type="text" class="form-control" id="jobTitle" placeholder="Job Title" required>
         </div>
         <div class="mb-3">
           <label for="companyName" class="form-label">Company Name</label>
-          <input type="text" class="form-control" id="companyName" placeholder="Company Name">
+          <input type="text" class="form-control" id="companyName" placeholder="Company Name" required>
         </div>
         <div class="mb-3">
           <label for="location" class="form-label">Location</label>
-          <input type="text" class="form-control" id="location" placeholder="Location">
+          <input type="text" class="form-control" id="location" placeholder="Location" required>
         </div>
         <div class="mb-3">
           <label for="jobDescription" class="form-label">Job Description</label>
-          <textarea class="form-control" id="jobDescription" rows="3"></textarea>
+          <textarea class="form-control" id="jobDescription" rows="3" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Post Job</button>
       </form>
@@ -74,11 +99,11 @@
       <form id="login-form">
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" placeholder="Email address">
+          <input type="email" class="form-control" id="email" placeholder="Email address" required>
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Password">
+          <input type="password" class="form-control" id="password" placeholder="Password" required>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
       </form>
@@ -88,19 +113,19 @@
       <form id="register-form">
         <div class="mb-3">
           <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Name">
+          <input type="text" class="form-control" id="name" placeholder="Name" required>
         </div>
         <div class="mb-3">
           <label for="register-email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="register-email" placeholder="Email address">
+          <input type="email" class="form-control" id="register-email" placeholder="Email address" required>
         </div>
         <div class="mb-3">
           <label for="register-password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="register-password" placeholder="Password">
+          <input type="password" class="form-control" id="register-password" placeholder="Password" required>
         </div>
         <div class="mb-3">
           <label for="confirm-password" class="form-label">Confirm Password</label>
-          <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password">
+          <input type="password" class="form-control" id="confirm-password" placeholder="Confirm Password" required>
         </div>
         <button type="submit" class="btn btn-primary">Register</button>
       </form>
@@ -109,4 +134,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/script.js"></script>
 </body>
-</html>s
+</html>
+

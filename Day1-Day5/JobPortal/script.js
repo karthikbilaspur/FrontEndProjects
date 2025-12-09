@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const forms = document.querySelectorAll('form');
 
   forms.forEach(function(form) {
-    form.addEventListener('submit', function(event) {
+    form.addEveantListener('submit', function(event) {
       event.preventDefault();
       const formType = form.classList.contains('login-form') ? 'login' :
         form.classList.contains('register-form') ? 'register' :
