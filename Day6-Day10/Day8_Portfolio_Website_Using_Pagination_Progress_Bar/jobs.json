@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "title": "Software Engineer",
+    "company": "ABC Corporation",
+    "location": "New York, NY",
+    "industry": "Software",
+    "description": "Develop software applications using Java and Python."
+  },
+  {
+    "id": 2,
+    "title": "Data Scientist",
+    "company": "DEF Startups",
+    "location": "San Francisco, CA",
+    "industry": "Finance",
+    "description": "Analyze data and develop predictive models using machine learning algorithms."
+  },
+  {
+    "id": 3,
+    "title": "UX Designer",
+    "company": "GHI Agency",
+    "location": "Los Angeles, CA",
+    "industry": "Design",
+    "description": "Create user-centered designs for web and mobile applications."
+  },{
+    "id": 4,
+    "title": "Marketing Manager",
+    "company": "JKL Marketing",
+    "location": "Chicago, IL",
+    "industry": "Marketing",
+    "description": "Develop and implement marketing strategies to increase brand awareness."
+  },
+  {
+    "id": 5,
+    "title": "Sales Executive",
+    "company": "MNO Sales",
+    "location": "Miami, FL",
+    "industry": "Sales",
+    "description": "Identify and pursue new sales opportunities to meet revenue targets."
+  }
+
+]
+
