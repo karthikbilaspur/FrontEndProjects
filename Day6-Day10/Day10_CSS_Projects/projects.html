@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Projects</title>
+    <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #555;
+            --background-color: #f9f9f9;
+            --text-color: #fff;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: var(--background-color);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .button:active {
+            transform: translateY(2px);
+        }
+
+        .project {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CSS Projects</h1>
+        <button class="button" onclick="showProject('flexbox')">Flexbox Layout</button>
+        <button class="button" onclick="showProject('grid')">Grid Layout</button>
+        <button class="button" onclick="showProject('sun')">Smiling Sun</button>
+        <button class="button" onclick="showProject('animations')">Animations and Transitions</button>
+
+        <div id="projects">
+            <div id="flexbox" class="project">
+                <!-- Flexbox Layout content here -->
+                <h2>Flexbox Layout</h2>
+                <p>This is a flexbox layout example.</p>
+            </div>
+            <div id="grid" class="project">
+                <!-- Grid Layout content here -->
+                <h2>Grid Layout</h2>
+                <p>This is a grid layout example.</p>
+            </div>
+            <div id="sun" class="project">
+                <!-- Smiling Sun content here -->
+                <h2>Smiling Sun</h2>
+                <p>This is a smiling sun example.</p>
+            </div>
+            <div id="animations" class="project">
+                <!-- Animations and Transitions content here -->
+                <h2>Animations and Transitions</h2>
+                <p>This is an animations and transitions example.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showProject(projectId) {
+            const projects = document.querySelectorAll('.project');
+            projects.forEach(project => project.classList.remove('active'));
+            document.getElementById(projectId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            width: 50%;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        input:invalid {
+            border: 1px solid red;
+        }
+        input:valid {
+            border: 1px solid green;
+        }
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        .success-message {
+            color: green;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            height: 40px;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <h2>Registration Form</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required pattern="[A-Za-z ]+" title="Please enter a valid name">
+        <span class="error-message" id="name-error"></span>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <span class="error-message" id="email-error"></span>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required pattern=".{8,}" title="Password must be at least 8 characters">
+        <span class="error-message" id="password-error"></span>
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required>
+        <span class="error-message" id="confirm-password-error"></span>
+        <input type="submit" value="Submit">
+        <span class="success-message" id="success-message"></span>
+    </form>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const inputs = form.querySelectorAll('input');
+        const successMessage = document.getElementById('success-message');
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.validity.valid) {
+                    input.nextElementSibling.textContent = '';
+                } else {
+                    input.nextElementSibling.textContent = input.title;
+                }
+            });
+        });
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (form.checkValidity()) {
+                if (document.getElementById('password').value !== document.getElementById('confirm-password').value) {
+                    document.getElementById('confirm-password-error').textContent = 'Passwords do not match';
+                } else {
+                    successMessage.textContent = 'Form submitted successfully!';
+                    form.reset();
+                    setTimeout(() => {
+                        successMessage.textContent = '';
+                    }, 3000);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

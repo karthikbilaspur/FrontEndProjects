@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations and Transitions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            animation: header-animation 2s ease-in-out;
+        }
+
+        @keyframes header-animation {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #f7f7f7;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            transition: background-color 0.5s ease-in-out;
+        }
+
+        .box:hover {
+            background-color: #ccc;
+        }
+
+        .animate {
+            animation: animate-box 2s ease-in-out infinite;
+        }
+
+        @keyframes animate-box {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .transition {
+            transition: width 0.5s ease-in-out;
+        }
+
+        .transition:hover {
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CSS Animations and Transitions</h1>
+    </div>
+    <div class="main">
+        <div class="box animate">
+            <h2>Animated Box</h2>
+            <p>This box is animated using CSS keyframes.</p>
+        </div>
+        <div class="box transition">
+            <h2>Transition Box</h2>
+            <p>This box has a transition effect on hover.</p>
+        </div>
+        <div class="box">
+            <h2>Normal Box</h2>
+            <p>This box has no animation or transition.</p>
+        </div>
+    </div>
+</body>
+</html>

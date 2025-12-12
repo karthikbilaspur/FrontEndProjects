@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Semantic Markup Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+        
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        header nav ul li {
+            margin-right: 20px;
+        }
+        
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 6em 2em 2em 2em;
+        }
+        
+        section {
+            background-color: #f7f7f7;
+            padding: 1em;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        aside {
+            background-color: #f7f7f7;
+            padding: 1em;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 20%;
+            float: right;
+            position: sticky;
+            top: 6em;
+        }
+        
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            clear: both;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .social-media {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1em;
+        }
+        
+        .social-media a {
+            margin-right: 10px;
+        }
+        
+        .social-media a img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <main>
+            <section id="home">
+                <h1>Welcome to our website</h1>
+                <p>This is the home section of our website.</p>
+            </section>
+            <section id="about">
+                <h1>About us</h1>
+                <p>This is the about section of our website.</p>
+                <article>
+                    <h2>Our mission</h2>
+                    <p>Our mission is to provide the best services to our customers.</p>
+                </article>
+                <article>
+                    <h2>Our team</h2>
+                    <p>Our team consists of experienced professionals.</p>
+                </article>
+            </section>
+            <section id="services">
+                <h1>Our services</h1>
+                <p>This is the services section of our website.</p>
+                <ul>
+                    <li>Service 1</li>
+                    <li>Service 2</li>
+                    <li>Service 3</li>
+                </ul>
+            </section>
+            <section id="contact">
+                <h1>Get in touch</h1>
+                <p>This is the contact section of our website.</p>
+                <address>
+                    <p>123 Main St</p>
+                    <p>Anytown, USA 12345</p>
+                    <p>(555) 555-5555</p>
+                    <p><a href="mailto:info@example.com">info@example.com</a></p>
+                </address>
+                <div class="social-media">
+                    <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram.png" alt="Instagram"></a>
+                </div>
+            </section>
+        </main>
+        <aside>
+            <h2>Latest news</h2>
+            <ul>
+                <li><a href="#">News article 1</a></li>
+                <li><a href="#">News article 2</a></li>
+                <li><a href="#">News article 3</a></li>
+            </ul>
+        </aside>
+    </div>
+    <footer>
+        <p>&copy; 2023 HTML5 Semantic Markup Website</p>
+    </footer>
+</body>
+</html>

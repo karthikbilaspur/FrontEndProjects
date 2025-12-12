@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project List</title>
+    <style>
+        .project {
+            padding: 10px;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        .project:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <div class="project-list">
+        <div class="project" data-code="Htm5_Audio_Player.html">Audio Player</div>
+        <div class="project" data-code="Html5_Form.html">Form Validation</div>
+        <div class="project" data-code="Html_Semantics_Website.html">Semantic Website</div>
+        <div class="project" data-code="Html_Video_Player.html">Video Player</div>
+        <div class="project" data-code="Html_Game.html">Ping Pong Game</div>
+    </div>
+
+    <script>
+        const projects = document.querySelectorAll('.project');
+
+        projects.forEach(project => {
+            project.addEventListener('click', () => {
+                const codeFile = project.getAttribute('data-code');
+                window.open(codeFile, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>

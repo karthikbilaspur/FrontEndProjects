@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Audio Player</title>
+    <style>
+        .audio-player {
+            width: 300px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .audio-player .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .audio-player .controls button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 50%;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+        }
+        .audio-player .controls button:hover {
+            background-color: #3e8e41;
+        }
+        .audio-player .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .audio-player .progress-bar .progress {
+            width: 0%;
+            height: 100%;
+            background-color: #4CAF50;
+            border-radius: 5px;
+        }
+        .audio-player .time {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio-player">
+        <audio id="audio" src="audio.mp3"></audio>
+        <div class="controls">
+            <button id="play-pause"><i class="fa fa-play"></i></button>
+            <button id="stop"><i class="fa fa-stop"></i></button>
+            <button id="mute"><i class="fa fa-volume-up"></i></button>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="time">
+            <span id="current-time">00:00</span>
+            <span id="total-time">00:00</span>
+        </div>
+    </div>
+
+    <script>
+        const audio = document.getElementById('audio');
+        const playPauseButton = document.getElementById('play-pause');
+        const stopButton = document.getElementById('stop');
+        const muteButton = document.getElementById('mute');
+        const progressBar = document.querySelector('.progress-bar .progress');
+        const currentTimeElement = document.getElementById('current-time');
+        const totalTimeElement = document.getElementById('total-time');
+
+        let isPlaying = false;
+        let isMuted = false;
+
+        playPauseButton.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                playPauseButton.innerHTML = '<i class="fa fa-play"></i>';
+            } else {
+                audio.play();
+                playPauseButton.innerHTML = '<i class="fa fa-pause"></i>';
+            }
+            isPlaying = !isPlaying;
+        });
+
+        stopButton.addEventListener('click', () => {
+            audio.pause();
+            audio.currentTime = 0;
+            playPauseButton.innerHTML = '<i class="fa fa-play"></i>';
+            isPlaying = false;
+        });
+
+        muteButton.addEventListener('click', () => {
+            if (isMuted) {
+                audio.muted = false;
+                muteButton.innerHTML = '<i class="fa fa-volume-up"></i>';
+            } else {
+                audio.muted = true;
+                muteButton.innerHTML = '<i class="fa fa-volume-mute"></i>';
+            }
+            isMuted = !isMuted;
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = `${progress}%`;
+            currentTimeElement.textContent = formatTime(audio.currentTime);
+            totalTimeElement.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('loadedmetadata', () => {
+            totalTimeElement.textContent = formatTime(audio.duration);
+        });
+
+        function formatTime(time) {
+            const minutes = Math.floor(time / 60);
+            const seconds = Math.floor(time % 60);
+            return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+    </script>
+</body>
+</html>

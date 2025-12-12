@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ping Pong Game</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <script>
+        // Get the canvas element
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Define game variables
+        let ballX = canvas.width / 2;
+        let ballY = canvas.height / 2;
+        let ballSpeedX = 5;
+        let ballSpeedY = 5;
+        let paddle1Y = (canvas.height - 100) / 2;
+        let paddle2Y = (canvas.height - 100) / 2;
+        let player1Score = 0;
+        let player2Score = 0;
+        let aiSpeed = 4;
+
+        // Draw everything
+        function draw() {
+            // Clear the canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw paddles
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, paddle1Y, 10, 100);
+            ctx.fillRect(canvas.width - 10, paddle2Y, 10, 100);
+
+            // Draw ball
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, 10, 0, Math.PI * 2);
+            ctx.fillStyle = 'black';
+            ctx.fill();
+
+            // Draw scores
+            ctx.font = '48px Arial';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'top';
+            ctx.fillText(player1Score, 100, 10);
+            ctx.textAlign = 'right';
+            ctx.fillText(player2Score, canvas.width - 100, 10);
+
+            // Draw dashed line in the middle
+            ctx.strokeStyle = 'black';
+            ctx.beginPath();
+            ctx.setLineDash([10, 10]);
+            ctx.moveTo(canvas.width / 2, 0);
+            ctx.lineTo(canvas.width / 2, canvas.height);
+            ctx.stroke();
+        }
+
+        // Update game logic
+        function update() {
+            // Move the ball
+            ballX += ballSpeedX;
+            ballY += ballSpeedY;
+
+            // Collision with top and bottom of the canvas
+            if (ballY < 0 || ballY > canvas.height) {
+                ballSpeedY *= -1;
+            }
+
+            // Collision with paddles
+            if (ballX < 10 && ballY > paddle1Y && ballY < paddle1Y + 100) {
+                ballSpeedX *= -1;
+                ballSpeedY = (ballY - (paddle1Y + 50)) / 10;
+            } else if (ballX > canvas.width - 10 && ballY > paddle2Y && ballY < paddle2Y + 100) {
+                ballSpeedX *= -1;
+                ballSpeedY = (ballY - (paddle2Y + 50)) / 10;
+            }
+
+            // Score points
+            if (ballX < 0) {
+                player2Score++;
+                ballX = canvas.width / 2;
+                ballY = canvas.height / 2;
+                ballSpeedX *= -1;
+                ballSpeedY = 5;
+            } else if (ballX > canvas.width) {
+                player1Score++;
+                ballX = canvas.width / 2;
+                ballY = canvas.height / 2;
+                ballSpeedX *= -1;
+                ballSpeedY = 5;
+            }
+
+            // Move paddles
+            if (moveUp1) {
+                paddle1Y -= 5;
+            }
+            if (moveDown1) {
+                paddle1Y += 5;
+            }
+
+            // AI opponent
+            if (ballX > canvas.width / 2) {
+                if (paddle2Y + 50 < ballY) {
+                    paddle2Y += aiSpeed;
+                } else if (paddle2Y + 50 > ballY) {
+                    paddle2Y -= aiSpeed;
+                }
+            }
+
+            // Ensure paddles don't go off the canvas
+            paddle1Y = Math.max(0, Math.min(paddle1Y, canvas.height - 100));
+            paddle2Y = Math.max(0, Math.min(paddle2Y, canvas.height - 100));
+        }
+
+        // Handle keyboard input
+        let moveUp1 = false;
+        let moveDown1 = false;
+
+        document.addEventListener('keydown', (e) => {
+            switch (e.key) {
+                case 'w':
+                    moveUp1 = true;
+                    break;
+                case 's':
+                    moveDown1 = true;
+                    break;
+            }
+        });
+
+        document.addEventListener('keyup', (e) => {
+            switch (e.key) {
+                case 'w':
+                    moveUp1 = false;
+                    break;
+                case 's':
+                    moveDown1 = false;
+                    break;
+            }
+        });
+
+        // Main game loop
+        setInterval(() => {
+            update();
+            draw();
+        }, 1000 / 60);
+    </script>
+</body>
+</html>
