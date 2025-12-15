@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #timer-container {
+      width: 80%;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #timer-display {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    #input-container {
+      margin-bottom: 20px;
+    }
+    #input-container input {
+      padding: 10px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      width: 50px;
+    }
+    #input-container button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    #input-container button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <h1>Countdown Timer</h1>
+  <div id="timer-container">
+    <p id="timer-display">00:00:00</p>
+    <div id="input-container">
+      <input id="hours-input" type="number" placeholder="HH">
+      <input id="minutes-input" type="number" placeholder="MM">
+      <input id="seconds-input" type="number" placeholder="SS">
+      <button id="start-button">Start</button>
+      <button id="reset-button">Reset</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
