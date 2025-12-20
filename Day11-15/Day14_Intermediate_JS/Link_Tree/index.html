@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linktree with ChatGPT-3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Linktree with ChatGPT-3</h1>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Image">
+            <h2>John Doe</h2>
+            <p>Software Engineer | AI Enthusiast</p>
+        </div>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/johndoe" target="_blank">LinkedIn</a>
+            <a href="https://github.com/johndoe" target="_blank">GitHub</a>
+            <a href="https://twitter.com/johndoe" target="_blank">Twitter</a>
+            <a href="#" id="chat-btn">Chat with me!</a>
+        </div>
+        <div class="chat-container" id="chat-container">
+            <div class="chat-header">
+                <h2>Chat with me!</h2>
+                <button id="close-chat-btn">X</button>
+            </div>
+            <div class="chat-body">
+                <div class="chat-log" id="chat-log"></div>
+                <input id="chat-input" type="text" placeholder="Type a message...">
+                <button id="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

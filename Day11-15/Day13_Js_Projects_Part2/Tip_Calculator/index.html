@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tip Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #result {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tip Calculator</h1>
+  <label>Total Bill (₹):</label>
+  <input type="number" id="bill-amount" placeholder="Enter bill amount">
+  <br><br>
+  <label>Service Quality:</label>
+  <select id="service-quality">
+    <option value="0.05">Poor (5%)</option>
+    <option value="0.10">Good (10%)</option>
+    <option value="0.15">Excellent (15%)</option>
+    <option value="0.20">Outstanding (20%)</option>
+  </select>
+  <br><br>
+  <button id="calculate-tip">Calculate Tip</button>
+  <div id="result"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

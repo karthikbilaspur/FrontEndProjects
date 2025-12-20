@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic-Tac-Toe Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tic-Tac-Toe Game</h1>
+    <divdiv class="game-board" role="application">
+      <div class="cell" id="cell-1" tabindex="0"></div>
+      <div class="cell" id="cell-2" tabindex="0"></div>
+      <div class="cell" id="cell-3" tabindex="0"></div>
+      <div class="cell" id="cell-4" tabindex="0"></div>
+      <div class="cell" id="cell-5" tabindex="0"></div>
+      <div class="cell" id="cell-6" tabindex="0"></div>
+      <div class="cell" id="cell-7" tabindex="0"></div>
+      <div class="cell" id="cell-8" tabindex="0"></div>
+      <div class="cell" id="cell-9" tabindex="0"></div>
+    </div>
+    <p id="result" aria-live="polite"></p>
+    <div class="controls">
+      <button id="reset-btn">Reset Game</button>
+      <button id="undo-btn" disabled>Undo</button>
+      <button id="redo-btn" disabled>Redo</button>
+    </div>
+    <div class="scoreboard">
+      <h2>Score</h2>
+      <p>Player X: <span id="score-x">0</span></p>
+      <p>Player O: <span id="score-o">0</span></p>
+      <p>Ties: <span id="score-tie">0</span></p>
+    </div>
+    <div class="settings">
+      <h2>Settings</h2>
+      <label for="symbol-x">Player X Symbol:</label>
+      <input id="symbol-x" type="text" value="X" maxlength="1">
+      <label for="symbol-o">Player O Symbol:</label>
+      <input id="symbol-o" type="text" value="O" maxlength="1">
+      <button id="dark-mode-btn">Toggle Dark Mode</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quote Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #quote-container {
+      width: 80%;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    #quote {
+      font-size: 24px;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+    #author {
+      font-size: 18px;
+      color: #666;
+    }
+    #new-quote-button {
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      background-color: #4CAF50;
+      color: #fff;
+      cursor: pointer;
+    }
+    #new-quote-button:hover {
+      background-color: #3e8e41;
+    }
+  </style>
+</head>
+<body>
+  <h1>Quote Generator</h1>
+  <div id="quote-container">
+    <p id="quote"></p>
+    <p id="author"></p>
+  </div>
+  <button id="new-quote-button">New Quote</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

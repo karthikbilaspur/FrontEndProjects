@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#news-feed">News Feed</a></li>
+                <li><a href="#connections">Connections</a></li>
+                <li><a href="#messages">Messages</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="profile">
+            <h2>Profile</h2>
+            <div class="profile-info">
+                <img src="profile-image.jpg" alt="Profile Image">
+                <h3 id="username"></h3>
+                <p id="headline"></p>
+            </div>
+        </section>
+        <section id="news-feed">
+            <h2>News Feed</h2>
+            <div class="news-feed-container"></div>
+        </section>
+        <section id="connections">
+            <h2>Connections</h2>
+            <div class="connections-container"></div>
+        </section>
+        <section id="messages">
+            <h2>Messages</h2>
+            <div class="messages-container"></div>
+            <input id="message-input" type="text" placeholder="Type a message...">
+            <button id="send-button">Send</button>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

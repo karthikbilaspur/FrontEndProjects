@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Signup Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <div class="form-step" id="step-1">
+                <h2>Welcome</h2>
+                <button id="login-btn">Login</button>
+                <button id="signup-btn">Signup</button>
+            </div>
+            <div class="form-step" id="step-2-login" style="display: none;">
+                <h2>Login</h2>
+                <input id="login-email" type="email" placeholder="Email">
+                <input id="login-password" type="password" placeholder="Password">
+                <button id="login-submit-btn">Submit</button>
+                <p>Don't have an account? <a href="#" id="login-signup-link">Signup</a></p>
+            </div>
+            <div class="form-step" id="step-2-signup" style="display: none;">
+                <h2>Signup</h2>
+                <input id="signup-email" type="email" placeholder="Email">
+                <input id="signup-password" type="password" placeholder="Password">
+                <input id="signup-confirm-password" type="password" placeholder="Confirm Password">
+                <button id="signup-submit-btn">Submit</button>
+                <p>Already have an account? <a href="#" id="signup-login-link">Login</a></p>
+            </div>
+            <div class="form-step" id="step-3" style="display: none;">
+                <h2>Verify Email</h2>
+                <input id="verify-email-code" type="text" placeholder="Enter verification code">
+                <button id="verify-email-btn">Verify</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
