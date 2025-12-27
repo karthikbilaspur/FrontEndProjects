@@ -1,0 +1,88 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Weather forecast website">
+    <meta name="keywords" content="weather, forecast, temperature">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main Navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#forecast">Forecast</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="hero">
+            <h1>Weather Forecast</h1>
+            <select id="country-select" aria-label="Country">
+                <option value="">Select Country</option>
+            </select>
+            <select id="state-select" aria-label="State" disabled>
+                <option value="">Select State</option>
+            </select>
+            <select id="city-select" aria-label="City" disabled>
+                <option value="">Select City</option>
+            </select>
+            <button id="get-weather-btn">Get Weather</button>
+            <button id="unit-toggle">Switch to Fahrenheit</button>
+        </section>
+
+        <!-- Current Weather Section -->
+        <section id="forecast" class="forecast">
+            <h1>Current Weather</h1>
+            <h2 id="city-name"></h2>
+            <p id="temperature"></p>
+            <p id="weather-description"></p>
+            <p id="humidity"></p>
+            <p id="wind-speed"></p>
+        </section>
+
+        <!-- 5-Day Forecast Section -->
+        <section id="forecast-5day" class="forecast-5day">
+            <h1>5-Day Forecast</h1>
+            <ul id="forecast-list" class="forecast-list"></ul>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h1>About Us</h1>
+            <p>This website provides current weather forecasts for cities around the world.</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h1>Get In Touch</h1>
+            <form id="contact-form" aria-label="Contact Form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Name">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Email">
+                <label for="message">Message:</label>
+                <textarea id="message" placeholder="Message"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Weather Forecast</p>
+        <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+        </ul>
+        <button id="scroll-to-top">↑</button>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.main {
+    width: 90%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.main h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+#table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#table th, #table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.main button {
+    width: max-content;
+    margin: auto;
+    display: block;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.main button:hover {
+    background-color: #3e8e41;
+}
+
+.main button:active {
+    transform: translate(0, 2px);
+}
+
+#error-msg {
+    text-align: center;
+    margin-top: 10px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.social-links a:hover {
+    color: #4CAF50;
+}
+
+@media (max-width: 768px) {
+    .main {
+        width: 95%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+    #table-container {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        width: 100%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+    #table-container {
+        max-height: 200px;
+    }
+    .main h1 {
+        font-size: 18px;
+    }
+    .main button {
+        padding: 8px 12px;
+    }
+}

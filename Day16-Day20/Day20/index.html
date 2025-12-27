@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lorem Ipsum Generator</h1>
+        <textarea id="output" placeholder="Your Lorem Ipsum text will appear here..."></textarea>
+        <div class="input-group">
+            <input id="paragraphs" type="number" placeholder="No. of paragraphs" value="1">
+            <input id="words-per-paragraph" type="number" placeholder="Words per paragraph" value="10">
+        </div>
+        <div class="input-group">
+            <select id="text-style">
+                <option value="normal">Normal</option>
+                <option value="uppercase">Uppercase</option>
+                <option value="lowercase">Lowercase</option>
+                <option value="title">Title Case</option>
+            </select>
+            <label><input type="checkbox" id="html-output"> HTML Output</label>
+        </div>
+        <div class="button-group">
+            <button id="generate-btn">Generate</button>
+            <button id="copy-btn">Copy to Clipboard</button>
+            <button id="save-btn">Save to File</button>
+            <button id="dark-mode-btn">Dark Mode</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        <div class="status-bar">
+            <p id="status-msg"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

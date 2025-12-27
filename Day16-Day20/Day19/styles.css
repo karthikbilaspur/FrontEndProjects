@@ -1,0 +1,116 @@
+:root {
+    --primary-color: #007bff;
+    --track-color: #ccc;
+    --thumb-color: #fff;
+    --thumb-size: 20px;
+    --track-height: 5px;
+}
+
+.price-range-slider {
+    width: 400px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.price-range-values {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.price-range-values input {
+    width: 45%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.price-range-values input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.slider-container {
+    position: relative;
+    height: var(--thumb-size);
+    margin-bottom: 20px;
+}
+
+.slider-track {
+    position: absolute;
+    width: 100%;
+    height: var(--track-height);
+    background-color: var(--track-color);
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
+
+.slider-thumb {
+    position: absolute;
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.min-thumb {
+    left: 0;
+}
+
+.max-thumb {
+    right: 0;
+}
+
+#min-slider, #max-slider {
+    width: 100%;
+    height: var(--thumb-size);
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.price-range-display {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+#reset-button:hover {
+    background-color: #0069d9;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    display: none;
+}
+
+@media (max-width: 480px) {
+    .price-range-slider {
+        width: 90%;
+        margin: 20px auto;
+    }
+}

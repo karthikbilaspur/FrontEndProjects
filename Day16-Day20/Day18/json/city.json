@@ -1,0 +1,149 @@
+{
+  "countries": [
+    {
+      "name": "India",
+      "states": [
+        {
+          "name": "Andhra Pradesh",
+          "cities": [
+            "Visakhapatnam",
+            "Vijayawada",
+            "Guntur"
+          ]
+        },
+        {
+          "name": "Telangana",
+          "cities": [
+            "Hyderabad",
+            "Warangal",
+            "Nizamabad"
+          ]
+        },
+        {
+          "name": "Tamil Nadu",
+          "cities": [
+            "Chennai",
+            "Coimbatore",
+            "Madurai"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "United States",
+      "states": [
+        {
+          "name": "California",
+          "cities": [
+            "Los Angeles",
+            "San Francisco",
+            "San Diego"
+          ]
+        },
+        {
+          "name": "New York",
+          "cities": [
+            "New York City",
+            "Buffalo",
+            "Rochester"
+          ]
+        },
+        {
+          "name": "Texas",
+          "cities": [
+            "Houston",
+            "Dallas",
+            "San Antonio"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "China",
+      "states": [
+        {
+          "name": "Beijing",
+          "cities": [
+            "Beijing",
+            "Tianjin",
+            "Qinhuangdao"
+          ]
+        },
+        {
+          "name": "Shanghai",
+          "cities": [
+            "Shanghai",
+            "Suzhou",
+            "Wuxi"
+          ]
+        },
+        {
+          "name": "Guangdong",
+          "cities": [
+            "Guangzhou",
+            "Shenzhen",
+            "Dongguan"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Australia",
+      "states": [
+        {
+          "name": "New South Wales",
+          "cities": [
+            "Sydney",
+            "Newcastle",
+            "Wollongong"
+          ]
+        },
+        {
+          "name": "Victoria",
+          "cities": [
+            "Melbourne",
+            "Geelong",
+            "Ballarat"
+          ]
+        },
+        {
+          "name": "Queensland",
+          "cities": [
+            "Brisbane",
+            "Gold Coast",
+            "Sunshine Coast"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "United Kingdom",
+      "states": [
+        {
+          "name": "England",
+          "cities": [
+            "London",
+            "Manchester",
+            "Birmingham"
+          ]
+        },
+        {
+          "name": "Scotland",
+          "cities": [
+            "Edinburgh",
+            "Glasgow",
+            "Aberdeen"
+          ]
+        },
+        {
+          "name": "Wales",
+          "cities": [
+            "Cardiff",
+            "Swansea",
+            "Newport"
+          ]
+        }
+      ]
+    }
+  ]
+}

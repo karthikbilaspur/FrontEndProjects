@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <h1 class="logo">GitHub Profile Search</h1>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="search-section">
+            <h2>Search for a GitHub User</h2>
+            <label for="username">Enter GitHub username:</label>
+            <input type="text" id="username" placeholder="GitHub username...">
+            <button id="search-btn">Search</button>
+            <div id="loading-indicator" style="display: none;">Loading...</div>
+        </section>
+        <section id="profile" class="profile-section"></section>
+        <section id="repo-list-container" class="repo-section">
+            <h2>Repositories</h2>
+            <ul id="repo-list"></ul>
+        </section>
+        <section id="follower-list-container" class="follower-section">
+            <h2>Followers</h2>
+            <ul id="follower-list"></ul>
+        </section>
+        <section id="following-list-container" class="following-section">
+            <h2>Following</h2>
+            <ul id="following-list"></ul>
+        </section>
+        <section id="social-media-links" class="social-section"></section>
+        <div id="error-msg" class="error-msg"></div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2025 GitHub Profile Search</p>
+        <div class="social-links">
+            <a href="#" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

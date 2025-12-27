@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Range Slider</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="price-range-slider" aria-label="Price Range Slider">
+        <div class="price-range-values">
+            <input type="number" id="min-price" placeholder="Min Price" aria-label="Minimum Price">
+            <input type="number" id="max-price" placeholder="Max Price" aria-label="Maximum Price">
+        </div>
+        <div class="slider-container">
+            <div class="slider-track" role="presentation"></div>
+            <div class="slider-thumb min-thumb" role="slider" aria-label="Minimum Price Slider" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="0"></div>
+            <div class="slider-thumb max-thumb" role="slider" aria-label="Maximum Price Slider" aria-valuemin="0" aria-valuemax="10000" aria-valuenow="10000"></div>
+            <input type="range" id="min-slider" min="0" max="10000" value="0" aria-hidden="true">
+            <input type="range" id="max-slider" min="0" max="10000" value="10000" aria-hidden="true">
+        </div>
+        <div class="price-range-display">
+            <span id="min-display">₹0</span> - <span id="max-display">₹10000</span>
+        </div>
+        <button id="reset-button" aria-label="Reset Price Range">Reset</button>
+        <div class="tooltip" id="tooltip"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
