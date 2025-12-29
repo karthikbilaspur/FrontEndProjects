@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Step Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1ozjc5ggQmZuOJd5" crossorigin="anonymous">
+    <!-- Font Libraries -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYWD+zQ3Mc9o1A2y2G4XxxXM7e1dg3A6hgrd8sqhQ66gw1q5Vvnf5drumBf3duf4m8g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Language Support -->
+    <meta name="language" content="en">
+    <link rel="alternate" hreflang="en" href="https://example.com/en">
+    <link rel="alternate" hreflang="es" href="https://example.com/es">
+    <link rel="alternate" hreflang="fr" href="https://example.com/fr">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" role="form" aria-label="Multi-step form">
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Registration progress">
+            <div class="progress"></div>
+        </div>
+        <h1 class="text-center mb-4">Welcome to Our Registration Process</h1>
+        <p class="text-center mb-4">Please fill out the following information to complete your registration.</p>
+        <form id="multi-step-form" novalidate>
+            <div class="step active" data-step="1" aria-hidden="false">
+                <h2>Step 1: <span data-translate="personalInfo">Personal Info</span></h2>
+                <p>Please provide your personal information below.</p>
+                <label for="name"><span data-translate="name">Name:</span></label>
+                <input type="text" id="name" placeholder="Name" required>
+                <label for="email"><span data-translate="email">Email:</span></label>
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="button" class="next-btn" aria-label="Next step"><span data-translate="next">Next</span></button>
+            </div>
+            <div class="step" data-step="2" aria-hidden="true">
+                <h2>Step 2: <span data-translate="address">Address</span></h2>
+                <p>Please provide your address information below.</p>
+                <label for="address"><span data-translate="address">Address:</span></label>
+                <input type="text" id="address" placeholder="Address" required>
+                <label for="city"><span data-translate="city">City:</span></label>
+                <input type="text" id="city" placeholder="City" required>
+                <button type="button" class="prev-btn" aria-label="Previous step"><span data-translate="prev">Prev</span></button>
+                <button type="button" class="next-btn" aria-label="Next step"><span data-translate="next">Next</span></button>
+            </div>
+            <div class="step" data-step="3" aria-hidden="true">
+                <h2>Step 3: <span data-translate="review">Review</span></h2>
+                <p><span data-translate="reviewInfo">Review your info:</span></p>
+                <div class="review-info"></div>
+                <button type="button" class="prev-btn" aria-label="Previous step"><span data-translate="prev">Prev</span></button>
+                <button type="submit" aria-label="Submit form"><span data-translate="submit">Submit</span></button>
+            </div>
+        </form>
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+            <button class="lang-btn" data-lang="en">English</button>
+            <button class="lang-btn" data-lang="es">Español</button>
+            <button class="lang-btn" data-lang="fr">Français</button>
+        </div>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Fullstack Development with MERN",
+    "description": "Build fullstack apps with MongoDB, Express, React, and Node.js.",
+    "category": "Fullstack",
+    "image": "https://example.com/mern.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Fullstack with Python and React",
+    "description": "Use Python (Django/Flask) with React for fullstack development.",
+    "category": "Fullstack",
+    "image": "https://example.com/python-react.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Next.js for Fullstack Development",
+    "description": "Build fullstack apps with Next.js and React.",
+    "category": "Fullstack",
+    "image": "https://example.com/nextjs.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Fullstack Authentication Flow",
+    "description": "Implement auth in fullstack apps with JWT and sessions.",
+    "category": "Fullstack",
+    "image": "https://example.com/fullstack-auth.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Fullstack Testing Strategies",
+    "description": "Learn testing strategies for fullstack applications.",
+    "category": "Fullstack",
+    "image": "https://example.com/fullstack-testing.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Deploy Fullstack Apps with Docker",
+    "description": "Deploy fullstack apps using Docker and Kubernetes.",
+    "category": "Fullstack",
+    "image": "https://example.com/fullstack-docker.jpg"
+  },
+  {
+    "id": 7,
+    "title": "State Management in Fullstack Apps",
+    "description": "Manage state in fullstack apps with Redux or Context API.",
+    "category": "Fullstack",
+    "image": "https://example.com/fullstack-state.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Fullstack with TypeScript",
+    "description": "Use TypeScript for fullstack development with Node.js and React.",
+    "category": "Fullstack",
+    "image": "https://example.com/fullstack-ts.jpg"
+  },
+  {
+    "id": 9,
+    "title": "GraphQL in Fullstack Apps",
+    "description": "Use GraphQL for data management in fullstack apps.",
+    "category": "Fullstack",
+    "image": "https://example.com/fullstack-graphql.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Fullstack Performance Optimization",
+    "description": "Optimize performance in fullstack applications.",
+    "category": "Fullstack",
+    "image": "https://example.com/fullstack-opt.jpg"
+  }
+]

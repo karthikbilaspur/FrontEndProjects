@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "HTML5 and CSS3 Mastery",
+    "description": "Learn the fundamentals of HTML5 and CSS3 for building responsive websites.",
+    "category": "Frontend",
+    "image": "https://example.com/html-css.jpg"
+  },
+  {
+    "id": 2,
+    "title": "JavaScript and DOM Manipulation",
+    "description": "Master JavaScript and learn how to manipulate the DOM for dynamic web pages.",
+    "category": "Frontend",
+    "image": "https://example.com/js-dom.jpg"
+  },
+  {
+    "id": 3,
+    "title": "ReactJS Fundamentals",
+    "description": "Learn the basics of ReactJS for building reusable UI components.",
+    "category": "Frontend",
+    "image": "https://example.com/react.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Responsive Web Design with Flexbox and Grid",
+    "description": "Create responsive layouts with Flexbox and CSS Grid.",
+    "category": "Frontend",
+    "image": "https://example.com/responsive-design.jpg"
+  },
+  {
+    "id": 5,
+    "title": "State Management with Redux",
+    "description": "Learn how to manage state in React apps with Redux.",
+    "category": "Frontend",
+    "image": "https://example.com/redux.jpg"
+  },
+  {
+    "id": 6,
+    "title": "AngularJS Development",
+    "description": "Build complex web apps with AngularJS.",
+    "category": "Frontend",
+    "image": "https://example.com/angular.jpg"
+  },
+  {
+    "id": 7,
+    "title": "VueJS for Frontend Development",
+    "description": "Learn VueJS for building progressive web apps.",
+    "category": "Frontend",
+    "image": "https://example.com/vuejs.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Sass and CSS Preprocessors",
+    "description": "Master Sass for efficient CSS development.",
+    "category": "Frontend",
+    "image": "https://example.com/sass.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Frontend Performance Optimization",
+    "description": "Learn techniques for optimizing frontend performance.",
+    "category": "Frontend",
+    "image": "https://example.com/perf-opt.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Testing Frontend Applications",
+    "description": "Learn how to write tests for frontend apps with Jest and Cypress.",
+    "category": "Frontend",
+    "image": "https://example.com/testing.jpg"
+  }
+]

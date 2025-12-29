@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Node.js and Express.js Fundamentals",
+    "description": "Learn the basics of Node.js and Express.js for building backend APIs.",
+    "category": "Backend",
+    "image": "https://example.com/node-express.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Database Design and MongoDB",
+    "description": "Master database design and MongoDB for storing data.",
+    "category": "Backend",
+    "image": "https://example.com/db-mongodb.jpg"
+  },
+  {
+    "id": 3,
+    "title": "RESTful API Development",
+    "description": "Learn how to build RESTful APIs with Node.js and Express.js.",
+    "category": "Backend",
+    "image": "https://example.com/rest-api.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Authentication and Authorization",
+    "description": "Implement authentication and authorization in backend apps.",
+    "category": "Backend",
+    "image": "https://example.com/auth.jpg"
+  },
+  {
+    "id": 5,
+    "title": "GraphQL for Backend Development",
+    "description": "Learn GraphQL for building efficient backend APIs.",
+    "category": "Backend",
+    "image": "https://example.com/graphql.jpg"
+  },
+  {
+    "id": 6,
+    "title": "Python for Backend Development",
+    "description": "Use Python and Flask/Django for backend development.",
+    "category": "Backend",
+    "image": "https://example.com/python-backend.jpg"
+  },
+  {
+    "id": 7,
+    "title": "Microservices Architecture",
+    "description": "Learn how to build microservices with Node.js and Docker.",
+    "category": "Backend",
+    "image": "https://example.com/microservices.jpg"
+  },
+  {
+    "id": 8,
+    "title": "SQL Databases with PostgreSQL",
+    "description": "Master SQL databases with PostgreSQL for backend apps.",
+    "category": "Backend",
+    "image": "https://example.com/sql-postgres.jpg"
+  },
+  {
+    "id": 9,
+    "title": "Backend Testing with Jest and Supertest",
+    "description": "Learn how to write tests for backend apps.",
+    "category": "Backend",
+    "image": "https://example.com/backend-testing.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Deployment and DevOps for Backend",
+    "description": "Deploy backend apps with Docker, Kubernetes, and CI/CD.",
+    "category": "Backend",
+    "image": "https://example.com/deployment.jpg"
+  }
+]

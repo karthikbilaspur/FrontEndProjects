@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark & Toast Notification</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+  <header>
+    <h1>My Bookmarks</h1>
+  </header>
+  <main>
+    <section class="bookmark-form" aria-label="Bookmark form">
+      <input type="url" name="url" id="urlInput" placeholder="Enter URL" pattern="https://.*" size="50" required aria-required="true">
+      <button id="addBookmark">Add Bookmark</button>
+      <button id="deleteAll">Delete All Bookmarks</button>
+    </section>
+    <section class="bookmarks" aria-label="Bookmarks list">
+      <ul id="bookmarkList">
+        <!-- Bookmarks will be added here dynamically -->
+      </ul>
+    </section>
+    <div class="container">
+      <h3>Toast Notification Demo</h3>
+      <div class="toast-buttons">
+        <div class="toast-row">
+          <button type="button" class="custom-toast success-toast" aria-label="Submit success toast">Submit</button>
+          <button type="button" class="custom-toast danger-toast" aria-label="Failed error toast">Failed</button>
+          <button type="button" class="custom-toast info-toast" aria-label="Information toast">Information</button>
+          <button type="button" class="custom-toast warning-toast" aria-label="Warning toast">Warning</button>
+        </div>
+      </div>
+    </div>
+    <div class="toast-overlay" id="toast-overlay" role="alert" aria-live="assertive"></div>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
