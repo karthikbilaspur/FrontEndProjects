@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Note Taking App</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Note Taking App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button id="addBtn" class="btn btn-primary">Add Note</button>
+          </li>
+          <li class="nav-item">
+            <button id="darkModeBtn" class="btn btn-secondary">Dark Mode</button>
+          </li>
+          <li class="nav-item">
+            <button id="reminderBtn" class="btn btn-warning">Reminders</button>
+          </li>
+          <li class="nav-item">
+            <button id="archiveBtn" class="btn btn-info">Archive</button>
+          </li>
+          <li class="nav-item">
+            <button id="shareBtn" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#shareModal">Share</button>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </div>
+    </div>
+  </nav>
+  <div class="container mt-5">
+    <div id="main" class="row">
+      <!-- Notes will be generated here -->
+    </div>
+  </div>
+  <div id="popup" class="modal fade" tabindex="-1" aria-labelledby="popupLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="popupLabel">Are you sure you want to delete this note?</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <button id="yesBtn" class="btn btn-danger">Yes</button>
+          <button id="noBtn" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="reminderPopup" class="modal fade" tabindex="-1" aria-labelledby="reminderLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="reminderLabel">Set Reminder</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <input id="reminderInput" type="datetime-local" class="form-control">
+          <button id="setReminderBtn" class="btn btn-primary">Set Reminder</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="archivePopup" class="modal fade" tabindex="-1" aria-labelledby="archiveLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="archiveLabel">Archived Notes</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="archivedNotes">
+          <!-- Archived notes will be generated here -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="shareModal" class="modal fade" tabindex="-1" aria-labelledby="shareLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="shareLabel">Share Note</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <button id="facebookBtn" class="btn btn-primary"><i class="fab fa-facebook-f"></i> Facebook</button>
+          <button id="twitterBtn" class="btn btn-info"><i class="fab fa-twitter"></i> Twitter</button>
+          <button id="whatsappBtn" class="btn btn-success"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+          <button id="emailBtn" class="btn btn-secondary"><i class="fa fa-envelope"></i> Email</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/bf520e6492.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>

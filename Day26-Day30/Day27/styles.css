@@ -1,0 +1,215 @@
+:root {
+  --primary-color: #4CAF50;
+  --secondary-color: #FF9800;
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --accent-color: #2196F3;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s;
+}
+
+.container {
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+}
+
+#scrambled-word {
+  font-size: 36px;
+  letter-spacing: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: pulse 2s infinite;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#guess {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+#guess:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+.btn {
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #3e8e41;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #ff8c00;
+}
+
+#result {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s;
+}
+
+#definition {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#score {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#timer {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#leaderboard {
+  font-size: 14px;
+  white-space: pre-wrap;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-links a {
+  margin-right: 10px;
+  font-size: 18px;
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* Media Queries */
+
+/* Large screens (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .container {
+    max-width: 900px;
+  }
+}
+
+/* Medium screens (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    max-width: 700px;
+  }
+  #scrambled-word {
+    font-size: 30px;
+  }
+}
+
+/* Small screens (phones, 576px and up) */
+@media (max-width: 767px) {
+  .container {
+    max-width: 90%;
+    padding: 10px;
+  }
+  #scrambled-word {
+    font-size: 24px;
+  }
+  .btn {
+    padding: 10px 15px;
+    font-size: 16px;
+  }
+}
+
+/* Extra small screens (small phones, 320px and up) */
+@media (max-width: 320px) {
+  .container {
+    max-width: 95%;
+    padding: 5px;
+  }
+  #scrambled-word {
+    font-size: 18px;
+  }
+  .btn {
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+}

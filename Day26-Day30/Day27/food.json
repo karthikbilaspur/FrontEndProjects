@@ -1,0 +1,52 @@
+[
+  {
+    "word": "apple",
+    "definition": "A sweet and crunchy fruit, native to Central Asia.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "banana",
+    "definition": "A long and curved fruit, native to Southeast Asia.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "cherry",
+    "definition": "A small and sweet fruit, native to the Northern Hemisphere.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "date",
+    "definition": "A sweet and nutritious fruit, native to the Middle East.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "elderberry",
+    "definition": "A type of fruit, known for its medicinal properties.",
+    "difficulty": "hard"
+  },
+  {
+    "word": "fig",
+    "definition": "A sweet and nutritious fruit, native to the Mediterranean region.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "grape",
+    "definition": "A small and sweet fruit, native to the Middle East.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "honeydew",
+    "definition": "A sweet and refreshing fruit, native to Africa.",
+    "difficulty": "medium"
+  },
+  {
+    "word": "jackfruit",
+    "definition": "A large and sweet fruit, native to South Asia.",
+    "difficulty": "hard"
+  },
+  {
+    "word": "kiwi",
+    "definition": "A small and furry fruit, native to China.",
+    "difficulty": "easy"
+  }
+]

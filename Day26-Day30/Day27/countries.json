@@ -1,0 +1,52 @@
+[
+  {
+    "word": "india",
+    "definition": "A country in South Asia, known for its rich culture and history.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "china",
+    "definition": "A country in East Asia, famous for its Great Wall and ancient civilization.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "usa",
+    "definition": "A country in North America, known for its diverse culture and technological advancements.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "japan",
+    "definition": "An island nation in East Asia, famous for its technology and unique culture.",
+    "difficulty": "medium"
+  },
+  {
+    "word": "brazil",
+    "definition": "A country in South America, known for its vibrant culture and beautiful beaches.",
+    "difficulty": "medium"
+  },
+  {
+    "word": "russia",
+    "definition": "A country in Eastern Europe and Northern Asia, famous for its history and literature.",
+    "difficulty": "hard"
+  },
+  {
+    "word": "australia",
+    "definition": "A country in Oceania, known for its unique wildlife and beautiful beaches.",
+    "difficulty": "hard"
+  },
+  {
+    "word": "canada",
+    "definition": "A country in North America, famous for its natural beauty and friendly people.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "germany",
+    "definition": "A country in Central Europe, known for its rich history and culture.",
+    "difficulty": "medium"
+  },
+  {
+    "word": "france",
+    "definition": "A country in Western Europe, famous for its art, fashion, and cuisine.",
+    "difficulty": "medium"
+  }
+]

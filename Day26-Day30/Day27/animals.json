@@ -1,0 +1,52 @@
+[
+  {
+    "word": "lion",
+    "definition": "A large carnivorous mammal, known as the king of the jungle.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "tiger",
+    "definition": "A large striped carnivorous mammal, native to Asia.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "elephant",
+    "definition": "A large herbivorous mammal, known for its long trunk and tusks.",
+    "difficulty": "medium"
+  },
+  {
+    "word": "giraffe",
+    "definition": "A tall herbivorous mammal, known for its long neck and spots.",
+    "difficulty": "medium"
+  },
+  {
+    "word": "zebra",
+    "definition": "A striped herbivorous mammal, native to Africa.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "kangaroo",
+    "definition": "A marsupial native to Australia, known for its hopping ability.",
+    "difficulty": "hard"
+  },
+  {
+    "word": "penguin",
+    "definition": "A flightless bird native to the Southern Hemisphere.",
+    "difficulty": "medium"
+  },
+  {
+    "word": "koala",
+    "definition": "A marsupial native to Australia, known for its cute appearance.",
+    "difficulty": "easy"
+  },
+  {
+    "word": "crocodile",
+    "definition": "A large carnivorous reptile, native to tropical regions.",
+    "difficulty": "hard"
+  },
+  {
+    "word": "butterfly",
+    "definition": "A colorful insect, known for its beautiful wings.",
+    "difficulty": "medium"
+  }
+]
