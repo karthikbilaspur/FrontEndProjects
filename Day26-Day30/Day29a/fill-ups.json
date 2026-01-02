@@ -1,0 +1,102 @@
+[
+    {
+        "question": "The sum of the interior angles of a triangle is ______________ degrees.",
+        "marks": 1,
+        "answer": "180"
+    },
+    {
+        "question": "The value of pi (π) is approximately ______________.",
+        "marks": 1,
+        "answer": "3.14"
+    },
+    {
+        "question": "The formula for the area of a circle is A = ______________.",
+        "marks": 1,
+        "answer": "πr^2"
+    },
+    {
+        "question": "The value of x in the equation 2x + 5 = 11 is ______________.",
+        "marks": 1,
+        "answer": "3"
+    },
+    {
+        "question": "The sum of the squares of the legs of a right triangle is equal to the square of the ______________.",
+        "marks": 1,
+        "answer": "hypotenuse"
+    },
+    {
+        "question": "The formula for the volume of a rectangular prism is V = ______________.",
+        "marks": 1,
+        "answer": "lwh"
+    },
+    {
+        "question": "The value of 2^3 is ______________.",
+        "marks": 1,
+        "answer": "8"
+    },
+    {
+        "question": "The equation of a line in slope-intercept form is y = ______________.",
+        "marks": 1,
+        "answer": "mx + b"
+    },
+    {
+        "question": "The value of x in the equation x - 3 = 7 is ______________.",
+        "marks": 1,
+        "answer": "10"
+    },
+    {
+        "question": "The formula for the area of a triangle is A = ______________.",
+        "marks": 1,
+        "answer": "(1/2)bh"
+    },
+    {
+        "question": "The value of 5! (5 factorial) is ______________.",
+        "marks": 1,
+        "answer": "120"
+    },
+    {
+        "question": "The equation of a circle with center (h, k) and radius r is (x - h)^2 + (y - k)^2 = ______________.",
+        "marks": 1,
+        "answer": "r^2"
+    },
+    {
+        "question": "The value of x in the equation 4x = 28 is ______________.",
+        "marks": 1,
+        "answer": "7"
+    },
+    {
+        "question": "The formula for the surface area of a sphere is A = ______________.",
+        "marks": 1,
+        "answer": "4πr^2"
+    },
+    {
+        "question": "The value of 3 × 4 is ______________.",
+        "marks": 1,
+        "answer": "12"
+    },
+    {
+        "question": "The equation of a parabola in vertex form is y = ______________.",
+        "marks": 1,
+        "answer": "a(x - h)^2 + k"
+    },
+    {
+        "question": "The value of x in the equation x + 2 = 9 is ______________.",
+        "marks": 1,
+        "answer": "7"
+    },
+    {
+        "question": "The formula for the volume of a cone is V = ______________.",
+        "marks": 1,
+        "answer": "(1/3)πr^2h"
+    },
+    {
+        "question": "The value of 7 - 2 is ______________.",
+        "marks": 1,
+        "answer": "5"
+    },
+    {
+        "question": "The equation of a line in point-slope form is y - y1 = ______________.",
+        "marks": 1,
+        "answer": "m(x - x1)"
+    }
+]

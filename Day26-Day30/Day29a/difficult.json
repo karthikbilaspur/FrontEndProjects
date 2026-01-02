@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is 12*12?",
+        "marks": 2
+    },
+    {
+        "question": "What is 15*2?",
+        "marks": 2
+    },
+    {
+        "question": "What is 18*3?",
+        "marks": 2
+    },
+    {
+        "question": "What is 20/2?",
+        "marks": 2
+    },
+    {
+        "question": "What is 24/3?",
+        "marks": 2
+    },
+    {
+        "question": "What is 30/5?",
+        "marks": 2
+    },
+    {
+        "question": "What is 36/6?",
+        "marks": 2
+    },
+    {
+        "question": "What is 42/7?",
+        "marks": 2
+    },
+    {
+        "question": "What is 48/8?",
+        "marks": 2
+    },
+    {
+        "question": "What is 54/9?",
+        "marks": 2
+    }
+]

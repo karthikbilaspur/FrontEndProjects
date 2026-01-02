@@ -1,0 +1,42 @@
+[
+    {
+        "question": "What is 24*24?",
+        "marks": 3
+    },
+    {
+        "question": "What is 36/6?",
+        "marks": 3
+    },
+    {
+        "question": "What is 48/8?",
+        "marks": 3
+    },
+    {
+        "question": "What is 60/10?",
+        "marks": 3
+    },
+    {
+        "question": "What is 72/12?",
+        "marks": 3
+    },
+    {
+        "question": "What is 84/14?",
+        "marks": 3
+    },
+    {
+        "question": "What is 96/16?",
+        "marks": 3
+    },
+    {
+        "question": "What is 108/18?",
+        "marks": 3
+    },
+    {
+        "question": "What is 120/20?",
+        "marks": 3
+    },
+    {
+        "question": "What is 132/22?",
+        "marks": 3
+    }
+]
