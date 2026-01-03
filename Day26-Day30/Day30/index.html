@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Interactive Quiz Game</h1>
+    </header>
+    <main>
+        <div class="rules-container">
+            <h1>Quiz Game Overview</h1>
+            <p>The Interactive Quiz Game is a fun and engaging way to test your knowledge on various topics. The game consists of multiple questions, each with a unique category and difficulty level. The questions are designed to challenge your understanding and encourage you to learn more.</p>
+            <h2>Question Format</h2>
+            <p>Each question will be presented in one of the following formats:</p>
+            <ul>
+                <li><h3>MCQ (Multiple Choice Question)</h3>: Choose the correct answer from the given options.</li>
+                <li><h3>Fill-up</h3>: Fill in the blank with the correct answer.</li>
+                <li><h3>Simple Question</h3>: Answer the question with a numerical value.</li>
+            </ul>
+            <h2>Marking Scheme</h2>
+            <p>Each question carries a certain number of marks, which will be awarded if you answer correctly. The marks are as follows:</p>
+            <ul>
+                <li><h4>Easy Questions</h4>: 1 mark</li>
+                <li><h4>Difficult Questions</h4>: 2 marks</li>
+                <li><h4>Hard Questions</h4>: 3 marks</li>
+            </ul>
+            <p>If you use a hint, 1 mark will be deducted from your score.</p>
+            <h2>Rules and Regulations</h2>
+            <p>To play the game, please follow these rules:</p>
+            <ul>
+                <li><h5>Time Limit</h5>: You have 60 seconds to answer each question.</li>
+                <li><h5>Answer Submission</h5>: Submit your answer using the "Submit" button.</li>
+                <li><h5>Next Question</h5>: Click "Next" to move to the next question.</li>
+                <li><h5>Skip Question</h5>: Click "Skip" to skip the current question.</li>
+                <li><h5>Hint</h5>: Click "Hint" to get a hint for the current question.</li>
+            </ul>
+            <h6>Disclaimer</h6>
+            <p>The quiz game is for entertainment purposes only. The questions are designed to test your knowledge and encourage learning.</p>
+            <button class="start-btn">Start Quiz</button>
+        </div>
+        <div class="quiz-container">
+            <div class="score-container">
+                <span id="score-label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <progress id="progress-bar" value="0" max="100"></progress>
+            <div class="question-number-container">
+                <span id="question-number">Question 1 of 10</span>
+            </div>
+            <div class="timer-container">
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <span id="timer">60</span>s
+            </div>
+            <div class="question-container"></div>
+            <div class="options-container"></div>
+            <div class="fill-up-container">
+                <label for="fill-up-input">Answer:</label>
+                <input type="text" id="fill-up-input">
+                <button id="fill-up-submit">Submit</button>
+            </div>
+            <div class="result-container"></div>
+            <button class="next-btn">Next</button>
+            <button class="skip-btn">Skip</button>
+            <button class="hint-btn"><i class="fa fa-lightbulb-o" aria-hidden="true"></i> Hint</button>
+            <div class="hint-container"></div>
+            <div class="category-container">
+                <select id="category-select" title="Select your category">
+                    <option value="all">All</option>
+                    <option value="easy">Easy</option>
+                    <option value="difficult">Difficult</option>
+                    <option value="hard">Hard</option>
+                    <option value="mcq">MCQ</option>
+                    <option value="fill-ups">Fill-ups</option>
+                </select>
+            </div>
+            <button class="reset-btn">Reset</button>
+            <div class="social-share-container">
+                <a href="#" class="share-btn" title="Share on Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" class="share-btn" title="Share on Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </div>
+            <div class="results-page-container">
+                <h2>Results</h2>
+                <p id="results-score"></p>
+                <p id="results-feedback"></p>
+            </div>
+        </div>
+        <!-- Add this to your HTML file -->
+<div class="pagination-container">
+    <button class="prev-btn">Prev</button>
+    <span id="question-numbers"></span>
+    <button class="next-btn">Next</button>
+</div>
+
+<div class="question-status-container">
+    <button class="answered-btn">Answered: <span id="answered-count">0</span></button>
+    <button class="unanswered-btn">Unanswered: <span id="unanswered-count">0</span></button>
+    <button class="attempted-btn">Attempted: <span id="attempted-count">0</span></button>
+</div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Quiz Game</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
