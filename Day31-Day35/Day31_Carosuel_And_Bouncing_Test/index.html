@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo: Carousel with Bouncing Text</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main role="main">
+        <section class="carousel-container" aria-label="Image Carousel">
+            <div class="carousel" role="region">
+                <!-- Slides -->
+                <div class="carousel-slide active" aria-hidden="false" id="slide-1" aria-current="true">
+                    <img src="https://picsum.photos/800/400?image=1" alt="A beautiful landscape image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>1</span>
+                    </h1>
+                    <div class="caption">This is the first slide</div>
+                </div>
+                <!-- Add 7 more slides -->
+                <div class="carousel-slide" aria-hidden="true" id="slide-2" aria-current="false">
+                    <img src="https://picsum.photos/800/400?image=2" alt="A stunning cityscape image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>2</span>
+                    </h1>
+                    <div class="caption">This is the second slide</div>
+                </div>
+                <div class="carousel-slide" aria-hidden="true" id="slide-3" aria-current="false">
+                    <img src="https://picsum.photos/800/400?image=3" alt="A breathtaking mountain image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>3</span>
+                    </h1>
+                    <div class="caption">This is the third slide</div>
+                </div>
+                <div class="carousel-slide" aria-hidden="true" id="slide-4" aria-current="false">
+                    <img src="https://picsum.photos/800/400?image=4" alt="A beautiful beach image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>4</span>
+                    </h1>
+                    <div class="caption">This is the fourth slide</div>
+                </div>
+                <div class="carousel-slide" aria-hidden="true" id="slide-5" aria-current="false">
+                    <img src="https://picsum.photos/800/400?image=5" alt="A stunning sunset image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>5</span>
+                    </h1>
+                    <div class="caption">This is the fifth slide</div>
+                </div>
+                <div class="carousel-slide" aria-hidden="true" id="slide-6" aria-current="false">
+                    <img src="https://picsum.photos/800/400?image=6" alt="A beautiful mountain range image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>6</span>
+                    </h1>
+                    <div class="caption">This is the sixth slide</div>
+                </div>
+                <div class="carousel-slide" aria-hidden="true" id="slide-7" aria-current="false">
+                    <img src="https://picsum.photos/800/400?image=7" alt="A stunning forest image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>7</span>
+                    </h1>
+                    <div class="caption">This is the seventh slide</div>
+                </div>
+                <div class="carousel-slide" aria-hidden="true" id="slide-8" aria-current="false">
+                    <img src="https://picsum.photos/800/400?image=8" alt="A beautiful desert image" loading="lazy">
+                    <h1 class="bouncing-letters">
+                        <span>S</span><span>l</span><span>i</span><span>d</span><span>e</span> <span>8</span>
+                    </h1>
+                    <div class="caption">This is the eighth slide</div>
+                </div>
+                <button class="nav prev" aria-label="Previous Slide" aria-disabled="true">&#60;</button>
+                <button class="nav next" aria-label="Next Slide" aria-disabled="false">&#62;</button>
+                <div class="dots" role="tablist">
+                    <!-- Update dots -->
+                    <button class="dot active" data-index="0" role="tab" aria-selected="true" aria-controls="slide-1">1</button>
+                    <button class="dot" data-index="1" role="tab" aria-selected="false" aria-controls="slide-2">2</button>
+                    <button class="dot" data-index="2" role="tab" aria-selected="false" aria-controls="slide-3">3</button>
+                    <button class="dot" data-index="3" role="tab" aria-selected="false" aria-controls="slide-4">4</button>
+                    <button class="dot" data-index="4" role="tab" aria-selected="false" aria-controls="slide-5">5</button>
+                    <button class="dot" data-index="5" role="tab" aria-selected="false" aria-controls="slide-6">6</button>
+                    <button class="dot" data-index="6" role="tab" aria-selected="false" aria-controls="slide-7">7</button>
+                    <button class="dot" data-index="7" role="tab" aria-selected="false" aria-controls="slide-8">8</button>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                    <div class="progress-indicator" aria-live="polite">1 of 8</div>
+                </div>
+                <button class="pause-button" aria-label="Pause Carousel">Pause</button>
+            </div>
+        </section>
+        <section class="video-container" aria-label="Video Section">
+            <iframe id="video-iframe" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+            <div class="video-progress-bar">
+                <div class="video-progress"></div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
