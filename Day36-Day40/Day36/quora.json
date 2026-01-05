@@ -1,0 +1,164 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is Quora?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Quora is a question-and-answer website where users can ask and answer questions.",
+          "votes": 10
+        },
+        {
+          "id": 2,
+          "answer": "Quora is a platform for sharing knowledge and expertise.",
+          "votes": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "How do I use Quora?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "To use Quora, simply ask a question or answer one.",
+          "votes": 8
+        },
+        {
+          "id": 2,
+          "answer": "You can also follow topics and users to see their content.",
+          "votes": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the purpose of Quora?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The purpose of Quora is to share knowledge and expertise.",
+          "votes": 12
+        },
+        {
+          "id": 2,
+          "answer": "Quora aims to provide a platform for users to learn and grow.",
+          "votes": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "How do I earn money on Quora?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "You can earn money on Quora through the Partner Program.",
+          "votes": 9
+        },
+        {
+          "id": 2",
+          "answer": "You can also earn money through Quora Spaces.",
+          "votes": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is Quora Spaces?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Quora Spaces is a feature that allows users to create and manage communities.",
+          "votes": 11
+        },
+        {
+          "id": 2,
+          "answer": "Quora Spaces is a way to connect with others who share similar interests.",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "How do I ask a question on Quora?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "To ask a question on Quora, simply click the 'Ask' button.",
+          "votes": 10
+        },
+        {
+          "id": 2,
+          "answer": "You can also use the Quora app to ask questions on-the-go.",
+          "votes": 5
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is Quora's mission?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Quora's mission is to share knowledge and expertise.",
+          "votes": 12
+        },
+        {
+          "id": 2,
+          "answer": "Quora aims to provide a platform for users to learn and grow.",
+          "votes": 6
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "How do I report a question on Quora?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "To report a question on Quora, click the 'Report' button.",
+          "votes": 8
+        },
+        {
+          "id": 2,
+          "answer": "You can also report a question through the Quora app.",
+          "votes": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is Quora's policy on plagiarism?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Quora's policy on plagiarism is strict.",
+          "votes": 11
+        },
+        {
+          "id": 2,
+          "answer": "Quora prohibits plagiarism and will take action against offenders.",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "How do I delete my Quora account?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "To delete your Quora account, go to your settings and click 'Delete Account'.",
+          "votes": 9
+        },
+        {
+          "id": 2,
+          "answer": "You can also contact Quora support to delete your account.",
+          "votes": 4
+        }
+      ]
+    }
+  ]
+}

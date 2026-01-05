@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "John Doe",
+    "rating": 4,
+    "text": "I was blown away by the quality of the project. The team was very responsive and delivered on time."
+  },
+  {
+    "id": 2,
+    "name": "Jane Smith",
+    "rating": 3,
+    "text": "The project was good, but there were a few minor issues that needed to be fixed. Overall, I'm satisfied."
+  },
+  {
+    "id": 3,
+    "name": "Bob Johnson",
+    "rating": 5,
+    "text": "Wow, I'm impressed! The team exceeded my expectations and delivered an amazing project."
+  },
+  {
+    "id": 4,
+    "name": "Alice Brown",
+    "rating": 2,
+    "text": "Unfortunately, the project didn't quite meet my expectations. There were some major issues that needed to be addressed."
+  },
+  {
+    "id": 5,
+    "name": "Mike Davis",
+    "rating": 4,
+    "text": "Great experience working with the team. They were very professional and delivered a high-quality project."
+  },
+  {
+    "id": 6,
+    "name": "Emily Chen",
+    "rating": 1,
+    "text": "Unfortunately, the project was a disaster. The team didn't communicate well and didn't deliver on time."
+  },
+  {
+    "id": 7,
+    "name": "David Lee",
+    "rating": 3,
+    "text": "The project was okay, but there were some minor issues that needed to be fixed. Overall, I'm satisfied."
+  },
+  {
+    "id": 8,
+    "name": "Sarah Taylor",
+    "rating": 5,
+    "text": "I'm so happy with the project! The team was very responsive and delivered an amazing result."
+  },
+  {
+    "id": 9,
+    "name": "Kevin White",
+    "rating": 2,
+    "text": "Unfortunately, the project didn't quite meet my expectations. There were some major issues that needed to be addressed."
+  },
+  {
+    "id": 10,
+    "name": "Rebecca Martin",
+    "rating": 4,
+    "text": "Great experience working with the team. They were very professional and delivered a high-quality project."
+  },
+  {
+    "id": 11,
+    "name": "James Wilson",
+    "rating": 3,
+    "text": "The project was good, but there were a few minor issues that needed to be fixed. Overall, I'm satisfied."
+  },
+  {
+    "id": 12,
+    "name": "Lisa Nguyen",
+    "rating": 5,
+    "text": "Wow, I'm impressed! The team exceeded my expectations and delivered an amazing project."
+  },
+  {
+    "id": 13,
+    "name": "Tom Harris",
+    "rating": 1,
+    "text": "Unfortunately, the project was a disaster. The team didn't communicate well and didn't deliver on time."
+  },
+  {
+    "id": 14,
+    "name": "Amy Patel",
+    "rating": 4,
+    "text": "Great experience working with the team. They were very professional and delivered a high-quality project."
+  },
+  {
+    "id": 15,
+    "name": "Chris Brooks",
+    "rating": 2,
+    "text": "Unfortunately, the project didn't quite meet my expectations. There were some major issues that needed to be addressed."
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "description": "Build a simple landing page",
+    "difficultyLevel": "Easy",
+    "timeTake": "1 hour",
+    "starRating": 5,
+    "tags": ["HTML", "CSS", "Web Development"],
+    "technologiesUsed": ["HTML5", "CSS3"],
+    "projectType": "Web Page",
+    "githubLink": "",
+    "createdAt": "2022-01-15T12:00:00Z",
+    "updatedAt": "2025-01-15T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "description": "Create a responsive navigation bar",
+    "difficultyLevel": "Medium",
+    "timeTake": "2 hours",
+    "starRating": 4,
+    "tags": ["HTML", "CSS", "JavaScript", "Web Development"],
+    "technologiesUsed": ["HTML5", "CSS3", "JavaScript"],
+    "projectType": "Web Component",
+    "githubLink": "",
+    "createdAt": "2022-03-20T12:00:00Z",
+    "updatedAt": "2025-03-20T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "description": "Develop an e-commerce website",
+    "difficultyLevel": "Hard",
+    "timeTake": "10 hours",
+    "starRating": 3,
+    "tags": ["HTML", "CSS", "JavaScript", "React", "Web Development"],
+    "technologiesUsed": ["HTML5", "CSS3", "JavaScript", "React"],
+    "projectType": "Web App",
+    "githubLink": "",
+    "createdAt": "2022-05-01T12:00:00Z",
+    "updatedAt": "2025-05-01T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "description": "Style a simple form",
+    "difficultyLevel": "Easy",
+    "timeTake": "30 minutes",
+    "starRating": 2,
+    "tags": ["HTML", "CSS", "Web Development"],
+    "technologiesUsed": ["HTML5", "CSS3"],
+    "projectType": "Web Page",
+    "githubLink": "",
+    "createdAt": "2022-07-10T12:00:00Z",
+    "updatedAt": "2025-07-10T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "description": "Implement client-side validation",
+    "difficultyLevel": "Medium",
+    "timeTake": "1.5 hours",
+    "starRating": 1,
+    "tags": ["JavaScript", "Web Development"],
+    "technologiesUsed": ["JavaScript"],
+    "projectType": "Web Component",
+    "githubLink": "",
+    "createdAt": "2022-09-15T12:00:00Z",
+    "updatedAt": "2025-09-15T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "description": "Create a RESTful API",
+    "difficultyLevel": "Hard",
+    "timeTake": "5 hours",
+    "starRating": 4,
+    "tags": ["Node.js", "Express", "API", "Web Development"],
+    "technologiesUsed": ["Node.js", "Express"],
+    "projectType": "API",
+    "githubLink": "",
+    "createdAt": "2022-11-20T12:00:00Z",
+    "updatedAt": "2025-11-20T12:00:00Z"
+  }
+]

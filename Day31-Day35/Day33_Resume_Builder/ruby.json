@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "description": "Write a simple Ruby script",
+    "difficultyLevel": "Easy",
+    "timeTake": "0.5 hours",
+    "starRating": 3,
+    "tags": ["Ruby", "Script"],
+    "technologiesUsed": ["Ruby 3.x"],
+    "projectType": "Script",
+    "githubLink": "",
+    "createdAt": "2024-01-01T12:00:00Z",
+    "updatedAt": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "description": "Create a Rails application",
+    "difficultyLevel": "Medium",
+    "timeTake": "5 hours",
+    "starRating": 4,
+    "tags": ["Ruby", "Rails", "Web Development"],
+    "technologiesUsed": ["Ruby 3.x", "Rails 7.x"],
+    "projectType": "Web App",
+    "githubLink": "",
+    "createdAt": "2024-02-01T12:00:00Z",
+    "updatedAt": "2025-02-01T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "description": "Implement a complex algorithm",
+    "difficultyLevel": "Hard",
+    "timeTake": "10 hours",
+    "starRating": 5,
+    "tags": ["Ruby", "Algorithm"],
+    "technologiesUsed": ["Ruby 3.x"],
+    "projectType": "Console App",
+    "githubLink": "",
+    "createdAt": "2024-03-01T12:00:00Z",
+    "updatedAt": "2025-03-01T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "description": "Style a simple page",
+    "difficultyLevel": "Easy",
+    "timeTake": "1 hour",
+    "starRating": 1,
+    "tags": ["Ruby", "CSS", "HTML"],
+    "technologiesUsed": ["Ruby 3.x", "CSS3", "HTML5"],
+    "projectType": "Web Page",
+    "githubLink": "",
+    "createdAt": "2024-04-01T12:00:00Z",
+    "updatedAt": "2025-04-01T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "description": "Create a RESTful API",
+    "difficultyLevel": "Medium",
+    "timeTake": "3 hours",
+    "starRating": 2,
+    "tags": ["Ruby", "API", "Rails"],
+    "technologiesUsed": ["Ruby 3.x", "Rails 7.x"],
+    "projectType": "API",
+    "githubLink": "",
+    "createdAt": "2024-05-01T12:00:00Z",
+    "updatedAt": "2025-05-01T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "description": "Develop a complex application",
+    "difficultyLevel": "Hard",
+    "timeTake": "15 hours",
+    "starRating": 4,
+    "tags": ["Ruby", "Rails", "Web Development"],
+    "technologiesUsed": ["Ruby 3.x", "Rails 7.x"],
+    "projectType": "Web App",
+    "githubLink": "",
+    "createdAt": "2024-06-01T12:00:00Z",
+    "updatedAt": "2025-06-01T12:00:00Z"
+  }
+]

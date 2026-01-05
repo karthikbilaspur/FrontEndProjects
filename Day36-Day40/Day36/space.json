@@ -1,0 +1,164 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is the largest planet in our solar system?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Jupiter is the largest planet in our solar system, with a diameter of approximately 142,984 kilometers.",
+          "votes": 10
+        },
+        {
+          "id": 2,
+          "answer": "The largest planet in our solar system is Jupiter, which is more than 1,300 times the size of Earth.",
+          "votes": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is a black hole?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "A black hole is a region in space where the gravitational pull is so strong that nothing, including light, can escape.",
+          "votes": 8
+        },
+        {
+          "id": 2,
+          "answer": "A black hole is a massive, invisible object in space that is formed when a massive star collapses in on itself.",
+          "votes": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the farthest human-made object from Earth?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The farthest human-made object from Earth is the Voyager 1 spacecraft, which is over 14 billion miles away.",
+          "votes": 12
+        },
+        {
+          "id": 2,
+          "answer": "The Voyager 1 spacecraft is the most distant human-made object from Earth, with a distance of over 14 billion miles.",
+          "votes": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is a supernova?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "A supernova is a massive star explosion that can be seen from millions of light-years away.",
+          "votes": 9
+        },
+        {
+          "id": 2,
+          "answer": "A supernova is a catastrophic event that occurs when a massive star runs out of fuel and collapses in on itself.",
+          "votes": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the International Space Station?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The International Space Station is a habitable artificial satellite in low Earth orbit where astronauts and cosmonauts live and work.",
+          "votes": 11
+        },
+        {
+          "id": 2,
+          "answer": "The International Space Station is a research laboratory in space where scientists conduct experiments in microgravity.",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is a galaxy?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "A galaxy is a massive, gravitationally bound system of stars, stellar remnants, interstellar gas, dust, and dark matter.",
+          "votes": 10
+        },
+        {
+          "id": 2,
+          "answer": "A galaxy is a collection of stars, gas, and dust that are held together by gravity.",
+          "votes": 5
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the solar system?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The solar system is a collection of celestial objects that orbit around the Sun, including planets, dwarf planets, asteroids, comets, and other objects.",
+          "votes": 12
+        },
+        {
+          "id": 2,
+          "answer": "The solar system is a group of planets and other objects that orbit around the Sun.",
+          "votes": 6
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is a comet?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "A comet is a small, icy body that orbits the Sun and is composed of frozen gases and dust.",
+          "votes": 8
+        },
+        {
+          "id": 2,
+          "answer": "A comet is a celestial object that is composed of ice and dust and orbits the Sun.",
+          "votes": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is a nebula?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "A nebula is a cloud of gas and dust in space that is the birthplace of stars.",
+          "votes": 11
+        },
+        {
+          "id": 2,
+          "answer": "A nebula is a massive cloud of gas and dust that is formed when a star is born or dies.",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is a star?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "A star is a massive, luminous ball of gas that is held together by its own gravity and generates energy through nuclear reactions.",
+          "votes": 9
+        },
+        {
+          "id": 2,
+          "answer": "A star is a celestial object that is composed of hot, glowing gas and is the source of light and heat for planets.",
+          "votes": 4
+        }
+      ]
+    }
+  ]
+}

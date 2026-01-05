@@ -1,0 +1,164 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "What is climate change?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Climate change refers to the long-term warming of the planet due to an increase in average global temperature.",
+          "votes": 10
+        },
+        {
+          "id": 2,
+          "answer": "Climate change is a result of human activities that release greenhouse gases, such as burning fossil fuels and deforestation.",
+          "votes": 5
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the main cause of global warming?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The main cause of global warming is the increase in greenhouse gases, such as carbon dioxide, in the atmosphere.",
+          "votes": 8
+        },
+        {
+          "id": 2,
+          "answer": "Global warming is primarily caused by human activities, such as burning fossil fuels, deforestation, and industrial processes.",
+          "votes": 3
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is the difference between climate change and global warming?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Climate change refers to the broader impacts of global warming, including changes in temperature, precipitation, and extreme weather events.",
+          "votes": 12
+        },
+        {
+          "id": 2,
+          "answer": "Global warming refers specifically to the increase in average global temperature, while climate change refers to the broader impacts.",
+          "votes": 6
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is sustainable development?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Sustainable development is a way of meeting the needs of the present without compromising the ability of future generations to meet their needs.",
+          "votes": 9
+        },
+        {
+          "id": 2,
+          "answer": "Sustainable development involves balancing economic, social, and environmental needs to achieve a more equitable and sustainable future.",
+          "votes": 4
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "What is the Paris Agreement?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "The Paris Agreement is an international agreement aimed at mitigating climate change by limiting global warming to well below 2°C.",
+          "votes": 11
+        },
+        {
+          "id": 2,
+          "answer": "The Paris Agreement is a global effort to address climate change by reducing greenhouse gas emissions and transitioning to renewable energy.",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is deforestation?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Deforestation is the permanent destruction of forests, usually as a result of human activities such as agriculture, urbanization, and logging.",
+          "votes": 10
+        },
+        {
+          "id": 2,
+          "answer": "Deforestation is a major contributor to climate change, as it releases stored carbon into the atmosphere and reduces the ability of forests to absorb carbon dioxide.",
+          "votes": 5
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "What is the impact of climate change on biodiversity?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Climate change is a major driver of biodiversity loss, as it alters ecosystems and disrupts the delicate balance of species interactions.",
+          "votes": 12
+        },
+        {
+          "id": 2,
+          "answer": "Climate change is causing many species to become extinct, as they are unable to adapt to the rapid changes in their environments.",
+          "votes": 6
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the role of individuals in addressing climate change?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Individuals can make a difference by reducing their carbon footprint, using public transport, and adopting sustainable lifestyles.",
+          "votes": 8
+        },
+        {
+          "id": 2,
+          "answer": "Individuals can also advocate for climate policies and support organizations working to address climate change.",
+          "votes": 3
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the impact of climate change on human health?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Climate change is expected to increase the spread of diseases, heat stress, and other health problems.",
+          "votes": 11
+        },
+        {
+          "id": 2,
+          "answer": "Climate change is also expected to increase the frequency and severity of extreme weather events, which can have devastating impacts on human health.",
+          "votes": 7
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What is the future of renewable energy?",
+      "answers": [
+        {
+          "id": 1,
+          "answer": "Renewable energy is expected to become increasingly cost-competitive with fossil fuels, making it a viable alternative for powering our homes, transportation, and industries.",
+          "votes": 9
+        },
+        {
+          "id": 2,
+          "answer": "The future of renewable energy looks bright, with solar and wind energy becoming increasingly efficient and affordable.",
+          "votes": 4
+        }
+      ]
+    }
+  ]
+}

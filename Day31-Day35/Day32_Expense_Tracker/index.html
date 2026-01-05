@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <h1>Expense Tracker</h1>
+    <div>
+      <select id="language-switcher">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="es">Spanish</option>
+        <!-- Add more languages as needed -->
+      </select>
+      <select id="currency-switcher">
+        <option value="INR">Indian Rupee (₹)</option>
+        <option value="USD">US Dollar ($)</option>
+        <option value="EUR">Euro (€)</option>
+        <!-- Add more currencies as needed -->
+      </select>
+    </div>
+  </header>
+  <main>
+    <div id="alert-container"></div>
+    <button id="add-expense-btn">Add Expense</button>
+    <section id="expense-list-section">
+      <input type="text" id="searchInput" placeholder="Search expenses...">
+      <select id="filter-category" title="filter-category">
+        <option value="All">All</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Other">Other</option>
+      </select>
+      <table id="expense-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Category</th>
+            <th>Date</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="expense-list"></tbody>
+      </table>
+      <div id="pagination-controls">
+        <button id="prev-page-btn">Prev</button>
+        <span id="page-info"></span>
+        <button id="next-page-btn">Next</button>
+      </div>
+    </section>
+    <canvas id="chart" width="400" height="200"></canvas>
+    <input type="file" id="import-file" accept=".json" title="file">
+    <button id="import-btn">Import</button>
+    <button id="export-btn">Export</button>
+    <div id="expense-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="expense-form">
+          <div class="form-group">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+          </div>
+          <div class="form-group">
+            <input type="number" id="expense-amount" placeholder="Amount" required>
+          </div>
+          <div class="form-group">
+            <select id="expense-category" required title="expense-category">
+              <option value="" disabled selected>Select Category</option>
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="date" id="expense-date" required title="expense-date">
+          </div>
+          <button type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

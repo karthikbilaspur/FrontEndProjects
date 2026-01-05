@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "description": "Write a script to automate tasks",
+    "difficultyLevel": "Easy",
+    "timeTake": "1 hour",
+    "starRating": 4,
+    "tags": ["Python", "Automation"],
+    "technologiesUsed": ["Python 3.x", "Selenium"],
+    "projectType": "Script",
+    "githubLink": "",
+    "createdAt": "2023-01-01T12:00:00Z",
+    "updatedAt": "2025-01-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "description": "Create a data analysis pipeline",
+    "difficultyLevel": "Medium",
+    "timeTake": "3 hours",
+    "starRating": 5,
+    "tags": ["Python", "Data Analysis", "Pandas"],
+    "technologiesUsed": ["Python 3.x", "Pandas", "NumPy"],
+    "projectType": "Data Analysis",
+    "githubLink": "",
+    "createdAt": "2023-02-01T12:00:00Z",
+    "updatedAt": "2025-02-01T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "description": "Develop a machine learning model",
+    "difficultyLevel": "Hard",
+    "timeTake": "10 hours",
+    "starRating": 3,
+    "tags": ["Python", "Machine Learning", "Scikit-learn"],
+    "technologiesUsed": ["Python 3.x", "Scikit-learn", "TensorFlow"],
+    "projectType": "Machine Learning",
+    "githubLink": "",
+    "createdAt": "2023-03-01T12:00:00Z",
+    "updatedAt": "2025-03-01T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "description": "Implement a simple game",
+    "difficultyLevel": "Easy",
+    "timeTake": "2 hours",
+    "starRating": 2,
+    "tags": ["Python", "Game Development", "Pygame"],
+    "technologiesUsed": ["Python 3.x", "Pygame"],
+    "projectType": "Game",
+    "githubLink": "",
+    "createdAt": "2023-04-01T12:00:00Z",
+    "updatedAt": "2025-04-01T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "description": "Create a web scraper",
+    "difficultyLevel": "Medium",
+    "timeTake": "2.5 hours",
+    "starRating": 1,
+    "tags": ["Python", "Web Scraping", "BeautifulSoup"],
+    "technologiesUsed": ["Python 3.x", "BeautifulSoup", "Requests"],
+    "projectType": "Web Scraping",
+    "githubLink": "",
+    "createdAt": "2023-05-01T12:00:00Z",
+    "updatedAt": "2025-05-01T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "description": "Develop a chatbot",
+    "difficultyLevel": "Hard",
+    "timeTake": "5 hours",
+    "starRating": 4,
+    "tags": ["Python", "Chatbot", "NLTK"],
+    "technologiesUsed": ["Python 3.x", "NLTK", "TensorFlow"],
+    "projectType": "Chatbot",
+    "githubLink": "",
+    "createdAt": "2023-06-01T12:00:00Z",
+    "updatedAt": "2025-06-01T12:00:00Z"
+  }
+]

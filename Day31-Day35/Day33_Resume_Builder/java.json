@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "description": "Implement a simple calculator",
+    "difficultyLevel": "Easy",
+    "timeTake": "0.5 hours",
+    "starRating": 4,
+    "tags": ["Java", "Console App"],
+    "technologiesUsed": ["Java SE"],
+    "projectType": "Console App",
+    "githubLink": "",
+    "createdAt": "2022-01-01T12:00:00Z",
+    "updatedAt": "2022-01-01T12:00:00Z"
+  },
+  {
+    "id": 2,
+    "description": "Create a banking system with transactions",
+    "difficultyLevel": "Medium",
+    "timeTake": "2 hours",
+    "starRating": 3,
+    "tags": ["Java", "Database", "GUI"],
+    "technologiesUsed": ["Java SE", "MySQL"],
+    "projectType": "Desktop App",
+    "githubLink": "",
+    "createdAt": "2022-01-02T12:00:00Z",
+    "updatedAt": "2022-01-02T12:00:00Z"
+  },
+  {
+    "id": 3,
+    "description": "Develop a game with AI opponents",
+    "difficultyLevel": "Hard",
+    "timeTake": "5 hours",
+    "starRating": 5,
+    "tags": ["Java", "Game Development", "AI"],
+    "technologiesUsed": ["Java SE", "JavaFX"],
+    "projectType": "Game",
+    "githubLink": "",
+    "createdAt": "2022-01-03T12:00:00Z",
+    "updatedAt": "2022-01-03T12:00:00Z"
+  },
+  {
+    "id": 4,
+    "description": "Write a program to sort an array",
+    "difficultyLevel": "Easy",
+    "timeTake": "0.33 hours",
+    "starRating": 2,
+    "tags": ["Java", "Algorithm"],
+    "technologiesUsed": ["Java SE"],
+    "projectType": "Console App",
+    "githubLink": "",
+    "createdAt": "2022-01-04T12:00:00Z",
+    "updatedAt": "2022-01-04T12:00:00Z"
+  },
+  {
+    "id": 5,
+    "description": "Implement a chat application",
+    "difficultyLevel": "Medium",
+    "timeTake": "3 hours",
+    "starRating": 4,
+    "tags": ["Java", "Networking", "GUI"],
+    "technologiesUsed": ["Java SE", "Java Sockets"],
+    "projectType": "Desktop App",
+    "githubLink": "",
+    "createdAt": "2022-01-05T12:00:00Z",
+    "updatedAt": "2022-01-05T12:00:00Z"
+  },
+  {
+    "id": 6,
+    "description": "Create a machine learning model",
+    "difficultyLevel": "Hard",
+    "timeTake": "10 hours",
+    "starRating": 1,
+    "tags": ["Java", "Machine Learning"],
+    "technologiesUsed": ["Java SE", "Weka"],
+    "projectType": "Console App",
+    "githubLink": "",
+    "createdAt": "2022-01-06T12:00:00Z",
+    "updatedAt": "2022-01-06T12:00:00Z"
+  }
+]

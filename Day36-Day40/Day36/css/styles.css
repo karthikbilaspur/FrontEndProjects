@@ -1,0 +1,128 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f0f2f5;
+  --text-color: #2a2a2a;
+  --border-radius: 10px;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.navbar {
+  padding: 1rem;
+  box-shadow: var(--box-shadow);
+  background-color: #fff;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.card {
+  margin-bottom: 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.card-text {
+  color: var(--secondary-color);
+}
+
+.vote-buttons {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.vote-buttons button {
+  margin: 0 5px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.vote-buttons button:hover {
+  background-color: #e9ecef;
+}
+
+.vote-buttons span {
+  margin: 0 5px;
+  font-weight: bold;
+}
+
+.modal-content {
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.modal-header {
+  background-color: #f7f7f7;
+  border-bottom: none;
+  padding: 1.5rem;
+}
+
+.modal-title {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.form-control {
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.list-group-item {
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: var(--box-shadow);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.list-group-item:hover {
+  background-color: #f7f7f7;
+}

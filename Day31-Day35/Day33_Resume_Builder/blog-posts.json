@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "title": "Getting Started with Web Development",
+    "description": "A beginner's guide to web development, covering the basics of HTML, CSS, and JavaScript.",
+    "link": "#"
+  },
+  {
+    "id": 2,
+    "title": "The Importance of Responsive Design",
+    "description": "Why responsive design is crucial for modern websites, and how to implement it using CSS media queries.",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "title": "JavaScript Best Practices",
+    "description": "Tips and tricks for writing clean, efficient, and scalable JavaScript code.",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "title": "The Benefits of Using a CSS Framework",
+    "description": "How CSS frameworks like Bootstrap and Tailwind can speed up your development process.",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "title": "A Guide to Web Accessibility",
+    "description": "Making your website accessible to everyone, including people with disabilities.",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "title": "The Future of Web Development",
+    "description": "Trends and predictions for the future of web development, including new technologies and frameworks.",
+    "link": "#"
+  },
+  {
+    "id": 7,
+    "title": "How to Optimize Your Website for SEO",
+    "description": "Tips and tricks for improving your website's search engine ranking.",
+    "link": "#"
+  },
+  {
+    "id": 8,
+    "title": "The Importance of User Experience (UX) Design",
+    "description": "Why UX design is crucial for creating engaging and user-friendly websites.",
+    "link": "#"
+  },
+  {
+    "id": 9,
+    "title": "A Beginner's Guide to Git and Version Control",
+    "description": "How to use Git and version control to manage your code and collaborate with others.",
+    "link": "#"
+  },
+  {
+    "id": 10,
+    "title": "The Benefits of Progressive Web Apps (PWAs)",
+    "description": "Why PWAs are the future of web development, and how to build one.",
+    "link": "#"
+  }
+]

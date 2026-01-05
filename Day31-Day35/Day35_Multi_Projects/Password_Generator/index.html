@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Password Generator</title>
+</head>
+
+<body>
+    <header>
+        <h1>Password Generator</h1>
+    </header>
+    <main>
+        <section class="generator">
+            <div class="password">
+                <input type="text" id="password-output" readonly />
+                <button id="copy-btn">Copy</button>
+            </div>
+            <div class="strength-indicator">
+                <span id="strength-meter"></span>
+            </div>
+            <div class="range">
+                <input type="range" id="length-slider" min="4" max="24" value="8" />
+                <span id="length-value">8</span>
+            </div>
+            <div class="options">
+                <div class="option">
+                    <label>
+                        <input type="checkbox" id="lowercaseCb" checked />
+                        <span>a-z</span>
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" id="uppercaseCb" />
+                        <span>A-Z</span>
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" id="digitsCb" />
+                        <span>0-9</span>
+                    </label>
+                </div>
+                <div class="option">
+                    <label>
+                        <input type="checkbox" id="specialsCb" />
+                        <span>!@$#%^</span>
+                    </label>
+                </div>
+            </div>
+            <button class="generate" id="generate-btn">Generate</button>
+            <div class="twofa">
+                <input type="text" id="twofa-secret" placeholder="2FA Secret Key" />
+                <button id="generate-twofa">Generate 2FA Code</button</button>
+                <span id="twofa-code"></span>
+            </div>
+            <div class="qr-code">
+                <canvas id="qr-canvas"></canvas>
+            </div>
+            <div class="vault">
+                <button id="lastpass-login">Login with LastPass</button>
+                <button id="onepassword-login">Login with 1Password</button>
+            </div>
+        </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/speakeasy@2.0.0/dist/speakeasy.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/dist/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
