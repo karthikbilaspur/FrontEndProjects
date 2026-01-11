@@ -1,0 +1,276 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.navbar {
+  padding: 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1rem;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+#hangman-canvas {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+#word-display {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#keyboard button {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#keyboard button:hover {
+  background-color: #0069d9;
+}
+
+#hint {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+#difficulty-buttons button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#difficulty-buttons button:hover {
+  background-color: #0069d9;
+}
+
+#score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+#restart-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+#restart-btn:hover {
+  background-color: #0069d9;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  clear: both;
+}
+
+#rules, #about {
+  margin-top: 2rem;
+}
+
+#rules ul, #about p {
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+#rules li, #about p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+#rules li:last-child, #about p:last-child {
+  margin-bottom: 0;
+}
+
+/* Media Queries */
+
+/* Extra Small Devices (Portrait Phones, < 576px) */
+@media (max-width: 575.98px) {
+  .card-body {
+    padding: 1rem;
+  }
+  #hangman-canvas {
+    width: 150px;
+    height: 150px;
+  }
+  #word-display {
+    font-size: 1.5rem;
+  }
+  #keyboard button {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+  #difficulty-buttons button {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+  #score {
+    font-size: 1.2rem;
+  }
+  #restart-btn {
+    padding: 5px 10px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Small Devices (Landscape Phones, 576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .card-body {
+    padding: 1.5rem;
+  }
+  #hangman-canvas {
+    width: 180px;
+    height: 180px;
+  }
+  #word-display {
+    font-size: 1.8rem;
+  }
+  #keyboard button {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+  #difficulty-buttons button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  #score {
+    font-size: 1.5rem;
+  }
+  #restart-btn {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Medium Devices (Tablets, 768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .card-body {
+    padding: 2rem;
+  }
+  #hangman-canvas {
+    width: 200px;
+    height: 200px;
+  }
+  #word-display {
+    font-size: 2rem;
+  }
+  #keyboard button {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  #difficulty-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  #score {
+    font-size: 1.5rem;
+  }
+  #restart-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Large Devices (Desktops, 992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .card-body {
+    padding: 2.5rem;
+  }
+  #hangman-canvas {
+    width: 220px;
+    height: 220px;
+  }
+  #word-display {
+    font-size: 2.2rem;
+  }
+  #keyboard button {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+  #difficulty-buttons button {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+  }
+  #score {
+    font-size: 1.6rem;
+  }
+  #restart-btn {
+    padding: 10px 25px;
+    font-size: 1.1rem;
+  }
+}
+
+/* Extra Large Devices (Large Desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .card-body {
+    padding: 3rem;
+  }
+  #hangman-canvas {
+    width: 250px;
+    height: 250px;
+  }
+  #word-display {
+    font-size: 2.5rem;
+  }
+  #keyboard button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+  #difficulty-buttons button {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+  }
+  #score {
+    font-size: 1.7rem;
+  }
+  #restart-btn {
+    padding: 10px 30px;
+    font-size: 1.2rem;
+  }
+}
