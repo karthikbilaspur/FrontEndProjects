@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aspect Ratio Counter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Aspect Ratio Counter</h1>
+    <div class="input-group">
+      <input id="width" type="number" value="1920" placeholder="Width">
+      <span>×</span>
+      <input id="height" type="number" value="1080" placeholder="Height">
+    </div>
+    <p id="aspect-ratio"></p>
+    <div class="button-group">
+      <button id="increment-width">Width +</button>
+      <button id="decrement-width">Width -</button>
+      <button id="increment-height">Height +</button>
+      <button id="decrement-height">Height -</button>
+    </div>
+    <div class="button-group">
+      <button id="reset">Reset</button>
+      <button id="apply-aspect-ratio">Apply Aspect Ratio</button>
+      <select id="aspect-ratio-presets">
+        <option value="16:9">16:9 (HD)</option>
+        <option value="4:3">4:3 (SD)</option>
+        <option value="1:1">1:1 (Square)</option>
+        <option value="21:9">21:9 (Cinematic)</option>
+      </select>
+    </div>
+    <div class="error-message" id="error-message"></div>
+    <div class="additional-features">
+      <h2>Additional Features</h2>
+      <button id="calculate-pixel-density">Calculate Pixel Density</button>
+      <input id="pixel-density" type="number" placeholder="Pixel Density (PPI)">
+      <p id="pixel-density-result"></p>
+      <button id="calculate-file-size">Calculate File Size</button>
+      <input id="file-size" type="number" placeholder="File Size (MB)">
+      <p id="file-size-result"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
