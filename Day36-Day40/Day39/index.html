@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Length Converter</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Length Converter</h1>
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <input type="number" id="inputValue" class="form-control" placeholder="Enter value">
+      </div>
+      <div class="col-md-6">
+        <div class="input-group">
+          <select id="fromUnit" class="form-select" title="From Unit"></select>
+          <button id="swapUnits" class="btn btn-outline-secondary">⇄</button>
+          <select id="toUnit" class="form-select" title="To Unit"></select>
+        </div>
+      </div>
+    </div>
+    <p id="result" class="text-center fs-4 mb-3"></p>
+    <p id="error" class="text-danger text-center"></p>
+    <div class="d-flex justify-content-center mb-3">
+      <button id="copyButton" class="btn btn-secondary me-2">Copy</button>
+      <button id="addFavorite" class="btn btn-primary me-2">Add to Favorites</button>
+      <button id="clearButton" class="btn btn-secondary me-2">Clear</button>
+      <button id="reset" class="btn btn-danger">Reset</button>
+    </div>
+    <div class="precision-control d-flex justify-content-center align-items-center mb-3">
+      <label for="precision" class="me-2">Precision:</label>
+      <input type="range" id="precision" min="2" max="6" value="4" class="form-range me-2">
+      <span id="precisionValue" class="ms-2">4</span>
+    </div>
+    <div class="d-flex justify-content-center mb-3">
+      <button id="darkModeToggle" class="btn btn-dark">Dark Mode</button>
+    </div>
+    <div id="favoritesSection" class="mb-3">
+      <h2 class="text-center mb-2">Favorites</h2>
+      <div id="favorites"></div>
+    </div>
+    <div id="historySection">
+      <h2 class="text-center mb-2">History <button id="toggleHistory" class="btn btn-sm btn-secondary">Toggle</button></h2>
+      <div id="history"></div>
+    </div>
+  </div>
+  <div id="loading" class="loading-spinner"></div>
+  <script src="https://cdn.jsdelivr.net/npm/numeral@2.0.6/dist/numeral.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+  <script src="script.js"></script>
+</body>
+</html>
