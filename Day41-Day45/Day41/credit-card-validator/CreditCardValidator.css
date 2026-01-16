@@ -1,0 +1,59 @@
+.credit-card-validator {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.credit-card-validator input {
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.credit-card-validator button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.credit-card-validator button:hover {
+  background-color: #3e8e41;
+}
+
+.valid {
+  color: green;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.invalid {
+  color: red;
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.card-type {
+  font-weight: bold;
+}
+
+.card-type.visa {
+  color: blue;
+}
+
+.card-type.mastercard {
+  color: red;
+}
+
+.card-type.american-express {
+  color: green;
+}
+
+.card-type.discover {
+  color: orange;
+}
