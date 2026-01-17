@@ -10,6 +10,7 @@ const CreditCardValidator = () => {
   const [isValid, setIsValid] = useState(null);
   const [cardType, setCardType] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false); // added loading state
 
   const handleCardNumberChange = (value) => {
     setCardNumber(value);
@@ -22,17 +23,23 @@ const CreditCardValidator = () => {
       return;
     }
 
-    const isValid = validateCardNumber(cardNumber);
-    const cardType = detectCardType(cardNumber);
-    setIsValid(isValid);
-    setCardType(cardType);
+    setLoading(true);
+    setTimeout(() => {
+      const isValid = validateCardNumber(cardNumber);
+      const cardType = detectCardType(cardNumber);
+      setIsValid(isValid);
+      setCardType(cardType);
+      setLoading(false);
+    }, 500); // simulate API call
   };
 
   return (
     <div className="credit-card-validator">
       <h1>Credit Card Validator</h1>
       <CardInput value={cardNumber} onChange={handleCardNumberChange} />
-      <button onClick={handleValidate}>Validate</button>
+      <button onClick={handleValidate} disabled={loading}>
+        {loading ? 'Validating...' : 'Validate'}
+      </button>
       <ValidationMessage isValid={isValid} cardType={cardType} error={error} />
     </div>
   );

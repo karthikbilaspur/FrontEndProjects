@@ -1,0 +1,46 @@
+.qrCodeGenerator {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.inputField {
+  width: 50%;
+  height: 40px;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.button {
+  width: 200px;
+  height: 40px;
+  font-size: 18px;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.button:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.qrCodeContainer {
+  margin-top: 20px;
+}
+
+.qrCodeContainer img {
+  width: 200px;
+  height: 200px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.error {
+  color: red;
+  font-size: 18px;
+  margin-top: 10px;
+}

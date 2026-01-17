@@ -1,5 +1,6 @@
 .container {
     text-align: center;
+    font-family: Arial, sans-serif;
 }
 
 .coin {
@@ -15,11 +16,29 @@
     transform: rotateX(180deg);
 }
 
+.coin.flipping {
+    animation: flip 0.5s;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    50% {
+        transform: rotateX(90deg);
+    }
+    100% {
+        transform: rotateX(180deg);
+    }
+}
+
 .heads, .tails {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .tails {
@@ -31,6 +50,27 @@ button {
     font-size: 18px;
     cursor: pointer;
     margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.reset-button {
+    background-color: #f44336;
+}
+
+.reset-button:hover {
+    background-color: #e53935;
 }
 
 p {

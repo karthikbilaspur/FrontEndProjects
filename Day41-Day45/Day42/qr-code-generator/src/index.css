@@ -1,0 +1,19 @@
+:root {
+  --primary-color: #4CAF50;
+  --primary-hover-color: #3e8e41;
+  --text-color: #fff;
+  --background-color: #333;
+  --border-color: #ccc;
+  --font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

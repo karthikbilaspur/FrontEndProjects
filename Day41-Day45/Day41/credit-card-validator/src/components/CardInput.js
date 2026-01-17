@@ -14,6 +14,7 @@ const CardInput = ({ value, onChange }) => {
       onChange={handleChange}
       placeholder="Enter credit card number"
       aria-label="Credit card number"
+      maxLength="19" // added maxLength
     />
   );
 };

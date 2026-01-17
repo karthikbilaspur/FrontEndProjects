@@ -16,6 +16,7 @@ export const validateCardNumber = (cardNumber) => {
         }
         return num;
       }
+      return num;
     })
     .reduce((acc, num) => acc + num, 0);
 
