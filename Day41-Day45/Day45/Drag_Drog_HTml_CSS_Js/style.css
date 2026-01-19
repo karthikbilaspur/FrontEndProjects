@@ -1,0 +1,167 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f0f0f0;
+  --text-color: #333;
+  --card-background: #fff;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+.list {
+  background-color: var(--card-background);
+  padding: 1rem;
+  border-radius: 8px;
+  width: 30%;
+  min-height: 400px;
+  box-shadow: var(--card-shadow);
+  margin: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.list h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-background);
+  color: var(--text-color);
+  padding: 1rem;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: grab;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:active {
+  cursor: grabbing;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.list.over {
+  background-color: #d1d3d8;
+}
+
+/* Dark Mode */
+.dark-mode {
+  --background-color: #333;
+  --text-color: #fff;
+  --card-background: #444;
+  --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .list {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .list {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .board {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .list h2 {
+    font-size: 1.2rem;
+  }
+  .card {
+    padding: 0.5rem;
+  }
+}
+
+/* Additional Styles */
+h1, h2 {
+  color: var(--primary-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+button {
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+#task-select, #task-input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+#task-select:focus, #task-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* New Styles for Content Section */
+#content {
+  padding: 2rem;
+  background-color: var(--card-background);
+  box-shadow: var(--card-shadow);
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+#content h2 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+#content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#content li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ccc;
+}
+
+#content li:last-child {
+  border-bottom: none;
+}

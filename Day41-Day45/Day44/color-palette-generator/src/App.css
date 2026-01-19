@@ -1,0 +1,72 @@
+/* App.css */
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.palette-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.color-box {
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.color {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.hex-value {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.lock-btn {
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.lock-btn:hover {
+  color: #666;
+}
+
+.saved-palettes {
+  margin-top: 40px;
+}
+
+.saved-palettes ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.saved-palettes li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.saved-palettes li:last-child {
+  border-bottom: none;
+}

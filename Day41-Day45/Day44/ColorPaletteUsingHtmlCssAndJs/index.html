@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Palette Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Color Palette Generator</h1>
+
+      <button id="generate-btn">
+        <i class="fas fa-sync-alt"></i>
+        Generate Palette
+      </button>
+
+      <select id="scheme-select" title="Color-Options">
+        <option value="random">Random</option>
+        <option value="monochromatic">Monochromatic</option>
+        <option value="complementary">Complementary</option>
+        <option value="analogous">Analogous</option>
+      </select>
+
+      <input type="color" id="color-input" title="Color Input" />
+
+      <div class="palette-container">
+        <!-- COLOR BOXES WILL BE GENERATED HERE -->
+      </div>
+
+      <button id="save-btn">Save Palette</button>
+      <button id="share-btn">Share</button>
+
+      <div class="saved-palettes">
+        <h2>Saved Palettes:</h2>
+        <ul id="saved-palettes-list"></ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

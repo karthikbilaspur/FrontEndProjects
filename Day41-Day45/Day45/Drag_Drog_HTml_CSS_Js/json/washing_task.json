@@ -1,0 +1,17 @@
+[
+  { "id": 1, "task": "Wash clothes at 5 AM" },
+  { "id": 2, "task": "Wash dishes after dinner" },
+  { "id": 3, "task": "Wash car on Sunday" },
+  { "id": 4, "task": "Wash hands before eating" },
+  { "id": 5, "task": "Wash vegetables before cooking" },
+  { "id": 6, "task": "Wash bike weekly" },
+  { "id": 7, "task": "Wash windows monthly" },
+  { "id": 8, "task": "Wash pet" },
+  { "id": 9, "task": "Wash curtains quarterly" },
+  { "id": 10, "task": "Wash floor daily" },
+  { "id": 11, "task": "Wash utensils after use" },
+  { "id": 12, "task": "Wash fruits before eating" },
+  { "id": 13, "task": "Wash clothes for tomorrow" },
+  { "id": 14, "task": "Wash dog weekly" },
+  { "id": 15, "task": "Wash and dry clothes" }
+]

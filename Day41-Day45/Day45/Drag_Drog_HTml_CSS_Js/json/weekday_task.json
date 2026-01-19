@@ -1,0 +1,47 @@
+[
+  { "id": 1, 
+  "task": "Washing clothes at 5 AM" 
+},
+  { "id": 2, 
+  "task": "Morning exercise" 
+},
+  { "id": 3, 
+  "task": "Breakfast" 
+},
+  { "id": 4, 
+  "task": "Office work" 
+},
+  { "id": 5, 
+  "task": "Lunch break"
+ },
+  { "id": 6, 
+  "task": "Team meeting"
+ },
+  { "id": 7, 
+  "task": "Project work"
+ },
+  { "id": 8,
+   "task": "Dinner" 
+},
+  { "id": 9, 
+  "task": "Gym"
+ },
+  { "id": 10,
+   "task": "Relax time"
+ },
+  { "id": 11, 
+  "task": "Study" 
+},
+  { "id": 12, 
+  "task": "Plan for tomorrow"
+ },
+  { "id": 13,
+   "task": "Sleep"
+ },
+  { "id": 14, 
+  "task": "Review day"
+ },
+  { "id": 15, 
+  "task": "Prep for next day"  
+ }
+]
