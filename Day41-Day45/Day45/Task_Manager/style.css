@@ -96,3 +96,84 @@ body {
 #content li:last-child {
   border-bottom: none;
 }
+
+/* Added styles */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.list {
+  border: 1px solid #ddd;
+}
+
+.card {
+  border: 1px solid #ddd;
+}
+
+.card:hover {
+  border-color: var(--primary-color);
+}
+
+.btn {
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+/* Media Queries */
+
+/* Large screens (desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1400px;
+  }
+  .list {
+    width: 23%;
+  }
+}
+
+/* Medium screens (tablets, 768px to 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .container {
+    max-width: 1000px;
+  }
+  .list {
+    width: 30%;
+  }
+}
+
+/* Small screens (phones, 480px to 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+  .container {
+    max-width: 700px;
+  }
+  .list {
+    width: 45%;
+  }
+}
+
+/* Extra small screens (phones, 479px and down) */
+@media (max-width: 479px) {
+  .container {
+    max-width: 100%;
+  }
+  .list {
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .filter-container {
+    flex-direction: column;
+  }
+  .filter-container select, .filter-container input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

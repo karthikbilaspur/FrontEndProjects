@@ -11,16 +11,25 @@ const assignToInput = document.getElementById('assign-to-input');
 const filterPrioritySelect = document.getElementById('filter-priority-select');
 const filterDueDateInput = document.getElementById('filter-due-date-input');
 
+// Constants
+const TASKS_API = 'https://task-data-api.herokuapp.com/tasks';
+const CATEGORIES = ['weekday', 'family', 'walking', 'washing'];
+const ERROR_MESSAGES = {
+  TASK_INCOMPLETE: 'Please fill in all fields',
+  TASK_SAVE_ERROR: 'Error saving task',
+  TASK_LOAD_ERROR: 'Error loading tasks',
+};
+
 // Task data
-const tasks = new Map();
+let tasks = new Map();
 let selectedCategory = '';
 
-// Fetch tasks from JSON file
-async function fetchTasks() {
+// Load tasks from API
+async function loadTasks() {
   try {
-    const response = await fetch('tasks.json');
+    const response = await fetch(TASKS_API);
     const data = await response.json();
-    data.tasks.forEach(task => {
+    data.forEach(task => {
       if (!tasks.has(task.category)) {
         tasks.set(task.category, []);
       }
@@ -28,8 +37,56 @@ async function fetchTasks() {
     });
     renderTasks();
   } catch (error) {
-    console.error(error);
+    console.error(ERROR_MESSAGES.TASK_LOAD_ERROR, error);
   }
+}
+
+// Save tasks to API
+async function saveTasks() {
+  try {
+    const taskList = [];
+    tasks.forEach((taskList, category) => {
+      taskList.forEach(task => {
+        taskList.push({ category, ...task });
+      });
+    });
+    const response = await fetch(TASKS_API, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(taskList),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to save tasks');
+    }
+  } catch (error) {
+    console.error(ERROR_MESSAGES.TASK_SAVE_ERROR, error);
+  }
+}
+
+// Validate task input
+function validateTask(task) {
+  if (!task.task || !task.priority || !task.dueDate || !task.assignTo) {
+    showError(ERROR_MESSAGES.TASK_INCOMPLETE);
+    return false;
+  }
+  return true;
+}
+
+// Show error message
+function showError(message) {
+  alert(message);
+}
+
+// Filter tasks
+function filterTasks(category, filters = {}) {
+  const taskList = tasks.get(category);
+  if (!taskList) return [];
+  return taskList.filter(task => {
+    for (const key in filters) {
+      if (task[key] !== filters[key]) return false;
+    }
+    return true;
+  });
 }
 
 // Render tasks
@@ -40,7 +97,11 @@ function renderTasks() {
     const list = document.createElement('div');
     list.classList.add('list', 'col-md-4');
     list.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} Tasks</h2>`;
-    taskList.forEach((task, index) => {
+    const filteredTasks = filterTasks(category, {
+      priority: filterPrioritySelect.value,
+      dueDate: filterDueDateInput.value,
+    });
+    filteredTasks.forEach((task, index) => {
       const taskElement = document.createElement('div');
       taskElement.classList.add('card', 'mb-2');
       taskElement.innerHTML = `
@@ -62,116 +123,48 @@ function renderTasks() {
   });
 }
 
-// Add task event listener
-addTaskBtn.addEventListener('click', async () => {
-  const taskName = taskInput.value.trim();
-  const priority = prioritySelect.value;
-  const dueDate = dueDateInput.value;
-  const assignTo = assignToInput.value;
-  if (taskName && selectedCategory) {
-    if (!tasks.has(selectedCategory)) {
-      tasks.set(selectedCategory, []);
-    }
-    tasks.get(selectedCategory).push({ task: taskName, priority, dueDate, assignTo, comments: [], attachments: [], tags: [] });
-    taskInput.value = '';
-    prioritySelect.value = '';
-    dueDateInput.value = '';
-    assignToInput.value = '';
-    await saveTasks();
-    renderTasks();
+// TaskManager class
+class TaskManager {
+  constructor() {
+    this.tasks = tasks;
+    this.selectedCategory = selectedCategory;
   }
-});
 
-// Filter tasks
-filterPrioritySelect.addEventListener('change', () => {
-  const priority = filterPrioritySelect.value;
-  const filteredTasks = tasks;
-  tasks.forEach((taskList, category) => {
-    taskList.forEach((task, index) => {
-      if (priority && task.priority !== priority) {
-        taskList.splice(index, 1);
+  addTask(task) {
+    if (validateTask(task) && this.selectedCategory) {
+      if (!this.tasks.has(this.selectedCategory)) {
+        this.tasks.set(this.selectedCategory, []);
       }
-    });
-  });
-  renderTasks();
-});
-
-filterDueDateInput.addEventListener('change', () => {
-  const dueDate = filterDueDateInput.value;
-  const filteredTasks = tasks;
-  tasks.forEach((taskList, category) => {
-    taskList.forEach((task, index) => {
-      if (dueDate && task.dueDate !== dueDate) {
-        taskList.splice(index, 1);
-      }
-    });
-  });
-  renderTasks();
-});
-
-// Comment task event listener
-board.addEventListener('click', async (e) => {
-  if (e.target.classList.contains('comment-btn')) {
-    const category = e.target.dataset.category;
-    const index = e.target.dataset.index;
-    const comment = prompt('Enter comment:');
-    if (comment) {
-      tasks.get(category)[index].comments.push(comment);
-      await saveTasks();
+      this.tasks.get(this.selectedCategory).push(task);
+      saveTasks();
       renderTasks();
+      taskInput.value = '';
+      prioritySelect.value = '';
+      dueDateInput.value = '';
+      assignToInput.value = '';
     }
-  }
-});
-
-// Attach task event listener
-board.addEventListener('click', async (e) => {
-  if (e.target.classList.contains('attach-btn')) {
-    const category = e.target.dataset.category;
-    const index = e.target.dataset.index;
-    const attachment = prompt('Enter attachment:');
-    if (attachment) {
-      tasks.get(category)[index].attachments.push(attachment);
-      await saveTasks();
-      renderTasks();
-    }
-  }
-});
-
-// Tag task event listener
-board.addEventListener('click', async (e) => {
-  if (e.target.classList.contains('tag-btn')) {
-    const category = e.target.dataset.category;
-    const index = e.target.dataset.index;
-    const tag = prompt('Enter tag:');
-    if (tag) {
-      tasks.get(category)[index].tags.push(tag);
-      await saveTasks();
-      renderTasks();
-    }
-  }
-});
-
-// Save tasks to JSON file
-async function saveTasks() {
-  try {
-    const taskList = [];
-    tasks.forEach((taskList, category) => {
-      taskList.forEach(task => {
-        taskList.push({ category, ...task });
-      });
-    });
-    const response = await fetch('tasks.json', {
-      method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ tasks: taskList }),
-    });
-    if (!response.ok) {
-      throw new Error('Failed to save tasks');
-    }
-  } catch (error) {
-    console.error(error);
   }
 }
 
+const taskManager = new TaskManager();
+
+// Add task event listener
+addTaskBtn.addEventListener('click', () => {
+  const task = {
+    task: taskInput.value.trim(),
+    priority: prioritySelect.value,
+    dueDate: dueDateInput.value,
+    assignTo: assignToInput.value,
+    comments: [],
+    attachments: [],
+    tags: [],
+  };
+  taskManager.addTask(task);
+});
+
+// Filter tasks event listeners
+filterPrioritySelect.addEventListener('change', renderTasks);
+filterDueDateInput.addEventListener('change', renderTasks);
+
 // Initialize
-fetchTasks();
+loadTasks();
