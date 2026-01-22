@@ -1,0 +1,329 @@
+body {
+    background-color: #ecf0f1;
+    font-family: Arial, Tahoma;
+    font-size: 20px;
+    color: #666666;
+}
+
+.flip-box {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.flip-box:hover {
+    transform: scale(1.05);
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-box.hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box.hover[data-flip-direction="vertical"] .flip-box-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-box.hover[data-flip-direction="diagonal"] .flip-box-inner {
+    transform: rotate3d(1, 1, 0, 180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.flip-box-front {
+    background-color: #14bcc8;
+    color: white;
+}
+
+.flip-box-back {
+    background-color: #ff7e70;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-box[data-flip-direction="vertical"] .flip-box-back {
+    transform: rotateX(180deg);
+}
+
+.flip-box[data-flip-direction="diagonal"] .flip-box-back {
+    transform: rotate3d(1, 1, 0, 180deg);
+}
+
+.flip-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .flip-box {
+        height: 150px;
+    }
+    .flip-box-front, .flip-box-back {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-box {
+        height: 100px;
+    }
+    .flip-box-front, .flip-box-back {
+        padding: 5px;
+    }
+    .flip-indicator {
+        font-size: 14px;
+    }
+}
+
+/* Accordion Styles */
+.Accordion {
+  /* styles for Accordion */
+}
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+/* Accordion Styles */
+
+/* Accordion Styles */
+
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+  border-top: 1px solid #ddd;
+}
+
+.sub-accordion {
+  margin-left: 20px;
+}
+
+.accordion-header.active + .accordion-content {
+  display: block;
+}
+
+/* Animated Counter Styles */
+
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  transition: all 0.5s ease-in-out;
+}
+
+.stat {
+  flex-basis: 30%;
+  text-align: center;
+  padding: 1em;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.stat:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.stat small {
+  font-size: 14px;
+  color: #666;
+}
+
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.5s ease-in-out;
+}
+
+#traffic-chart, #engagement-chart {
+  width: 45%;
+  height: 200px;
+  margin: 1em;
+  transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+  }
+  .stat {
+    margin-bottom: 1em;
+  }
+  .charts-container {
+    flex-direction: column;
+  }
+  #traffic-chart, #engagement-chart {
+    width: 100%;
+    height: 200px;
+    margin: 1em 0;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 0.5em;
+  }
+  main {
+    margin: 1em auto;
+    padding: 0.5em;
+  }
+  .stat h2 {
+    font-size: 18px;
+  }
+  .stat small {
+    font-size: 12px;
+  }
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.dark-mode header {
+  background-color: #444;
+}
+
+.dark-mode main {
+  background-color: #444;
+  border-color: #555;
+}
+
+.dark-mode .stat {
+  background-color: #555;
+  border-color: #666;
+}
+
+.dark-mode .stat h2 {
+  color: #fff;
+}
+
+.dark-mode .stat small {
+  color: #ccc;
+}
+
+/* Additional styles for CodingPage */
+header {
+  /* styles for header */
+}
+
+footer {
+  /* styles for footer */
+}

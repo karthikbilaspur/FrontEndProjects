@@ -1,0 +1,158 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+/* Accordion Styles */
+
+.accordion {
+  width: 100%;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px 5px 0 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-header:hover {
+  background-color: #e0e0e0;
+}
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+  border-top: 1px solid #ddd;
+}
+
+.sub-accordion {
+  margin-left: 20px;
+}
+
+.accordion-header.active + .accordion-content {
+  display: block;
+}
+
+/* Footer Styles */
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+  clear: both;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  margin-right: 20px;
+  display: inline-block;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 768px) {
+  main {
+    margin: 20px auto;
+    padding: 10px;
+  }
+  .accordion-item {
+    margin-bottom: 5px;
+  }
+  .accordion-header {
+    padding: 5px;
+  }
+  .accordion-content {
+    padding: 5px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+  }
+  header nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  main {
+    margin: 10px auto;
+    padding: 5px;
+  }
+  .accordion-item {
+    margin-bottom: 2px;
+  }
+  .accordion-header {
+    padding: 2px;
+  }
+  .accordion-content {
+    padding: 2px;
+  }
+}

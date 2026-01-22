@@ -1,0 +1,162 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+a {
+  text-decoration: none;
+  color: #337ab7;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #23527c;
+}
+
+/* Navigation Styles */
+.navbar {
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.nav-link {
+  margin-right: 20px;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
+
+.nav-link.active {
+  color: #337ab7;
+}
+
+/* Section Styles */
+.section {
+  padding: 2em;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h1 {
+  margin-top: 0;
+}
+
+/* Social Media Styles */
+.social-media {
+  margin-top: 20px;
+}
+
+.social-media a {
+  margin-right: 20px;
+  font-size: 1.5em;
+  color: #337ab7;
+  transition: color 0.2s ease-in-out;
+}
+
+.social-media a:hover {
+  color: #23527c;
+}
+
+/* Form Styles */
+form {
+  padding: 20px;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #337ab7;
+}
+
+/* Footer Styles */
+footer {
+  padding: 1em;
+  text-align: center;
+  clear: both;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin-right: 20px;
+  color: #337ab7;
+  transition: color 0.2s ease-in-out;
+}
+
+.pagination a:hover {
+  color: #23527c;
+}
+
+.pagination a.active {
+  color: #23527c;
+}
+
+/* Media Queries */
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2em;
+  }
+  .nav-link {
+    margin-right: 10px;
+  }
+  .section {
+    padding: 1em;
+  }
+  .social-media a {
+    font-size: 1.2em;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar-brand {
+    font-size: 1em;
+  }
+  .nav-link {
+    margin-right: 5px;
+  }
+  .section {
+    padding: 0.5em;
+  }
+  .social-media a {
+    font-size: 1em;
+    margin-right: 5px;
+  }
+  footer {
+    padding: 0.5em;
+  }
+}

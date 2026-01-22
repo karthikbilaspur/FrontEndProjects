@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingPage</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/3D_Boxes/style.css">
+    <link rel="stylesheet" href="/Accordian/styles.css">
+    <link rel="stylesheet" href="/animated-counter/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#flip-box">3D Flip Box</a></li>
+                <li><a href="#accordion">Accordion</a></li>
+                <li><a href="#counter">Animated Counter</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="flip-box">
+            <div class="container py-5">
+                <div class="row mb-5">
+                    <div class="col-md-12 text-center">
+                        <h2>Explore Our Features</h2>
+                        <p class="text-muted">Discover the power of 3D flip boxes</p>
+                    </div>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="flip-box hover" data-flip-direction="horizontal" data-flip-trigger="hover">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                    <div class="box1">
+                                        <p>Front Side</p>
+                                        <i class="fas fa-arrow-right flip-indicator"></i>
+                                    </div>
+                                </div>
+                                <div class="flip-box-back">
+                                    <div class="box2">
+                                        <p>Back Side</p>
+                                        <i class="fas fa-arrow-left flip-indicator"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="flip-box hover" data-flip-direction="vertical" data-flip-trigger="click">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                    <div class="box1">
+                                        <p>Front Side</p>
+                                        <i class="fas fa-arrow-down flip-indicator"></i>
+                                    </div>
+                                </div>
+                                <div class="flip-box-back">
+                                    <div class="box2">
+                                        <p>Back Side</p>
+                                        <i class="fas fa-arrow-up flip-indicator"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="flip-box hover" data-flip-direction="diagonal" data-flip-trigger="hover">
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                    <div class="box1">
+                                        <p>Front Side</p>
+                                        <i class="fas fa-arrow-right flip-indicator"></i>
+                                    </div>
+                                </div>
+                                <div class="flip-box-back">
+                                    <div class="box2">
+                                        <p>Back Side</p>
+                                        <i class="fas fa-arrow-left flip-indicator"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="accordion">
+            <h1>Programming Languages Accordion</h1>
+            <div class="accordion">
+              <div class="accordion-item">
+                <button class="accordion-header">Programming Languages</button>
+                <div class="accordion-content">
+                  <p>Here are some popular programming languages and their main features:</p>
+                  <div class="accordion sub-accordion">
+                    <div class="accordion-item">
+                      <button class="accordion-header">Java</button>
+                      <div class="accordion-content">
+                        <p>Java is an object-oriented language developed by Sun Microsystems (now Oracle Corporation). Its main features include:</p>
+                        <ul>
+                          <li>Object-oriented</li>
+                          <li>Platform independent</li>
+                          <li>Robust security</li>
+                        </ul>
+                        <div class="accordion sub-accordion">
+                          <div class="accordion-item">
+                            <button class="accordion-header">Use cases</button>
+                            <div class="accordion-content">
+                              <ul>
+                                <li>Android app development</li>
+                                <li>Web development</li>
+                                <li>Enterprise software development</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <button class="accordion-header">Python</button>
+                      <div class="accordion-content">
+                        <p>Python is a high-level language developed by Guido van Rossum. Its main features include:</p>
+                        <ul>
+                          <li>Easy to learn</li>
+                          <li>High-level language</li>
+                          <li>Large community</li>
+                        </ul>
+                        <div class="accordion sub-accordion">
+                          <div class="accordion-item">
+                            <button class="accordion-header">Use cases</button>
+                            <div class="accordion-content">
+                              <ul>
+                                <li>Data science</li>
+                                <li>Machine learning</li>
+                                <li>Web development</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <button class="accordion-header">JavaScript</button>
+                      <div class="accordion-content">
+                        <p>JavaScript is a dynamic language developed by Brendan Eich. Its main features include:</p>
+                        <ul>
+                          <li>Dynamic typing</li>
+                          <li>First-class functions</li>
+                          <li>Client-side scripting</li>
+                        </ul>
+                        <div class="accordion sub-accordion">
+                          <div class="accordion-item">
+                            <button class="accordion-header">Use cases</button>
+                            <div class="accordion-content">
+                              <ul>
+                                <li>Web development</li>
+                                <li>Mobile app development</li>
+                                <li>Desktop applications</li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+        <section id="counter">
+            <h1>Kboard Dashboard</h1>
+            <section class="stats-container">
+              <div class="stat">
+                <h2><span id="users-counter">0</span> <small>Users</small></h2>
+              </div>
+              <div class="stat">
+                <h2><span id="posts-counter">0</span> <small>Posts</small></h2>
+              </div>
+              <div class="stat">
+                <h2><span id="engagement-counter">0</span> <small>Engagements</small></h2>
+              </div>
+            </section>
+            <section class="charts-container">
+              <canvas id="traffic-chart"></canvas>
+              <canvas id="engagement-chart"></canvas>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023-2026 Kboard. All rights reserved.</p>
+        <ul>
+          <li><a href="#terms">Terms of Service</a></li>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </footer>
+    <section id="terms">
+      <h2>Terms of Service</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+    <section id="privacy">
+      <h2>Privacy Policy</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </section>
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>If you have any questions or concerns, please reach out to us at <a href="mailto:contact@kboard.com">contact@kboard.com</a>.</p>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"></script>
+<script src="script.js"></script>
+<script src="animated-counter/script.js"></script>
+<script src="accordian/script.js"></script>
+<script src="3d_Boxes/script.js"></script>
+</body>
+</html>

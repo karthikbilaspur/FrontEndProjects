@@ -1,0 +1,129 @@
+body {
+    background-color: #ecf0f1;
+    font-family: Arial, Tahoma;
+    font-size: 20px;
+    color: #666666;
+}
+
+.flip-box {
+    background-color: transparent;
+    width: 100%;
+    height: 200px;
+    perspective: 1000px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.flip-box:hover {
+    transform: scale(1.05);
+}
+
+.flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-box.hover .flip-box-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-box.hover[data-flip-direction="vertical"] .flip-box-inner {
+    transform: rotateX(180deg);
+}
+
+.flip-box.hover[data-flip-direction="diagonal"] .flip-box-inner {
+    transform: rotate3d(1, 1, 0, 180deg);
+}
+
+.flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.flip-box-front {
+    background-color: #14bcc8;
+    color: white;
+}
+
+.flip-box-back {
+    background-color: #ff7e70;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-box[data-flip-direction="vertical"] .flip-box-back {
+    transform: rotateX(180deg);
+}
+
+.flip-box[data-flip-direction="diagonal"] .flip-box-back {
+    transform: rotate3d(1, 1, 0, 180deg);
+}
+
+.flip-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .flip-box {
+        height: 150px;
+    }
+    .flip-box-front, .flip-box-back {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .flip-box {
+        height: 100px;
+    }
+    .flip-box-front, .flip-box-back {
+        padding: 5px;
+    }
+    .flip-indicator {
+        font-size: 14px;
+    }
+}
