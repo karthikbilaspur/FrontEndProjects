@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Image Converter - Resize, Compress, and Add Watermark to Images">
+  <meta name="keywords" content="image converter, image compressor, image resizer, watermark, JPEG, PNG, GIF, BMP, TIFF">
+  <title>Image Converter - Resize, Compress, and Add Watermark to Images</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://example.com/image-converter">
+  <meta property="og:title" content="Image Converter - Resize, Compress, and Add Watermark to Images">
+  <meta property="og:description" content="Image Converter - Resize, Compress, and Add Watermark to Images">
+  <meta property="og:image" content="https://example.com/image-converter-preview.jpg">
+  <meta property="og:url" content="https://example.com/image-converter">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@example">
+  <meta name="twitter:creator" content="@example">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#how-it-works">How it Works</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="image-converter">
+      <h1>Image Converter</h1>
+      <form id="image-form">
+        <div class="form-group">
+          <label for="input-image">Select Images:</label>
+          <input type="file" id="input-image" accept="image/*" multiple>
+          <div class="drag-drop-area">
+            <p>Drag and drop images here or click to select</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="output-format">Output Format:</label>
+          <select id="output-format">
+            <option value="jpg">JPEG</option>
+            <option value="png">PNG</option>
+            <option value="gif">GIF</option>
+            <option value="bmp">BMP</option>
+            <option value="tiff">TIFF</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="resize-option">Resize Option:</label>
+          <select id="resize-option">
+            <option value="original">Original Size</option>
+            <option value="custom">Custom Size</option>
+          </select>
+        </div>
+        <div class="form-group" id="custom-size-group" style="display: none;">
+          <label for="width">Width:</label>
+          <input type="number" id="width" placeholder="Width">
+          <label for="height">Height:</label>
+          <input type="number" id="height" placeholder="Height">
+        </div>
+        <div class="form-group">
+          <label for="quality">Quality:</label>
+          <input type="range" id="quality" min="1" max="100" value="80">
+          <span id="quality-value">80%</span>
+        </div>
+        <div class="form-group">
+          <label for="watermark">Watermark:</label>
+          <input type="file" id="watermark" accept="image/*">
+        </div>
+        <div class="form-group">
+          <label for="rotate">Rotate:</label>
+          <input type="number" id="rotate" placeholder="Degrees">
+        </div>
+        <div class="form-group">
+          <label for="flip">Flip:</label>
+          <select id="flip">
+            <option value="">None</option>
+            <option value="horizontal">Horizontal</option>
+            <option value="vertical">Vertical</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="crop">Crop (x,y,w,h):</label>
+          <input type="text" id="crop" placeholder="e.g. 10,20,300,400">
+        </div>
+        <div class="form-group">
+          <label for="compress">Compress:</label>
+          <input type="number" id="compress" placeholder="Quality (1-100)">
+        </div>
+        <div class="form-group">
+          <button id="convert-btn">Convert Images</button>
+        </div>
+      </form>
+      <div class="image-preview" id="image-preview"></div>
+      <div class="download-link" id="download-link"></div>
+      <progress id="progress-bar" value="0" max="100"></progress>
+    </section>
+    <section id="how-it-works">
+      <h1>How it Works</h1>
+      <p>The Image Converter is a web-based application that allows users to convert, resize, compress, and add watermarks to images.</p>
+      <h2>Step 1: Select an Image</h2>
+      <p>Select an image file from your computer or drag and drop it into the designated area.</p>
+      <h2>Step 2: Choose Output Format</h2>
+      <p>Choose the desired output format for your image, such as JPEG, PNG, GIF, BMP, or TIFF.</p>
+      <h2>Step 3: Resize and Compress</h2>
+      <p>Resize your image to a custom size or compress it to reduce the file size.</p>
+      <h2>Step 4: Add Watermark (Optional)</h2>
+      <p>Add a watermark to your image, if desired.</p>
+      <h2>Step 5: Rotate, Flip, and Crop (Optional)</h2>
+      <p>Rotate, flip, or crop your image, if desired.</p>
+      <h2>Step 6: Convert and Download</h2>
+      <p>Click the "Convert Images" button to convert your image and download the result.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 Image Converter. All rights reserved.</p>
+    <ul>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/sharp@0.29.3/dist/sharp.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

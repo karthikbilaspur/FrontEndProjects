@@ -1,0 +1,204 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="file"],
+select,
+input[type="number"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.image-preview {
+  margin-top: 20px;
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+.download-link {
+  margin-top: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  clear: both;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer ul li {
+  margin-right: 20px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#how-it-works {
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px 0;
+}
+
+#how-it-works h1 {
+  margin-bottom: 10px;
+}
+
+#how-it-works h2 {
+  margin-bottom: 5px;
+}
+
+#how-it-works p {
+  margin-bottom: 10px;
+}
+
+/* Media Queries */
+
+@media only screen and (max-width: 990px) {
+  .container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 15px;
+  }
+  main {
+    padding: 15px;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+  main {
+    padding: 10px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  header nav ul {
+    flex-direction: column;
+  }
+  header nav ul li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .container {
+    margin: 10px auto;
+    padding: 5px;
+  }
+  main {
+    padding: 5px;
+  }
+  .form-group {
+    margin-bottom: 5px;
+  }
+  input[type="file"],
+  select,
+  input[type="number"] {
+    height: 30px;
+    padding: 5px;
+  }
+  button {
+    height: 30px;
+  }
+}

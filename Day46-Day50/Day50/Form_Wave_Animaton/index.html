@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for our services with our secure and easy-to-use registration form">
+    <meta name="keywords" content="registration, form, secure, easy-to-use, services">
+    <meta name="author" content="Your Company Name">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Registration Form">
+    <meta property="og:description" content="Register for our services with our secure and easy-to-use registration form">
+    <meta property="og:image" content="https://example.com/image.jpg">
+    <meta property="og:url" content="https://example.com/registration-form">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Registration Form">
+    <meta name="twitter:description" content="Register for our services with our secure and easy-to-use registration form">
+    <meta name="twitter:image" content="https://example.com/image.jpg">
+    <title>Wave Animation Form</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://example.com/registration-form">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header>
+        <h1>Registration Form</h1>
+        <p>Secure and Easy Registration Process</p>
+    </header>
+    <main>
+        <section class="about-section">
+            <h2>About Our Registration Process</h2>
+            <p>Our registration process is designed to be secure welcome and provides a seamless experience for our users. We collect only the necessary information to provide our services, and we ensure that your data is protected and secure.</p>
+            <p>Our registration form is designed to be easy to use, with clear instructions and validation to help you complete the process quickly and efficiently.</p>
+        </section>
+        <form id="form" aria-labelledby="form-legend">
+            <legend id="form-legend">Registration Form</legend>
+            <fieldset>
+                <div class="input-group">
+                    <input type="text" id="username" required aria-required="true" placeholder="Enter your username">
+                    <label for="username">Username</label>
+                    <div class="wave"></div>
+                    <span class="error-message" role="alert"></span>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required aria-required="true" placeholder="Enter your email">
+                    <label for="email">Email</label>
+                    <div class="wave"></div>
+                    <span class="error-message" role="alert"></span>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" required aria-required="true" placeholder="Enter your password">
+                    <label for="password">Password</label>
+                    <div class="wave"></div>
+                    <span class="error-message" role="alert"></span>
+                    <div class="password-strength"></div>
+                    <span class="password-strength-text"></span>
+                    <ul class="password-requirements"></ul>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="confirm-password" required aria-required="true" placeholder="Confirm your password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <div class="wave"></div>
+                    <span class="error-message" role="alert"></span>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="phone" required aria-required="true" pattern="[0-9]{10}" placeholder="Enter your phone number">
+                    <label for="phone">Phone Number</label>
+                    <div class="wave"></div>
+                    <span class="error-message" role="alert"></span>
+                </div>
+                <div class="input-group">
+                    <label for="captcha">CAPTCHA:</label>
+                    <span id="captcha" aria-live="polite"></span>
+                    <input type="text" id="captcha-input" required aria-required="true" placeholder="Enter the CAPTCHA">
+                    <span class="error-message" role="alert"></span>
+                    <button type="button" id="captcha-audio" aria-label="Listen to CAPTCHA audio">Listen</button>
+                </div>
+                <button type="submit" disabled>
+                    <span class="button-text">Submit</span>
+                    <span class="loading-spinner" style="display: none;"></span>
+                </button>
+                <div class="success-message" role="status"></div>
+            </fieldset>
+        </form>
+        <button id="dark-mode-toggle">Toggle Dark Mode</button>
+        <div class="progress-bar-container">
+            <div class="progress-bar"></div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Your Company Name. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.6/inputmask.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
