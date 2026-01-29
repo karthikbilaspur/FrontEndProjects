@@ -1,20 +1,14 @@
-// script.js
-
-// Add event listeners to forms
 document.addEventListener('DOMContentLoaded', function() {
   const forms = document.querySelectorAll('form');
 
   forms.forEach(function(form) {
-    form.addEveantListener('submit', function(event) {
+    form.addEventListener('submit', function(event) {
       event.preventDefault();
-      const formType = form.classList.contains('login-form') ? 'login' :
-        form.classList.contains('register-form') ? 'register' :
-        form.classList.contains('post-job-form') ? 'post-job' : '';
+      const formType = form.dataset.type;
       handleSubmit(form, formType);
     });
   });
 
-  // Add event listener to job listing links
   const jobLinks = document.querySelectorAll('.job-link');
   jobLinks.forEach(function(link) {
     link.addEventListener('click', function(event) {
@@ -25,7 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Handle form submission
 function handleSubmit(form, formType) {
   try {
     switch (formType) {
@@ -40,9 +33,9 @@ function handleSubmit(form, formType) {
         break;
       case 'register':
         const name = form.querySelector('#name').value.trim();
-        const registerEmail = form.querySelector('#email').value.trim();
-        const registerPassword = form.querySelector('#password').value.trim();
-        const confirmPassword = form.querySelector('#confirmPassword').value.trim();
+        const registerEmail = form.querySelector('#register-email').value.trim();
+        const registerPassword = form.querySelector('#register-password').value.trim();
+        const confirmPassword = form.querySelector('#confirm-password').value.trim();
         if (!name || !registerEmail || !registerPassword || !confirmPassword) {
           throw new Error('Please fill in all fields');
         }
@@ -66,12 +59,13 @@ function handleSubmit(form, formType) {
       default:
         throw new Error('Unknown form type');
     }
+    // Show success message
+    displaySuccess(form, 'Form submitted successfully!');
   } catch (error) {
     displayError(form, error.message);
   }
 }
 
-// Show job details
 function showJobDetails(jobId) {
   try {
     // TO DO: Implement job details logic
@@ -81,26 +75,34 @@ function showJobDetails(jobId) {
   }
 }
 
-// Display error message to user
 function displayError(form, message) {
   const errorDiv = document.createElement('div');
   errorDiv.className = 'alert alert-danger';
   errorDiv.textContent = message;
 
   if (form) {
-    const formGroup = form.querySelector('.form-group');
-    if (formGroup) {
-      formGroup.appendChild(errorDiv);
-    } else {
-      form.appendChild(errorDiv);
-    }
+    form.appendChild(errorDiv);
   } else {
-    const body = document.body;
-    body.insertBefore(errorDiv, body.firstChild);
+    document.body.insertBefore(errorDiv, document.body.firstChild);
   }
 
-  // Remove error message after 5 seconds
   setTimeout(() => {
     errorDiv.remove();
+  }, 5000);
+}
+
+function displaySuccess(form, message) {
+  const successDiv = document.createElement('div');
+  successDiv.className = 'alert alert-success';
+  successDiv.textContent = message;
+
+  if (form) {
+    form.appendChild(successDiv);
+  } else {
+    document.body.insertBefore(successDiv, document.body.firstChild);
+  }
+
+  setTimeout(() => {
+    successDiv.remove();
   }, 5000);
 }

@@ -1,0 +1,161 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Timer - Boost Your Productivity</title>
+  <meta name="description" content="A simple and customizable Pomodoro timer to help you stay focused and increase productivity.">
+  <meta name="keywords" content="Pomodoro timer, productivity, time management, focus, timer, work timer, break timer">
+  <meta name="author" content="Your Name">
+  <meta property="og:title" content="Pomodoro Timer - Boost Your Productivity">
+  <meta property="og:description" content="A simple and customizable Pomodoro timer to help you stay focused and increase productivity.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:image" content="https://yourwebsite.com/image.jpg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <nav>
+      <ul>
+        <!-- Navigation Buttons -->
+        <li><button id="btn-start">Start</button></li>
+        <li><button id="btn-reset">Reset</button></li>
+        <li><button id="btn-settings">Settings</button></li>
+        <li><button id="btn-history">History</button></li>
+        <li><button id="btn-share">Share</button></li>
+        <li><button id="btn-theme-switcher">Theme</button></li>
+        <li><button id="help-btn">Help</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Timer Section -->
+    <section class="timer-section">
+      <h1 class="timer-display">25:00</h1>
+      <div class="timer-controls">
+        <button id="btn-start" class="primary-btn">Start</button>
+        <button id="btn-reset" class="secondary-btn">Reset</button>
+      </div>
+      <p class="timer-status">Work Time</p>
+      <!-- 
+        Timer Functionality:
+        - Displays the current time
+        - Starts and resets the timer
+        - Switches between work and break modes
+      -->
+    </section>
+
+    <!-- Task Management Section -->
+    <section class="task-section">
+      <h2>Add Task:</h2>
+      <input id="task-input" type="text" placeholder="Task name">
+      <select id="task-category" title="Task-Calculatory">
+        <option value="work">Work</option>
+        <option value="personal">Personal</option>
+      </select>
+      <select id="task-priority" title="Task-Priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button id="add-task-btn">Add Task</button>
+      <ul id="task-list"></ul>
+      <!-- 
+        Task Management Functionality:
+        - Allows users to add tasks
+        - Assigns tasks to categories (work or personal)
+        - Assigns tasks a priority level (high, medium, or low)
+        - Displays the list of tasks
+      -->
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+      <h2>Stats:</h2>
+      <p id="tasks-completed">Tasks completed: 0</p>
+      <p id="time-spent">Time spent: 0 hours</p>
+      <!-- 
+        Statistics Functionality:
+        - Displays the number of tasks completed
+        - Displays the total time spent on tasks
+      -->
+    </section>
+  </main>
+
+  <!-- Modals Section -->
+  <!-- 
+    Modals are used to display additional information or settings
+    without cluttering the main interface
+  -->
+  <div id="settings-modal" class="modal">
+    <h2>Settings</h2>
+    <label for="work-time-input">Work Time (minutes):</label>
+    <input id="work-time-input" type="number" value="25">
+    <label for="break-time-input">Break Time (minutes):</label>
+    <input id="break-time-input" type="number" value="5">
+    <button id="save-settings-btn">Save</button>
+    <button id="close-settings-btn" class="close-btn">&times;</button>
+    <!-- 
+      Settings Functionality:
+      - Allows users to adjust work and break times
+      - Saves the settings
+    -->
+  </div>
+
+  <div id="history-modal" class="modal">
+    <h2>History</h2>
+    <ul id="history-list"></ul>
+    <button id="close-history-btn" class="close-btn">&times;</button>
+    <!-- 
+      History Functionality:
+      - Displays a list of past tasks and their completion times
+    -->
+  </div>
+
+  <div id="share-modal" class="modal">
+    <h2>Share</h2>
+    <button id="facebook-share-btn-modal">Facebook</button>
+    <button id="twitter-share-btn-modal">Twitter</button>
+    <button id="linkedin-share-btn-modal">LinkedIn</button>
+    <button id="close-share-btn" class="close-btn">&times;</button>
+    <!-- 
+      Share Functionality:
+      - Allows users to share their progress on social media
+    -->
+  </div>
+
+  <div id="theme-modal" class="modal">
+    <h2>Theme</h2>
+    <select id="theme-select" title="Theme-Select">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+    </select>
+    <button id="save-theme-btn">Save</button>
+    <button id="close-theme-btn" class="close-btn">&times;</button>
+    <!-- 
+      Theme Functionality:
+      - Allows users to switch between light and dark themes
+    -->
+  </div>
+
+  <div id="help-modal" class="modal">
+    <h2>Help</h2>
+    <p>Pomodoro Timer is a simple timer that helps you stay focused.</p>
+    <button id="close-help-btn" class="close-btn">&times;</button>
+    <!-- 
+      Help Functionality:
+      - Displays information about the app and its usage
+    -->
+  </div>
+
+  <script src="script.js"></script>
+  <footer>
+    <p>&copy; 2026 Pomodoro Timer. All rights reserved.</p>
+  </footer>
+</body>
+</html>

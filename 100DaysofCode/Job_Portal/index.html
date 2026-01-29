@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Job application and registration form for [Company Name]">
+  <meta name="keywords" content="job application, registration form, [Company Name]">
+  <meta property="og:title" content="Job Application and Registration Form">
+  <meta property="og:description" content="Job application and registration form for [Company Name]">
+  <meta property="og:image" content="[Image URL]">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Job Application and Registration Form">
+  <meta name="twitter:description" content="Job application and registration form for [Company Name]">
+  <meta name="twitter:image" content="[Image URL]">
+  <link rel="canonical" href="[Page URL]">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <title>Job Application and Registration Form</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+  <h1>Job Application and Registration Form</h1>
+  <form id="job-application-form">
+    <!-- Step 1: Personal Details -->
+    <section id="step1">
+      <h2>Personal Details</h2>
+      <label for="name" aria-label="Full Name">Name:</label>
+      <input type="text" id="name" name="name" aria-required="true"><br><br>
+      <label for="email" aria-label="Email Address">Email:</label>
+      <input type="email" id="email" name="email" aria-required="true"><br><br>
+      <label for="location" aria-label="Location">Location:</label>
+      <input type="text" id="location" name="location" autocomplete="address-level2"><br><br>
+      <label for="job-title" aria-label="Job Title">Job Title:</label>
+      <input type="text" id="job-title" name="job-title"><br><br>
+      <label for="password" aria-label="Password">Password:</label>
+      <input type="password" id="password" name="password">
+      <div id="password-strength-meter"></div>
+      <label for="confirm-password" aria-label="Confirm Password">Confirm Password:</label>
+      <input type="password" id="confirm-password" name="confirm-password">
+      <div id="password-match-message"></div>
+      <button id="next-step1" type="button">Next</button>
+    </section>
+
+    <!-- Step 2: Work Experience -->
+    <section id="step2">
+      <h2>Work Experience</h2>
+      <div id="work-experience-container">
+        <!-- Dynamic fields will be added here -->
+      </div>
+      <button id="add-work-experience" type="button">Add Work Experience</button>
+      <button id="next-step2" type="button">Next</button>
+      <button id="prev-step2" type="button">Previous</button>
+    </section>
+
+    <!-- Step 3: Skills -->
+    <section id="step3">
+      <h2>Skills</h2>
+      <div id="skills-container">
+        <!-- Dynamic fields will be added here -->
+      </div>
+      <button id="add-skill" type="button">Add Skill</button>
+      <button id="next-step3" type="button">Next</button>
+      <button id="prev-step3" type="button">Previous</button>
+    </section>
+
+    <!-- Step 4: Payment -->
+    <section id="step4">
+      <h2>Payment</h2>
+      <label for="payment-method" aria-label="Payment Method">Payment Method:</label>
+      <select id="payment-method" name="payment-method">
+        <option value="stripe">Stripe</option>
+        <option value="paypal">PayPal</option>
+      </select>
+      <div id="payment-form-container">
+        <!-- Payment form will be rendered here -->
+      </div>
+      <label for="resume" aria-label="Resume">Resume:</label>
+      <input type="file" id="resume" name="resume"><br><br>
+      <label for="cover-letter" aria-label="Cover Letter">Cover Letter:</label>
+      <textarea id="cover-letter" name="cover-letter"></textarea>
+      <button id="submit-form" type="submit">Submit</button>
+      <button id="prev-step4" type="button">Previous</button>
+    </section>
+  </form>
+
+  <!-- Social Sharing Section -->
+  <section id="social-sharing">
+    <h2>Share with Friends!</h2>
+    <ul>
+      <li><a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank">
+        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+        <span class="sr-only">Share on Facebook</span>
+      </a></li>
+      <li><a href="https://twitter.com/intent/tweet?url=https://example.com" target="_blank">
+        <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+        <span class="sr-only">Share on Twitter</span>
+      </a></li>
+      <li><a href="https://www.linkedin.com/shareArticle?url=https://example.com" target="_blank">
+        <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+        <span class="sr-only">Share on LinkedIn</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <!-- Mail Sending Section -->
+  <section id="mail-sending">
+    <h2>Get in Touch!</h2>
+    <form id="contact-form">
+      <label for="name" aria-label="Name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+      <label for="email" aria-label="Email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+      <label for="message" aria-label="Message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+      <button id="send-message" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section id="testimonials" aria-live="polite" aria-atomic="true">
+    <h2>What Our Clients Say!</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial active">
+        <p>"This is the best job application form I've ever used!"</p>
+        <span>- John Doe, Software Engineer</span>
+      </div>
+      <div class="testimonial">
+        <p>"The payment process was so smooth and easy."</p>
+        <span>- Jane Doe, Marketing Manager</span>
+      </div>
+      <div class="testimonial">
+        <p>"I love the design and functionality of this form!"</p>
+        <span>- Bob Smith, UX Designer</span>
+      </div>
+    </div>
+  </section>
+
+<!-- Footer Section -->
+<footer>
+  <p>&copy; 2026 Job Application Form. All rights reserved.</p>
+  <ul>
+    <li><a href="#">Terms of Service</a>
+      <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+    </li>
+    <li><a href="#">Privacy Policy</a>
+      <div>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+      </div>
+    </li>
+    <li><a href="#">Contact Us</a>
+      <div>
+        <p>+91 12345 67890</p>
+      </div>
+    </li>
+  </ul>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>

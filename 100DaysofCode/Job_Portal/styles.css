@@ -1,0 +1,337 @@
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Form styles */
+#job-application-form {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* Label styles */
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+label.required:after {
+  content: "*";
+  color: #f00;
+  margin-left: 5px;
+}
+
+/* Input styles */
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+input[type="text"].error, input[type="email"].error, input[type="password"].error {
+  border-color: #f00;
+}
+
+/* Button styles */
+button[type="button"], button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button[type="button"]:hover, button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+button[type="button"]:disabled, button[type="submit"]:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Password strength meter styles */
+#password-strength-meter {
+  margin-bottom: 20px;
+}
+
+#password-strength-meter ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#password-strength-meter li {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Password match message styles */
+#password-match-message {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+#password-match-message.error {
+  color: #f00;
+}
+
+/* Social sharing styles */
+#social-sharing {
+  text-align: center;
+  padding: 20px;
+}
+
+#social-sharing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#social-sharing li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+#social-sharing a {
+  color: #333;
+  text-decoration: none;
+}
+
+#social-sharing a:hover {
+  color: #666;
+}
+
+/* Mail sending styles */
+#mail-sending {
+  padding: 20px;
+}
+
+#contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contact-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#contact-form input, #contact-form textarea {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact-form textarea {
+  height: 100px;
+}
+
+#contact-form button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#contact-form button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Testimonial styles */
+#testimonials {
+  padding: 20px;
+}
+
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.testimonial.active {
+  opacity: 1;
+}
+
+.testimonial p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.testimonial span {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+
+/* Responsive styles */
+@media (min-width: 1200px) {
+  #job-application-form {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 30px;
+  }
+  #job-application-form section {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #job-application-form {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  #job-application-form section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #job-application-form {
+    margin: 20px auto;
+    padding: 10px;
+  }
+  #job-application-form section {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #job-application-form {
+    margin: 10px auto;
+    padding: 5px;
+  }
+  #job-application-form section {
+    padding: 5px;
+  }
+}
+
+/* Print styles */
+@media print {
+  #job-application-form {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+  }
+  footer {
+    display: none;
+  }
+}
+
+/* Accessibility styles */
+:focus {
+  outline: 2px solid #4CAF50;
+  outline-offset: 2px;
+}
+
+/* Utility classes */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Animation styles */
+.animate {
+  transition: all 0.3s ease-in-out;
+}
+
+.animate:hover {
+  transform: scale(1.1);
+}
