@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter - Convert Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur</title>
+  <meta name="description" content="Convert temperature units easily with our online temperature converter. Supports Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales.">
+  <meta name="keywords" content="temperature converter, celsius, fahrenheit, kelvin, rankine, reaumur, temperature conversion, unit conversion">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="canonical" href="https://example.com/temperature-converter">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <meta property="og:title" content="Temperature Converter">
+  <meta property="og:description" content="Convert temperature units easily with our online temperature converter. Supports Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales.">
+  <meta property="og:image" content="https://example.com/temperature-converter-image.jpg">
+  <meta property="og:url" content="https://example.com/temperature-converter">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Temperature Converter">
+  <meta name="twitter:description" content="Convert temperature units easily with our online temperature converter. Supports Celsius, Fahrenheit, Kelvin, Rankine, and Réaumur scales.">
+  <meta name="twitter:image" content="https://example.com/temperature-converter-image.jpg">
+</head>
+<body>
+  <header>
+<nav aria-label="Main navigation">
+  <button class="hamburger-menu" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="#" class="nav-link">Home</a></li>
+    <li><a href="#" class="nav-link">About Us</a></li>
+    <li><a href="#" class="nav-link">Get in Touch</a></li>
+  </ul>
+</nav>  </header>
+
+<section id="about-us">
+  <h2>About Us</h2>
+  <p>We're a team of experts dedicated to providing accurate and reliable temperature conversions.</p>
+  <p>Our tool is designed to be easy to use and accessible to everyone, whether you're a student, a scientist, or just someone who needs to convert temperatures.</p>
+</section>
+
+<section id="get-in-touch">
+  <h2>Get in Touch</h2>
+  <p>If you have any questions or feedback, please don't hesitate to contact us.</p>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name">
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <label for="message">Message:</label>
+    <textarea id="message" name="message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+  <main>
+    <h1>Temperature Converter</h1>
+    <section aria-label="Temperature conversion form">
+      <form>
+        <div class="form-group">
+          <label for="temperature">Temperature:</label>
+          <input id="temperature" type="number" aria-label="Temperature" placeholder="Enter temperature">
+        </div>
+        <div class="form-group">
+          <label for="from-scale">From:</label>
+          <select id="from-scale" aria-label="From scale">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+            <option value="rankine">Rankine (°R)</option>
+            <option value="reaumur">Réaumur (°Ré)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="to-scale">To:</label>
+          <select id="to-scale" aria-label="To scale">
+            <option value="celsius">Celsius (°C)</option>
+            <option value="fahrenheit">Fahrenheit (°F)</option>
+            <option value="kelvin">Kelvin (K)</option>
+            <option value="rankine">Rankine (°R)</option>
+            <option value="reaumur">Réaumur (°Ré)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="precision">Precision:</label>
+          <select id="precision">
+            <option value="0">0 decimal places</option>
+            <option value="1">1 decimal place</option>
+            <option value="2" selected>2 decimal places</option>
+            <option value="3">3 decimal places</option>
+            <option value="4">4 decimal places</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <button id="save-btn" type="button">Save</button>
+          <button id="reset-btn" type="button">Reset</button>
+        </div>
+      </form>
+    </section>
+    <section aria-label="Temperature conversion result">
+      <div id="result" role="status"></div>
+    </section>
+    <section aria-label="Temperature conversion history">
+      <h2>History:</h2>
+      <div id="history"></div>
+      <div class="export-buttons">
+        <button id="export-csv-btn">Export to CSV</button>
+        <button id="export-pdf-btn">Export to PDF</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2026 Temperature Converter</p>
+    <ul class="social-media"> 
+    <li><a href="#" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+      <li><a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a></li>
+      <li><a href="#" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+      <li><a href="#" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+    </ul>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+</html>
