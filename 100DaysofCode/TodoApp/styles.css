@@ -1,0 +1,155 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #f1c40f;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  --text-color: #333;
+  --background-color: #f0f0f0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+}
+
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease;
+}
+
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#task-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+#task-list li:last-child {
+  border-bottom: none;
+}
+
+#task-list li.completed {
+  text-decoration: line-through;
+  color: #666;
+  background-color: #f9f9f9;
+}
+
+.priority-select {
+  width: 100px;
+  margin-right: 10px;
+}
+
+.start-timer-btn, .stop-timer-btn {
+  margin-right: 10px;
+}
+
+#calendar {
+  margin-top: 20px;
+}
+
+.fc-event {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.fc-event:hover {
+  background-color: #ccc;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ccc;
+}
+
+.social-links li {
+  margin-right: 10px;
+}
+
+.social-links li:last-child {
+  margin-right: 0;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ccc;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 600px;
+  }
+  #task-list li {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 400px;
+  }
+  #task-list li {
+    padding: 6px;
+  }
+  .priority-select {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    max-width: 300px;
+  }
+  #task-list li {
+    padding: 4px;
+  }
+  .priority-select {
+    width: 60px;
+  }
+}

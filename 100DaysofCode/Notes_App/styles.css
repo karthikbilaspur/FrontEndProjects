@@ -1,0 +1,276 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.5s ease-in-out;
+}
+
+.container:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Header Styles */
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+h1 i {
+  margin-right: 10px;
+  animation: rotate 2s infinite;
+}
+
+/* Button Styles */
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Note Styles */
+
+.note {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.note:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.note h5 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Editor Styles */
+
+#editor {
+  min-height: 200px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+#editor:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Choices.js Styles */
+
+.choices {
+  width: 100%;
+}
+
+.choices__inner {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.choices__inner:focus {
+  border-color: #007bff;
+}
+
+.choices__list--dropdown {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.choices__list--dropdown .choices__item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.choices__list--dropdown .choices__item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Footer Styles */
+
+footer {
+  background-color: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #337ab7;
+  transition: color 0.3s ease-in-out;
+}
+
+footer a:hover {
+  color: #23527c;
+}
+
+/* Animations */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark Theme */
+
+body.dark {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark .container {
+  background-color: #444;
+  border-color: #555;
+}
+
+body.dark .note {
+  background-color: #555;
+  border-color: #666;
+}
+
+body.dark .note:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark #editor {
+  background-color: #555;
+  border-color: #666;
+}
+
+body.dark #editor:focus {
+  border-color: #007bff;
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .container {
+    margin: 20px auto;
+    padding: 10px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  .btn {
+    padding: 5px 10px;
+  }
+  .note {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 10px auto;
+    padding: 5px;
+  }
+  h1 {
+    font-size: 16px;
+  }
+  .btn {
+    padding: 3px 5px;
+  }
+  .note {
+    padding: 5px;
+  }
+  footer {
+    padding: 10px;
+  }
+  footer li {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}

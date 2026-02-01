@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="To-Do List App - Organize your tasks and increase productivity with our intuitive and user-friendly interface">
+    <meta name="keywords" content="to-do list, task manager, productivity, todo list, task organizer, daily tasks, weekly tasks, monthly tasks">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="To-Do List App - Organize Your Tasks">
+    <meta property="og:description" content="To-Do List App - Organize your tasks and increase productivity with our intuitive and user-friendly interface">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="To-Do List App - Organize Your Tasks">
+    <meta name="twitter:description" content="To-Do List App - Organize your tasks and increase productivity with our intuitive and user-friendly interface">
+    <meta name="twitter:image" content="https://yourwebsite.com/image.jpg">
+
+    <title>To-Do List App - Organize Your Tasks</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/dist/fullcalendar.min.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">To-Do List App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="container mt-5">
+    <h1>To-Do List App</h1>
+    <input id="task-input" type="text" class="form-control" placeholder="Add new task">
+    <div class="input-group mt-2">
+        <input id="due-date-input" type="date" class="form-control" title="Form">
+        <input id="due-time-input" type="time" class="form-control" title=" form-control">
+        <span id="due-day" class="input-group-text"></span>
+    </div>
+    <button id="add-task-btn" class="btn btn-primary mt-2">Add Task</button>
+    <ul id="task-list" class="list-group mt-3"></ul>
+    <div class="btn-group mt-3">
+        <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="filterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Filter
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="filterDropdown">
+            <li><button class="dropdown-item filter-btn" data-priority="all">All</button></li>
+            <li><button class="dropdown-item filter-btn" data-priority="low">Low</button></li>
+            <li><button class="dropdown-item filter-btn" data-priority="medium">Medium</button></li>
+            <li><button class="dropdown-item filter-btn" data-priority="high">High</button></li>
+        </ul>
+        <button class="btn btn-sm btn-secondary dropdown-toggle ms-2" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+            Sort
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="sortDropdown">
+            <li><button class="dropdown-item sort-btn" data-sort="priority">Priority</button></li>
+            <li><button class="dropdown-item sort-btn" data-sort="dueDate">Due Date</button></li>
+        </ul>
+        <button class="btn btn-sm btn-danger reset-btn ms-2">Reset</button>
+    </div>
+    <div class="mt-3">
+        <button class="btn btn-sm btn-primary save-csv-btn">Save to CSV</button>
+        <button class="btn btn-sm btn-primary save-excel-btn">Save to Excel</button>
+        <button class="btn btn-sm btn-primary save-pdf-btn">Save to PDF</button>
+        <button class="btn btn-sm btn-primary share-btn">Share</button>
+    </div>
+    <div id="calendar" class="mt-5"></div>
+</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/dist/fullcalendar.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <div class="container">
+        <p>&copy; 2023 To-Do List App. All rights reserved.</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="#" class="text-white" data-bs-toggle="collapse" data-bs-target="#about">About</a></li>
+            <li class="list-inline-item"><a href="#" class="text-white" data-bs-toggle="collapse" data-bs-target="#contact">Contact</a></li>
+            <li class="list-inline-item"><a href="#" class="text-white" data-bs-toggle="collapse" data-bs-target="#privacy">Privacy Policy</a></li>
+            <li class="list-inline-item"><a href="#" class="text-white" data-bs-toggle="collapse" data-bs-target="#terms">Terms of Service</a></li>
+        </ul>
+        <ul class="list-inline mb-3">
+            <li class="list-inline-item">
+                <a href="#" class="text-white me-2">
+                    <i class="fab fa-facebook-f fa-lg"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="text-white me-2">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="text-white me-2">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="text-white me-2">
+                    <i class="fab fa-linkedin-in fa-lg"></i>
+                </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#" class="text-white">
+                    <i class="fab fa-youtube fa-lg"></i>
+                </a>
+            </li>
+        </ul>
+        <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> by Your Name</p>
+    </div>
+
+     <div class="collapse" id="about">
+        <div class="container mt-5">
+            <h1>About Us</h1>
+            <p>To-Do List App is a simple and intuitive task management tool.</p>
+        </div>
+    </div>
+
+    <div class="collapse" id="contact">
+        <div class="container mt-5">
+            <h1>Contact Us</h1>
+            <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+        </div>
+    </div>
+
+    <div class="collapse" id="privacy">
+        <div class="container mt-5">
+            <h1>Privacy Policy</h1>
+            <p>We respect your privacy and will not share your data with third parties.</p>
+        </div>
+    </div>
+
+    <div class="collapse" id="terms">
+        <div class="container mt-5">
+            <h1>Terms of Service</h1>
+            <p>By using our app, you agree to our terms of service.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

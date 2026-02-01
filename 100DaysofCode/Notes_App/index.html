@@ -1,0 +1,145 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App - Organize Your Thoughts and Ideas | Note Taking App</title>
+    <meta name="description" content="Notes App is a powerful note taking app that helps you organize your thoughts and ideas. Create, edit, and manage your notes with ease.">
+    <meta name="keywords" content="note taking app, notes app, note organizer, note manager, productivity app, task manager">
+    <meta name="author" content="Your Name">
+    <link rel="canonical" href="https://example.com/notes-app">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta property="og:title" content="Notes App - Organize Your Thoughts and Ideas">
+    <meta property="og:description" content="Notes App is a powerful note taking app that helps you organize your thoughts and ideas.">
+    <meta property="og:image" content="https://example.com/notes-app-image.png">
+    <meta property="og:url" content="https://example.com/notes-app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@your_twitter_handle">
+    <meta name="twitter:creator" content="@your_twitter_handle">
+</head>
+<body>
+    <main class="container mt-5">
+        <h1><i class="fa-solid fa-note-sticky"></i> Notes App</h1>
+        <section class="mb-3">
+            <button id="new-note" class="btn btn-primary mb-2"><i class="fa-solid fa-plus"></i> New Note</button>
+            <div class="dropdown mb-2" role="group">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="note-dropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Note actions">
+                    Note
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="note-dropdown">
+                    <li><a class="dropdown-item" href="#" id="save-note">Save Note</a></li>
+                    <li><a class="dropdown-item" href="#" id="delete-note">Delete Note</a></li>
+                    <li><a class="dropdown-item" href="#" id="edit-note">Edit Note</a></li>
+                    <li><a class="dropdown-item" href="#" id="share-note">Share Note</a></li>
+                    <li><a class="dropdown-item" href="#" id="duplicate-note">Duplicate Note</a></li>
+                    <li><a class="dropdown-item" href="#" id="archive-note">Archive Note</a></li>
+                    <li><a class="dropdown-item" href="#" id="restore-note">Restore Note</a></li>
+                </ul>
+            </div>
+            <div class="dropdown mb-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="folder-dropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Folder actions">
+                    Folder
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="folder-dropdown">
+                    <li><a class="dropdown-item" href="#" id="add-folder">Add Folder</a></li>
+                    <li><a class="dropdown-item" href="#" id="delete-folder">Delete Folder</a></li>
+                </ul>
+            </div>
+            <div class="dropdown mb-2">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="sort-dropdown" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Sort by">
+                    Sort By
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="sort-dropdown">
+                    <li><a class="dropdown-item" href="#" id="sort-title">Title</a></li>
+                    <li><a class="dropdown-item" href="#" id="sort-created">Date Created</a></li>
+                    <li><a class="dropdown-item" href="#" id="sort-modified">Date Modified</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="mb-3">
+            <input id="note-title" type="text" class="form-control mb-2" placeholder="Title" aria-label="Note title">
+            <div id="editor" contenteditable="true" class="form-control mb-2" aria-label="Note editor"></div>
+            <select id="folder-select" class="form-select mb-2" aria-label="Select folder">
+                <option value="default">Default</option>
+            </select>
+            <input id="search-note" type="text" class="form-control mb-2" placeholder="Search notes" aria-label="Search notes">
+        </section>
+        <section id="notes-container" class="mt-3"></section>
+        <section class="mb-3">
+            <select id="tag-dropdown" multiple aria-label="Select tags">
+                <!-- Tags will be generated here -->
+            </select>
+            <input id="tag-input" type="text" class="form-control mb-2" placeholder="Add tag" aria-label="Add tag">
+            <button id="add-tag" class="btn btn-secondary">Add Tag</button>
+            <button id="remind-me" class="btn btn-secondary">Remind Me</button>
+            <input id="reminder-date" type="date" class="form-control mb-2" aria-label="Reminder date">
+            <input id="reminder-time" type="time" class="form-control mb-2" aria-label="Reminder time">
+        </section>
+        <section class="mb-3">
+            <select id="theme-select" class="form-select mb-2" aria-label="Select theme">
+                <option value="light">Light Theme</option>
+                <option value="dark">Dark Theme</option>
+            </select>
+            <button id="calendar-btn" class="btn btn-secondary">Add to Calendar</button>
+            <button id="import-btn" class="btn btn-secondary">Import Notes</button>
+            <button id="export-btn" class="btn btn-secondary">Export Notes</button>
+        </section>
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="container p-4">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>About Us</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><h6>Our Story</h6></li>
+                        <li><a href="#" class="text-dark">Learn about our journey and mission to simplify note-taking.</a></li>
+                        <li><h6>Team</h6></li>
+                        <li><a href="#" class="text-dark">Meet the team behind Notes App and their passion for productivity.</a></li>
+                        <li><h6>Careers</h6></li>
+                        <li><a href="#" class="text-dark">Explore career opportunities and join our team to shape the future of note-taking.</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Contact</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-dark"><i class="fa-solid fa-envelope"></i> Email</a></li>
+                        <li><a href="#" class="text-dark"><i class="fa-solid fa-phone"></i> Phone</a></li>
+                        <li><a href="#" class="text-dark"><i class="fa-solid fa-map"></i> Address</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Services</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><h6>Note Taking</h6></li>
+                        <li><a href="#" class="text-dark">Capture your thoughts and ideas with our intuitive note-taking features.</a></li>
+                        <li><h6>Task Management</h6></li>
+                        <li><a href="#" class="text-dark">Stay organized and on track with our task management tools and reminders.</a></li>
+                        <li><h6>Collaboration</h6></li>
+                        <li><a href="#" class="text-dark">Collaborate with others in real-time and share notes with ease.</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5>Connect</h5>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="#" class="text-dark"><i class="fa-brands fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="#" class="text-dark"><i class="fa-brands fa-twitter"></i> Twitter</a></li>
+                        <li><a href="#" class="text-dark"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="text-center p-3 bg-dark text-white">
+            &copy; 2026 Notes App
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
