@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple book management system to add, search, and manage books">
+  <meta name="keywords" content="book management, book catalog, library management, book tracking">
+  <meta name="author" content="Your Name">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Book Management System">
+  <meta property="og:description" content="A simple book management system to add, search, and manage books">
+  <meta property="og:type" content="website">
+  <title>Book Management System</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+
+</head>
+<body>
+  <header class="bg-light py-3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#">Book Management System</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="jumbotron jumbotron-fluid bg-primary text-white">
+      <div class="container">
+        <h1 class="display-4">Welcome to Book Management System</h1>
+        <p class="lead">A simple system to manage your book collection</p>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <h2>Add a Book</h2>
+      <form id="book-form">
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input type="text" class="form-control" id="title" required>
+        </div>
+        <div class="form-group">
+          <label for="author">Author:</label>
+          <input type="text" class="form-control" id="author" required>
+        </div>
+        <div class="form-group">
+          <label for="isbn">ISBN:</label>
+          <input type="text" class="form-control" id="isbn" required>
+        </div>
+        <div class="form-group">
+          <label for="category">Category:</label>
+          <select class="form-control" id="category">
+            <option value="Fiction">Fiction</option>
+            <option value="Non-Fiction">Non-Fiction</option>
+            <option value="Biography">Biography</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="cover">Book Cover:</label>
+          <input type="file" class="form-control" id="cover">
+        </div>
+        <button type="submit" class="btn btn-primary">Add Book</button>
+      </form>
+    </div>
+    <div class="container mt-5">
+      <h2>Book Collection</h2>
+      <div class="row mt-5">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="search" placeholder="Search...">
+        </div>
+        <div class="col-md-6">
+          <select class="form-control" id="sort">
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="isbn">ISBN</option>
+          </select>
+        </div>
+      </div>
+      <table class="table mt-5">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="book-list"></tbody>
+      </table>
+    </div>
+    <div class="container mt-5">
+      <h2>Book Recommendations</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Book Cover">
+            <div class="card-body">
+              <h5 class="card-title">Book Title</h5>
+              <p class="card-text">Book Author</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Book Cover">
+            <div class="card-body">
+              <h5 class="card-title">Book Title</h5>
+              <p class="card-text">Book Author</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="https://via.placeholder.com/200x300" class="card-img-top" alt="Book Cover">
+            <div class="card-body">
+              <h5 class="card-title">Book Title</h5>
+              <p class="card-text">Book Author</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <h2>Membership Plans</h2>
+      <div id="membership-plans" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#membership-plans" data-slide-to="0" class="active"></li>
+          <li data-target="#membership-plans" data-slide-to="1"></li>
+          <li data-target="#membership-plans" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <h2>3 Months Plan</h2>
+              <p>Perfect for trying out our services</p>
+              <ul>
+                <li>✔️ Access to basic features</li>
+                <li>✖️ Advanced analytics</li>
+                <li>✖️ Priority support</li>
+              </ul>
+              <p>₹999/month</p>
+              <button class="btn btn-primary">Sign Up</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h2>6 Months Plan</h2>
+              <p>Great value for regular users</p>
+              <ul>
+                <li>✔️ Access to basic features</li>
+                <li>✔️ Advanced analytics</li>
+                <li>✖️ Priority support</li>
+              </ul>
+              <p>₹799/month</p>
+              <button class="btn btn-primary">Sign Up</button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <h2>12 Months Plan</h2>
+              <p>Best value for long-term commitment</p>
+              <ul>
+                <li>✔️ Access to basic features</li>
+                <li>✔️ Advanced analytics</li>
+                <li>✔️ Priority support</li>
+              </ul>
+              <p>₹599/month</p>
+              <button class="btn btn-primary">Sign Up</button>
+            </div>
+          </div>
+        </div>
+<a class="carousel-control-prev" href="#membership-plans" role="button" data-slide="prev">
+  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+  <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#membership-plans" role="button" data-slide="next">
+  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <span class="sr-only">Next</span>
+</a>
+
+        </div>
+        </div>
+    </main>
+<footer class="bg-light py-4 mt-5">
+  <div class="container text-center">
+    <p>&copy; 2026 Book Management System. All rights reserved.</p>
+    <div class="social-media-links mb-3">
+      <a href="#" class="mx-2"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="mx-2"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="mx-2"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="mx-2"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <div class="footer-links">
+      <a href="#" data-toggle="modal" data-target="#aboutModal">About</a> |
+      <a href="#" data-toggle="modal" data-target="#contactModal">Contact Us</a> |
+      <a href="#" data-toggle="modal" data-target="#termsModal">Terms & Conditions</a> |
+      <a href="#" data-toggle="modal" data-target="#faqModal">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+<!-- Modals -->
+<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aboutModalLabel">About</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Book Management System is a simple system to manage your book collection.</p>
+        <p>We use JavaScript to handle the frontend logic, including adding, editing, and deleting books, as well as searching and sorting the book list.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="contactModalLabel">Contact Us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
+        <p>Phone: 123-456-7890</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Please read our terms and conditions carefully before using the Book Management System.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="faqModalLabel">FAQ</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Q: How do I add a book?</p>
+        <p>A: Click on the "Add Book" button and fill in the required fields.</p>
+        <p>Q: How do I edit a book?</p>
+        <p>A: Click on the "Edit" button next to the book you want to edit.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div class="modal fade" id="signUpModal" tabindex="-1" role="dialog" aria-labelledby="signUpModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="signUpModalLabel">Sign Up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signUpForm">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" required>
+          </div>
+          <div class="form-group">
+            <label for="plan">Plan:</label>
+            <input type="text" class="form-control" id="plan" readonly>
+          </div>
+          <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" class="form-control" id="price" readonly>
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
