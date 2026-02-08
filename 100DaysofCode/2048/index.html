@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===== BASIC META ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===== SEO META ===== -->
+    <title>2048 Advanced Game | AI, Replay, Undo & Modes</title>
+    <meta name="description" content="Play 2048 Advanced – a modern HTML5 puzzle game with AI autoplay, undo/redo, replay system, multiple modes, and persistent stats.">
+    <meta name="keywords" content="2048 game, html5 game, puzzle game, javascript game, 2048 ai, browser game, logic game">
+    <meta name="author" content="Your Name">
+
+    <!-- ===== SOCIAL PREVIEW ===== -->
+    <meta property="og:title" content="2048 Advanced Game">
+    <meta property="og:description" content="A feature-rich 2048 game with AI, replay, undo, and game modes.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="preview.png">
+    <meta property="og:url" content="https://yourgameurl.com">
+
+    <!-- ===== TWITTER CARD ===== -->
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<main class="game-container">
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <h1>2048</h1>
+
+        <div class="scores">
+            <div class="score-box">
+                <span>Score</span>
+                <div id="score">0</div>
+            </div>
+            <div class="score-box">
+                <span>Best</span>
+                <div id="best">0</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== CONTROLS ===== -->
+    <section class="controls">
+        <button id="restart">Restart</button>
+        <button id="undo">Undo</button>
+        <button id="redo">Redo</button>
+        <button id="auto">AI</button>
+        <button onclick="startReplay()">Replay</button>
+    </section>
+
+    <!-- ===== MODES ===== -->
+    <section class="modes">
+        <button onclick="mode='classic'; startGame()">Classic</button>
+        <button onclick="mode='hard'; startGame()">Hard</button>
+        <button onclick="mode='timed'; startGame()">Timed</button>
+    </section>
+
+    <!-- ===== GAME BOARD ===== -->
+    <section id="board" class="board size-4" aria-label="2048 Game Board"></section>
+
+    <!-- ===== WIN OVERLAY ===== -->
+    <div id="winScreen" class="overlay" role="dialog" aria-modal="true">
+        <div class="message">
+            <h2>You Win 🎉</h2>
+            <button onclick="winScreen.classList.remove('show')">Continue</button>
+        </div>
+    </div>
+
+    <!-- ===== RULES ===== -->
+    <section class="rules">
+        <h2>How to Play 2048</h2>
+        <p>
+            2048 is a single-player sliding puzzle game. Your goal is to combine numbered tiles
+            to create a tile with the value <strong>2048</strong>.
+        </p>
+
+        <ul>
+            <li>Use <strong>arrow keys</strong> or swipe to move tiles.</li>
+            <li>Tiles slide as far as possible in the chosen direction.</li>
+            <li>When two tiles with the same number collide, they merge.</li>
+            <li>Each merge increases your score.</li>
+            <li>A new tile (2 or 4) appears after every move.</li>
+            <li>The game ends when no moves are possible.</li>
+        </ul>
+
+        <p>
+            Advanced features include <strong>undo/redo</strong>, <strong>AI autoplay</strong>,
+            <strong>replay system</strong>, and <strong>multiple difficulty modes</strong>.
+        </p>
+    </section>
+
+    <!-- ===== STATS ===== -->
+    <section class="stats">
+        <h3>Game Statistics</h3>
+        <ul>
+            <li>Games Played: <span id="stat-games">—</span></li>
+            <li>Wins: <span id="stat-wins">—</span></li>
+            <li>Total Moves: <span id="stat-moves">—</span></li>
+            <li>Best Tile: <span id="stat-best">—</span></li>
+        </ul>
+    </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>© 2026 2048 Advanced | Built with HTML, CSS & JavaScript</p>
+
+    <nav class="socials">
+        <a href="#" aria-label="GitHub">GitHub</a>
+        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        <a href="#" aria-label="Twitter">Twitter</a>
+    </nav>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

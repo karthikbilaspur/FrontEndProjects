@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Database Comparison: MySQL, PostgreDB, MongoDB, and More</title>
+    <meta name="description" content="Compare top databases like MySQL, PostgreDB, MongoDB, Oracle, SQL Server, and MariaDB. Get insights into their features, strengths, and weaknesses.">
+    <meta name="keywords" content="databases, MySQL, PostgreDB, MongoDB, Oracle, SQL Server, MariaDB, comparison">
+    <meta name="author" content="Your Name">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://example.com/database-comparison">
+    
+    <!-- OpenGraph Meta Tags -->
+    <meta property="og:title" content="Top Database Comparison: MySQL, PostgreDB, MongoDB, and More">
+    <meta property="og:description" content="Compare top databases like MySQL, PostgreDB, MongoDB, Oracle, SQL Server, and MariaDB. Get insights into their features, strengths, and weaknesses.">
+    <meta property="og:image" content="https://example.com/image.jpg" alt="Database Comparison Image">
+    <meta property="og:url" content="https://example.com/database-comparison">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Database Comparison">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@your_twitter_handle">
+    <meta name="twitter:creator" content="@your_twitter_handle">
+    <meta name="twitter:title" content="Top Database Comparison: MySQL, PostgreDB, MongoDB, and More">
+    <meta name="twitter:description" content="Compare top databases like MySQL, PostgreDB, MongoDB, Oracle, SQL Server, and MariaDB. Get insights into their features, strengths, and weaknesses.">
+    <meta name="twitter:image" content="https://example.com/image.jpg" alt="Database Comparison Image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    
+    <!-- Main Content Section -->
+    <main class="container mt-5">
+        <h1 class="text-center mb-4">Database Comparison</h1>
+        <div class="row mb-3">
+            <div class="col-md-4 mb-2">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search databases...">
+            </div>
+            <div class="col-md-4 mb-2">
+                <select id="typeFilter" class="form-select" title="typeFilter">
+                    <option value="">All Types</option>
+                    <option value="Relational">Relational</option>
+                    <option value="NoSQL">NoSQL</option>
+                    <option value="Graph">Graph</option>
+                    <option value="Time-series">Time-series</option>
+                    <option value="Document">Document</option>
+                </select>
+            </div>
+            <div class="col-md-4 mb-2">
+                <select id="sortBy" class="form-select" title="sort-databases">
+                    <option value="name">Name</option>
+                    <option value="type">Type</option>
+                </select>
+            </div>
+        </div>
+        <div class="accordion" id="databaseAccordion">
+            <!-- Accordion items will be generated dynamically -->
+        </div>
+        <div id="paginationContainer" class="d-flex justify-content-center mt-3">
+            <!-- Pagination buttons will be generated dynamically -->
+        </div>
+        <h2 class="mt-5">Recommend a Database</h2>
+        <form id="recommend-form">
+            <label for="use-case" class="form-label">What is your use case?</label>
+            <select id="use-case" class="form-select mb-3">
+                <option value="web-app">Web Application</option>
+                <option value="real-time-app">Real-time Application</option>
+                <option value="big-data">Big Data</option>
+                <option value="iot">IoT</option>
+            </select>
+            <label for="data-size" class="form-label">What is your data size?</label>
+            <select id="data-size" class="form-select mb-3">
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <button type="submit" class="btn btn-primary">Recommend</button>
+        </form>
+        <div id="recommendation-result" class="mt-3">
+            <!-- Recommendation result will be displayed here -->
+        </div>
+      
+        <div class="comparison-container mt-5">
+            <h2>Compare Databases</h2>
+            <div class="row">
+                <div class="col-md-4 mb-2">
+                    <select id="db1-select" class="form-select" title="select-database-1">
+                        <option value="">Select Database 1</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <select id="db2-select" class="form-select" title="select-database-2">
+                        <option value="">Select Database 2</option>
+                    </select>
+                </div>
+                <div class="col-md-4 mb-2">
+                    <button id="compare-btn" class="btn btn-primary">Compare</button>
+                </div>
+            </div>
+            <div id="comparison-warning"></div>    
+            <div id="comparison-result">
+                <!-- Display comparison result here -->
+            </div>
+        </div>  
+    </main>
+    
+        <div class="carousel-container">
+        <div class="carousel" id="carousel">
+            <div class="card">
+                <h2>MySQL</h2>
+                <p>Popular open-source relational database</p>
+                <p>Type: Relational</p>
+                <p>Strengths: Maturity, wide adoption, easy to use</p>
+                <p>Weaknesses: Limited scalability, not ideal for complex queries</p>
+                <p>Use Cases: Web applications, blogs, small-scale projects</p>
+            </div>
+            <div class="card">
+                <h2>PostgreSQL</h2>
+                <p>Powerful, open-source relational database</p>
+                <p>Type: Relational</p>
+                <p>Strengths: ACID compliance, scalability, advanced data types</p>
+                <p>Weaknesses: Steeper learning curve, resource-intensive</p>
+                <p>Use Cases: Complex applications, data analytics, enterprise projects</p>
+            </div>
+            <div class="card">
+                <h2>Oracle</h2>
+                <p>Commercial relational database with advanced features</p>
+                <p>Type: Relational</p>
+                <p>Strengths: High performance, security, scalability</p>
+                <p>Weaknesses: Expensive, complex setup, resource-intensive</p>
+                <p>Use Cases: Enterprise applications, large-scale projects, financial systems</p>
+            </div>
+            <div class="card">
+                <h2>SQL Server</h2>
+                <p>Microsoft's relational database with robust features</p>
+                <p>Type: Relational</p>
+                <p>Strengths: Integration with Microsoft tools, high performance, security</p>
+                <p>Weaknesses: Windows-centric, expensive, resource-intensive</p>
+                <p>Use Cases: Windows-based applications, enterprise projects, business intelligence</p>
+            </div>
+            <div class="card">
+                <h2>MariaDB</h2>
+                <p>Open-source relational database, fork of MySQL</p>
+                <p>Type: Relational</p>
+                <p>Strengths: Compatibility with MySQL, improved performance, security</p>
+                <p>Weaknesses: Limited support for advanced features, compatibility issues</p>
+                <p>Use Cases: Web applications, small-scale projects, MySQL migration</p>
+            </div>
+            <div class="card">
+                <h2>Neo4j</h2>
+                <p>Graph database optimized for complex relationships</p>
+                <p>Type: Graph</p>
+                <p>Strengths: High performance, scalability, advanced querying</p>
+                <p>Weaknesses: Steeper learning curve, limited support for transactions</p>
+                <p>Use Cases: Social networks, recommendation engines, knowledge graphs</p>
+            </div>
+            <div class="card">
+                <h2>Amazon Neptune</h2>
+                <p>Graph database service for complex relationships</p>
+                <p>Type: Graph</p>
+                <p>Strengths: Highly scalable, fully managed, integrates with AWS</p>
+                <p>Weaknesses: Limited support for advanced querying, expensive</p>
+                <p>Use Cases: Real-time applications, IoT, knowledge graphs</p>
+            </div>
+            <div class="card">
+                <h2>ArangoDB</h2>
+                <p>Multi-model database with graph capabilities</p>
+                <p>Type: Graph</p>
+                <p>Strengths: Flexible data model, high performance, scalable</p>
+                <p>Weaknesses: Limited support for advanced querying, complex setup</p>
+                <p>Use Cases: Real-time applications, IoT, recommendation engines</p>
+            </div>
+            <div class="card">
+                <h2>InfluxDB</h2>
+                <p>Time-series database for large amounts of data</p>
+                <p>Type: Time-series</p>
+                <p>Strengths: High performance, scalable, integrates with Grafana</p>
+                <p>Weaknesses: Limited support for advanced querying, resource-intensive</p>
+                <p>Use Cases: Monitoring, IoT, analytics</p>
+            </div>
+            <div class="card">
+                <h2>OpenTSDB</h2>
+                <p>Time-series database for large amounts of data</p>
+                <p>Type: Time-series</p>
+                <p>Strengths: Scalable, high performance, integrates with Hadoop</p>
+                <p>Weaknesses: Limited support for advanced querying, complex setup</p>
+                <p>Use Cases: Monitoring, IoT, analytics</p>
+            </div>
+            <div class="card">
+                <h2>TimescaleDB</h2>
+                <p>Time-series database built on PostgreSQL</p>
+                <p>Type: Time-series</p>
+                <p>Strengths: High performance, scalable, integrates with PostgreSQL</p>
+                <p>Weaknesses: Limited support for advanced querying, resource-intensive</p>
+                <p>Use Cases: Monitoring, IoT, analytics</p>
+            </div>
+            <div class="card">
+                <h2>MongoDB</h2>
+                <p>NoSQL document-based database</p>
+                <p>Type: Document</p>
+                <p>Strengths: Flexible schema, high scalability, easy data retrieval</p>
+                <p>Weaknesses: Limited support for transactions, data consistency</p>
+                <p>Use Cases: Big data, real-time applications, content management</p>
+            </div>
+            <div class="card">
+                <h2>Couchbase</h2>
+                <p>NoSQL document-based database</p>
+                <p>Type: Document</p>
+                <p>Strengths: High performance, scalable, easy data retrieval</p>
+                <p>Weaknesses: Limited support for advanced querying, resource-intensive</p>
+                <p>Use Cases: Real-time applications, IoT, content management</p>
+            </div>
+            <div class="card">
+                <h2>CouchDB</h2>
+                <p>NoSQL document-based database</p>
+                <p>Type: Document</p>
+                <p>Strengths: Flexible schema, high scalability, easy data retrieval</p>
+                <p>Weaknesses: Limited support for advanced querying, data consistency</p>
+                <p>Use Cases: Big data, real-time applications, content management</p>
+            </div>
+        </div>
+        <button class="prev" onclick="prevCard()">&#10094;</button>
+        <button class="next" onclick="nextCard()">&#10095;</button>
+    </div>
+
+
+
+    <!-- Footer Section -->
+
+<footer class="bg-dark text-white mt-5 p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>About Us</h5>
+                <p>Database Comparison is a website dedicated to providing information and resources about various database management systems.</p>
+            </div>
+          <div class="quick-links">
+    <h5>Quick Links</h5>
+    <ul class="list-unstyled">
+        <li><a class="dropdown-item" href="#home" data-bs-toggle="collapse" data-bs-target="#home-content" aria-expanded="false" aria-controls="home-content">Home</a></li>
+        <li><a class="dropdown-item" href="#about" data-bs-toggle="collapse" data-bs-target="#about-content" aria-expanded="false" aria-controls="about-content">About</a></li>
+        <li><a class="dropdown-item" href="#contact" data-bs-toggle="collapse" data-bs-target="#contact-content" aria-expanded="false" aria-controls="contact-content">Contact</a></li>
+        <li><a class="dropdown-item" href="#privacy" data-bs-toggle="collapse" data-bs-target="#privacy-content" aria-expanded="false" aria-controls="privacy-content">Privacy Policy</a></li>
+        <li><a class="dropdown-item" href="#terms" data-bs-toggle="collapse" data-bs-target="#terms-content" aria-expanded="false" aria-controls="terms-content">Terms of Service</a></li>
+    </ul>
+</div>
+
+            <div class="col-md-4">
+                <h5>Stay Connected</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-white"><i class="fab fa-facebook-f me-2"></i> Facebook</a></li>
+                    <li><a href="#" class="text-white"><i class="fab fa-twitter me-2"></i> Twitter</a></li>
+                    <li><a href="#" class="text-white"><i class="fab fa-instagram me-2"></i> Instagram</a></li>
+                    <li><a href="#" class="text-white"><i class="fab fa-linkedin-in me-2"></i> LinkedIn</a></li>
+                    <li><a href="#" class="text-white"><i class="fab fa-github me-2"></i> GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <p>&copy; <span id="year"></span> Database Comparison. All rights reserved.</p>
+                <p><small>This website uses cookies to improve user experience. By continuing to browse, you agree to our use of cookies.</small></p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-md-12 text-center">
+                <button class="btn btn-primary" id="back-to-top">Back to Top</button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* ===============================
+   CSS VARIABLES
+   =============================== */
+
+:root {
+  --bg-main: #0f1220;
+  --bg-panel: #1b1f3b;
+  --accent: #5ddcff;
+  --accent-soft: rgba(93, 220, 255, 0.15);
+  --text-main: #ffffff;
+  --text-muted: #b5b8ff;
+
+  --radius: 14px;
+  --transition-fast: 0.2s ease;
+  --transition-slow: 0.4s ease;
+
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+/* ===============================
+   GLOBAL RESET
+   =============================== */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(180deg, #0f1220, #141832);
+  color: var(--text-main);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===============================
+   HEADER
+   =============================== */
+
+.app-header {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+  animation: fadeDown 0.8s ease;
+}
+
+.app-header h1 {
+  font-size: 2.6rem;
+  letter-spacing: 1px;
+}
+
+.app-header p {
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  font-size: 1rem;
+}
+
+/* ===============================
+   LAYOUT
+   =============================== */
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1220px;
+  margin: auto;
+}
+
+.game-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* ===============================
+   CANVAS (GAME)
+   =============================== */
+
+#game-canvas {
+  background: #000;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-slow),
+              box-shadow var(--transition-fast);
+}
+
+#game-canvas:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.45);
+}
+
+/* ===============================
+   CONTROLS
+   =============================== */
+
+.controls {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.controls button,
+.actions button {
+  background: var(--bg-panel);
+  color: var(--text-main);
+  border: 1px solid var(--accent-soft);
+  border-radius: 10px;
+  padding: 0.55rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background var(--transition-fast),
+              transform var(--transition-fast),
+              border var(--transition-fast);
+}
+
+.controls button:hover,
+.actions button:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.controls button:active,
+.actions button:active {
+  transform: scale(0.96);
+}
+
+.controls button:focus-visible,
+.actions button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ===============================
+   INFO PANEL
+   =============================== */
+
+.info-panel {
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.panel-box {
+  background: var(--bg-panel);
+  padding: 1.4rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  animation: fadeUp 0.6s ease;
+}
+
+.panel-box h2 {
+  margin-bottom: 0.8rem;
+  color: var(--accent);
+  font-size: 1.05rem;
+}
+
+.panel-box ul {
+  list-style: none;
+}
+
+.panel-box li {
+  margin-bottom: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.panel-box li strong {
+  color: var(--text-main);
+}
+
+.panel-box.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ===============================
+   DESCRIPTION
+   =============================== */
+
+.description {
+  max-width: 900px;
+  margin: 3rem auto 2rem;
+  padding: 0 1.5rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.description h2 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.description p + p {
+  margin-top: 0.8rem;
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+
+.app-footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 2rem;
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: var(--text-muted);
+  font-size: 1.4rem;
+  margin: 0 0.6rem;
+  transition: color var(--transition-fast),
+              transform var(--transition-fast);
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+/* ===============================
+   ANIMATIONS
+   =============================== */
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE MEDIA QUERIES
+   =============================== */
+
+/* <= 1220px */
+@media (max-width: 1220px) {
+  .app-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-panel {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* <= 768px */
+@media (max-width: 768px) {
+  #game-canvas {
+    width: 240px;
+    height: 480px;
+  }
+
+  .app-header h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* <= 480px */
+@media (max-width: 480px) {
+  #game-canvas {
+    width: 200px;
+    height: 400px;
+  }
+
+  .controls button {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+  }
+}
+
+/* <= 244px (Ultra Small Devices) */
+@media (max-width: 244px) {
+  body {
+    font-size: 12px;
+  }
+
+  #game-canvas {
+    width: 160px;
+    height: 320px;
+  }
+}
