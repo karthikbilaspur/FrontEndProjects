@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebApplication">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title itemprop="name">Expense Tracker - Your Personal Finance Manager</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" itemprop="description" content="Effortlessly track your daily, weekly, and monthly expenses with our intuitive Expense Tracker. Manage your finances, categorize spending, and visualize your budget easily.">
+  <meta name="keywords" content="expense tracker, money management, budget app, personal finance, expense manager, spending tracker, financial tool, budget planner, free expense app">
+  <meta name="author" content="Your Name or Company Name">
+  <link rel="canonical" href="https://yourwebsite.com/expense-tracker/"> <!-- IMPORTANT: Replace with your actual URL -->
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png"> <!-- For iOS devices (180x180px) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"> <!-- For modern browsers (32x32px) -->
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"> <!-- For modern browsers (16x16px) -->
+  <link rel="manifest" href="manifest.json"> <!-- Web App Manifest for PWA -->
+
+  <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+  <meta property="og:title" content="Expense Tracker - Your Personal Finance Manager">
+  <meta property="og:description" content="Effortlessly track your daily, weekly, and monthly expenses with our intuitive Expense Tracker. Manage your finances, categorize spending, and visualize your budget easily.">
+  <meta property="og:image" itemprop="image" content="https://yourwebsite.com/images/og-image.jpg"> <!-- IMPORTANT: Replace with a relevant image URL (min 1200x630px recommended) -->
+  <meta property="og:url" content="https://yourwebsite.com/expense-tracker/"> <!-- IMPORTANT: Replace with your actual URL -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Expense Tracker App">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image"> <!-- Or "summary" -->
+  <meta name="twitter:site" content="@YourTwitterHandle"> <!-- IMPORTANT: Replace with your Twitter handle -->
+  <meta name="twitter:creator" content="@YourTwitterHandle"> <!-- IMPORTANT: Replace with your Twitter handle -->
+  <meta name="twitter:title" content="Expense Tracker - Your Personal Finance Manager">
+  <meta name="twitter:description" content="Effortlessly track your daily, weekly, and monthly expenses with our intuitive Expense Tracker. Manage your finances, categorize spending, and visualize your budget easily.">
+  <meta name="twitter:image" content="https://yourwebsite.com/images/twitter-image.jpg"> <!-- IMPORTANT: Replace with a relevant image URL -->
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Font Awesome for Icons (using a smaller subset if possible in production for performance) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header role="banner">
+    <div class="container header-grid">
+      <div class="site-branding">
+        <a href="/" class="logo-link" aria-label="Go to homepage">
+          <img src="logo.png" alt="Expense Tracker Logo" class="site-logo" width="40" height="40"> <!-- IMPORTANT: Create a logo.png -->
+          <h1 id="app-title" class="site-title" itemprop="headline">Expense Tracker</h1>
+        </a>
+      </div>
+      <nav class="header-nav" aria-label="Language and Currency Selection">
+        <div class="controls-group">
+          <label for="language-switcher" class="visually-hidden">Select Language</label>
+          <select id="language-switcher" aria-label="Select Language">
+            <option value="en">English</option>
+            <option value="hi">Hindi</option>
+            <option value="es">Spanish</option>
+            <option value="Arabic">Arabic</option>
+            <option value="Russian">Russian</option>
+            <option value="Japanese">Japanese</option>
+            <option value="Chinese">Chinese</option>
+            <!-- Add more languages as needed -->
+          </select>
+          <label for="currency-switcher" class="visually-hidden">Select Currency</label>
+          <select id="currency-switcher" aria-label="Select Currency">
+            <option value="INR">Indian Rupee (₹)</option>
+            <option value="USD">US Dollar ($)</option>
+            <option value="EUR">Euro (€)</option>
+            <option value="Arabic">Arabic (د.إ)</option>
+            <option value="Rub">Russian Ruble (₽)</option>
+            <option value="JPY">Japanese Yen (¥)</option>
+          </select>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="container">
+    <!-- Alerts will appear here -->
+    <div id="alert-container" aria-live="polite" aria-atomic="true"></div>
+
+    <section class="action-bar" aria-labelledby="global-actions-heading">
+      <h2 id="global-actions-heading" class="visually-hidden">Global Actions</h2>
+      <button id="add-expense-btn" class="button-primary">
+        <i class="fas fa-plus" aria-hidden="true"></i> <span class="button-text">Add New Expense</span>
+      </button>
+
+      <div class="file-actions">
+        <!-- Hidden file input for import -->
+        <label for="import-file" class="button-secondary" tabindex="0" role="button">
+          <i class="fas fa-file-import" aria-hidden="true"></i> <span class="button-text">Import</span>
+        </label>
+        <input type="file" id="import-file" accept=".json" title="Import Expenses from JSON file" class="visually-hidden">
+
+        <button id="export-btn" class="button-secondary">
+          <i class="fas fa-file-export" aria-hidden="true"></i> <span class="button-text">Export</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="expense-list-section" aria-labelledby="expense-list-heading">
+      <h2 id="expense-list-heading" class="section-title">Your Expenses</h2>
+      <div class="filters-search-group">
+        <label for="searchInput" class="visually-hidden">Search expenses by name, category or date</label>
+        <input type="search" id="searchInput" placeholder="Search expenses..." aria-label="Search expenses by name, category or date" maxlength="50">
+        
+        <label for="filter-category" class="visually-hidden">Filter expenses by category</label>
+        <select id="filter-category" aria-label="Filter expenses by category">
+          <option value="All">All Categories</option>
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="table-responsive" role="region" aria-labelledby="expense-list-heading" tabindex="0">
+        <table id="expense-table" summary="List of all recorded expenses with details on name, amount, category, date, and available actions.">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Amount</th>
+              <th scope="col">Category</th>
+              <th scope="col">Date</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="expense-list">
+            <!-- Expense rows will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="pagination-controls" role="navigation" aria-label="Pagination for expense list">
+        <button id="prev-page-btn" aria-label="Go to previous page of expenses">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i> <span class="visually-hidden">Previous</span>
+        </button>
+        <span id="page-info" aria-live="polite">Page 1 of 1</span>
+        <button id="next-page-btn" aria-label="Go to next page of expenses">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i> <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="chart-section" aria-labelledby="chart-heading">
+      <h2 id="chart-heading" class="section-title">Expense Distribution</h2>
+      <div class="chart-container">
+        <canvas id="chart" role="img" aria-label="Bar chart showing expense distribution by category."></canvas>
+      </div>
+    </section>
+
+    <!-- Expense Modal -->
+    <div id="expense-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" data-modal-type="add-edit">
+      <div class="modal-content">
+        <button class="close" aria-label="Close modal">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <h2 id="modal-title" class="modal-title-text">Add Expense</h2>
+        <form id="expense-form" aria-live="polite">
+          <div class="form-group">
+            <label for="expense-name">Expense Name</label>
+            <input type="text" id="expense-name" placeholder="e.g., Groceries, Dinner out" required aria-required="true" maxlength="100">
+          </div>
+          <div class="form-group">
+            <label for="expense-amount">Amount</label>
+            <input type="number" id="expense-amount" placeholder="e.g., 50.00" step="0.01" min="0" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="expense-category">Category</label>
+            <select id="expense-category" required aria-required="true">
+              <option value="" disabled selected>Select Category</option>
+              <option value="Food">Food</option>
+              <option value="Transport">Transport</option>
+              <option value="Entertainment">Entertainment</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="expense-date">Date</label>
+            <input type="date" id="expense-date" required aria-required="true">
+          </div>
+          <input type="hidden" id="expense-id">
+          <button type="submit" id="save-expense-btn" class="button-primary">Save Expense</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container footer-grid">
+      <div class="footer-copyright">
+        <p>&copy; <span id="current-year"></span> Expense Tracker. All rights reserved.</p>
+      </div>
+      <nav class="social-nav" aria-label="Social Media Links">
+        <ul class="social-links">
+          <li><a href="https://facebook.com/yourprofile" aria-label="Visit us on Facebook" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://twitter.com/yourhandle" aria-label="Follow us on Twitter" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://instagram.com/yourprofile" aria-label="Find us on Instagram" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></li>
+          <li><a href="https://github.com/yourrepo" aria-label="View source on GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a></li>
+          <!-- Add more social links as needed -->
+        </ul>
+      </nav>
+      <div class="footer-info">
+        <p>Built with <i class="fas fa-heart text-red" aria-hidden="true"></i> by Your Company/Name.</p>
+        <p><a href="/privacy-policy" rel="nofollow">Privacy Policy</a> | <a href="/terms-of-service" rel="nofollow">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Third-Party Libraries -->
+  <!-- Axios for HTTP requests (using the same version as before) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- Chart.js for data visualization (using the same version as before) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

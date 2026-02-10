@@ -1,0 +1,785 @@
+/* ==========================================================================
+   1. CSS Variables (Root)
+   ========================================================================== */
+:root {
+    /* Light Mode Colors */
+    --primary-color: #f06; /* Vibrant Pink/Red */
+    --secondary-color: #48f; /* Bright Blue */
+    --accent-color: #d10550; /* Darker Pink for hover */
+    --text-color: #333; /* Dark gray for main text */
+    --light-text-color: #555; /* Slightly lighter gray */
+    --background-light: #fff; /* White for cards */
+    --background-medium: #f9f9f9; /* Light gray for quiz sections */
+    --background-dark: #eee; /* Even lighter gray for options */
+    --border-color: #ddd; /* Light gray border */
+    --shadow-light: rgba(0, 0, 0, 0.1); /* Light shadow */
+    --shadow-medium: rgba(0, 0, 0, 0.2); /* Medium shadow */
+    --button-primary-bg: var(--secondary-color);
+    --button-primary-text: var(--background-light);
+    --button-primary-hover-bg: #357ae8; /* Darker blue */
+    --timer-color: #e74c3c; /* Red for timer */
+    --footer-bg: #333;
+    --footer-text: #fff;
+    --footer-disclaimer-text: #aaa;
+    --footer-link-color: #fff;
+    --feedback-error-color: #e74c3c; /* Red for error messages */
+
+    /* Dark Mode Colors (will be overridden when .dark-mode is active) */
+    --dark-primary-color: #ff4d94; /* Brighter pink for dark mode */
+    --dark-secondary-color: #66b3ff; /* Lighter blue for dark mode */
+    --dark-accent-color: #ff1a6f; /* Darker pink for hover */
+    --dark-text-color: #eee; /* Light gray for main text */
+    --dark-light-text-color: #ccc; /* Slightly darker light gray */
+    --dark-background-light: #333; /* Darker for cards */
+    --dark-background-medium: #2a2a2a; /* Dark gray for quiz sections */
+    --dark-background-dark: #1a1a1a; /* Even darker gray for options */
+    --dark-border-color: #555; /* Darker border */
+    --dark-shadow-light: rgba(255, 255, 255, 0.05);
+    --dark-shadow-medium: rgba(255, 255, 255, 0.1);
+    --dark-button-primary-bg: #444;
+    --dark-button-primary-text: #eee;
+    --dark-button-primary-hover-bg: #666;
+    --dark-timer-color: #ffa07a; /* Lighter red/orange for dark mode timer */
+    --dark-footer-bg: #1a1a1a;
+    --dark-footer-text: #ddd;
+    --dark-footer-disclaimer-text: #888;
+    --dark-footer-link-color: #fff;
+}
+
+/* ==========================================================================
+   2. Base Styles
+   ========================================================================== */
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column; /* Stack container and footer vertically */
+    justify-content: flex-start; /* Align items to the top initially */
+    align-items: center; /* Center items horizontally */
+    min-height: 100vh;
+    /* Use CSS variables for background transition */
+    background: var(--background-medium); /* Changed to use var for easier dark mode transition */
+    margin: 0; /* Changed from var(--spacing-md) to 0, container will handle spacing */
+    color: var(--text-color);
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scroll from carousel overscrolling */
+    transition: background-color var(--transition-speed-normal) ease, color var(--transition-speed-normal) ease;
+}
+
+/* Container for main content */
+.container {
+    background-color: var(--background-light);
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 var(--spacing-sm) var(--spacing-lg) var(--shadow-medium);
+    width: 90%;
+    max-width: 800px; /* Constrain max width for large screens */
+    padding: var(--spacing-lg);
+    text-align: center;
+    margin-top: var(--spacing-lg); /* Give some space from the top */
+    margin-bottom: var(--spacing-lg); /* Space between container and footer */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Headers */
+h1 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px var(--shadow-light);
+    transition: color var(--transition-speed-normal) ease;
+}
+
+h2 {
+    color: var(--primary-color);
+    margin: var(--spacing-md) 0;
+    font-size: 2em;
+    text-align: center;
+    transition: color var(--transition-speed-normal) ease;
+}
+
+h3 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    font-size: 1.5em;
+    transition: color var(--transition-speed-normal) ease;
+}
+
+p {
+    color: var(--light-text-color);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+    transition: color var(--transition-speed-normal) ease;
+}
+
+strong {
+    color: var(--secondary-color);
+    transition: color var(--transition-speed-normal) ease;
+}
+
+a {
+    color: var(--secondary-color); /* Default link color */
+    text-decoration: none;
+    transition: color var(--transition-speed-normal) ease;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+/* Accessibility: Visually hide content but keep it for screen readers */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* ==========================================================================
+   3. App Header/Navbar (NEW)
+   ========================================================================== */
+.app-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 800px;
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-top: var(--spacing-md); /* Space from top of page */
+    margin-bottom: var(--spacing-md);
+    background-color: var(--background-light); /* Matching container background */
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 2px 8px var(--shadow-light);
+    box-sizing: border-box;
+}
+
+.app-navbar h1 {
+    margin: 0;
+    font-size: 1.8em;
+    color: var(--primary-color);
+}
+
+.app-navbar .header-controls {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* ==========================================================================
+   4. Section Card & Quiz Styles (UPDATED)
+   ========================================================================== */
+.quiz-section-card {
+    background-color: var(--background-medium);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-large);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    text-align: left;
+    box-shadow: 0 4px var(--spacing-sm) var(--shadow-light);
+    animation: fadeIn 0.8s ease-out;
+    transition: background-color var(--transition-speed-normal) ease, border-color var(--transition-speed-normal) ease, box-shadow var(--transition-speed-normal) ease;
+}
+
+.quiz-section-card ul {
+    list-style: none; /* Remove default bullet points */
+    padding-left: 0;
+    text-align: left;
+    margin-left: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.quiz-section-card ul li {
+    position: relative;
+    padding-left: 25px; /* Space for custom bullet */
+    margin-bottom: var(--spacing-sm);
+    color: var(--light-text-color);
+    transition: color var(--transition-speed-normal) ease;
+}
+
+.quiz-section-card ul li::before {
+    content: "\f00c"; /* Font Awesome checkmark icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 0.9em;
+    top: 2px;
+    transition: color var(--transition-speed-normal) ease;
+}
+
+/* Specific styling for the single question container */
+#quiz-question-container {
+    min-height: 150px; /* Ensure some height even when empty */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-md);
+    background-color: var(--background-medium);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-large);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px var(--spacing-sm) var(--shadow-light);
+    transition: background-color var(--transition-speed-normal) ease, border-color var(--transition-speed-normal) ease, box-shadow var(--transition-speed-normal) ease;
+}
+
+.quiz-card {
+    width: 100%; /* Take full width of its container */
+    background-color: var(--background-light); /* Inner card background */
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    text-align: left;
+    box-shadow: 0 4px var(--spacing-sm) var(--shadow-light);
+    animation: slideInFromLeft 0.5s ease-out;
+    transition: background-color var(--transition-speed-normal) ease, border-color var(--transition-speed-normal) ease, box-shadow var(--transition-speed-normal) ease;
+}
+
+.options label {
+    display: block;
+    margin: var(--spacing-sm) 0;
+    padding: 12px 15px;
+    background-color: var(--background-dark);
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    transition: background-color var(--transition-speed-normal) ease, color var(--transition-speed-normal) ease;
+    border: 1px solid var(--border-color); /* Added border for definition */
+}
+
+.options label:hover {
+    background-color: #d0d0d0; /* Slightly darker hover */
+}
+
+.options input[type="radio"] {
+    margin-right: var(--spacing-sm);
+    transform: scale(1.1);
+    vertical-align: middle;
+    accent-color: var(--primary-color); /* Color for checked radio button */
+}
+
+/* Applying styles to the label when its contained radio button is checked */
+.options input[type="radio"]:checked + label {
+    font-weight: bold;
+    color: var(--primary-color);
+    background-color: #ffe0e0; /* Light pink background */
+    border-color: var(--primary-color);
+}
+
+.results {
+    margin-top: var(--spacing-lg);
+    font-size: 1.3em;
+    color: var(--primary-color);
+    font-weight: bold;
+    animation: pulse 1s infinite alternate;
+    transition: color var(--transition-speed-normal) ease;
+}
+
+/* NEW: Quiz setup feedback message */
+#quiz-setup-feedback {
+    color: var(--feedback-error-color);
+    font-weight: bold;
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+/* ==========================================================================
+   5. Buttons (UPDATED)
+   ========================================================================== */
+button {
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-text);
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: var(--spacing-md);
+    transition: background-color var(--transition-speed-normal) ease, transform var(--transition-speed-fast) ease, box-shadow var(--transition-speed-fast) ease, color var(--transition-speed-normal) ease;
+}
+
+button:hover:not(:disabled) {
+    background-color: var(--button-primary-hover-bg);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px var(--shadow-light);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px var(--shadow-light);
+}
+
+button:disabled {
+    background-color: #cccccc;
+    color: #888888;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* NEW: Specific styling for quiz navigation buttons */
+.quiz-navigation {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+    width: 100%; /* Take full width of parent */
+}
+.quiz-navigation button {
+    margin-top: 0; /* Override general button margin */
+    flex-grow: 1; /* Allow buttons to grow and fill space */
+    max-width: 180px; /* Limit max width */
+}
+
+/* ==========================================================================
+   6. Accordion Styles (UPDATED)
+   ========================================================================== */
+.accordion-item {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-base);
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+    box-shadow: 0 2px 5px var(--shadow-light);
+    transition: border-color var(--transition-speed-normal) ease, box-shadow var(--transition-speed-normal) ease;
+}
+
+.accordion-header {
+    background-color: var(--primary-color);
+    color: var(--background-light);
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: background-color var(--transition-speed-normal) ease, color var(--transition-speed-normal) ease;
+    /* Accessibility: Indicate interactive element */
+    -webkit-appearance: none; /* Remove default button styles for cross-browser consistency */
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-radius: 0;
+}
+
+.accordion-header:hover:not(.active) {
+    background-color: var(--accent-color); /* Darker pink */
+}
+
+.accordion-header.active {
+    background-color: var(--accent-color); /* Stay darker when active */
+}
+
+.accordion-content {
+    padding: 15px 20px;
+    background-color: var(--background-light);
+    border-top: 1px solid var(--border-color);
+    display: none; /* Controlled by JavaScript */
+    text-align: left;
+    /* Removed slideDown animation as max-height is tricky for dynamic content */
+    transition: background-color var(--transition-speed-normal) ease, border-color var(--transition-speed-normal) ease;
+}
+
+.accordion-content p {
+    margin-bottom: var(--spacing-sm);
+    color: var(--light-text-color);
+    transition: color var(--transition-speed-normal) ease;
+}
+
+.icon {
+    transition: transform var(--transition-speed-normal) ease;
+}
+
+.accordion-header.active .icon {
+    transform: rotate(180deg);
+}
+
+/* ==========================================================================
+   7. Options Grid (Difficulty & Subject Selection) (UPDATED)
+   ========================================================================== */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+}
+
+.options-grid label {
+    display: flex;
+    flex-direction: column; /* Stack input and text */
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 12px 15px;
+    background-color: var(--background-dark);
+    border-radius: var(--border-radius-base);
+    cursor: pointer;
+    transition: background-color var(--transition-speed-normal) ease, border-color var(--transition-speed-normal) ease;
+    min-height: 40px;
+    border: 2px solid transparent; /* Added for checked state border */
+}
+
+.options-grid label:hover {
+    background-color: #d0d0d0;
+}
+
+.options-grid input[type="radio"] {
+    margin-bottom: 5px; /* Space between radio and text */
+    margin-right: 0; /* Remove horizontal margin */
+    transform: scale(1.1);
+    vertical-align: middle;
+    accent-color: var(--primary-color);
+}
+
+/* Apply style to the label itself when the radio is checked */
+.options-grid input[type="radio"]:checked + span {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+.options-grid input[type="radio"]:checked ~ span { /* Targets the span directly after the input if the input is checked */
+     font-weight: bold;
+     color: var(--primary-color);
+ }
+
+/* Style the entire label (parent of the radio) when the radio is checked */
+.options-grid input[type="radio"]:checked + label {
+    border-color: var(--primary-color);
+    background-color: #ffe0e0; /* Light pink background */
+}
+/* IMPORTANT: The above CSS selector requires the `input` to be immediately followed by the `label` in HTML for `+ label` to work.
+   Your current HTML has the `label` as the parent of `input` and text.
+   For your current HTML structure:
+   <label>
+       <input type="radio" ...> Text
+   </label>
+   You need to style the label when its contained radio is checked. This requires a slightly different approach:
+*/
+.options-grid label:has(input[type="radio"]:checked) { /* :has() is modern, but not fully supported everywhere. */
+    border-color: var(--primary-color);
+    background-color: #ffe0e0;
+}
+/* Fallback if :has() isn't supported, you'd need JS to add a class to the label */
+
+/* ==========================================================================
+   8. Card Carousel (UPDATED)
+   ========================================================================== */
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    margin-top: var(--spacing-lg);
+    border-radius: var(--border-radius-large);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    background-color: var(--background-light); /* Changed to var */
+    padding: var(--spacing-md);
+    transition: background-color var(--transition-speed-normal) ease, box-shadow var(--transition-speed-normal) ease;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform var(--transition-speed-slow) ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    flex-shrink: 0; /* Prevent slides from shrinking */
+    box-sizing: border-box;
+    padding: var(--spacing-md);
+    background-color: var(--background-light); /* Ensure individual slide background */
+    border-radius: var(--border-radius-base); /* Rounded corners for individual slides */
+    text-align: center;
+    transition: background-color var(--transition-speed-normal) ease;
+}
+
+.carousel-slide h3 {
+    color: var(--primary-color); /* Changed to var */
+    margin-bottom: 15px;
+}
+
+.carousel-slide p {
+    color: var(--light-text-color); /* Changed to var */
+    line-height: 1.6;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    color: var(--background-light);
+    border: none;
+    padding: var(--spacing-sm) 15px;
+    cursor: pointer;
+    font-size: 1.5em;
+    border-radius: 50%;
+    z-index: 10;
+    transition: background-color var(--transition-speed-normal) ease, transform var(--transition-speed-fast) ease, color var(--transition-speed-normal) ease;
+}
+
+.carousel-button.prev {
+    left: var(--spacing-sm);
+}
+
+.carousel-button.next {
+    right: var(--spacing-sm);
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.7); /* Darker on hover */
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-button:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* ==========================================================================
+   9. Footer Styles (UPDATED)
+   ========================================================================== */
+.app-footer {
+    margin-top: var(--spacing-lg);
+    padding: 25px;
+    background-color: var(--footer-bg); /* Changed to var */
+    color: var(--footer-text); /* Changed to var */
+    border-radius: var(--border-radius-large);
+    text-align: center;
+    box-shadow: 0 -5px 15px var(--shadow-light);
+    width: 90%;
+    max-width: 800px;
+    box-sizing: border-box;
+    transition: background-color var(--transition-speed-normal) ease, color var(--transition-speed-normal) ease, box-shadow var(--transition-speed-normal) ease;
+}
+
+.app-footer p {
+    margin: 0 0 15px 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+    color: inherit; /* Inherit color from footer */
+}
+
+.app-footer .social-links {
+    margin-bottom: 15px;
+}
+
+.app-footer .social-links a {
+    color: var(--footer-link-color); /* Changed to var */
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color var(--transition-speed-normal) ease, transform var(--transition-speed-fast) ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.app-footer .social-links a:hover {
+    color: var(--primary-color); /* Match main theme color */
+    transform: translateY(-3px) scale(1.1);
+}
+
+.app-footer .disclaimer {
+    font-size: 0.8em;
+    color: var(--footer-disclaimer-text); /* Changed to var */
+    margin-top: 15px;
+}
+
+/* ==========================================================================
+   10. Animations (UPDATED)
+   ========================================================================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInFromLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
+}
+
+/* Timer Display Styling (NEW) */
+.timer-style {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--timer-color);
+    margin-bottom: 20px;
+    text-align: center;
+    transition: color var(--transition-speed-normal) ease;
+}
+
+/* ==========================================================================
+   11. Dark Mode Specific Overrides (NEW)
+   ========================================================================== */
+body.dark-mode {
+    --primary-color: var(--dark-primary-color);
+    --secondary-color: var(--dark-secondary-color);
+    --accent-color: var(--dark-accent-color);
+    --text-color: var(--dark-text-color);
+    --light-text-color: var(--dark-light-text-color);
+    --background-light: var(--dark-background-light);
+    --background-medium: var(--dark-background-medium);
+    --background-dark: var(--dark-background-dark);
+    --border-color: var(--dark-border-color);
+    --shadow-light: var(--dark-shadow-light);
+    --shadow-medium: var(--dark-shadow-medium);
+    --button-primary-bg: var(--dark-button-primary-bg);
+    --button-primary-text: var(--dark-button-primary-text);
+    --button-primary-hover-bg: var(--dark-button-primary-hover-bg);
+    --timer-color: var(--dark-timer-color);
+    --footer-bg: var(--dark-footer-bg);
+    --footer-text: var(--dark-footer-text);
+    --footer-disclaimer-text: var(--dark-footer-disclaimer-text);
+    --footer-link-color: var(--dark-footer-link-color);
+    --feedback-error-color: var(--dark-timer-color); /* Use a bright color for errors in dark mode */
+}
+
+/* Specific dark mode overrides for elements not using general vars or where special adjustments needed */
+body.dark-mode .app-navbar {
+    background-color: var(--dark-background-light);
+    box-shadow: 0 2px 8px var(--dark-shadow-light);
+}
+
+body.dark-mode .options label:hover {
+    background-color: #444; /* Darker hover for dark mode options */
+}
+
+body.dark-mode .options input[type="radio"]:checked + label {
+    background-color: #4a3a3a; /* Darker checked background for dark mode */
+    border-color: var(--dark-primary-color);
+}
+
+body.dark-mode .options-grid label:has(input[type="radio"]:checked) {
+    background-color: #4a3a3a; /* Darker checked background for dark mode */
+    border-color: var(--dark-primary-color);
+}
+
+/* Ensure the background gradient adapts */
+body.dark-mode {
+    background: linear-gradient(135deg, var(--dark-background-medium), var(--dark-background-dark));
+}
+
+/* ==========================================================================
+   12. Media Queries (Responsiveness) (UPDATED)
+   ========================================================================== */
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .container, .app-footer, .app-navbar {
+        max-width: 960px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+    h3 { font-size: 1.3em; }
+    .container, .app-footer, .app-navbar {
+        width: 85%;
+        max-width: none; /* Remove max-width constraint for this range */
+    }
+    .app-navbar h1 { font-size: 1.6em; }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container, .app-footer, .app-navbar {
+        width: 95%;
+        padding: var(--spacing-md);
+        max-width: none;
+    }
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.6em; }
+    h3 { font-size: 1.2em; }
+    button { padding: 10px 20px; font-size: 1em; }
+    .options-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); }
+    .app-navbar h1 { font-size: 1.4em; }
+}
+
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    body {
+        margin: 0; /* Reset body margin for full-width on mobile */
+    }
+    .container, .app-footer, .app-navbar {
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-sm); /* More horizontal padding on small screens */
+        border-radius: 0; /* Make sections full width without rounded corners on edge */
+        box-shadow: none; /* Remove shadows for cleaner mobile look */
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+    }
+    .app-navbar {
+        flex-direction: column; /* Stack header items */
+        align-items: center;
+        padding-bottom: var(--spacing-md);
+    }
+    .app-navbar h1 {
+        font-size: 1.6em;
+        margin-bottom: var(--spacing-sm);
+    }
+    .app-navbar .header-controls {
+        flex-direction: column; /* Stack buttons */
+        width: 100%;
+    }
+    .app-navbar .header-controls button {
+        width: calc(100% - 10px); /* Full width with gap */
+        margin: 5px 0;
+    }
+    h1 { font-size: 1.8em; margin-bottom: var(--spacing-md); }
+    h2 { font-size: 1.4em; margin: var(--spacing-md) 0 var(--spacing-sm); }
+    h3 { font-size: 1.1em; }
+    p { font-size: 0.9em; }
+
+    .quiz-card, .quiz-section-card {
+        padding: var(--spacing-sm);
+    }
+
+    .options label, .options-grid label {
+        padding: var(--spacing-sm);
+        font-size: 0.9em;
+    }
+    .options-grid {
+        grid-template-columns: 1fr; /* Stack options on small screens */
+        gap: var(--spacing-sm);
+    }
+
+    button {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: 0.95em;
+        margin-top: var(--spacing-sm);
+    }
+
+    .accordion-header {
+        font-size: 1em;
+        padding: var(--spacing-sm) 15px;
+    }
+    .accordion-content {
+        padding: var(--spacing-sm) 15px;
+    }
+
+    .carousel-button {
+        font-size: 1.2em;
+        padding: 5px 10px;
+    }
+
+    .app-footer {
+        padding: 15px;
+    }
+    .app-footer p {
+        font-size: 0.8em;
+    }
+    .app-footer .social-links a {
+        font-size: 1.2em;
+        margin: 0 5px;
+    }
+}

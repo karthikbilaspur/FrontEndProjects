@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>WeatherWise: Instant Global Weather Forecasts</title>
+    <meta name="description" content="Get instant, accurate weather forecasts for any city worldwide with WeatherWise. Real-time conditions, 5-day outlook, and customizable units.">
+    <meta name="keywords" content="weather app, weather forecast, real-time weather, global weather, city weather, 5-day forecast, Celsius, Fahrenheit, weather conditions, Bangalore weather, openweathermap">
+    <meta name="author" content="Meta AI">
+    <link rel="canonical" href="[YOUR_CANONICAL_URL_HERE]">
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="WeatherWise: Instant Global Weather Forecasts">
+    <meta property="og:description" content="Get instant, accurate weather forecasts for any city worldwide with WeatherWise. Real-time conditions, 5-day outlook, and customizable units.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[YOUR_CANONICAL_URL_HERE]">
+    <meta property="og:image" content="[URL_TO_YOUR_PREVIEW_IMAGE]">
+    <meta property="og:image:alt" content="WeatherWise App Screenshot">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WeatherWise: Instant Global Weather Forecasts">
+    <meta name="twitter:description" content="Get instant, accurate weather forecasts for any city worldwide with WeatherWise. Real-time conditions, 5-day outlook, and customizable units.">
+    <meta name="twitter:image" content="[URL_TO_YOUR_PREVIEW_IMAGE]">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts for better aesthetics (Optional, but nice!) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Your CSS will go here, ideally in a separate file (e.g., style.css) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <h1 class="header-title">WeatherWise</h1>
+            <form class="header-search" role="search" aria-label="Search city in header">
+                <label for="headerCityInput" class="visually-hidden">Search city</label>
+                <input type="text" id="headerCityInput" placeholder="Enter City..." aria-label="Enter city name for quick search">
+                <button type="submit" id="headerSearchBtn" aria-label="Search city">Search</button>
+            </form>
+        </div>
+        <div class="header-right control-buttons">
+            <button id="themeToggle" aria-label="Toggle dark/light theme" aria-pressed="false">🌙</button>
+            <button id="unitToggle" aria-label="Toggle temperature units Celsius/Fahrenheit" aria-pressed="true">°F</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="main-content" aria-labelledby="main-weather-heading">
+            <h2 id="main-weather-heading" class="visually-hidden">Current Weather and Forecast</h2>
+            <form class="search-section" role="search" aria-label="Search for weather by city or current location">
+                <label for="cityInput" class="visually-hidden">Enter city name</label>
+                <input type="text" id="cityInput" placeholder="Enter city name for weather forecast" aria-label="Enter city name for detailed forecast">
+                <button type="submit" id="searchBtn" aria-label="Search weather by city">Search</button>
+                <button type="button" id="locationBtn" aria-label="Get weather for current location">My Location</button>
+            </form>
+
+            <div id="error" class="error-message hidden" role="alert" aria-live="assertive">
+                <!-- Error messages will be displayed here dynamically by JavaScript -->
+            </div>
+            <div id="loader" class="loader hidden" role="status" aria-live="polite">
+                Loading Weather...
+            </div>
+
+            <!-- Current Weather Section -->
+            <section id="currentWeather" class="current-weather" aria-labelledby="current-weather-title">
+                <h3 id="current-weather-title" class="visually-hidden">Current Weather Details</h3>
+                <!-- Current Weather Skeleton will be rendered here by JavaScript -->
+                <div id="currentWeatherSkeleton" class="current-weather-skeleton hidden" aria-hidden="true">
+                    <div class="skeleton skeleton-city"></div>
+                    <div class="skeleton skeleton-icon"></div>
+                    <div class="skeleton skeleton-temp"></div>
+                    <div class="skeleton skeleton-condition"></div>
+                    <div class="skeleton-details-grid">
+                        <div class="skeleton skeleton-detail-item"></div>
+                        <div class="skeleton skeleton-detail-item"></div>
+                        <div class="skeleton skeleton-detail-item"></div>
+                        <div class="skeleton skeleton-detail-item"></div>
+                        <div class="skeleton skeleton-detail-item"></div>
+                        <div class="skeleton skeleton-detail-item"></div>
+                    </div>
+                    <div class="skeleton skeleton-line"></div>
+                </div>
+
+                <!-- Actual Current Weather Card will be loaded here by JavaScript -->
+                <div id="weather" class="weather-card hidden" aria-live="polite">
+                    <h2 id="city"></h2>
+                    <div class="current-details">
+                        <div class="icon-and-temp">
+                            <img id="icon" src="" alt="Weather Condition Description">
+                            <span id="temp" class="current-temp"></span>
+                        </div>
+                        <p id="condition" class="current-condition"></p>
+                        <div class="extra-details">
+                            <div><strong>Feels like:</strong> <span id="feelsLikeTemp"></span></div>
+                            <div><strong>Humidity:</strong> <span id="humidity"></span></div>
+                            <div><strong>Wind:</strong> <span id="wind"></span></div>
+                            <div><strong>Pressure:</strong> <span id="pressure"></span></div>
+                            <div><strong>Visibility:</strong> <span id="visibility"></span></div>
+                            <div><strong>Sunrise:</strong> <span id="sunrise"></span></div>
+                            <div><strong>Sunset:</strong> <span id="sunset"></span></div>
+                        </div>
+                        <p id="lastUpdated" class="last-updated"></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast Section -->
+            <section class="forecast-section" aria-labelledby="forecast-heading">
+                <h3 id="forecast-heading">5-Day Forecast</h3>
+                <!-- Forecast Skeleton will be rendered here by JavaScript -->
+                <div id="forecastSkeleton" class="forecast-skeleton-grid hidden" aria-hidden="true">
+                    <div class="forecast-skeleton-card skeleton">
+                        <div class="skeleton skeleton-date"></div>
+                        <div class="skeleton skeleton-icon"></div>
+                        <div class="skeleton skeleton-temp"></div>
+                        <div class="skeleton skeleton-condition"></div>
+                    </div>
+                    <div class="forecast-skeleton-card skeleton">
+                        <div class="skeleton skeleton-date"></div>
+                        <div class="skeleton skeleton-icon"></div>
+                        <div class="skeleton skeleton-temp"></div>
+                        <div class="skeleton skeleton-condition"></div>
+                    </div>
+                    <div class="forecast-skeleton-card skeleton">
+                        <div class="skeleton skeleton-date"></div>
+                        <div class="skeleton skeleton-icon"></div>
+                        <div class="skeleton skeleton-temp"></div>
+                        <div class="skeleton skeleton-condition"></div>
+                    </div>
+                    <div class="forecast-skeleton-card skeleton">
+                        <div class="skeleton skeleton-date"></div>
+                        <div class="skeleton skeleton-icon"></div>
+                        <div class="skeleton skeleton-temp"></div>
+                        <div class="skeleton skeleton-condition"></div>
+                    </div>
+                    <div class="forecast-skeleton-card skeleton">
+                        <div class="skeleton skeleton-date"></div>
+                        <div class="skeleton skeleton-icon"></div>
+                        <div class="skeleton skeleton-temp"></div>
+                        <div class="skeleton skeleton-condition"></div>
+                    </div>
+                </div>
+
+                <!-- Actual Forecast Container will be loaded here by JavaScript -->
+                <div id="forecastContainer" class="forecast-grid hidden" aria-live="polite">
+                    <p class="no-data-message">No 5-day forecast available.</p>
+                </div>
+            </section>
+
+            <!-- Daily Details Section (New Feature) -->
+            <section id="dailyDetailsSection" class="daily-details-section hidden" aria-labelledby="daily-details-heading">
+                <h3 id="daily-details-heading" class="visually-hidden">Detailed Hourly Forecast for Selected Day</h3>
+                <div id="dailyDetailsLoader" class="loader small-loader hidden" role="status" aria-live="polite">Loading Hourly Forecast...</div>
+                <div id="dailyDetailsContainer" class="daily-details-container" aria-live="polite">
+                    <!-- Hourly forecast cards will be injected here by JavaScript -->
+                    <p class="no-data-message">Select a day from the 5-day forecast to see hourly details.</p>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar" aria-labelledby="sidebar-heading">
+            <h2 id="sidebar-heading" class="visually-hidden">Application Settings and History</h2>
+            <section class="history-section" aria-labelledby="recent-searches-heading">
+                <h3 id="recent-searches-heading">Recent Searches</h3>
+                <ul id="searchHistoryList" role="list">
+                    <!-- Search history items will be injected here by JavaScript -->
+                    <li class="no-history-message">No recent searches</li>
+                </ul>
+            </section>
+
+            <!-- New Settings Section -->
+            <section class="settings-section" aria-labelledby="settings-heading">
+                <h3 id="settings-heading">Settings</h3>
+                <div class="setting-item">
+                    <label for="refreshInterval">Auto-Refresh Interval:</label>
+                    <input type="range" id="refreshInterval" min="0" max="60" value="0" step="5" aria-valuemin="0" aria-valuemax="60" aria-valuenow="0" aria-valuetext="Off">
+                    <span id="refreshValue">Off</span>
+                </div>
+                <button id="clearHistoryBtn" aria-label="Clear all recent search history">Clear History</button>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 WeatherWise  Powered by <a href="https://openweathermap.org/" target="_blank" rel="noopener noreferrer">OpenWeatherMap</a>.</p>
+       <a href="facebook" target="_blank" rel="noopener noreferrer">Follow us on Facebook</a>
+       <a href="twitter" target="_blank" rel="noopener noreferrer">Follow us on Twitter</a>
+      <a href="github" target="_blank" rel="noopener noreferrer">View our GitHub</a>
+
+    </footer>
+
+    <!-- Your JavaScript would typically be linked here as a separate file (e.g., script.js) -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz App - Test Your Knowledge in Math, History, Geography & Science</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Engage with our customizable quiz app! Choose from Math, History, Geography, and Science subjects across easy, medium, and hard difficulty levels. Includes interactive questions, detailed explanations, and related articles carousel.">
+    <meta name="keywords" content="quiz app, HTML5, CSS3, JavaScript, interactive quiz, educational game, math quiz, history quiz, geography quiz, science quiz, online learning, knowledge test, web development project">
+    <meta name="author" content="Meta AI">
+    <meta name="robots" content="index, follow"> <!-- Ensures search engines index and follow links -->
+    <link rel="canonical" href="https://yourwebsite.com/quiz-app-url"> <!-- IMPORTANT: Replace with your actual URL -->
+
+    <!-- Open Graph / Social Media Meta Tags (for better sharing) -->
+    <meta property="og:title" content="Interactive Quiz App - Challenge Your Brain!">
+    <meta property="og:description" content="Test your knowledge with customizable quizzes in Math, History, Geography, and Science. Fun, interactive, and educational!">
+    <meta property="og:image" content="https://yourwebsite.com/quiz-app-preview.jpg"> <!-- IMPORTANT: Replace with a preview image URL -->
+    <meta property="og:url" content="https://yourwebsite.com/quiz-app-url"> <!-- IMPORTANT: Replace with your actual URL -->
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://yourwebsite.com/favicon.png"> <!-- IMPORTANT: Replace with your favicon URL -->
+
+    <!-- Link to Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0pReHqJgo76Nq86bE9pC3n5lq4Fz/Vd6l9hFmB5a6Z6b6v6l6e6w6c6d6e6f6g6h6i6j6k6l6m6n6o6p6q6r6s6t6u6v6w6x6y6z" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header role="banner">
+            <nav class="app-navbar" aria-label="Main Navigation">
+                <h1>Interactive Quiz App</h1>
+                <div class="header-controls">
+                    <button id="theme-toggle" aria-label="Toggle Dark or Light Mode">Dark Mode</button>
+                    <button id="restart-quiz-button" aria-label="Restart Quiz">Restart Quiz</button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- App Description Section -->
+            <section id="app-description-section" class="quiz-section-card" role="region" aria-labelledby="description-heading">
+                <h2 id="description-heading">Unleash Your Inner Genius!</h2>
+                <p>Welcome to the <strong>Interactive Quiz App</strong>, where learning meets fun! This application is designed to challenge your knowledge across diverse subjects and difficulty levels. With a sleek HTML5 structure, responsive CSS3 styling, and dynamic JavaScript, you'll enjoy a seamless and engaging experience.</p>
+                <h3>Key Features:</h3>
+                <ul>
+                    <li><strong>Customizable Quizzes:</strong> Select your preferred subject (Math, History, Geography, Science) and difficulty (Easy, Medium, Hard) to tailor your learning journey.</li>
+                    <li><strong>Interactive Question Cards:</strong> Each question is presented in a clean, easy-to-use card format, making answering a breeze.</li>
+                    <li><strong>Collapsible Explanations (Accordions):</strong> After submitting your quiz, review detailed explanations for every question, presented in an intuitive, collapsable accordion design.</li>
+                    <li><strong>Engaging Content Carousel:</strong> Discover related articles and topics in a dynamic card carousel, offering continuous learning opportunities.</li>
+                    <li><strong>Responsive Design:</strong> Enjoy a consistent and visually appealing experience across all devices, from desktops to mobile phones.</li>
+                </ul>
+                <p>Ready to put your knowledge to the test? Click below to begin your quiz adventure!</p>
+                <button id="start-selection-button" aria-label="Start Quiz Selection">Start Quiz Selection</button>
+            </section>
+
+            <!-- Quiz Setup Section (Hidden by default) -->
+            <section id="quiz-setup-section" class="quiz-section-card"  role="region" aria-labelledby="setup-heading">
+                <h2 id="setup-heading">Choose Your Quiz</h2>
+
+                <fieldset>
+                    <legend>1. Select Difficulty:</legend>
+                    <div class="options-grid">
+                        <label>
+                            <input type="radio" name="difficulty" value="easy" checked aria-label="Easy difficulty, 20 questions"> Easy (20 questions)
+                        </label>
+                        <label>
+                            <input type="radio" name="difficulty" value="medium" aria-label="Medium difficulty, 15 questions"> Medium (15 questions)
+                        </label>
+                        <label>
+                            <input type="radio" name="difficulty" value="hard" aria-label="Hard difficulty, 10 questions"> Hard (10 questions)
+                        </label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>2. Select Subject:</legend>
+                    <div class="options-grid">
+                        <label>
+                            <input type="radio" name="subject" value="math" checked aria-label="Math subject"> Math
+                        </label>
+                        <label>
+                            <input type="radio" name="subject" value="history" aria-label="History subject"> History
+                        </label>
+                        <label>
+                            <input type="radio" name="subject" value="geography" aria-label="Geography subject"> Geography
+                        </label>
+                        <label>
+                            <input type="radio" name="subject" value="science" aria-label="Science subject"> Science
+                        </label>
+                    </div>
+                </fieldset>
+
+                <!-- NEW: Feedback area for selection errors -->
+                <div id="quiz-setup-feedback" role="alert" aria-live="assertive"></div>
+
+                <button id="start-quiz-button" aria-label="Start Quiz">Start Quiz</button>
+            </section>
+
+            <!-- Quiz Active Section (Hidden by default) -->
+            <section id="quiz-active-section"  role="main" aria-labelledby="quiz-heading">
+                <h2 id="quiz-heading" class="visually-hidden">Active Quiz</h2> <!-- Visually hidden heading for accessibility -->
+                <div id="timer-display" class="timer-style" aria-live="polite"></div>
+                
+                <!-- NEW: Container for single question display -->
+                <div id="quiz-question-container">
+                    <!-- Individual quiz questions and navigation buttons will be loaded here by JavaScript -->
+                </div>
+
+                <!-- Removed static submit button as it's now dynamically created -->
+                <div class="results" id="quiz-results" role="status" aria-live="polite"></div>
+            </section>
+
+            <section class="explanation-section" role="region" aria-labelledby="explanations-heading">
+                <h2 id="explanations-heading">Quiz Explanations</h2>
+                <div id="explanations-accordion">
+                    <!-- Accordion items will be loaded here by JavaScript -->
+                </div>
+            </section>
+
+            <section class="carousel-section" role="region" aria-labelledby="articles-heading">
+                <h2 id="articles-heading">Related Articles</h2>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper" id="card-carousel" role="list">
+                        <!-- Carousel Slides will be loaded here by JavaScript -->
+                    </div>
+                    <button class="carousel-button prev" id="carousel-prev" aria-label="Previous Article">&#10094;</button>
+                    <button class="carousel-button next" id="carousel-next" aria-label="Next Article">&#10095;</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="app-footer" role="contentinfo">
+        <p>&copy; 2026 Interactive Quiz App</p>
+        <div class="social-links" role="navigation" aria-label="Social Media Links">
+            <a href="https://facebook.com/yourprofile" target="_blank" aria-label="Facebook Profile" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank" aria-label="Twitter Profile" rel="noopener"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram Profile" rel="noopener"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn Profile" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/yourprofile" target="_blank" aria-label="GitHub Profile" rel="noopener"><i class="fab fa-github"></i></a>
+        </div>
+        <p class="disclaimer">Disclaimer: This app is for educational and entertainment purposes only. Information provided should not be considered professional advice.</p>
+    </footer>
+
+    <!-- Link to your external JavaScript file, now as a module -->
+    <!-- The 'type="module"' attribute is crucial because your script.js now uses export/import implicitly via the module pattern. -->
+    <script src="script.js" type="module"></script>
+</body>
+</html>
