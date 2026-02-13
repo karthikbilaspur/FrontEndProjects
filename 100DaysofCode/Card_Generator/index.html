@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Greeting Card Designer — Free Online Card Maker</title>
+
+<meta name="description" content="Design beautiful greeting cards online with templates, stickers and download instantly.">
+<meta name="keywords" content="greeting card maker, online card designer, birthday card creator">
+<meta name="author" content="Card Editor">
+
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+</head>
+
+<body>
+
+<header class="topbar">
+<h1>🎴 Card Designer</h1>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Templates</a>
+<a href="#">Features</a>
+<a href="#">Contact</a>
+</nav>
+
+<button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+</header>
+
+<div class="app">
+
+<div class="toolbar">
+<h2>Editor</h2>
+
+<button onclick="addText()">Text</button>
+<button onclick="addRectangle()">Rectangle</button>
+<button onclick="addCircle()">Circle</button>
+
+<button onclick="undo()">Undo</button>
+<button onclick="redo()">Redo</button>
+
+<input type="color" id="colorPicker">
+
+<button onclick="downloadCard()">Download</button>
+</div>
+
+<div class="canvas-container">
+<canvas id="cardCanvas" width="900" height="550"></canvas>
+</div>
+
+</div>
+
+<!-- Floating Button -->
+<button class="floating-download" onclick="downloadCard()">⬇</button>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+<div class="footer-grid">
+
+<div>
+<h3>Card Designer</h3>
+<p>Create stunning greeting cards easily.</p>
+</div>
+
+<div>
+<h4>Quick Links</h4>
+<a href="#">Home</a>
+<a href="#">Templates</a>
+<a href="#">Pricing</a>
+</div>
+
+<div>
+<h4>Contact</h4>
+<p>Email: support@carddesigner.com</p>
+<p>India</p>
+</div>
+
+<div>
+<h4>Follow</h4>
+<div class="social">
+<a href="#">Instagram</a>
+<a href="#">Twitter</a>
+<a href="#">YouTube</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+<p>© 2026 Card Designer.</p>
+<button onclick="scrollToTop()">⬆ Back to Top</button>
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

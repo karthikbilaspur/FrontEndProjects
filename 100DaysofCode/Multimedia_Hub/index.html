@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Multimedia Hub — Music, Video, Games & Entertainment</title>
+
+<!-- SEO META -->
+<meta name="description" content="Multimedia Hub is an all-in-one entertainment dashboard featuring music player, video player, games, and user system built with HTML, CSS, and JavaScript.">
+<meta name="keywords" content="multimedia hub, music player, video player, web games, html css javascript project, frontend portfolio, entertainment dashboard">
+<meta name="author" content="Your Name">
+<meta name="robots" content="index, follow">
+
+<!-- SOCIAL SHARING (Open Graph) -->
+<meta property="og:title" content="Multimedia Hub">
+<meta property="og:description" content="Play music, watch videos, play games — all in one place.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="preview.png">
+
+<!-- TWITTER CARD -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Multimedia Hub">
+<meta name="twitter:description" content="All-in-one entertainment dashboard">
+
+<!-- MOBILE THEME -->
+<link rel="stylesheet" href="style.css">
+
+<!-- ICONS (Font Awesome) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>🎧 Multimedia Hub</h1>
+<button onclick="toggleTheme()">🌙</button>
+</header>
+
+<div class="container">
+
+<aside>
+<button onclick="showSection('home')">Home</button>
+<button onclick="showSection('music')">Music</button>
+<button onclick="showSection('video')">Video</button>
+<button onclick="showSection('game')">Game</button>
+<button onclick="showSection('user')">User</button>
+</aside>
+
+<main>
+
+<section id="home" class="active">
+<h2 id="welcome">Welcome</h2>
+<p>Your all-in-one entertainment dashboard.</p>
+</section>
+
+<section id="music">
+<h2>Music Player</h2>
+
+<select id="playlist" title="Song">
+<option value="audio.mp3">Song 1</option>
+<option value="audio2.mp3">Song 2</option>
+</select>
+
+<div class="player">
+<audio id="audio"></audio>
+<h3 id="songTitle"></h3>
+
+<button onclick="playPauseAudio()">Play/Pause</button>
+<button onclick="stopAudio()">Stop</button>
+
+<div class="progressBar" onclick="seekAudio(event)">
+<div id="audioProgress"></div>
+</div>
+
+<span id="audioTime">00:00</span>
+</div>
+</section>
+
+<section id="video">
+<h2>Video Player</h2>
+
+<div class="player">
+<video id="videoPlayer" src="video.mp4"></video>
+
+<button onclick="playPauseVideo()">Play/Pause</button>
+<button onclick="fullscreen()">Fullscreen</button>
+
+<div class="progressBar" onclick="seekVideo(event)">
+<div id="videoProgress"></div>
+</div>
+</div>
+</section>
+
+<section id="game">
+<h2>Ping Pong</h2>
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+<p id="score">Score: 0</p>
+<button onclick="restartGame()">Restart</button>
+</section>
+
+<section id="user">
+<h2>User System</h2>
+
+<div id="auth">
+<input id="name" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+<button onclick="register()">Register</button>
+
+<input id="lname" placeholder="Username">
+<input id="lpass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+</div>
+
+<button onclick="logout()">Logout</button>
+<p id="msg"></p>
+
+</section>
+
+</main>
+</div>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>© 2026 Multimedia Hub | Built for Frontend Portfolio</p>
+
+<div class="social">
+<a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com"
+   target="_blank"
+   title="Share on Facebook"
+   rel="noopener noreferrer">
+   Share on Facebook
+</a>
+<a href="https://twitter.com/intent/tweet?url=https://example.com" target="_blank" title="Share on Twitter"    rel="noopener noreferrer">
+ >
+<i class="fab fa-twitter"></i>
+</a>
+
+<a href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com" target="_blank" title="Share on LinkedIn"    rel="noopener noreferrer">
+>
+<i class="fab fa-linkedin"></i>
+</a>
+
+<a href="https://wa.me/?text=https://example.com" target="_blank" title="Share on WhatsApp"    rel="noopener noreferrer">
+>
+<i class="fab fa-whatsapp"></i>
+</a>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
