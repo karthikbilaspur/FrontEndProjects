@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meme Studio V2 - Enhanced & Localized</title>
+
+<link rel="stylesheet" href="styles.css">
+
+<!-- Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<!-- SortableJS for drag-and-drop layer reordering -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+
+<!-- Font Awesome for Social Icons & UI Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Impact&family=Montserrat:wght@400;700&family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&family=Comic+Neue:wght@400;700&family=Lobster&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+<div class="left-panel">
+
+<h2 class="app-title">🔥 Meme Studio V2</h2>
+
+<section class="panel-section settings">
+<h3>Settings</h3>
+<div class="control-group">
+<label for="memeLanguage">Meme Language:</label>
+<select id="memeLanguage">
+<option value="en">English</option>
+<option value="es">Español</option>
+<option value="fr">Français</option>
+<option value="de">Deutsch</option>
+<option value="hi">हिंदी</option>
+<option value="pt">Português</option>
+<option value="ja">日本語</option>
+<option value="zh">中文</option>
+</select>
+</div>
+<div class="button-group">
+<button id="undoBtn" disabled><i class="fas fa-undo"></i> Undo</button>
+<button id="redoBtn" disabled><i class="fas fa-redo"></i> Redo</button>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Canvas Background</h3>
+<div class="control-group">
+<input type="color" id="bgColor" value="#ffffff">
+<label for="bgColor">Background Color</label>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Add Content</h3>
+<div class="control-group">
+<label for="uploadImage" class="file-upload-label"><i class="fas fa-upload"></i> Upload Image</label>
+<input type="file" id="uploadImage" accept="image/*">
+</div>
+<button onclick="addText()"><i class="fas fa-font"></i> Add Text Box</button>
+</section>
+
+<section class="panel-section">
+<h3>Text Controls <span class="control-hint">(Select text to enable)</span></h3>
+<div class="control-group">
+<label for="fontFamily">Font Style</label>
+<select id="fontFamily" disabled>
+<option value="Impact">Impact</option>
+<option value="Montserrat">Montserrat</option>
+<option value="Roboto">Roboto</option>
+<option value="Open Sans">Open Sans</option>
+<option value="Comic Neue">Comic Neue</option>
+<option value="Lobster">Lobster</option>
+<option value="Pacifico">Pacifico</option>
+</select>
+</div>
+<div class="control-group">
+<input type="color" id="textColor" disabled>
+<label for="textColor">Text Color</label>
+</div>
+<div class="control-group">
+<input type="color" id="strokeColor" value="#000000" disabled>
+<label for="strokeColor">Stroke Color</label>
+</div>
+<div class="control-group">
+<input type="range" id="fontSize" min="10" max="150" value="40" disabled>
+<label for="fontSize">Font Size</label>
+</div>
+<div class="control-group">
+<input type="range" id="opacity" min="0" max="1" step="0.1" value="1" disabled>
+<label for="opacity">Opacity</label>
+</div>
+<div class="control-group">
+<label for="textAlign">Text Align:</label>
+<select id="textAlign" disabled>
+<option value="left">Left</option>
+<option value="center">Center</option>
+<option value="right">Right</option>
+</select>
+</div>
+<div class="control-group">
+<label for="shadowColor">Text Shadow Color:</label>
+<input type="color" id="shadowColor" value="#000000" disabled>
+</div>
+<div class="control-group">
+<label for="shadowBlur">Text Shadow Blur:</label>
+<input type="range" id="shadowBlur" min="0" max="50" value="0" disabled>
+</div>
+<div class="control-group">
+<label for="shadowOffsetX">Text Shadow X-Offset:</label>
+<input type="range" id="shadowOffsetX" min="-20" max="20" value="0" disabled>
+</div>
+<div class="control-group">
+<label for="shadowOffsetY">Text Shadow Y-Offset:</label>
+<input type="range" id="shadowOffsetY" min="-20" max="20" value="0" disabled>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Image Filters <span class="control-hint">(Select image to enable)</span></h3>
+<div class="button-group">
+<button id="filterGrayscale" disabled><i class="fas fa-paint-brush"></i> Grayscale</button>
+<button id="filterSepia" disabled><i class="fas fa-tint"></i> Sepia</button>
+<button id="filterInvert" disabled><i class="fas fa-adjust"></i> Invert</button>
+<button id="filterContrast" disabled><i class="fas fa-circle-half-stroke"></i> Contrast</button>
+<button id="filterBlur" disabled><i class="fas fa-droplet"></i> Blur</button>
+<button id="filterRemove" disabled><i class="fas fa-ban"></i> Clear Filters</button>
+</div>
+<div class="control-group">
+<label for="contrastValue">Contrast Amount:</label>
+<input type="range" id="contrastValue" min="0" max="1" step="0.05" value="0" disabled>
+</div>
+<div class="control-group">
+<label for="blurValue">Blur Amount:</label>
+<input type="range" id="blurValue" min="0" max="1" step="0.05" value="0" disabled>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Effects</h3>
+<div class="button-group">
+<button onclick="applyGradient()"><i class="fas fa-rainbow"></i> Gradient Text</button>
+<button onclick="applyNeon()"><i class="fas fa-lightbulb"></i> Neon Text</button>
+<button onclick="applyGlitch()"><i class="fas fa-ghost"></i> Glitch Effect</button>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Object Transform</h3>
+<div class="button-group">
+<button onclick="flipX()"><i class="fas fa-arrows-alt-h"></i> Flip Horizontal</button>
+<button onclick="flipY()"><i class="fas fa-arrows-alt-v"></i> Flip Vertical</button>
+<button onclick="rotateObject()"><i class="fas fa-rotate"></i> Rotate</button>
+<button id="bringForward" disabled><i class="fas fa-arrow-up"></i> Bring Forward</button>
+<button id="sendBackward" disabled><i class="fas fa-arrow-down"></i> Send Backward</button>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Meme Actions</h3>
+<div class="button-group">
+<button class="clear-button" onclick="clearCanvas()"><i class="fas fa-trash-alt"></i> Clear Canvas</button>
+<button class="download-button" onclick="downloadMeme()"><i class="fas fa-download"></i> Download Meme</button>
+</div>
+</section>
+
+</div>
+
+<div class="canvas-container">
+<canvas id="memeCanvas" width="900" height="550"></canvas>
+</div>
+
+<div class="right-panel">
+<h3>Layers <span class="control-hint">(Drag to reorder)</span></h3>
+<ul id="layerList"></ul>
+<p class="layer-hint">Click a layer to select it. Use 'Del' to remove.</p>
+
+<section class="panel-section">
+<h3>Templates <span class="control-hint">(Coming Soon!)</span></h3>
+<div id="memeTemplates">
+<p>Browse popular meme templates here.</p>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Image Search <span class="control-hint">(Coming Soon!)</span></h3>
+<div id="imageSearch">
+<p>Search for stock photos or meme bases.</p>
+</div>
+</section>
+
+<section class="panel-section">
+<h3>Project Files <span class="control-hint">(Coming Soon!)</span></h3>
+<div class="button-group">
+<button disabled><i class="fas fa-folder-open"></i> Load Project</button>
+<button disabled><i class="fas fa-save"></i> Save Project</button>
+</div>
+</section>
+
+</div>
+
+</div>
+
+<footer class="app-footer">
+<p>&copy; 2026 Meme Studio.</p>
+<div class="social-icons">
+<a href="#" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<a href="#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+<a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+<a href="#" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

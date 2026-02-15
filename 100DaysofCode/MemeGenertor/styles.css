@@ -1,0 +1,461 @@
+/* Basic Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif; /* Default font */
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a1a, #000000); /* Darker, more interesting background */
+    color: #e0e0e0; /* Light grey text for contrast */
+    min-height: 100vh; /* Ensure body takes full viewport height */
+    display: flex;
+    flex-direction: column; /* For footer positioning */
+}
+
+/* App Layout */
+.app {
+    display: flex;
+    flex: 1; /* Allow app to grow and push footer down */
+    max-height: calc(100vh - 60px); /* Adjust for footer height */
+    overflow: hidden; /* Prevent internal scrollbars from messing with layout */
+}
+
+.left-panel,
+.right-panel {
+    width: 280px; /* Slightly wider panels */
+    background: #1e1e1e;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling for content within panels */
+    border-right: 1px solid #333; /* Separator for left panel */
+    border-left: 1px solid #333; /* Separator for right panel */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+    flex-shrink: 0; /* Prevent panels from shrinking */
+}
+
+.app-title {
+    color: #ff4757; /* Highlighted title color */
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: 700;
+    text-shadow: 0 0 5px rgba(255, 71, 87, 0.5); /* Subtle glow */
+}
+
+/* Panel Sections & Controls */
+.panel-section {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #2a2a2a; /* Section separator */
+}
+
+.panel-section:last-child {
+    border-bottom: none; /* No border for the last section */
+    margin-bottom: 0;
+}
+
+.panel-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    border-left: 4px solid #ff4757; /* Accent for section titles */
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.control-hint {
+    font-size: 0.7em;
+    color: #888;
+    font-weight: 400;
+}
+
+.control-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column; /* Stack label and input */
+}
+
+.control-group label {
+    font-size: 0.9em;
+    color: #b0b0b0;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+/* Inputs & Selects */
+input[type="file"],
+input[type="color"],
+input[type="range"],
+select {
+    width: 100%;
+    padding: 8px 10px;
+    margin: 5px 0;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #333;
+    color: #e0e0e0;
+    font-size: 0.9em;
+    transition: all 0.2s ease-in-out;
+    -webkit-appearance: none; /* For custom styling of some input types */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+input[type="color"] {
+    height: 35px; /* Make color input larger */
+    padding: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-webkit-color-swatch { border: none; border-radius: 5px; }
+input[type="color"]::-moz-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-moz-color-swatch { border: none; border-radius: 5px; }
+
+input[type="range"] {
+    height: 25px;
+    background: transparent;
+    cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #555;
+    border-radius: 5px;
+    border: 0.2px solid #010101;
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid #000;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #ff4757;
+    cursor: pointer;
+    margin-top: -5px; /* Center thumb on track */
+    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+}
+
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+    padding-right: 30px; /* Make space for arrow */
+}
+
+input:focus,
+select:focus {
+    border-color: #ff4757;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 71, 87, 0.5);
+}
+
+input:disabled, select:disabled, button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #2a2a2a;
+    border-color: #333;
+    box-shadow: none;
+    transform: none; /* Disable hover/active effects */
+}
+button:disabled:hover {
+    background-color: #2a2a2a; /* Keep disabled button background consistent on hover */
+}
+
+/* File Upload Button Styling */
+input[type="file"] {
+    display: none; /* Hide default input */
+}
+
+.file-upload-label {
+    display: flex; /* Use flexbox for icon and text */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 15px;
+    background: #4a90e2; /* A nice blue for upload */
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.file-upload-label i {
+    margin-right: 8px;
+}
+
+.file-upload-label:hover {
+    background-color: #357ABD;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 6px;
+    background: #ff4757;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex; /* For icon alignment */
+    align-items: center;
+    justify-content: center;
+}
+button i {
+    margin-right: 8px;
+}
+
+button:hover:not(:disabled) {
+    background-color: #e03545; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+}
+
+.button-group button {
+    margin-bottom: 10px; /* Spacing between grouped buttons */
+}
+
+/* Specific Button Colors */
+.clear-button {
+    background: #777; /* Grey for clear */
+}
+
+.clear-button:hover:not(:disabled) {
+    background: #666;
+}
+
+.download-button {
+    background: #28a745; /* Green for download */
+}
+
+.download-button:hover:not(:disabled) {
+    background: #218838;
+}
+
+/* Canvas Container */
+.canvas-container {
+    flex: 1; /* Allow canvas to take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2c2c2c; /* Canvas area background */
+    padding: 20px; /* Padding around canvas */
+    min-width: 400px; /* Ensure canvas area doesn't shrink too much */
+}
+
+canvas {
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7), 0 0 0 5px rgba(255, 255, 255, 0.05); /* Enhanced shadow and subtle white border */
+    max-width: 100%; /* Ensure canvas scales down */
+    height: auto;
+    display: block; /* Remove extra space below canvas */
+}
+
+/* Layer List */
+#layerList {
+    list-style: none;
+    margin-top: 15px;
+    padding: 0;
+    min-height: 50px; /* Ensure it's visible even when empty */
+}
+
+#layerList li {
+    background: #3a3a3a;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    cursor: grab; /* Indicate draggable */
+    font-size: 0.9em;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out, border-left 0.2s ease-in-out;
+    border-left: 3px solid transparent; /* Highlight active layer */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#layerList li.sortable-chosen {
+    background: #4a4a4a;
+    border-left-color: #ff4757;
+    opacity: 0.7; /* Make dragged item slightly transparent */
+}
+
+#layerList li.sortable-ghost {
+    opacity: 0.4; /* Ghost item for drag-and-drop */
+    background: #2a2a2a;
+}
+
+#layerList li.active {
+    background: #4a4a4a;
+    border-left-color: #ff4757;
+    cursor: default;
+}
+
+#layerList li:hover {
+    background: #4a4a4a;
+}
+
+#layerList li span.layer-actions {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+#layerList li span.layer-actions i {
+    cursor: pointer;
+    font-size: 0.9em;
+    color: #ccc;
+    padding: 3px;
+    border-radius: 3px;
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+#layerList li span.layer-actions i:hover {
+    color: #fff;
+    background-color: #555;
+}
+
+.layer-hint {
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Recent Memes / Templates / Image Search sections */
+#memeTemplates, #imageSearch, #recentMemes {
+    margin-top: 15px;
+    padding: 10px;
+    background: #2a2a2a;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+#memeTemplates p, #imageSearch p, #recentMemes p {
+    margin: 0;
+}
+
+/* Footer */
+.app-footer {
+    background: #1e1e1e;
+    color: #888;
+    padding: 15px 20px;
+    text-align: center;
+    font-size: 0.85em;
+    border-top: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px; /* Ensure a consistent height */
+    flex-wrap: wrap; /* Allow footer content to wrap */
+}
+
+.app-footer p {
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px; /* Spacing for social icons */
+    margin-top: 5px; /* Adjust for wrap */
+}
+
+.social-icons a {
+    color: #e0e0e0;
+    font-size: 1.3em;
+    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.social-icons a:hover {
+    color: #ff4757; /* Social icons light up on hover */
+    transform: translateY(-3px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+   .app {
+        flex-direction: column; /* Stack panels vertically on smaller screens */
+        max-height: none; /* Allow full height */
+        overflow-y: auto;
+    }
+
+   .left-panel,
+   .right-panel {
+        width: 100%; /* Full width for panels */
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid #333; /* Separator when stacked */
+        max-height: 50vh; /* Limit height for panels */
+    }
+   .left-panel { order: 1; }
+   .canvas-container { order: 2; }
+   .right-panel { order: 3; }
+
+   .canvas-container {
+        padding: 15px;
+        min-height: 400px; /* Ensure canvas area has some height */
+        flex-grow: 1; /* Allow canvas container to grow */
+    }
+
+   .app-footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+   .app-title {
+        font-size: 1.5em;
+    }
+
+   .left-panel,
+   .right-panel {
+        padding: 15px;
+        max-height: 40vh; /* Further limit panel height on small screens */
+    }
+
+   .panel-section h3 {
+        font-size: 1em;
+    }
+
+    button,
+   .file-upload-label {
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+    button i,.file-upload-label i {
+        margin-right: 5px; /* Smaller icon margin on mobile */
+    }
+
+   .app-footer {
+        font-size: 0.75em;
+    }
+
+   .social-icons {
+        gap: 10px;
+    }
+   .social-icons a {
+        font-size: 1.1em;
+    }
+}
