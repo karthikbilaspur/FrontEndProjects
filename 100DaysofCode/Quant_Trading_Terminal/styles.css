@@ -1,0 +1,388 @@
+/* =========================
+   GLOBAL RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Use a modern, clean font stack */
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; /* Smoother fonts */
+  -moz-osx-font-smoothing: grayscale; /* Smoother fonts */
+}
+
+html {
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body {
+  background: #0f172a; /* Deep blue-gray background */
+  color: #e5e7eb; /* Light gray text for contrast */
+  transition: background 0.4s ease-in-out, color 0.4s ease-in-out; /* Smooth theme transitions */
+  min-height: 100vh; /* Ensure body takes full viewport height */
+  display: flex; /* Flexbox for main layout */
+  flex-direction: column; /* Stack header, main, footer vertically */
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 28px;
+  background: #111827; /* Slightly darker header */
+  border-bottom: 1px solid #1f2937; /* Subtle border */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  position: sticky; /* Keep header visible */
+  top: 0;
+  z-index: 1000; /* Ensure header is on top */
+}
+
+header h1 {
+  font-size: 1.8rem; /* Slightly larger title */
+  font-weight: 700;
+  letter-spacing: -0.02em; /* Tighter letter spacing for modern look */
+  color: #e5e7eb;
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  padding: 10px 18px; /* Slightly larger padding */
+  border-radius: 8px;
+  border: none;
+  background: #2563eb; /* Primary blue */
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem; /* Slightly larger text */
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  outline: none; /* Remove default focus outline */
+}
+
+button:hover {
+  background: #1d4ed8; /* Darker blue on hover */
+  transform: translateY(-2px); /* Subtle lift effect */
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.4); /* Blue shadow on hover */
+}
+
+button:active {
+  transform: translateY(0); /* Press effect */
+  box-shadow: none;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+main {
+  flex: 1; /* Allow main content to grow and push footer down */
+  padding: 20px;
+  display: grid;
+  gap: 20px;
+  /* Responsive grid for main sections */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: start; /* Align items to the start of the grid area */
+  max-width: 1400px; /* Max width for content */
+  margin: 20px auto; /* Center content */
+}
+
+/* =========================
+   GLASS EFFECT (CARDS)
+========================= */
+.glass {
+  background: rgba(17, 24, 39, 0.85); /* Slightly less transparent */
+  border-radius: 16px;
+  padding: 24px; /* More padding for content */
+  border: 1px solid rgba(55, 65, 81, 0.3); /* Softer border */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); /* Deeper shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effects */
+}
+
+.glass:hover {
+  transform: translateY(-5px); /* Lift card on hover */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.glass h3 {
+  font-size: 1.25rem;
+  margin-bottom: 15px;
+  color: #e5e7eb;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.2); /* Subtle separator */
+  padding-bottom: 10px;
+}
+
+/* =========================
+   CHARTS
+========================= */
+canvas {
+  width: 100% !important; /* Retaining !important as Chart.js often applies inline styles */
+  height: auto; /* Ensure charts scale nicely */
+  max-height: 400px; /* Max height for charts to prevent excessive stretching */
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.1); /* Slightly darker background for canvas area */
+  padding: 10px; /* Small inner padding for charts */
+}
+
+/* =========================
+   STRATEGY CONTROLS
+========================= */
+.glass input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #374151; /* Darker border */
+  background: #1f2937; /* Darker input background */
+  color: #e5e7eb;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass input[type="number"]:focus {
+  border-color: #2563eb; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3); /* Glow effect on focus */
+}
+
+.glass input::placeholder {
+  color: #9ca3af; /* Lighter placeholder text */
+}
+
+.glass button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+#analyticsOutput {
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(37, 99, 235, 0.1); /* Light blue background for output */
+  border: 1px solid rgba(37, 99, 235, 0.3);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #93c5fd; /* Light blue text */
+  text-align: center;
+}
+
+/* =========================
+   PNL HUD
+========================= */
+#pnlHud {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(17, 24, 39, 0.95); /* Slightly darker background */
+  font-weight: 600;
+  font-size: 1.1rem; /* Slightly larger */
+  color: #e5e7eb;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+#livePnL {
+  color: #22c55e; /* Green for positive PnL (example) */
+  transition: color 0.3s ease; /* Smooth color change */
+}
+/* You'd update #livePnL color dynamically via JS based on value */
+
+/* =========================
+   HEATMAP
+========================= */
+#heatmap {
+  display: grid;
+  /* Adjusting to a more direct `repeat` for 6 columns with even spacing */
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px; /* Slightly larger gap */
+  margin-top: 10px;
+}
+
+.heat-cell {
+  padding: 12px; /* More padding */
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.9rem; /* Slightly larger font */
+  font-weight: 500;
+  color: white; /* Ensure text is white regardless of background */
+  transition: background 0.3s ease, transform 0.2s ease;
+  /* Removed min-width as grid-template-columns: repeat(6, 1fr) handles cell sizing */
+}
+
+.heat-cell:hover {
+  transform: scale(1.05); /* Subtle scale on hover */
+  z-index: 1; /* Bring to front on hover */
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  margin-top: 40px;
+  background: #111827;
+  padding: 40px 20px;
+  border-top: 1px solid #1f2937; /* Border above footer */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minwidth for columns */
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-left h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #e5e7eb;
+}
+
+.footer-left p {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  line-height: 1.6;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #e5e7eb;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.2); /* Subtle separator */
+  padding-bottom: 8px;
+}
+
+.footer-links a,
+.footer-social a {
+  display: block;
+  color: #9ca3af;
+  text-decoration: none;
+  margin-bottom: 8px; /* More spacing */
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #2563eb;
+  transform: translateX(5px); /* Slide effect on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #1f2937;
+  color: #6b7280; /* Muted copyright text */
+  font-size: 0.85rem;
+}
+
+/* =========================
+   RESPONSIVENESS
+========================= */
+@media (max-width: 1024px) {
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .header-controls {
+    width: 100%;
+    justify-content: center;
+  }
+
+  button {
+    flex: 1; /* Buttons take equal width */
+  }
+
+  main {
+    grid-template-columns: 1fr; /* Single column layout on small screens */
+    padding: 15px;
+  }
+
+  .glass {
+    padding: 20px;
+  }
+
+  #pnlHud {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    width: fit-content;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .footer-links h4,
+  .footer-social h4 {
+    border-bottom: none; /* Remove border on smaller screens for cleaner look */
+    padding-bottom: 0;
+    margin-top: 20px;
+  }
+
+  .footer-links a,
+  .footer-social a {
+    transform: none !important; /* Disable hover effect on touch devices */
+    display: inline-block;
+    margin: 0 10px 8px;
+  }
+
+  .footer-left {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #1f2937;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.3rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+
+  .glass h3 {
+    font-size: 1.1rem;
+  }
+
+  .heat-cell {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  #pnlHud {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}

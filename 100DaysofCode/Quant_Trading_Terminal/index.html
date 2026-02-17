@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Quant Trading Terminal | Browser-Based Paper Trading Simulator</title>
+<meta name="description" content="Professional browser-based quantitative trading terminal with candlestick charts, RSI, MACD, backtesting engine and risk management." />
+<meta name="keywords" content="quant trading, trading terminal, paper trading simulator, backtesting engine, javascript trading app" />
+<meta name="author" content="Quant Trading Terminal" />
+<meta name="robots" content="index, follow" />
+
+<!-- OpenGraph -->
+<meta property="og:title" content="Quant Trading Terminal" />
+<meta property="og:description" content="Browser-based quant trading simulator with indicators and backtesting." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="preview.png" />
+
+<!-- Styles -->
+<link rel="stylesheet" href="styles.css" />
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+<header>
+<h1>Quant Trading Terminal</h1>
+<div class="header-controls">
+<button id="themeToggle">Toggle Theme</button>
+<button id="compactToggle">Compact Mode</button>
+</div>
+</header>
+
+<main>
+
+<div class="glass">
+<h3>Price Chart</h3>
+<canvas id="stockChart"></canvas>
+</div>
+
+<div class="glass">
+<h3>Strategy Controls</h3>
+<input type="number" id="rsiBuy" placeholder="RSI Buy (e.g. 30)" />
+<input type="number" id="rsiSell" placeholder="RSI Sell (e.g. 70)" />
+<button id="applyStrategy">Apply Strategy</button>
+<button id="runBacktest">Run Backtest</button>
+<button id="optimizeStrategy">Optimize RSI</button>
+<div id="analyticsOutput">Awaiting Backtest...</div>
+</div>
+
+<div class="glass">
+<h3>Heatmap</h3>
+<div id="heatmap"></div>
+</div>
+
+<div class="glass">
+<h3>Equity Curve</h3>
+<canvas id="equityChart"></canvas>
+</div>
+
+</main>
+
+<div id="pnlHud">
+PnL: ₹<span id="livePnL">0.00</span>
+</div>
+
+<footer>
+<div class="footer-container">
+<div class="footer-left">
+<h3>Quant Trading Terminal</h3>
+<p>Browser-based trading simulator with risk management and backtesting engine.</p>
+</div>
+<div class="footer-links">
+<h4>Quick Links</h4>
+<a href="#">Documentation</a>
+<a href="#">API Reference</a>
+<a href="#">Privacy Policy</a>
+</div>
+<div class="footer-social">
+<h4>Connect</h4>
+<a href="#">GitHub</a>
+<a href="#">Twitter</a>
+<a href="#">LinkedIn</a>
+</div>
+</div>
+<div class="footer-bottom">
+(c) 2026 Quant Trading Terminal
+</div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
