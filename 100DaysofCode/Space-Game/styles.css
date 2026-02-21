@@ -1,0 +1,243 @@
+/* Import a sci-fi inspired Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+:root {
+    --primary-bg: #100f2e; /* Very dark blue, almost black */
+    --secondary-bg: #1e1e3f; /* Slightly lighter dark blue */
+    --accent-color-1: #e94560; /* Bright red-pink (your original accent) */
+    --accent-color-2: #8aff8a; /* Neon green (new accent for highlights) */
+    --text-light: #e0e0e0; /* Off-white for general text */
+    --text-dark: #a0a0a0; /* Darker gray for subtle text */
+    --border-color: #4a4a6e; /* Muted purple-gray for borders */
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --canvas-border: #e94560;
+    --font-heading: 'Orbitron', sans-serif;
+    --font-body: 'Roboto Mono', monospace;
+}
+
+body {
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+}
+
+/* Scrollbar styling for a consistent look */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+body::-webkit-scrollbar-track {
+    background: var(--primary-bg);
+}
+body::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color-1);
+    border-radius: 4px;
+    border: 1px solid var(--secondary-bg);
+}
+
+header {
+    background-color: var(--secondary-bg);
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--accent-color-1);
+}
+
+header h1 {
+    margin: 0;
+    color: var(--accent-color-2); /* Changed to neon green for header title */
+    font-family: var(--font-heading);
+    font-size: 3em; /* Slightly larger */
+    text-shadow: 0 0 10px var(--accent-color-2), 0 0 20px var(--accent-color-2), 0 0 30px var(--accent-color-2); /* Neon glow effect */
+    letter-spacing: 2px;
+    transition: color 0.3s ease-in-out;
+}
+
+header h1:hover {
+    color: var(--text-light);
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 95%; /* Increased width slightly */
+    max-width: 1400px; /* Max width to contain content */
+    gap: 40px; /* More space between sections */
+    padding-bottom: 40px;
+}
+
+canvas {
+    background-color: #000;
+    border: 3px solid var(--canvas-border); /* Thicker border */
+    display: block;
+    box-shadow: 0 0 25px var(--canvas-border), 0 0 50px rgba(233, 69, 96, 0.4); /* Enhanced glow */
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px; /* Slightly rounded corners */
+}
+
+.game-info {
+    background-color: var(--secondary-bg);
+    padding: 30px; /* More padding */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    width: 100%;
+    max-width: 900px; /* Wider info section */
+    line-height: 1.8; /* Increased line height for readability */
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-info:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--shadow-color), 0 0 30px var(--accent-color-1);
+}
+
+.game-info h2, .game-info h3, .game-info h4 {
+    color: var(--accent-color-1);
+    font-family: var(--font-heading);
+    border-bottom: 2px solid var(--border-color); /* Thicker border */
+    padding-bottom: 8px; /* More padding */
+    margin-top: 35px;
+    letter-spacing: 1px;
+}
+
+.game-info h2 { font-size: 2.2em; }
+.game-info h3 { font-size: 1.8em; }
+.game-info h4 { font-size: 1.4em; }
+
+.game-info p {
+    margin-bottom: 15px;
+}
+
+.game-info ul {
+    list-style-type: none; /* Remove default bullets */
+    margin-left: 0;
+    padding: 0;
+}
+
+.game-info ul li {
+    padding-left: 20px; /* Indent for custom bullet */
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.game-info ul li::before {
+    content: '→'; /* Custom bullet point */
+    color: var(--accent-color-2);
+    position: absolute;
+    left: 0;
+}
+
+.game-info ul ul {
+    list-style-type: none; /* Remove default bullets for nested lists too */
+    margin-left: 25px; /* Indent nested lists further */
+    padding: 0;
+}
+
+.game-info ul ul li::before {
+    content: '▪'; /* Custom bullet for nested items */
+    color: var(--accent-color-1);
+}
+
+.game-info kbd {
+    background-color: var(--border-color);
+    color: var(--text-light);
+    padding: 4px 8px; /* Slightly larger padding */
+    border-radius: 5px; /* More rounded */
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.95em;
+    margin: 0 3px;
+    border-bottom: 2px solid var(--primary-bg); /* Little depth */
+}
+
+footer {
+    width: 100%;
+    background-color: var(--secondary-bg);
+    color: var(--text-dark);
+    text-align: center;
+    padding: 20px 0; /* More padding */
+    margin-top: auto;
+    box-shadow: 0 -4px 15px var(--shadow-color);
+    font-size: 0.85em;
+    border-top: 2px solid var(--accent-color-1);
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+.disclaimer {
+    color: var(--accent-color-1);
+    margin-top: 15px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    .game-info h2 { font-size: 2em; }
+    .game-info h3 { font-size: 1.6em; }
+    .game-info h4 { font-size: 1.2em; }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+        margin-bottom: 20px;
+    }
+    header h1 {
+        font-size: 2em;
+        text-shadow: 0 0 8px var(--accent-color-2);
+    }
+    main {
+        width: 98%; /* Even wider on smaller screens */
+        gap: 30px;
+    }
+    .game-info {
+        padding: 20px;
+    }
+    .game-info h2 { font-size: 1.8em; }
+    .game-info h3 { font-size: 1.4em; }
+    .game-info h4 { font-size: 1.1em; }
+    .game-info ul li {
+        padding-left: 15px;
+    }
+    .game-info ul li::before {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.6em;
+        letter-spacing: 1px;
+    }
+    .game-info {
+        padding: 15px;
+        line-height: 1.7;
+    }
+    .game-info h2 { font-size: 1.5em; }
+    .game-info h3 { font-size: 1.2em; }
+    .game-info h4 { font-size: 1em; }
+    footer {
+        padding: 10px 0;
+        font-size: 0.8em;
+    }
+    .disclaimer {
+        font-size: 0.9em;
+    }
+}

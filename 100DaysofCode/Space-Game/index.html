@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shooter: Retro Arcade Thrills!</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Experience classic arcade action with Space Shooter! A retro-style, two-player HTML5 game featuring dynamic levels, power-ups, challenging bosses, and a star-rating system. Play for free in your browser.">
+    <meta name="keywords" content="space shooter, arcade game, HTML5 game, JavaScript game, retro game, 2 player game, browser game, free game, educational game, game development, meta ai">
+    <meta name="author" content="Meta AI">
+
+    <!-- OpenGraph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Space Shooter: Retro Arcade Thrills!">
+    <meta property="og:description" content="Experience classic arcade action with Space Shooter! A retro-style, two-player HTML5 game featuring dynamic levels, power-ups, challenging bosses, and a star-rating system. Play for free in your browser.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_GAME_URL_HERE"> <!-- IMPORTANT: Replace with your actual game URL -->
+    <meta property="og:image" content="YOUR_PREVIEW_IMAGE_URL_HERE"> <!-- Optional: Replace with a URL to a cool screenshot/logo -->
+    <meta property="og:image:alt" content="Screenshot of Space Shooter game in action.">
+
+    <!-- Favicon (optional) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Space Shooter: Retro Arcade Thrills!</h1>
+    </header>
+
+    <main>
+        <canvas id="game"></canvas>
+
+        <section class="game-info">
+            <h2>About the Game</h2>
+            <p>Dive into the nostalgic world of arcade space shooters right in your browser! "Space Shooter" is a dynamic HTML5 game that combines classic gameplay with modern enhancements. Whether you play solo or with a friend, prepare for an action-packed adventure against waves of alien invaders, challenging bosses, and endless fun.</p>
+
+            <h3>How to Play</h3>
+            <h4>Objective:</h4>
+            <p>Destroy all enemy ships and bosses to clear levels, earn coins, and achieve the highest star rating possible!</p>
+
+            <h4>Controls:</h4>
+            <ul>
+                <li><strong>Player 1:</strong>
+                    <ul>
+                        <li>Move Left: <kbd>ArrowLeft</kbd></li>
+                        <li>Move Right: <kbd>ArrowRight</kbd></li>
+                        <li>Shoot: <kbd>Spacebar</kbd></li>
+                    </ul>
+                </li>
+                <li><strong>Player 2:</strong>
+                    <ul>
+                        <li>Move Left: <kbd>A</kbd></li>
+                        <li>Move Right: <kbd>D</kbd></li>
+                        <li>Shoot: <kbd>Enter</kbd></li>
+                    </ul>
+                </li>
+                <li><strong>Mobile Controls:</strong>
+                    <ul>
+                        <li>Move (Player 1): Drag finger on the screen.</li>
+                        <li>Shoot (Player 1): Tap the left half of the screen.</li>
+                        <li>Shoot (Player 2): Tap the right half of the screen.</li>
+                    </ul>
+                </li>
+                <li><strong>Game Menus:</strong>
+                    <ul>
+                        <li>Navigate Menus: <kbd>ArrowUp</kbd> / <kbd>ArrowDown</kbd></li>
+                        <li>Confirm / Select: <kbd>Enter</kbd></li>
+                        <li>Pause / Unpause: <kbd>P</kbd></li>
+                        <li>Open / Exit Shop: <kbd>B</kbd></li>
+                        <li>Exit current screen (e.g., Shop, Level Select): <kbd>Escape</kbd></li>
+                        <li>Buy Shop Items: <kbd>1</kbd>, <kbd>2</kbd>, <kbd>3</kbd>, <kbd>4</kbd> (corresponds to item number)</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Key Features:</h3>
+            <ul>
+                <li><strong>Two-Player Co-op:</strong> Team up with a friend for double the firepower!</li>
+                <li><strong>Dynamic Levels:</strong> Progress through increasingly challenging levels with scaling enemy counts, HP, and speed.</li>
+                <li><strong>Star Rating System:</strong> Achieve 1, 2, or 3 stars per level based on your score, adding replayability and a challenge.</li>
+                <li><strong>Level Select Screen:</strong> Choose which level to play, see your star progress, and unlock new stages.</li>
+                <li><strong>Varied Enemies:</strong> Encounter different enemy types including 'normal', 'zigzag', 'kamikaze', 'sniper', and 'shooter' enemies that fire back!</li>
+                <li><strong>Epic Boss Battles:</strong> Face off against powerful bosses every few levels with their own attack patterns.</li>
+                <li><strong>Power-ups:</strong> Collect temporary buffs like increased damage, faster fire rate, shields, or health regeneration dropped by defeated enemies.</li>
+                <li><strong>Player Upgrades (Shop):</strong> Spend in-game coins to permanently boost your damage, fire rate, maximum health, and bullet speed.</li>
+                <li><strong>Screen Shake & Particles:</strong> Explosive visuals and tactile feedback for hits and destruction.</li>
+                <li><strong>Save System:</strong> Your coins, upgrades, and star progress are automatically saved in your browser.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Space Shooter Game. All rights reserved.</p>
+        <p class="disclaimer"><strong>Disclaimer:</strong> This game is developed as an educational project by Meta AI to demonstrate game development concepts and features. It is intended for learning purposes only.</p>
+    </footer>
+
+    <!-- Link to your JavaScript game logic -->
+    <script src="game.js"></script>
+</body>
+</html>
