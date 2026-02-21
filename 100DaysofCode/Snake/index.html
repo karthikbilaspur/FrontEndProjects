@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Ultimate Retro Snake Game - Play Classic & Modern Modes Online</title>
+  <meta name="description" content="Play Ultimate Retro Snake, a modern take on the classic arcade game! Featuring infinity, time attack, life, classic, levels, human vs AI, and boss modes. Challenge your high score now!" />
+  <meta name="keywords" content="snake game, retro game, classic arcade, online game, HTML5 game, JavaScript game, modern snake, AI game, time attack, infinite mode, boss mode" />
+  <meta name="author" content="Meta AI" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yourwebsite.com/index.html" /> <!-- IMPORTANT: Replace with your actual URL -->
+
+  <!-- Open Graph / Social Media Tags -->
+  <meta property="og:title" content="Ultimate Retro Snake Game" />
+  <meta property="og:description" content="Play Ultimate Retro Snake, a modern take on the classic arcade game! Featuring infinity, time attack, life, classic, levels, human vs AI, and boss modes. Challenge your high score now!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourwebsite.com/index.html" /> <!-- IMPORTANT: Replace with your actual URL -->
+  <meta property="og:image" content="https://yourwebsite.com/snake-preview.jpg" /> <!-- IMPORTANT: Replace with a compelling image URL -->
+  <meta property="og:image:alt" content="Screenshot of the Ultimate Retro Snake game in action" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card Tags (for better Twitter display) -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@yourtwitterhandle" /> <!-- Optional: Your Twitter handle -->
+  <meta name="twitter:creator" content="@yourtwitterhandle" /> <!-- Optional: Your Twitter handle -->
+  <meta name="twitter:title" content="Ultimate Retro Snake Game" />
+  <meta name="twitter:description" content="Play Ultimate Retro Snake, a modern take on the classic arcade game! Featuring infinity, time attack, life, classic, levels, human vs AI, and boss modes. Challenge your high score now!" />
+  <meta name="twitter:image" content="https://yourwebsite.com/snake-preview.jpg" /> <!-- IMPORTANT: Replace with a compelling image URL -->
+
+  <!-- Favicon (optional but recommended) -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Font Awesome for social icons - Replace with your own kit or specific version if needed -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlalDLsU7zQ/r/Lq9eWJb0q0H2u5/1D6f4s1gK7n3O/hF4pL2e+gN+e+P+1D/g4+xV2g8+y+Q+0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <header>
+    <h1>Ultimate Retro Snake</h1>
+  </header>
+  <div class="wrap">
+    <div class="panel">
+      <h2>Modes & Settings</h2>
+      <label for="mode">Game Mode</label>
+      <select id="mode">
+        <option value="infinity">Infinity (Endless)</option>
+        <option value="time">Time Attack</option>
+        <option value="life">Life Mode</option>
+        <option value="classic">Classic</option>
+        <option value="levels">Obstacles & Levels</option>
+        <option value="vsai">Human vs AI</option>
+        <option value="boss">Boss Level</option>
+      </select>
+      <label for="speed">Speed</label>
+      <input id="speed" type="range" min="5" max="20" value="10" />
+      <div class="row">
+        <button id="start">Start Game</button>
+        <button id="pause" class="secondary">Pause</button>
+      </div>
+      <h2>Stats</h2>
+      <div class="stats">
+        <div class="stat"><div>Score</div><strong id="score">0</strong></div>
+        <div class="stat"><div>High</div><strong id="high">0</strong></div>
+        <div class="stat"><div>Time</div><strong id="time">0</strong></div>
+        <div class="stat"><div>Lives</div><strong id="lives">0</strong></div>
+        <div class="stat"><div>Boss Life</div><strong id="bossLife">N/A</strong></div>
+      </div>
+      <h2>Controls</h2>
+      <div>
+        <span class="pill">Arrows / WASD</span>
+        <span class="pill">P = Pause</span>
+        <span class="pill">R = Restart</span>
+      </div>
+      <h2>Leaderboard (Local)</h2>
+      <ol id="leaderboard"></ol>
+      <button id="skinBtn" class="secondary">Change Skin</button>
+    </div>
+    <div class="panel gameWrap">
+      <canvas id="game" width="720" height="520"></canvas>
+      <div class="row">
+        <button id="restart">Restart</button>
+        <button id="soundBtn" class="secondary">Sound: Off</button>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-content">
+      <span>HTML5 Canvas • CSS3 • Vanilla JS (no frameworks)</span>
+      <div class="social-links">
+        <!-- IMPORTANT: Replace # with your actual social media URLs -->
+        <a href="https://facebook.com/yourpage" target="_blank" aria-label="Follow us on Facebook" rel="noopener"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/yourhandle" target="_blank" aria-label="Follow us on Twitter" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Follow us on Instagram" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/yourrepo" target="_blank" aria-label="View on GitHub" rel="noopener"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

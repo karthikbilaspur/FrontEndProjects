@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title data-key="pageTitle">Tribute to Great Indian Personalities 🇮🇳</title>
+
+<!-- SEO & Metadata -->
+<meta name="description" content="A tribute page showcasing the lives and achievements of influential Indian personalities across sports, business, arts, and leadership.">
+<meta name="keywords" content="Sachin Tendulkar, Mary Kom, Ratan Tata, Kiran Mazumdar Shaw, Rabindranath Tagore, C.V. Raman, Mahatma Gandhi, A.P.J. Abdul Kalam, Indian personalities, tribute, achievements, biographies, India">
+<meta name="author" content="Meta AI">
+<link rel="canonical" href="https://your-portfolio-link.com/tribute"> <!-- TODO: Update with your actual page link -->
+
+<!-- Open Graph (Social Sharing) -->
+<meta property="og:title" data-key="pageTitle" content="Tribute to Great Indian Personalities 🇮🇳">
+<meta property="og:description" content="Explore the extraordinary journeys of icons who shaped India's history and future.">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/d/d1/Mahatma-Gandhi.jpg"> <!-- Representative image -->
+<meta property="og:url" content="https://your-portfolio-link.com/tribute"> <!-- TODO: Update with your actual page link -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+
+<!-- Favicon -->
+<link rel="icon" href="https://cdn-icons-png.flaticon.com/512/3176/3176292.png" type="image/png">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/3176/3176292.png">
+
+<!-- Font Awesome for icons (if you decide to use them later) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Optimized Google Font Loading (Example, assuming Poppins again) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Structured Data for SEO (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Tribute to Great Indian Personalities 🇮🇳",
+  "description": "A comprehensive tribute page dedicated to influential Indian personalities, detailing their major achievements, timelines, and autobiographies.",
+  "author": {
+    "@type": "Person",
+    "name": "Meta AI"
+  },
+  "url": "https://your-portfolio-link.com/tribute", <!-- TODO: Update with your actual page link -->
+  "image": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Mahatma-Gandhi.jpg",
+  "mentions": [
+    { "@type": "Person", "name": "Sachin Tendulkar" },
+    { "@type": "Person", "name": "Mary Kom" },
+    { "@type": "Person", "name": "Ratan Tata" },
+    { "@type": "Person", "name": "Kiran Mazumdar Shaw" },
+    { "@type": "Person", "name": "Rabindranath Tagore" },
+    { "@type": "Person", "name": "C.V. Raman" },
+    { "@type": "Person", "name": "Mahatma Gandhi" },
+    { "@type": "Person", "name": "A.P.J. Abdul Kalam" }
+  ]
+}
+</script>
+
+<!-- Link to your CSS file -->
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<header>
+  <h1 data-key="headerTitle">Tribute to Great Indian Personalities 🇮🇳</h1>
+  <p data-key="headerSubtitle">Celebrating the lives and legacies of India's inspiring figures.</p>
+  <nav aria-label="Main Navigation">
+    <ul>
+      <li><a href="#sachin-tendulkar" data-key="navSachin">Sachin Tendulkar</a></li>
+      <li><a href="#mary-kom" data-key="navMaryKom">Mary Kom</a></li>
+      <li><a href="#ratan-tata" data-key="navRatanTata">Ratan Tata</a></li>
+      <li><a href="#kiran-mazumdar-shaw" data-key="navKiranShaw">Kiran Mazumdar Shaw</a></li>
+      <li><a href="#rabindranath-tagore" data-key="navTagore">Rabindranath Tagore</a></li>
+      <li><a href="#cv-raman" data-key="navCVRaman">C.V. Raman</a></li>
+      <li><a href="#mahatma-gandhi" data-key="navGandhi">Mahatma Gandhi</a></li>
+      <li><a href="#apj-abdul-kalam" data-key="navAPJKalam">A.P.J. Abdul Kalam</a></li>
+    </ul>
+  </nav>
+  <div class="header-controls">
+    <button id="darkToggle" aria-label="Toggle dark mode" type="button" data-key="darkMode">🌙 Dark Mode</button>
+    <select id="language-selector" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी (Hindi)</option>
+      <option value="kn">ಕನ್ನಡ (Kannada)</option>
+      <option value="te">తెలుగు (Telugu)</option>
+      <option value="mr">मराठी (Marathi)</option>
+      <option value="ta">தமிழ் (Tamil)</option>
+    </select>
+  </div>
+</header>
+
+<main>
+
+  <section id="sachin-tendulkar" aria-labelledby="sachin-tendulkar-heading">
+    <h2 id="sachin-tendulkar-heading" data-key="sectionSachinTitle">Sachin Tendulkar <small>(Cricket Legend)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/2/25/Sachin_Tendulkar.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/2/25/Sachin_Tendulkar.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/2/25/Sachin_Tendulkar.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/2/25/Sachin_Tendulkar.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Portrait of Sachin Tendulkar, the legendary Indian cricketer, in his playing kit.">
+      <figcaption data-key="sachinFigCaption">Sachin Ramesh Tendulkar (Born 1973)</figcaption>
+    </figure>
+    <h3 data-key="sachinMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="sachin-achievements">
+      <div class="short-text" data-key-list="sachinMajorAchievementsShort">
+        <ul>
+          <li>**100 International Centuries:** The only player in history to score 100 international centuries.</li>
+          <li>**2011 Cricket World Cup Winner:** A pivotal member of the Indian team that won the World Cup.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="sachinMajorAchievementsFull">
+        <ul>
+          <li>**100 International Centuries:** The only player in history to score 100 international centuries.</li>
+          <li>**2011 Cricket World Cup Winner:** A pivotal member of the Indian team that won the World Cup.</li>
+          <li>**Highest Run-Scorer:** Holds the record for most runs in both Test and One Day International (ODI) cricket.</li>
+          <li>**Bharat Ratna:** Awarded India's highest civilian honour in 2014.</li>
+          <li>**First Male to Score ODI Double Century:** Achieved this feat against South Africa in 2010.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="sachin-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="sachinTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="sachin-timeline">
+      <div class="short-text" data-key-list="sachinTimelineShort">
+        <ul>
+          <li>**1989:** Made Test and ODI debut against Pakistan.</li>
+          <li>**1994:** Scored his first ODI century.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="sachinTimelineFull">
+        <ul>
+          <li>**1989:** Made Test and ODI debut against Pakistan.</li>
+          <li>**1994:** Scored his first ODI century.</li>
+          <li>**2007:** Surpassed Brian Lara to become the highest run-scorer in Test cricket.</li>
+          <li>**2011:** Won the Cricket World Cup with India.</li>
+          <li>**2013:** Retired from all forms of cricket.</li>
+          <li>**2014:** Conferred with the Bharat Ratna.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="sachin-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="sachinAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="sachin-autobiography">
+      <span class="short-text" data-key="sachinAutobiographyShort">"**Playing It My Way**" (2014) is his widely acclaimed autobiography.</span>
+      <span class="full-text hidden" data-key="sachinAutobiographyFull">"**Playing It My Way**" (2014) is his widely acclaimed autobiography, chronicling his journey from a young cricket prodigy to a global icon, offering insights into his personal life and illustrious career.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="sachin-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/Sachin_Tendulkar" target="_blank" rel="noopener noreferrer" data-key="sachinWikipedia">📖 Sachin Tendulkar on Wikipedia</a></p>
+  </section>
+
+  <section id="mary-kom" aria-labelledby="mary-kom-heading">
+    <h2 id="mary-kom-heading" data-key="sectionMaryKomTitle">Mary Kom <small>(Olympic Boxer)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Mary_Kom_2016.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/a/ab/Mary_Kom_2016.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/a/ab/Mary_Kom_2016.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/a/ab/Mary_Kom_2016.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Portrait of Mary Kom, the Indian Olympic boxer, wearing boxing gloves.">
+      <figcaption data-key="maryKomFigCaption">Mangte Chungneijang Mary Kom (Born 1982)</figcaption>
+    </figure>
+    <h3 data-key="maryKomMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="marykom-achievements">
+      <div class="short-text" data-key-list="maryKomMajorAchievementsShort">
+        <ul>
+          <li>**Six-time World Amateur Boxing Champion:** The only female to achieve this feat.</li>
+          <li>**Olympic Bronze Medal:** Won bronze at the 2012 London Olympics.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="maryKomMajorAchievementsFull">
+        <ul>
+          <li>**Six-time World Amateur Boxing Champion:** The only female to achieve this feat.</li>
+          <li>**Olympic Bronze Medal:** Won bronze at the 2012 London Olympics.</li>
+          <li>**Asian Games Gold Medal:** Secured gold at the 2014 Incheon Asian Games.</li>
+          <li>**Commonwealth Games Gold Medal:** Won gold at the 2018 Gold Coast Commonwealth Games.</li>
+          <li>**Padma Vibhushan:** Awarded India's second-highest civilian honour in 2020.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="marykom-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="maryKomTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="marykom-timeline">
+      <div class="short-text" data-key-list="maryKomTimelineShort">
+        <ul>
+          <li>**2001:** Won her first World Boxing Championship silver medal.</li>
+          <li>**2012:** Won bronze medal at the London Olympics.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="maryKomTimelineFull">
+        <ul>
+          <li>**2001:** Won her first World Boxing Championship silver medal.</li>
+          <li>**2002-2010:** Won 5 consecutive World Championship gold medals.</li>
+          <li>**2012:** Won bronze medal at the London Olympics.</li>
+          <li>**2014:** Won gold at the Asian Games.</li>
+          <li>**2018:** Won her record sixth World Championship gold medal.</li>
+          <li>**2020:** Awarded the Padma Vibhushan.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="marykom-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="maryKomAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="marykom-autobiography">
+      <span class="short-text" data-key="maryKomAutobiographyShort">"**Unbreakable**" (2013) is her inspiring autobiography.</span>
+      <span class="full-text hidden" data-key="maryKomAutobiographyFull">"**Unbreakable**" (2013) is her inspiring autobiography, detailing her struggles, triumphs, and journey to becoming a boxing legend while balancing motherhood.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="marykom-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/Mary_Kom" target="_blank" rel="noopener noreferrer" data-key="maryKomWikipedia">📖 Mary Kom on Wikipedia</a></p>
+  </section>
+
+  <section id="ratan-tata" aria-labelledby="ratan-tata-heading">
+    <h2 id="ratan-tata-heading" data-key="sectionRatanTataTitle">Ratan Tata <small>(Industrialist & Philanthropist)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Ratan_Tata.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/5/5a/Ratan_Tata.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/5/5a/Ratan_Tata.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/5/5a/Ratan_Tata.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Portrait of Ratan Tata, a prominent Indian industrialist and former chairman of Tata Sons.">
+      <figcaption data-key="ratanTataFigCaption">Ratan Naval Tata (Born 1937)</figcaption>
+    </figure>
+    <h3 data-key="ratanTataMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="ratantata-achievements">
+      <div class="short-text" data-key-list="ratanTataMajorAchievementsShort">
+        <ul>
+          <li>**Transformed Tata Group:** Led the conglomerate through major global acquisitions.</li>
+          <li>**Pioneered Tata Nano:** Launched the world's most affordable car.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="ratanTataMajorAchievementsFull">
+        <ul>
+          <li>**Transformed Tata Group:** Led the conglomerate through major global acquisitions, including Tetley Tea, Jaguar Land Rover, and Corus Steel.</li>
+          <li>**Pioneered Tata Nano:** Launched the world's most affordable car, Tata Nano, making car ownership accessible to many.</li>
+          <li>**Increased Group Revenue:** During his chairmanship, Tata Group's revenues grew exponentially.</li>
+          <li>**Padma Vibhushan:** Awarded India's second-highest civilian honour in 2008.</li>
+          <li>**Philanthropic Efforts:** Known for his commitment to philanthropy and ethical business practices.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="ratantata-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="ratanTataTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="ratantata-timeline">
+      <div class="short-text" data-key-list="ratanTataTimelineShort">
+        <ul>
+          <li>**1991:** Appointed Chairman of Tata Sons.</li>
+          <li>**2008:** Tata Motors acquires Jaguar Land Rover.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="ratanTataTimelineFull">
+        <ul>
+          <li>**1962:** Joined the Tata Group.</li>
+          <li>**1991:** Appointed Chairman of Tata Sons.</li>
+          <li>**2000:** Tata Tea acquires Tetley.</li>
+          <li>**2007:** Tata Steel acquires Corus.</li>
+          <li>**2008:** Tata Motors acquires Jaguar Land Rover; Tata Nano launched.</li>
+          <li>**2012:** Stepped down as Chairman of Tata Sons.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="ratantata-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="ratanTataAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="ratantata-autobiography">
+      <span class="short-text" data-key="ratanTataAutobiographyShort">While not a traditional autobiography, his life and work are extensively documented in various biographies.</span>
+      <span class="full-text hidden" data-key="ratanTataAutobiographyFull">While not a traditional autobiography, his life and work are extensively documented in "**The Wit & Wisdom of Ratan Tata**" and numerous biographies, highlighting his vision and leadership.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="ratantata-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/Ratan_Tata" target="_blank" rel="noopener noreferrer" data-key="ratanTataWikipedia">📖 Ratan Tata on Wikipedia</a></p>
+  </section>
+
+  <section id="kiran-mazumdar-shaw" aria-labelledby="kiran-mazumdar-shaw-heading">
+    <h2 id="kiran-mazumdar-shaw-heading" data-key="sectionKiranShawTitle">Kiran Mazumdar Shaw <small>(Biotech Entrepreneur)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Kiran_Mazumdar-Shaw.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/3/3f/Kiran_Mazumdar-Shaw.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/3/3f/Kiran_Mazumdar-Shaw.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/3/3f/Kiran_Mazumdar-Shaw.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Portrait of Kiran Mazumdar-Shaw, founder of Biocon.">
+      <figcaption data-key="kiranShawFigCaption">Kiran Mazumdar-Shaw (Born 1953)</figcaption>
+    </figure>
+    <h3 data-key="kiranShawMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="kiran-achievements">
+      <div class="short-text" data-key-list="kiranShawMajorAchievementsShort">
+        <ul>
+          <li>**Founder of Biocon:** Built Biocon from a garage startup.</li>
+          <li>**Biotech Pioneer:** Instrumental in putting India on the global biotech map.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="kiranShawMajorAchievementsFull">
+        <ul>
+          <li>**Founder of Biocon:** Built Biocon from a garage startup into a leading global biopharmaceutical company.</li>
+          <li>**Biotech Pioneer:** Instrumental in putting India on the global biotech map, focusing on affordable healthcare.</li>
+          <li>**Prominent Female Entrepreneur:** Recognized globally as one of the most powerful and influential women in business.</li>
+          <li>**Padma Bhushan:** Awarded India's third-highest civilian honour in 2005.</li>
+          <li>**Forbes "World's 100 Most Powerful Women":** Consistently featured on this prestigious list.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="kiran-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="kiranShawTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="kiran-timeline">
+      <div class="short-text" data-key-list="kiranShawTimelineShort">
+        <ul>
+          <li>**1978:** Founded Biocon in her garage in Bengaluru.</li>
+          <li>**2004:** Biocon becomes the first Indian biotech company to go public.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="kiranShawTimelineFull">
+        <ul>
+          <li>**1978:** Founded Biocon in her garage in Bengaluru.</li>
+          <li>**2004:** Biocon becomes the first Indian biotech company to go public.</li>
+          <li>**2005:** Awarded the Padma Bhushan.</li>
+          <li>**2014:** Featured in Forbes' "The World's 100 Most Powerful Women".</li>
+          <li>**2019:** Elected as a Fellow of the Royal Society of Edinburgh.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="kiran-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="kiranShawAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="kiran-autobiography">
+      <span class="short-text" data-key="kiranShawAutobiographyShort">While she hasn't published a dedicated autobiography, her journey is a prominent part of many books.</span>
+      <span class="full-text hidden" data-key="kiranShawAutobiographyFull">While she hasn't published a dedicated autobiography, her journey is a prominent part of many books on Indian entrepreneurship and innovation, highlighting her pioneering spirit.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="kiran-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/Kiran_Mazumdar-Shaw" target="_blank" rel="noopener noreferrer" data-key="kiranShawWikipedia">📖 Kiran Mazumdar Shaw on Wikipedia</a></p>
+  </section>
+
+  <section id="rabindranath-tagore" aria-labelledby="rabindranath-tagore-heading">
+    <h2 id="rabindranath-tagore-heading" data-key="sectionTagoreTitle">Rabindranath Tagore <small>(Poet, Philosopher, Artist)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Rabindranath_Tagore.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/e/e0/Rabindranath_Tagore.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/e/e0/Rabindranath_Tagore.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/e/e0/Rabindranath_Tagore.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Portrait of Rabindranath Tagore, a renowned Indian polymath.">
+      <figcaption data-key="tagoreFigCaption">Rabindranath Tagore (1861 – 1941)</figcaption>
+    </figure>
+    <h3 data-key="tagoreMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="tagore-achievements">
+      <div class="short-text" data-key-list="tagoreMajorAchievementsShort">
+        <ul>
+          <li>**Nobel Prize in Literature (1913):** The first non-European to win a Nobel Prize.</li>
+          <li>**Composed National Anthems:** Authored the national anthems of India and Bangladesh.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="tagoreMajorAchievementsFull">
+        <ul>
+          <li>**Nobel Prize in Literature (1913):** The first non-European to win a Nobel Prize, awarded for his profound and sensitive, fresh and beautiful verse, especially "Gitanjali".</li>
+          <li>**Composed National Anthems:** Authored the national anthems of India ("Jana Gana Mana") and Bangladesh ("Amar Shonar Bangla").</li>
+          <li>**Founded Visva-Bharati University:** Established an experimental school at Santiniketan, which evolved into a renowned university.</li>
+          <li>**Prolific Writer:** Penned over 2,000 songs, numerous poems, novels, short stories, essays, and plays.</li>
+          <li>**Modernized Bengali Art and Literature:** Revolutionized Bengali literature and Indian art with contextual modernism.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="tagore-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="tagoreTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="tagore-timeline">
+      <div class="short-text" data-key-list="tagoreTimelineShort">
+        <ul>
+          <li>**1861:** Born in Calcutta, Bengal Presidency.</li>
+          <li>**1913:** Awarded the Nobel Prize in Literature.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="tagoreTimelineFull">
+        <ul>
+          <li>**1861:** Born in Calcutta, Bengal Presidency.</li>
+          <li>**1901:** Established the Brahmacharya Ashram, which later became Visva-Bharati University.</li>
+          <li>**1913:** Awarded the Nobel Prize in Literature.</li>
+          <li>**1919:** Renounced his knighthood in protest of the Jallianwala Bagh massacre.</li>
+          <li>**1941:** Passed away.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="tagore-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="tagoreAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="tagore-autobiography">
+      <span class="short-text" data-key="tagoreAutobiographyShort">"**My Reminiscences**" (1912), originally "Jivan Smriti" in Bengali.</span>
+      <span class="full-text hidden" data-key="tagoreAutobiographyFull">"**My Reminiscences**" (1912), originally "Jivan Smriti" in Bengali, offers a vivid account of his early life and experiences that shaped his literary genius.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="tagore-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/Rabindranath_Tagore" target="_blank" rel="noopener noreferrer" data-key="tagoreWikipedia">📖 Rabindranath Tagore on Wikipedia</a></p>
+  </section>
+
+  <section id="cv-raman" aria-labelledby="cv-raman-heading">
+    <h2 id="cv-raman-heading" data-key="sectionCVRamanTitle">C.V. Raman <small>(Physicist, Nobel Laureate)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/0/08/CV_Raman.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/0/08/CV_Raman.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/0/08/CV_Raman.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/0/08/CV_Raman.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Portrait of C.V. Raman, an Indian physicist, known for his work on light scattering.">
+      <figcaption data-key="cvRamanFigCaption">Sir C.V. Raman (1888 – 1970)</figcaption>
+    </figure>
+    <h3 data-key="cvRamanMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="raman-achievements">
+      <div class="short-text" data-key-list="cvRamanMajorAchievementsShort">
+        <ul>
+          <li>**Nobel Prize in Physics (1930):** Awarded for his work on the scattering of light.</li>
+          <li>**Raman Effect:** Discovered that deflected light changes wavelength.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="cvRamanMajorAchievementsFull">
+        <ul>
+          <li>**Nobel Prize in Physics (1930):** Awarded for his work on the scattering of light and for the discovery of the effect named after him (Raman Effect).</li>
+          <li>**Raman Effect:** Discovered that when light traverses a transparent material, some of the deflected light changes wavelength and amplitude.</li>
+          <li>**Established Research Institutions:** Made significant contributions to science in India, fostering a strong scientific environment.</li>
+          <li>**First Indian Director of IISc:** Became the first Indian Director of the Indian Institute of Science, Bangalore.</li>
+          <li>**Bharat Ratna:** Conferred with India's highest civilian award in 1954.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="raman-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="cvRamanTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="raman-timeline">
+      <div class="short-text" data-key-list="cvRamanTimelineShort">
+        <ul>
+          <li>**1928:** Discovered the Raman Effect.</li>
+          <li>**1930:** Awarded the Nobel Prize in Physics.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="cvRamanTimelineFull">
+        <ul>
+          <li>**1888:** Born in Tiruchirappalli, Tamil Nadu.</li>
+          <li>**1907:** Joined the Indian Finance Department.</li>
+          <li>**1917:** Appointed Palit Professor of Physics at the University of Calcutta.</li>
+          <li>**1928:** Discovered the Raman Effect.</li>
+          <li>**1930:** Awarded the Nobel Prize in Physics.</li>
+          <li>**1947:** Established the Raman Research Institute.</li>
+          <li>**1970:** Passed away.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="raman-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="cvRamanAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="raman-autobiography">
+      <span class="short-text" data-key="cvRamanAutobiographyShort">C.V. Raman did not write a formal autobiography, but his life and work are extensively documented.</span>
+      <span class="full-text hidden" data-key="cvRamanAutobiographyFull">C.V. Raman did not write a formal autobiography, but his life and work are extensively documented in numerous scientific and biographical accounts, emphasizing his groundbreaking contributions to physics.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="raman-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/C._V._Raman" target="_blank" rel="noopener noreferrer" data-key="cvRamanWikipedia">📖 C.V. Raman on Wikipedia</a></p>
+  </section>
+
+  <section id="mahatma-gandhi" aria-labelledby="mahatma-gandhi-heading">
+    <h2 id="mahatma-gandhi-heading" data-key="sectionGandhiTitle">Mahatma Gandhi <small>(Father of the Nation)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Mahatma-Gandhi.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/d/d1/Mahatma-Gandhi.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/d/d1/Mahatma-Gandhi.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/d/d1/Mahatma-Gandhi.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Iconic black and white portrait of Mahatma Gandhi, smiling.">
+      <figcaption data-key="gandhiFigCaption">Mohandas Karamchand Gandhi (1869 – 1948)</figcaption>
+    </figure>
+    <h3 data-key="gandhiMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="gandhi-achievements">
+      <div class="short-text" data-key-list="gandhiMajorAchievementsShort">
+        <ul>
+          <li>**Indian Independence Movement:** Led India to independence from British rule.</li>
+          <li>**Satyagraha:** Developed the philosophy of nonviolent resistance.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="gandhiMajorAchievementsFull">
+        <ul>
+          <li>**Indian Independence Movement:** Led India to independence from British rule through nonviolent civil disobedience.</li>
+          <li>**Satyagraha:** Developed the philosophy of nonviolent resistance, inspiring civil rights movements globally.</li>
+          <li>**Dandi March (Salt March):** A landmark act of civil disobedience against the British salt monopoly.</li>
+          <li>**Quit India Movement:** Launched a mass movement demanding an end to British rule.</li>
+          <li>**Promoted Social Harmony:** Campaigned against untouchability and advocated for Hindu-Muslim unity.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="gandhi-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="gandhiTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="gandhi-timeline">
+      <div class="short-text" data-key-list="gandhiTimelineShort">
+        <ul>
+          <li>**1915:** Returned to India and joined the nationalist movement.</li>
+          <li>**1930:** Led the Dandi March.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="gandhiTimelineFull">
+        <ul>
+          <li>**1869:** Born in Porbandar, Gujarat.</li>
+          <li>**1893:** Moved to South Africa, where he developed Satyagraha.</li>
+          <li>**1915:** Returned to India and joined the nationalist movement.</li>
+          <li>**1930:** Led the Dandi March.</li>
+          <li>**1942:** Launched the Quit India Movement.</li>
+          <li>**1947:** India gained independence.</li>
+          <li>**1948:** Assassinated in Delhi.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="gandhi-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="gandhiAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="gandhi-autobiography">
+      <span class="short-text" data-key="gandhiAutobiographyShort">"**The Story of My Experiments with Truth**" (1925-1929) is his seminal autobiography.</span>
+      <span class="full-text hidden" data-key="gandhiAutobiographyFull">"**The Story of My Experiments with Truth**" (1925-1929) is his seminal autobiography, offering deep insights into his moral and spiritual development and the evolution of his Satyagraha philosophy.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="gandhi-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/Mahatma_Gandhi" target="_blank" rel="noopener noreferrer" data-key="gandhiWikipedia">📖 Mahatma Gandhi on Wikipedia</a></p>
+  </section>
+
+  <section id="apj-abdul-kalam" aria-labelledby="apj-abdul-kalam-heading">
+    <h2 id="apj-abdul-kalam-heading" data-key="sectionAPJKalamTitle">A.P.J. Abdul Kalam <small>(Former President & Scientist)</small></h2>
+    <figure>
+      <img loading="lazy"
+           src="https://upload.wikimedia.org/wikipedia/commons/9/99/APJ_Abdul_Kalam.jpg"
+           srcset="https://upload.wikimedia.org/wikipedia/commons/9/99/APJ_Abdul_Kalam.jpg 480w,
+                   https://upload.wikimedia.org/wikipedia/commons/9/99/APJ_Abdul_Kalam.jpg 800w,
+                   https://upload.wikimedia.org/wikipedia/commons/9/99/APJ_Abdul_Kalam.jpg 1200w"
+           sizes="(max-width: 600px) 100vw, (max-width: 1000px) 50vw, 33vw"
+           alt="Portrait of A.P.J. Abdul Kalam, the former President of India.">
+      <figcaption data-key="apjKalamFigCaption">Avul Pakir Jainulabdeen Abdul Kalam (1931 – 2015)</figcaption>
+    </figure>
+    <h3 data-key="apjKalamMajorAchievementsTitle">Major Achievements</h3>
+    <div class="content-wrapper" id="kalam-achievements">
+      <div class="short-text" data-key-list="apjKalamMajorAchievementsShort">
+        <ul>
+          <li>**11th President of India (2002-2007):** Known as the "People's President".</li>
+          <li>**"Missile Man of India":** Played a leading role in India's missile programs.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="apjKalamMajorAchievementsFull">
+        <ul>
+          <li>**11th President of India (2002-2007):** Known as the "People's President" for his accessible and inspiring tenure.</li>
+          <li>**"Missile Man of India":** Played a leading role in the development of India's ballistic missile and nuclear weapons programs.</li>
+          <li>**Scientist and Engineer:** Key figure in the Indian Space Research Organisation (ISRO) and Defence Research and Development Organisation (DRDO).</li>
+          <li>**Bharat Ratna:** Conferred with India's highest civilian award in 1997.</li>
+          <li>**Prolific Author and Educator:** Wrote several inspiring books and dedicated his post-presidency to education.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="kalam-achievements" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="apjKalamTimelineTitle">Timeline Highlights</h3>
+    <div class="content-wrapper" id="kalam-timeline">
+      <div class="short-text" data-key-list="apjKalamTimelineShort">
+        <ul>
+          <li>**1980s:** Spearheaded the Integrated Guided Missile Development Program (IGMDP).</li>
+          <li>**2002:** Elected as the 11th President of India.</li>
+        </ul>
+      </div>
+      <div class="full-text hidden" data-key-list="apjKalamTimelineFull">
+        <ul>
+          <li>**1931:** Born in Rameswaram, Tamil Nadu.</li>
+          <li>**1960:** Joined DRDO as a scientist.</li>
+          <li>**1980s:** Spearheaded the Integrated Guided Missile Development Program (IGMDP).</li>
+          <li>**1992-1999:** Served as Chief Scientific Adviser to the Prime Minister.</li>
+          <li>**1997:** Awarded the Bharat Ratna.</li>
+          <li>**2002:** Elected as the 11th President of India.</li>
+          <li>**2015:** Passed away while delivering a lecture.</li>
+        </ul>
+      </div>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="kalam-timeline" data-key="readMore">Read More</button>
+    </div>
+    <h3 data-key="apjKalamAutobiographyTitle">Autobiography</h3>
+    <p class="content-wrapper" id="kalam-autobiography">
+      <span class="short-text" data-key="apjKalamAutobiographyShort">"**Wings of Fire**" (1999) is his inspiring autobiography.</span>
+      <span class="full-text hidden" data-key="apjKalamAutobiographyFull">"**Wings of Fire**" (1999) is his inspiring autobiography, recounting his humble beginnings and his journey to becoming a renowned scientist and the President of India.</span>
+      <button class="read-more-btn" aria-expanded="false" aria-controls="kalam-autobiography" data-key="readMore">Read More</button>
+    </p>
+    <p><a href="https://en.wikipedia.org/wiki/A._P._J._Abdul_Kalam" target="_blank" rel="noopener noreferrer" data-key="apjKalamWikipedia">📖 A.P.J. Abdul Kalam on Wikipedia</a></p>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="current-year"></span> <span data-key="footerText">Tribute Page • Built with 🧡 by Meta AI</span></p>
+  <p data-key="footerDisclaimer">All images and content are for educational and tribute purposes only.</p>
+</footer>
+
+<!-- Link to your JavaScript file -->
+<script src="script.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+/* ================= GOOGLE FONT ================= */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --primary: #0d47a1; /* Darker Blue */
+  --secondary: #1565c0; /* Medium Blue */
+  --accent: #ff6f00; /* Orange */
+  --bg: #f4f6fb; /* Light Greyish Blue */
+  --text: #1f2937; /* Dark Grey */
+  --card-bg: rgba(255,255,255,0.85); /* Slightly less transparent white */
+  --border-color: rgba(255,255,255,0.4); /* Light border for glass effect */
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,0.12);
+  --blur: blur(12px);
+  --header-height: 120px; /* Approximate height for the header */
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  --bg: #0f172a; /* Dark Blue-Grey */
+  --text: #e5e7eb; /* Light Grey */
+  --card-bg: rgba(30,41,59,0.85); /* Slightly less transparent dark blue */
+  --border-color: rgba(255,255,255,0.1); /* Darker border for glass effect */
+  --primary: #111827; /* Very Dark Blue */
+  --secondary: #1f2937; /* Dark Blue-Grey */
+}
+
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Prevent scrollbar from causing layout shifts */
+  overflow-y: scroll;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.4s ease, color 0.4s ease;
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--primary);
+  margin-bottom: 0.8em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+/* ================= HEADER ================= */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 20px 20px 10px; /* Reduced bottom padding */
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: var(--header-height); /* Ensure minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Space between header elements */
+}
+
+header h1 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: white; /* Override default primary color */
+  margin-bottom: 5px;
+}
+
+header p {
+  font-size: 1.1em;
+  margin-bottom: 15px;
+}
+
+/* ================= NAVIGATION ================= */
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 10px; /* Space above dark mode button */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 5px 0;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* Underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: white;
+  left: 0;
+  bottom: 0px; /* Position directly below text */
+  transition: 0.3s;
+}
+
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+/* Dark Mode Toggle Button */
+#darkToggle {
+  background: rgba(255,255,255,0.2);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+#darkToggle:hover {
+  background: rgba(255,255,255,0.3);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateY(-1px);
+}
+
+/* ================= MAIN CONTAINER ================= */
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* ================= PERSONALITY SECTIONS ================= */
+section {
+  background: var(--card-bg); /* Use card background for sections */
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color); /* Light border for definition */
+  padding: 30px;
+  margin-bottom: 40px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.4s ease, border-color 0.4s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+section h2 {
+  color: var(--secondary);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+section h3 {
+  color: var(--primary);
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 1.3em;
+  position: relative;
+  padding-left: 15px;
+}
+
+section h3::before {
+  content: '▶'; /* Little arrow icon */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent);
+  font-size: 0.8em;
+  line-height: 1.5;
+}
+
+/* Figure for image */
+figure {
+  margin: 20px auto 30px;
+  text-align: center;
+  max-width: 300px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: scale(1.02);
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+figure img:hover {
+  transform: scale(1.05);
+}
+
+figcaption {
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 10px;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 1em;
+}
+
+ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 0.5em;
+}
+
+ul li::before {
+  content: '•'; /* Custom bullet point */
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1; /* Align with text */
+}
+
+/* Autobiography/Wikipedia links */
+p strong {
+  color: var(--primary);
+}
+
+section p a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 15px;
+  background: var(--accent);
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+section p a:hover {
+  background: var(--secondary);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+/* --- READ MORE/LESS FEATURE STYLES --- */
+.content-wrapper {
+  margin-top: 10px; /* Space above content */
+  margin-bottom: 15px; /* Space below content before button */
+}
+
+.content-wrapper .hidden {
+  display: none;
+}
+
+.read-more-btn {
+  display: block; /* Make button full width */
+  margin-top: 10px;
+  background: var(--secondary);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: fit-content; /* Adjust width to content */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.read-more-btn:hover {
+  background: var(--primary);
+  transform: translateY(-1px);
+}
+
+/* ================= FOOTER ================= */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  font-size: 0.9em;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+footer p {
+  margin-bottom: 5px;
+}
+footer p:last-child {
+  margin-bottom: 0;
+}
+
+/* ================= SCROLL TO TOP BUTTON (optional, will be controlled by JS) ================= */
+#topBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Not clickable when hidden */
+  transition: opacity 0.3s ease, transform 0.2s ease;
+  z-index: 90;
+}
+
+#topBtn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#topBtn:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: var(--secondary);
+}
+
+/* ================= PROGRESS BAR ================= */
+#progressBar {
+  height: 5px;
+  background: linear-gradient(to right, var(--accent), #ff9800);
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 101; /* Above header for visibility */
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 992px) {
+  h1 { font-size: 2.2em; }
+  h2 { font-size: 1.8em; }
+  section { padding: 25px; margin-bottom: 30px; }
+  nav ul { gap: 10px; }
+}
+
+@media (max-width: 768px) {
+  header { padding-top: 15px; }
+  header h1 { font-size: 1.8em; }
+  header p { font-size: 1em; }
+  nav ul { flex-direction: column; gap: 5px; }
+  nav a { padding: 3px 0; font-size: 0.95em; }
+  main { margin: 20px auto; padding: 0 15px; }
+  section { padding: 20px; margin-bottom: 25px; }
+  figure { max-width: 250px; }
+  .read-more-btn { width: 100%; } /* Full width on smaller screens */
+}
+
+@media (max-width: 576px) {
+  header h1 { font-size: 1.5em; }
+  header p { font-size: 0.9em; margin-bottom: 10px; }
+  #darkToggle { font-size: 0.8em; padding: 6px 12px; }
+  section { padding: 15px; }
+  figure { max-width: 100%; margin-left: 0; margin-right: 0; }
+  #topBtn { width: 40px; height: 40px; font-size: 1.2em; bottom: 20px; right: 20px; }
+}
+
+
+/* Add to styles.css */
+
+.header-controls {
+  display: flex;
+  gap: 15px; /* Space between dark mode and language selector */
+  align-items: center;
+  margin-top: 10px; /* Space from navigation */
+}
+
+#language-selector {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.2);
+  color: white;
+  font-size: 0.9em;
+  cursor: pointer;
+  -webkit-appearance: none; /* Remove default dropdown arrow for custom styling */
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-chevron-down'%3E%3Cpolyline points='6 9 12 3 18 9'%3E%3C/polyline%3E%3C/svg%3E"); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  padding-right: 28px; /* Space for the custom arrow */
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+#language-selector option {
+  background-color: var(--secondary); /* Darker background for options */
+  color: white;
+}
+
+#language-selector:hover {
+  background: rgba(255,255,255,0.3);
+  border-color: rgba(255,255,255,0.5);
+}

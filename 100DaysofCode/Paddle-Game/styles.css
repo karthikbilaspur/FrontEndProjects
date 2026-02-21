@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #222;
+    color: #eee;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Align to top to give space for content */
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+canvas {
+    display: block;
+    background: black;
+    border: 2px solid #00f7ff;
+    max-width: 90%; /* Ensure canvas fits on smaller screens */
+    max-height: 70vh; /* Limit canvas height */
+}
+h1, h2 {
+    color: #00f7ff;
+    text-shadow: 0 0 5px #00f7ff;
+    text-align: center;
+}
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+.instructions-container {
+    max-width: 800px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+}
+.instructions-container ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+.instructions-container li {
+    margin-bottom: 8px;
+}
+footer {
+    margin-top: 30px;
+    font-size: 0.8em; /* Slightly smaller for footer */
+    color: #aaa;
+    text-align: center;
+    max-width: 800px;
+    padding-bottom: 20px; /* Ensure space at bottom */
+}
+.disclaimer {
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        justify-content: flex-start; /* Important for mobile to avoid content being squished */
+    }
+    canvas {
+        max-width: 100%;
+        margin-top: 10px; /* Space from title */
+    }
+    h1 {
+        font-size: 1.5em;
+    }
+    h2 {
+        font-size: 1.2em;
+    }
+   .instructions-container {
+
+
+        padding: 15px;
+        font-size: 0.8em;
+    }
+    footer {
+        font-size: 0.7em;
+    }
+}
+

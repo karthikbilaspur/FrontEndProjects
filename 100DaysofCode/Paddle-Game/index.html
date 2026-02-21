@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Chaos Pong - God Mode Edition</title>
+
+    <!-- SEO Tags -->
+    <meta name="description" content="Experience Ultimate Chaos Pong! A hyper-enhanced JavaScript Pong game with boss battles, power-ups, portals, gravity, and wild ball mutations. Play the most chaotic Pong ever!">
+    <meta name="keywords" content="pong, game, javascript, html5, canvas, arcade, chaos, ultimate, boss battle, powerups, portals, gravity, mini-game, educational, web development">
+    <meta name="author" content="Meta AI">
+
+    <!-- Open Graph Tags (for social media sharing) -->
+    <meta property="og:title" content="Ultimate Chaos Pong - God Mode Edition">
+    <meta property="og:description" content="Experience Ultimate Chaos Pong! A hyper-enhanced JavaScript Pong game with boss battles, power-ups, portals, gravity, and wild ball mutations. Play the most chaotic Pong ever!">
+    <meta property="og:type" content="game">
+    <meta property="og:url" content="YOUR_GAME_URL_HERE"> <!-- Replace with your actual game URL when hosted -->
+    <meta property="og:image" content="YOUR_SCREENSHOT_URL_HERE"> <!-- Replace with a screenshot of your game -->
+    <meta property="og:image:alt" content="Screenshot of Ultimate Chaos Pong gameplay">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ultimate Chaos Pong - God Mode Edition">
+    <meta name="twitter:description" content="Experience Ultimate Chaos Pong! A hyper-enhanced JavaScript Pong game with boss battles, power-ups, portals, gravity, and wild ball mutations. Play the most chaotic Pong ever!">
+    <meta name="twitter:image" content="YOUR_SCREENSHOT_URL_HERE"> <!-- Replace with a screenshot of your game -->
+
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Ultimate Chaos Pong: God Mode Edition!</h1>
+        <canvas id="game"></canvas>
+    </div>
+
+    <div class="instructions-container">
+        <h2>How to Play:</h2>
+        <p>Welcome to the most chaotic Pong game you've ever encountered! This isn't your grandma's Pong; it's a mashup of epic proportions with a ton of features designed to keep you on your toes.</p>
+        <h3>Controls:</h3>
+        <ul>
+            <li><strong>Arrow Up/Down:</strong> Move your paddle.</li>
+            <li><strong>Spacebar:</strong> Pause/Unpause the game.</li>
+            <li><strong>Z:</strong> Dash (move instantly up or down) or Shoot Bullets (if you have no dash cooldown).</li>
+            <li><strong>X:</strong> Activate Rage Shot (when Rage meter is full).</li>
+            <li><strong>1, 2, 3:</strong> Select upgrades from the upgrade menu when it appears.</li>
+            <li><strong>Touch (Mobile):</strong> Drag your finger on the screen to move your paddle.</li>
+            <li><strong>R (Game Over):</strong> Restart the game.</li>
+        </ul>
+        <h3>Key Features:</h3>
+        <ul>
+            <li><strong>Power-ups:</strong> Small colored squares will appear randomly. Hit them with the ball for temporary buffs like a bigger paddle, slowed balls, or even spawning multiple balls!</li>
+            <li><strong>Portals:</strong> Two purple-outlined circles. The ball can enter one and instantly exit the other side of the arena.</li>
+            <li><strong>Gravity Well:</strong> A central cyan circle that pulls the ball towards it, altering its trajectory.</li>
+            <li><strong>Boss Battle:</strong> After scoring 5 points, a boss appears on the right side. Hit it with the ball or your bullets to defeat it! Watch out for its health phases.</li>
+            <li><strong>Bullets & Rage:</strong> Use 'Z' to shoot! Build up 'Rage' by making combos and hitting the ball. High rage increases bullet power and affects your dash cooldown.</li>
+            <li><strong>Rage Shot:</strong> When your 'Rage' meter is full, press 'X' for a super-powered shot that sends the ball flying at extreme speed!</li>
+            <li><strong>Combo System:</strong> Keep hitting the ball without the AI scoring to build up your combo. Higher combos can lead to ball mutations!</li>
+            <li><strong>Ball Mutations:</strong> Balls can randomly become "Ghost" balls (pass through things?) or "Seeking" balls (gently home in on paddles).</li>
+            <li><strong>Upgrade System:</strong> Every 3 points you score, a menu will pop up, letting you choose between powerful permanent upgrades like a bigger paddle, multi-ball, or rage boosts.</li>
+            <li><strong>Slow-motion:</strong> Time briefly slows down when the ball is very close to your paddle, giving you precious milliseconds to react.</li>
+            <li><strong>Destructible Walls:</strong> The top and bottom walls can be damaged by ball hits. Break them to create new openings and strategies!</li>
+            <li><strong>AI Buffs:</strong> The AI isn't left out! It might occasionally get temporary buffs like increased speed or a larger paddle.</li>
+            <li><strong>Arena Effects:</strong> Random global modifiers like "Low Gravity," "High Friction," or "Paddle Clamp" will activate, changing the entire game's physics for a short period.</li>
+            <li><strong>Ball Splitting:</strong> The boss might sometimes split the ball when hit, adding more chaos!</li>
+        </ul>
+        <p>Survive the chaos, master the mechanics, and defeat the Boss to claim victory!</p>
+    </div>
+
+    <footer>
+        <p>Developed by  karthik.</p>
+        <p class="disclaimer">Disclaimer: This code is provided for educational purposes only, to demonstrate advanced JavaScript game development concepts and features. It is not intended for commercial use or distribution without proper licensing and review.</p>
+    </footer>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
+
