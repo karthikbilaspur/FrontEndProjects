@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>All-in-One Calculator Hub - Age, BMI, Tip, Area, Temperature Tools</title>
+    <meta name="description" content="Your go-to online calculator hub for essential daily calculations. Features include Age Calculator, BMI Calculator, Tip Calculator, Multi-Shape Area Calculator, and Temperature Converter.">
+    <meta name="keywords" content="calculator, age calculator, bmi calculator, tip calculator, area calculator, temperature converter, online tools, free calculator">
+    <meta name="author" content="Your Name/Company">
+    <link rel="canonical" href="https://yourwebsite.com/calculators"> <!-- Replace with your actual URL -->
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="All-in-One Calculator Hub">
+    <meta property="og:description" content="Your go-to online calculator hub for essential daily calculations. Features include Age Calculator, BMI Calculator, Tip Calculator, Multi-Shape Area Calculator, and Temperature Converter.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/calculators"> <!-- Replace with your actual URL -->
+    <meta property="og:image" content="https://yourwebsite.com/images/calculator-hub-share.jpg"> <!-- Replace with a relevant image URL -->
+    <meta property="og:image:alt" content="Screenshot of the All-in-One Calculator Hub">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourtwitterhandle"> <!-- Optional: Replace with your Twitter handle -->
+    <meta name="twitter:creator" content="@yourtwitterhandle"> <!-- Optional: Replace with your Twitter handle -->
+    <meta name="twitter:title" content="All-in-One Calculator Hub">
+    <meta name="twitter:description" content="Your go-to online calculator hub for essential daily calculations. Features include Age Calculator, BMI Calculator, Tip Calculator, Multi-Shape Area Calculator, and Temperature Converter.">
+    <meta name="twitter:image" content="https://yourwebsite.com/images/calculator-hub-share.jpg"> <!-- Replace with a relevant image URL -->
+
+    <link rel="stylesheet" href="style.css"> <!-- LINK TO OUR NEW CSS FILE -->
+
+    <!-- Optional: Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Your All-in-One Calculator Hub!</h1>
+
+        <div class="calculator-selector">
+            <label for="calculatorType">Choose a calculator:</label>
+            <select id="calculatorType" onchange="showCalculator()">
+                <option value="">--Select a calculator--</option>
+                <option value="age">Age Calculator</option>
+                <option value="bmi">BMI Calculator</option>
+                <option value="tip">Tip Calculator</option>
+                <option value="area">Multi-Shape Area Calculator</option>
+                <option value="temperature">Temperature Converter</option>
+            </select>
+        </div>
+
+        <div id="calculatorsContainer">
+            <!-- Age Calculator -->
+            <div id="ageCalculator" class="calculator-section" data-name="age">
+                <h2>Age Calculator</h2>
+                <div class="input-group">
+                    <label for="dob">Enter your birthdate:</label>
+                    <input type="date" id="dob">
+                </div>
+                <div class="button-group">
+                    <button onclick="calculateAge()">Calculate Age</button>
+                    <button class="reset-btn" onclick="resetAgeCalculator()">Reset</button>
+                </div>
+                <p>Your age is: <span id="ageResult" class="result"></span></p>
+
+                <div class="calculator-details">
+                    <h3>About the Age Calculator:</h3>
+                    <p class="short-description">
+                        This tool helps you determine your current age based on your date of birth.
+                    </p>
+                    <p class="full-description" id="ageFullDesc"></p>
+                        Simply enter your birthdate in the provided field, and click 'Calculate Age'. The calculator will then
+                        provide your age in years. It accounts for leap years and the current date to give you an accurate result.
+                    </p>
+                    <button class="read-more-btn" onclick="toggleDescription('age')">Read More</button>
+                    <button class="read-less-btn" onclick="toggleDescription('age')">Read Less</button>
+                </div>
+            </div>
+
+            <!-- BMI Calculator -->
+            <div id="bmiCalculator" class="calculator-section" data-name="bmi">
+                <h2>BMI Calculator</h2>
+                <div class="input-group">
+                    <label for="weight">Weight:</label>
+                    <input type="number" id="weight" step="0.1">
+                    <select id="weightUnit" title="Weight">
+                        <option value="kg">kg</option>
+                        <option value="lbs">lbs</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="height">Height:</label>
+                    <input type="number" id="height" step="0.1">
+                    <select id="heightUnit" title="Height">
+                        <option value="cm">cm</option>
+                        <option value="inches">inches</option>
+                    </select>
+                </div>
+                <div class="button-group">
+                    <button onclick="calculateBMI()">Calculate BMI</button>
+                    <button class="reset-btn" onclick="resetBMICalculator()">Reset</button>
+                </div>
+                <p>Your BMI is: <span id="bmiResult" class="result"></span></p>
+                <p><span id="bmiCategory" class="result-category"></span></p>
+
+                <div class="calculator-details">
+                    <h3>About the BMI Calculator:</h3>
+                    <p class="short-description">
+                        The Body Mass Index (BMI) is a simple calculation using a person's height and weight.
+                    </p>
+                    <p class="full-description" id="bmiFullDesc">
+                        The formula is BMI = kg/m², where kg is a person's weight in kilograms and m² is their height in metres squared.
+                        A high BMI can indicate high body fatness. BMI screens for weight categories that may lead to health problems, but
+                        it does not diagnose the body fatness or health of an individual. It now supports both metric and imperial units.
+                    </p>
+                    <button class="read-more-btn" onclick="toggleDescription('bmi')">Read More</button>
+                    <button class="read-less-btn" onclick="toggleDescription('bmi')">Read Less</button>
+                </div>
+            </div>
+
+            <!-- Tip Calculator -->
+            <div id="tipCalculator" class="calculator-section" data-name="tip">
+                <h2>Tip Calculator</h2>
+                <div class="input-group">
+                    <label for="billAmount">Bill Amount ($):</label>
+                    <input type="number" id="billAmount" step="0.01">
+                </div>
+                <div class="input-group">
+                    <label for="tipPercentage">Tip Percentage (%):</label>
+                    <input type="number" id="tipPercentage" value="15">
+                </div>
+                <div class="tip-percentage-buttons">
+                    <button onclick="applyTipPercentage(10)">10%</button>
+                    <button onclick="applyTipPercentage(15)">15%</button>
+                    <button onclick="applyTipPercentage(20)">20%</button>
+                    <button onclick="applyTipPercentage(25)">25%</button>
+                </div>
+                <div class="button-group">
+                    <button onclick="calculateTip()">Calculate Tip</button>
+                    <button class="reset-btn" onclick="resetTipCalculator()">Reset</button>
+                </div>
+                <p>Tip Amount: $<span id="tipAmountResult" class="result"></span></p>
+                <p>Total Bill: $<span id="totalBillResult" class="result"></span></p>
+
+                <div class="calculator-details">
+                    <h3>About the Tip Calculator:</h3>
+                    <p class="short-description">
+                        Easily calculate the tip amount and the total bill based on your dining experience.
+                    </p>
+                    <p class="full-description" id="tipFullDesc">
+                        Enter your total bill amount and the desired tip percentage. You can also use the quick
+                        buttons to apply common tip percentages. The calculator will instantly show you the tip amount
+                        and the new total bill. Great for splitting checks or just figuring out a fair tip.
+                    </p>
+                    <button class="read-more-btn" onclick="toggleDescription('tip')">Read More</button>
+                    <button class="read-less-btn" onclick="toggleDescription('tip')">Read Less</button>
+                </div>
+            </div>
+
+            <!-- Multi-Shape Area Calculator -->
+            <div id="areaCalculator" class="calculator-section" data-name="area">
+                <h2>Multi-Shape Area Calculator</h2>
+                <div class="input-group">
+                    <label for="shapeType">Select Shape:</label>
+                    <select id="shapeType" onchange="showShapeInputs()">
+                        <option value="">--Select a shape--</option>
+                        <option value="circle">Circle</option>
+                        <option value="square">Square</option>
+                        <option value="rectangle">Rectangle</option>
+                        <option value="triangle">Triangle</option>
+                    </select>
+                </div>
+                <div id="shapeInputs">
+                    <!-- Inputs for Circle -->
+                    <div id="circleInputs" class="shape-input-group">
+                        <label for="circleRadius">Radius:</label>
+                        <input type="number" id="circleRadius" step="0.1">
+                    </div>
+
+                    <!-- Inputs for Square -->
+                    <div id="squareInputs" class="shape-input-group">
+                        <label for="squareSide">Side Length:</label>
+                        <input type="number" id="squareSide" step="0.1">
+                    </div>
+
+                    <!-- Inputs for Rectangle -->
+                    <div id="rectangleInputs" class="shape-input-group">
+                        <label for="rectangleLength">Length:</label>
+                        <input type="number" id="rectangleLength" step="0.1">
+                        <label for="rectangleWidth">Width:</label>
+                        <input type="number" id="rectangleWidth" step="0.1">
+                    </div>
+
+                    <!-- Inputs for Triangle -->
+                    <div id="triangleInputs" class="shape-input-group">
+                        <label for="triangleBase">Base:</label>
+                        <input type="number" id="triangleBase" step="0.1">
+                        <label for="triangleHeight">Height:</label>
+                        <input type="number" id="triangleHeight" step="0.1">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button onclick="calculateArea()">Calculate Area</button>
+                    <button class="reset-btn" onclick="resetAreaCalculator()">Reset</button>
+                </div>
+                <p>Area: <span id="areaResult" class="result"></span></p>
+
+                <div class="calculator-details">
+                    <h3>About the Multi-Shape Area Calculator:</h3>
+                    <p class="short-description">
+                        Calculate the area of various 2D shapes like circles, squares, rectangles, and triangles.
+                    </p>
+                    <p class="full-description" id="areaFullDesc">
+                        Select the shape you need, enter the required dimensions (radius for circle, side for square,
+                        length/width for rectangle, base/height for triangle), and click 'Calculate Area'.
+                        The tool uses standard geometric formulas to provide accurate area measurements.
+                    </p>
+                    <button class="read-more-btn" onclick="toggleDescription('area')">Read More</button>
+                    <button class="read-less-btn" onclick="toggleDescription('area')">Read Less</button>
+                </div>
+            </div>
+
+            <!-- Temperature Converter -->
+            <div id="temperatureCalculator" class="calculator-section" data-name="temperature">
+                <h2>Temperature Converter</h2>
+                <div class="input-group">
+                    <label for="celsius">Celsius:</label>
+                    <input type="number" id="celsius" onkeyup="convertTemperature('celsius')">
+                </div>
+                <div class="input-group">
+                    <label for="fahrenheit">Fahrenheit:</label>
+                    <input type="number" id="fahrenheit" onkeyup="convertTemperature('fahrenheit')">
+                </div>
+                <div class="input-group">
+                    <label for="kelvin">Kelvin:</label>
+                    <input type="number" id="kelvin" onkeyup="convertTemperature('kelvin')">
+                </div>
+                <div class="button-group">
+                    <button class="reset-btn" onclick="resetTemperatureCalculator()">Reset</button>
+                </div>
+
+                <div class="calculator-details">
+                    <h3>About the Temperature Converter:</h3>
+                    <p class="short-description">
+                        Convert temperatures between Celsius, Fahrenheit, and Kelvin scales instantly.
+                    </p>
+                    <p class="full-description" id="temperatureFullDesc">
+                        Simply enter a value in any of the three fields (Celsius, Fahrenheit, or Kelvin), and the other
+                        two fields will automatically update with the converted values. The converter handles positive and
+                        negative temperatures and validates Kelvin inputs to ensure they are above absolute zero.
+                    </p>
+                    <button class="read-more-btn" onclick="toggleDescription('temperature')">Read More</button>
+                    <button class="read-less-btn" onclick="toggleDescription('temperature')">Read Less</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer role="contentinfo">
+        <div class="container footer-grid">
+            <div class="footer-copyright">
+                <p>&copy; <span id="current-year"></span> Calculator Hub. All rights reserved.</p>
+            </div>
+            <div class="footer-info">
+                <p>Designed for easy calculations.</p>
+                <p><a href="#" rel="nofollow">Privacy Policy</a> | <a href="#" rel="nofollow">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Update current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

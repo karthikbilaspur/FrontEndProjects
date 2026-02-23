@@ -1,0 +1,510 @@
+/* --- 1. Root Variables (Good as is, maybe a few tweaks) --- */
+:root {
+    --primary-color: #4CAF50; /* Green - Used for accents, main buttons */
+    --secondary-color: #2196F3; /* Blue - Used for secondary actions, links */
+    --accent-color: #FFC107; /* Amber - Potential for highlights, warnings */
+    --text-color: #333;
+    --light-text-color: #666;
+    --background-color: #f8f9fa; /* Lighter, softer background */
+    --card-background: #ffffff;
+    --border-color: #e0e0e0; /* Softer border */
+    --error-color: #e53935; /* More vibrant red */
+
+    --font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Added Roboto for a modern feel */
+    --font-size-base: 16px;
+    --border-radius: 10px; /* Slightly larger for softer edges */
+    --box-shadow-light: 0 4px 15px rgba(0, 0, 0, 0.08); /* More pronounced shadow */
+    --box-shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger hover shadow */
+    --transition-speed: 0.3s; /* Global transition speed */
+}
+
+/* Import Google Fonts (if you want Roboto) - add this to your HTML <head> or use @import */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap'); */
+
+/* --- 2. General Body & Container Styling --- */
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0; /* Container will handle padding */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column; /* Stack header, main content, and footer */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Full viewport height */
+}
+
+.container {
+    max-width: 960px; /* Slightly wider container */
+    width: 100%;
+    background-color: var(--card-background);
+    padding: 40px; /* Increased padding */
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow-light);
+    animation: fadeIn var(--transition-speed) ease-out; /* Root animation */
+    margin: 25px auto; /* Centered with vertical margin */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px; /* More space below heading */
+    font-size: 2.8em; /* Larger heading */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+    font-weight: 700; /* Bolder */
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-top: 0;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 12px; /* Slightly more padding */
+    margin-bottom: 25px;
+    font-size: 2em; /* Larger subheading */
+    font-weight: 500;
+}
+
+h3 {
+    color: var(--text-color);
+    font-size: 1.4em; /* Larger sub-subheading */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* --- 3. Calculator Selector --- */
+.calculator-selector {
+    text-align: center;
+    margin-bottom: 50px; /* More space below selector */
+    padding: 20px; /* Increased padding */
+    background-color: #e3f2fd; /* Lighter blue background for selector */
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.calculator-selector label {
+    font-size: 1.2em; /* Larger label */
+    margin-right: 20px;
+    font-weight: bold;
+    color: #1a237e; /* Darker blue for label */
+}
+
+.calculator-selector select {
+    padding: 12px 20px; /* Larger padding */
+    border: 1px solid var(--border-color);
+    border-radius: 5px; /* Consistent border-radius */
+    font-size: 1.1em; /* Larger font size */
+    background-color: #fff;
+    cursor: pointer;
+    outline: none;
+    transition: all var(--transition-speed) ease; /* Transition for all properties */
+    appearance: none; /* Remove default arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23000%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095.1a17.6%2017.6%200%200%200%205.4-12.9c0-5-1.8-9.3-5.4-12.8z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow for select */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 10px;
+    padding-right: 40px; /* Make space for the custom arrow */
+}
+
+.calculator-selector select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.25); /* Stronger focus ring */
+}
+
+/* --- 4. Calculator Sections --- */
+.calculator-section {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 30px 35px; /* Increased padding */
+    margin-bottom: 35px; /* More space between sections */
+    box-shadow: var(--box-shadow-light);
+    animation: slideIn 0.6s ease-out; /* Slightly longer animation */
+    transform-origin: top center;
+    position: relative;
+    overflow: hidden; /* Clear any floating elements */
+}
+
+/* --- 5. Input Groups --- */
+.input-group {
+    margin-bottom: 20px; /* More space between input groups */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px; /* Gap between label and input */
+}
+
+.input-group label {
+    flex: 0 0 140px; /* Slightly wider fixed width for labels */
+    margin-right: 15px;
+    font-weight: 600; /* Bolder label */
+    font-size: 1.05em;
+    color: var(--light-text-color);
+}
+
+.input-group input[type="number"],
+.input-group input[type="date"],
+.input-group select {
+    flex: 1;
+    padding: 12px 15px; /* Larger padding for inputs */
+    border: 1px solid var(--border-color);
+    border-radius: 5px; /* Softer corners for inputs */
+    font-size: 1.05em;
+    min-width: 180px; /* Ensure inputs aren't too small */
+    transition: all var(--transition-speed) ease;
+    box-sizing: border-box; /* Crucial for responsive width */
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.25); /* Stronger focus ring */
+    outline: none;
+}
+
+/* Error highlighting for inputs */
+input.error-input {
+    border-color: var(--error-color)!important;
+    box-shadow: 0 0 0 4px rgba(229, 57, 53, 0.25)!important;
+}
+
+/* --- 6. Buttons --- */
+.button-group, .tip-percentage-buttons {
+    margin-top: 30px; /* More space above buttons */
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 14px 30px; /* Larger buttons */
+    border: none;
+    border-radius: 5px; /* Consistent border-radius */
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: bold;
+    transition: all var(--transition-speed) ease; /* Transition for all properties */
+    box-shadow: var(--box-shadow-light);
+    outline: none;
+    text-transform: uppercase; /* Make buttons pop */
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background-color: #43a047; /* Darker green on hover */
+    transform: translateY(-3px); /* More pronounced lift */
+    box-shadow: var(--box-shadow-hover);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.reset-btn {
+    background-color: #757575; /* Darker grey for reset */
+}
+
+.reset-btn:hover {
+    background-color: #616161;
+}
+
+.tip-percentage-buttons button {
+    background-color: var(--secondary-color);
+    padding: 10px 20px; /* Smaller padding for these buttons */
+    font-size: 0.95em;
+    text-transform: none; /* No uppercase for these */
+    letter-spacing: normal;
+}
+
+.tip-percentage-buttons button:hover {
+    background-color: #1976D2; /* Darker blue on hover */
+}
+
+/* --- 7. Results --- */
+p {
+    margin-top: 25px; /* More space above results */
+    font-size: 1.15em;
+    font-weight: 500;
+    text-align: center; /* Center results */
+}
+
+.result {
+    color: var(--secondary-color);
+    font-weight: 700; /* Bolder result */
+    font-size: 1.3em;
+    margin-left: 8px;
+    display: inline-block; /* Prevent line breaks */
+}
+
+.result-category {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.15em;
+    margin-left: 8px;
+    display: inline-block;
+}
+
+/* --- 8. Calculator Details (Read More/Less) --- */
+.calculator-details {
+    margin-top: 40px; /* More space above details */
+    padding-top: 25px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.calculator-details p {
+    font-size: 1em; /* Standard font size */
+    color: var(--light-text-color);
+    margin-bottom: 12px;
+    text-align: left; /* Align description text left */
+}
+
+.full-description {
+    display: none; /* Hidden by default, JS toggles */
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease-out, height 0.5s ease-out; /* Smoother transition */
+}
+
+/* Styles for when full-description is active */
+.full-description.active {
+    display: block;
+    height: auto;
+    opacity: 1;
+}
+
+.read-more-btn, .read-less-btn {
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    text-decoration: none; /* Remove default underline */
+    padding: 0;
+    margin: 0;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: color 0.2s ease, text-decoration 0.2s ease;
+    box-shadow: none;
+}
+
+.read-more-btn:hover, .read-less-btn:hover {
+    color: var(--primary-color);
+    text-decoration: underline; /* Add underline on hover */
+    transform: none;
+    background: none;
+    box-shadow: none;
+}
+
+/* --- 9. Shape Inputs (Area Calculator Specific) --- */
+#shapeInputs {
+    margin-top: 25px; /* More space */
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    margin-bottom: 20px;
+}
+
+.shape-input-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Increased gap */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.shape-input-group label {
+    flex: 0 0 100px; /* Adjust label width for shape inputs */
+    margin-right: 0;
+}
+
+/* --- 10. Animations & Transitions --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Global transition for interactive elements */
+a, button, select, input {
+    transition: all var(--transition-speed) ease;
+}
+
+/* --- 11. Footer Styling --- */
+footer {
+    background-color: #263238; /* Darker, more solid footer background */
+    color: #cfd8dc;
+    padding: 25px 0;
+    margin-top: auto; /* Push footer to the bottom */
+    width: 100%; /* Full width */
+    text-align: center;
+    font-size: 0.95em;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1); /* Shadow for footer */
+}
+
+footer .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent; /* Override container background */
+    box-shadow: none; /* Override container shadow */
+    border-radius: 0; /* Override container border-radius */
+}
+
+footer p {
+    margin: 8px 0;
+    color: #b0bec5; /* Lighter text in footer */
+    font-size: 0.95em;
+}
+
+footer a {
+    color: #e0f2f1; /* Light cyan links */
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* --- 12. Media Queries for Responsiveness --- */
+@media (max-width: 992px) {
+    .container {
+        max-width: 760px;
+    }
+    h1 { font-size: 2.4em; }
+    h2 { font-size: 1.8em; }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0; /* Remove body padding, let container handle it */
+    }
+    .container {
+        margin: 15px; /* Margin on sides, auto top/bottom */
+        padding: 25px; /* Adjusted padding for smaller screens */
+        border-radius: var(--border-radius);
+    }
+    h1 { font-size: 2em; margin-bottom: 30px; }
+    h2 { font-size: 1.6em; margin-bottom: 20px; }
+    h3 { font-size: 1.2em; margin-top: 25px; }
+
+    .calculator-selector {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+    .calculator-selector label {
+        display: block; /* Stack label and select */
+        margin-bottom: 10px;
+        margin-right: 0;
+        font-size: 1.1em;
+    }
+    .calculator-selector select {
+        width: 100%; /* Full width select */
+        box-sizing: border-box;
+        font-size: 1em;
+    }
+
+    .input-group {
+        flex-direction: column; /* Stack label and input */
+        align-items: flex-start;
+        gap: 5px; /* Smaller gap */
+    }
+    .input-group label {
+        width: 100%;
+        flex: auto;
+        margin-bottom: 5px;
+    }
+    .input-group input,
+    .input-group select {
+        width: 100%;
+        box-sizing: border-box;
+        min-width: unset; /* Remove min-width constraint */
+    }
+
+    .button-group, .tip-percentage-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+        margin-top: 25px;
+    }
+    button {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+    .tip-percentage-buttons button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    p { font-size: 1.05em; }
+    .result { font-size: 1.2em; }
+    .result-category { font-size: 1.05em; }
+
+    .calculator-section {
+        padding: 25px 20px; /* Adjusted padding */
+        margin-bottom: 25px;
+    }
+
+    .calculator-details {
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .shape-input-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .shape-input-group label {
+        width: 100%;
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin: 10px;
+    }
+    h1 { font-size: 1.8em; margin-bottom: 25px; }
+    h2 { font-size: 1.4em; margin-bottom: 15px; }
+    h3 { font-size: 1.1em; margin-top: 20px; }
+    .calculator-selector { margin-bottom: 25px; padding: 10px; }
+    .calculator-selector label { font-size: 1em; margin-bottom: 8px; }
+    .calculator-selector select { padding: 10px 15px; font-size: 0.95em; }
+
+    .calculator-section {
+        padding: 20px 15px;
+        margin-bottom: 20px;
+    }
+
+    .input-group { margin-bottom: 15px; }
+    .input-group label { font-size: 0.95em; }
+    .input-group input, .input-group select { font-size: 0.95em; padding: 10px; }
+
+    .button-group, .tip-percentage-buttons { margin-top: 20px; gap: 8px; }
+    button { padding: 10px 15px; font-size: 0.95em; }
+    .tip-percentage-buttons button { padding: 8px 12px; font-size: 0.85em; }
+
+    p { font-size: 1em; margin-top: 15px; }
+    .result { font-size: 1.1em; }
+    .result-category { font-size: 1em; }
+
+    .calculator-details { margin-top: 25px; padding-top: 15px; }
+    .calculator-details p { font-size: 0.9em; }
+    .read-more-btn, .read-less-btn { font-size: 0.85em; }
+}
