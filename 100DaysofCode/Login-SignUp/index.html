@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Multi Form Types Project - Showcase of Modern Web Forms</title>
+
+<!-- Meta Description for SEO -->
+<meta name="description" content="Explore a collection of modern and responsive web form designs including login, registration, multi-step, and social media integrations. View HTML, CSS, and JavaScript code snippets for each form type.">
+
+<!-- Keywords for SEO (less critical now, but still can be included) -->
+<meta name="keywords" content="web forms, HTML forms, CSS forms, JavaScript forms, login form, registration form, multi-step form, social login, responsive forms, web design showcase, UI/UX examples">
+
+<!-- Author of the page -->
+<meta name="author" content="Your Name or Company Name (e.g., Meta AI)">
+
+<!-- Canonical URL (helps search engines understand the primary version of a page) -->
+<link rel="canonical" href="https://www.yourwebsite.com/multi-form-types-project">
+
+<!-- Open Graph Meta Tags for Social Media Sharing (Facebook, LinkedIn, etc.) -->
+<!-- Essential for how your link appears when shared -->
+<meta property="og:title" content="Multi Form Types Project - Modern Web Forms Showcase">
+<meta property="og:description" content="Explore a collection of modern and responsive web form designs including login, registration, multi-step, and social media integrations. View HTML, CSS, and JavaScript code snippets for each form type.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.yourwebsite.com/multi-form-types-project">
+<meta property="og:image" content="https://www.yourwebsite.com/images/form-showcase-screenshot.jpg">
+<meta property="og:image:alt" content="Screenshot of the Multi Form Types Project showcasing various form designs">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Your Website Name">
+
+<!-- Twitter Card Meta Tags (for Twitter Sharing) -->
+<!-- Specific to Twitter, can provide a more detailed preview -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@yourtwitterhandle">
+<meta name="twitter:creator" content="@yourtwitterhandle">
+<meta name="twitter:title" content="Multi Form Types Project - Modern Web Forms Showcase">
+<meta name="twitter:description" content="Explore a collection of modern and responsive web form designs including login, registration, multi-step, and social media integrations. View HTML, CSS, and JavaScript code snippets for each form type.">
+<meta name="twitter:image" content="https://www.yourwebsite.com/images/form-showcase-screenshot.jpg">
+<meta name="twitter:image:alt" content="Screenshot of the Multi Form Types Project showcasing various form designs">
+
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<!-- Prism.js for code highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<h1>Multi Form Types Project</h1>
+
+<!-- Dropdown -->
+<div class="selector">
+    <select id="formSelector" title="Select Form Type">Form Types:-
+        <option value="">-- Select Form Type --</option>
+        <option value="form1">Simple Login with Icons</option>
+        <option value="form2">Login with Floating Labels</option>
+        <option value="form3">Login & Registration Toggle</option>
+        <option value="form4">Responsive Registration Form</option>
+        <option value="form5">Login with Social Media</option>
+        <option value="form6">Multi-Step Registration</option>
+        <option value="form7">Form with Tooltips</option>
+        <option value="form8">Password Visibility Toggle</option>
+        <option value="form9">Search Bar with Suggestions</option>
+        <option value="form10">Profile with Avatar Upload</option>
+    </select>
+</div>
+
+<!-- Description -->
+<div class="description" id="descriptionBox">
+    <h2 id="descTitle"></h2>
+    <p id="descText"></p>
+    <button onclick="scrollToForm()">More</button>
+</div>
+
+<!-- Forms Container -->
+<div class="forms">
+
+<!-- 1️⃣ Simple Login with Icons -->
+<section id="form1" class="form-section">
+    <h2>Simple Login with Icons</h2>
+    <div class="input-group">
+        <i class="fa fa-user"></i>
+        <input type="text" placeholder="Username">
+    </div>
+    <div class="input-group">
+        <i class="fa fa-lock"></i>
+        <input type="password" placeholder="Password">
+    </div>
+    <button onclick="simulateSubmit('form1')">Login</button>
+    <button class="show-code-btn" onclick="showCode('form1')">Show Code</button>
+    <p id="form1-message" class="form-message"></p>
+</section>
+
+<!-- 2️⃣ Floating Label Login -->
+<section id="form2" class="form-section">
+    <h2>Floating Label Login</h2>
+    <div class="floating-group">
+        <input type="text" required title="Username is must be at least 3 characters">
+        <label>Username</label>
+    </div>
+    <div class="floating-group">
+        <input type="password" required title="Password must be at least 6 characters">
+        <label>Password</label>
+    </div>
+    <button onclick="simulateSubmit('form2')">Login</button>
+    <button class="show-code-btn" onclick="showCode('form2')">Show Code</button>
+    <p id="form2-message" class="form-message"></p>
+</section>
+
+<!-- 3️⃣ Login & Registration Toggle -->
+<section id="form3" class="form-section">
+    <h2>Login & Registration</h2>
+    <div class="toggle-buttons">
+        <button onclick="showLogin()" aria-label="Show login form">Login</button>
+        <button onclick="showRegister()" aria-label="Show registration form">Register</button>
+    </div>
+
+    <div id="loginBox">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button onclick="simulateSubmit('form3')">Login</button>
+    </div>
+
+    <div id="registerBox">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button onclick="simulateSubmit('form3')">Register</button>
+    </div>
+    <button class="show-code-btn" onclick="showCode('form3')">Show Code</button>
+    <p id="form3-message" class="form-message"></p>
+</section>
+
+<!-- 4️⃣ Responsive Registration -->
+<section id="form4" class="form-section">
+    <h2>Responsive Registration Form</h2>
+    <div class="responsive-grid">
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone">
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+    </div>
+    <button onclick="simulateSubmit('form4')">Register</button>
+    <button class="show-code-btn" onclick="showCode('form4')">Show Code</button>
+    <p id="form4-message" class="form-message"></p>
+</section>
+
+<!-- 5️⃣ Social Media Login -->
+<section id="form5" class="form-section">
+    <h2>Login with Social Media</h2>
+    <input type="email" placeholder="Email">
+    <input type="password" placeholder="Password">
+    <button onclick="simulateSubmit('form5')">Login</button>
+
+    <div class="social-login">
+        <p>Or Login With</p>
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-github"></i>
+    </div>
+    <button class="show-code-btn" onclick="showCode('form5')">Show Code</button>
+    <p id="form5-message" class="form-message"></p>
+</section>
+
+<!-- 6️⃣ Multi-Step Registration -->
+<section id="form6" class="form-section multi-step-form">
+    <h2>Multi-Step Registration</h2>
+    <div class="progress-indicator" id="progressIndicator6">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+    <div class="form-step" id="step1">
+        <h3>Step 1: Personal Info</h3>
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        <button onclick="showStep(2)">Next</button>
+    </div>
+    <div class="form-step" id="
+        <h3>Step 2: Contact Info</h3>
+        <input type="email" placeholder="Email">
+        <input type="tel" placeholder="Phone Number">
+        <button onclick="showStep(1)">Previous</button>
+        <button onclick="showStep(3)">Next</button>
+    </div>
+    <div class="form-step" id="step3">
+        <h3>Step 3: Account Info</h3>
+        <input type="password" placeholder="Password">
+        <input type="password" placeholder="Confirm Password">
+        <button onclick="showStep(2)">Previous</button>
+        <button onclick="simulateSubmit('form6')" id="submitMultiStep">Submit</button>
+    </div>
+    <button class="show-code-btn" onclick="showCode('form6')">Show Code</button>
+    <p id="form6-message" class="form-message"></p>
+</section>
+
+<!-- 7️⃣ Form with Tooltips -->
+<section id="form7" class="form-section">
+    <h2>Form with Tooltips</h2>
+    <div class="tooltip-group">
+        <input type="text" placeholder="Username">
+        <span class="tooltip-text">Choose a unique username.</span>
+    </div>
+    <div class="tooltip-group">
+        <input type="email" placeholder="Email Address">
+        <span class="tooltip-text">Enter a valid email for verification.</span>
+    </div>
+    <button onclick="simulateSubmit('form7')">Submit</button>
+    <button class="show-code-btn" onclick="showCode('form7')">Show Code</button>
+    <p id="form7-message" class="form-message"></p>
+</section>
+
+<!-- 8️⃣ Password Visibility Toggle -->
+<section id="form8" class="form-section">
+    <h2>Password Visibility Toggle</h2>
+    <input type="email" placeholder="Email">
+    <div class="input-group password-toggle-group">
+        <input type="password" id="passwordField8" placeholder="Password">
+        <i class="fa fa-eye toggle-password" onclick="togglePasswordVisibility('passwordField8')" aria-label="Toggle password visibility"></i>
+    </div>
+    <button onclick="simulateSubmit('form8')">Login</button>
+    <button class="show-code-btn" onclick="showCode('form8')">Show Code</button>
+    <p id="form8-message" class="form-message"></p>
+</section>
+
+<!-- 9️⃣ Search Bar with Suggestions -->
+<section id="form9" class="form-section search-form">
+    <h2>Search Bar with Suggestions</h2>
+    <div class="search-input-container">
+        <input type="text" id="searchBarInput" placeholder="Search..." onfocus="showSuggestions()" onblur="hideSuggestions()">
+        <i class="fa fa-search search-icon"></i>
+        <div class="search-suggestions" id="searchSuggestions">
+            <div class="suggestion-item" onclick="selectSuggestion('Latest News')">Latest News</div>
+            <div class="suggestion-item" onclick="selectSuggestion('Product Reviews')">Product Reviews</div>
+            <div class="suggestion-item" onclick="selectSuggestion('How-to Guides')">How-to Guides</div>
+        </div>
+    </div>
+    <button onclick="simulateSubmit('form9')">Search</button>
+    <button class="show-code-btn" onclick="showCode('form9')">Show Code</button>
+    <p id="form9-message" class="form-message"></p>
+</section>
+
+<!-- 🔟 Profile with Avatar Upload -->
+<section id="form10" class="form-section avatar-upload-form">
+    <h2>Profile with Avatar Upload</h2>
+    <div class="avatar-upload-container">
+        <label for="avatarInput" class="avatar-label">
+            <img id="avatarPreview" src="https://via.placeholder.com/100" alt="Avatar Preview">
+            <input type="file" id="avatarInput" accept="image/*" onchange="previewAvatar(event)">
+            <span class="upload-text">Upload Avatar</span>
+        </label>
+    </div>
+    <input type="text" placeholder="Display Name">
+    <input type="email" placeholder="Email">
+    <button onclick="simulateSubmit('form10')">Save Profile</button>
+    <button class="show-code-btn" onclick="showCode('form10')">Show Code</button>
+    <p id="form10-message" class="form-message"></p>
+</section>
+
+</div>
+
+<!-- The Modal for Code Display -->
+<div id="codeModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Code Snippets</h2>
+            <button id="copyCodeBtn" class="copy-code-button">Copy All</button>
+            <span class="close" id="closeCodeModal">&times;</span>
+        </div>
+        <div class="modal-body" id="codeContent">
+            <!-- Code will be loaded here -->
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<!-- Prism.js for code highlighting -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-css.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Gaming Console Timeline (JS-Driven)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-controls">
+        <label for="navSelector">Choose Layout:</label>
+        <select id="navSelector" class="mode-selector-dropdown">
+            <option value="tabbed-layout">Tabbed Layout</option>
+            <option value="accordion-layout">Accordion Layout</option>
+            <option value="scrollsnap-layout">Scroll-Snap Layout</option>
+        </select>
+        <button id="themeToggle" class="theme-toggle">Toggle Dark Mode</button>
+    </div>
+
+    <div id="app-container">
+        <!-- All navigation and content will be injected here by JavaScript -->
+        <p class="loading-message">Loading content...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

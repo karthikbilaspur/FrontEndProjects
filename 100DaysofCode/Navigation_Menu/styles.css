@@ -1,0 +1,795 @@
+/* ========================================================================== */
+/* GLOBAL & THEME VARIABLES */
+/* ========================================================================== */
+
+:root {
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --header-bg: #4CAF50;
+    --header-text: #fff;
+    --nav-bg: #333;
+    --nav-link: #fff;
+    --nav-link-hover: #FFC107;
+    --nav-active-bg: #4CAF50;
+    --nav-active-border: #FFC107;
+    --content-bg: #fff;
+    --content-shadow: rgba(0,0,0,0.1);
+    --section-border: #eee;
+    --section-heading: #4CAF50;
+    --strong-color: #555;
+    --button-bg: #007bff;
+    --button-text: #fff;
+    --button-hover-bg: #0056b3;
+    --accordion-nav-bg: #2c3e50;
+    --accordion-nav-brand: #3498db;
+    --accordion-header-bg: #34495e;
+    --accordion-header-hover: #466280;
+    --accordion-header-active: #3498db;
+    --accordion-body-bg: #3f5870;
+    --scroll-dots-bg: rgba(255,255,255,0.4);
+    --scroll-dots-active: #fff;
+    --scroll-dots-active-ring: #4CAF50;
+    --scroll-content-bg: rgba(255,255,255,0.9);
+    --scroll-content-shadow: rgba(0,0,0,0.15);
+    --scroll-heading: #3f51b5;
+    --scroll-bullet: #4CAF50;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a2e;
+    --text-color: #e0e0e0;
+    --header-bg: #0f3460;
+    --header-text: #e0e0e0;
+    --nav-bg: #16213e;
+    --nav-link: #e0e0e0;
+    --nav-link-hover: #e94560;
+    --nav-active-bg: #0f3460;
+    --nav-active-border: #e94560;
+    --content-bg: #0a0a1a;
+    --content-shadow: rgba(0,0,0,0.5);
+    --section-border: #3c3c54;
+    --section-heading: #e94560;
+    --strong-color: #c0c0c0;
+    --button-bg: #e94560;
+    --button-text: #fff;
+    --button-hover-bg: #c0392b;
+    --accordion-nav-bg: #0d1629;
+    --accordion-nav-brand: #e94560;
+    --accordion-header-bg: #16213e;
+    --accordion-header-hover: #21335c;
+    --accordion-header-active: #e94560;
+    --accordion-body-bg: #1f2a40;
+    --scroll-dots-bg: rgba(255,255,255,0.2);
+    --scroll-dots-active: #e94560;
+    --scroll-dots-active-ring: #0f3460;
+    --scroll-content-bg: rgba(10,10,26,0.95);
+    --scroll-content-shadow: rgba(0,0,0,0.5);
+    --scroll-heading: #e94560;
+    --scroll-bullet: #e94560;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-color); /* Default for general headings */
+}
+
+/* ========================================================================== */
+/* TOP CONTROLS (dropdown, theme toggle) */
+/* ========================================================================== */
+.top-controls {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    gap: 20px; /* Space between items */
+    padding: 15px 20px;
+    background-color: var(--nav-bg);
+    color: var(--nav-link);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.top-controls label {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.mode-selector-dropdown {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--nav-active-border);
+    background-color: var(--nav-bg);
+    color: var(--nav-link);
+    font-size: 1rem;
+    cursor: pointer;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13%205.4L146.2%20224.6%2018.8%2074.8c-3.4-3.4-8-5.4-13-5.4-5%200-9.6%202-13%205.4s-5.4%208-5.4%2013%202%209.6%205.4%2013L133.2%20259c3.4%203.4%208%205.4%2013%205.4s9.6-2%2013-5.4l129.2-129.2c3.4-3.4%205.4-8%205.4-13s-2-9.6-5.4-13z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+.mode-selector-dropdown:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--nav-active-border);
+}
+
+.theme-toggle {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--button-hover-bg);
+}
+
+/* ========================================================================== */
+/* APP CONTAINER & COMMON CONTENT STYLES */
+/* ========================================================================== */
+#app-container {
+    width: 100%;
+    /* No min-height here, as layouts will manage their own height,
+       especially scroll-snap which takes 100vh */
+}
+
+.loading-message {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 50px;
+    color: var(--text-color);
+}
+
+/* Read More/Less Toggle */
+.read-more-container {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.read-more-content {
+    max-height: 100px; /* Initial collapsed height */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+.read-more-content.expanded {
+    max-height: 1000px; /* Large enough to show all content */
+    transition: max-height 0.7s ease-in;
+}
+
+.read-more-toggle {
+    background: none;
+    border: none;
+    color: var(--section-heading); /* Use theme color for consistency */
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 0;
+    text-decoration: underline;
+}
+
+.read-more-toggle:hover {
+    color: var(--nav-link-hover);
+}
+
+/* ========================================================================== */
+/* TABBED LAYOUT STYLES (Scoped for dynamic injection) */
+/* ========================================================================== */
+.tabbed-layout-wrapper {
+    /* Main wrapper for tabbed content */
+    display: block; /* Ensures it starts as block, JS manages actual content */
+}
+
+.tabbed-layout-wrapper.header-banner {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tabbed-layout-wrapper.header-banner h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    color: inherit;
+}
+
+.tabbed-layout-wrapper.header-banner p {
+    margin: 0;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    color: inherit;
+}
+
+.tabbed-layout-wrapper #tabNav {
+    background-color: var(--nav-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.tabbed-layout-wrapper.tab-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tabbed-layout-wrapper.tab-links li {
+    margin: 0;
+    position: relative;
+}
+
+.tabbed-layout-wrapper.tab-links a {
+    display: block;
+    padding: 15px 25px;
+    color: var(--nav-link);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tabbed-layout-wrapper.tab-links a:hover {
+    background-color: var(--nav-active-bg);
+    color: var(--nav-link-hover);
+}
+
+.tabbed-layout-wrapper.tab-links a.active {
+    background-color: var(--nav-active-bg);
+    color: var(--nav-active-border);
+    border-bottom-color: var(--nav-active-border);
+}
+
+/* Dropdown specific styles for tabbed */
+.tabbed-layout-wrapper.dropdown {
+    position: relative;
+}
+
+.tabbed-layout-wrapper.dropdown-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.tabbed-layout-wrapper.dropdown-toggle.arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    border: solid var(--nav-link);
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.tabbed-layout-wrapper.dropdown:hover.dropdown-toggle.arrow-down,
+.tabbed-layout-wrapper.dropdown.active.dropdown-toggle.arrow-down {
+    transform: rotate(-135deg);
+    border-color: var(--nav-link-hover);
+}
+
+.tabbed-layout-wrapper.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--nav-bg);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style: none;
+    padding: 0;
+    margin-top: 3px;
+    border-radius: 0 0 5px 5px;
+}
+
+.tabbed-layout-wrapper.dropdown-menu li a {
+    color: var(--nav-link);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-bottom: none;
+}
+
+.tabbed-layout-wrapper.dropdown-menu li a:hover {
+    background-color: var(--nav-active-bg);
+    color: var(--nav-link-hover);
+}
+
+.tabbed-layout-wrapper.dropdown:hover.dropdown-menu,
+.tabbed-layout-wrapper.dropdown.active.dropdown-menu {
+    display: block;
+}
+
+.tabbed-layout-wrapper.tab-content-container {
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: var(--content-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--content-shadow);
+    padding: 30px;
+    min-height: 500px;
+}
+
+.tabbed-layout-wrapper.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tabbed-layout-wrapper.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tabbed-layout-wrapper h2 {
+    color: var(--section-heading);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--section-border);
+    padding-bottom: 10px;
+}
+
+.tabbed-layout-wrapper ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.tabbed-layout-wrapper li {
+    margin-bottom: 10px;
+}
+
+.tabbed-layout-wrapper li strong {
+    color: var(--strong-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .tabbed-layout-wrapper.header-banner {
+        padding: 20px 10px;
+    }
+   .tabbed-layout-wrapper.header-banner h1 {
+        font-size: 2rem;
+    }
+   .tabbed-layout-wrapper.header-banner p {
+        font-size: 1rem;
+    }
+   .tabbed-layout-wrapper.tab-links a {
+        padding: 12px 18px;
+        font-size: 1rem;
+    }
+   .tabbed-layout-wrapper.tab-content-container {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+   .tabbed-layout-wrapper h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ========================================================================== */
+/* ACCORDION LAYOUT STYLES (Scoped for dynamic injection) */
+/* ========================================================================== */
+.accordion-layout-wrapper {
+    display: flex; /* Flex for sidebar + content */
+    width: 100%;
+}
+
+.accordion-layout-wrapper #accordionNav {
+    background-color: var(--accordion-nav-bg);
+    color: var(--text-color);
+    width: 280px;
+    padding: 1.5rem 0;
+    box-shadow: 2px 0 8px var(--content-shadow);
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.accordion-layout-wrapper.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--accordion-nav-brand);
+    margin-bottom: 2rem;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.accordion-layout-wrapper.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background-color: var(--accordion-header-bg);
+    color: var(--nav-link);
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.accordion-layout-wrapper.accordion-menu {
+    width: 100%;
+}
+
+.accordion-layout-wrapper.accordion-group {
+    margin-bottom: 5px;
+}
+
+.accordion-layout-wrapper.accordion-header {
+    background-color: var(--accordion-header-bg);
+    color: var(--nav-link);
+    cursor: pointer;
+    padding: 15px 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-layout-wrapper.accordion-header:hover {
+    background-color: var(--accordion-header-hover);
+}
+
+.accordion-layout-wrapper.accordion-header.active {
+    background-color: var(--accordion-header-active);
+    color: var(--header-text);
+}
+
+.accordion-layout-wrapper.accordion-header.arrow-indicator {
+    display: inline-block;
+    border: solid var(--nav-link);
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.accordion-layout-wrapper.accordion-header.active.arrow-indicator {
+    transform: rotate(-135deg);
+    border-color: var(--nav-link-hover);
+}
+
+.accordion-layout-wrapper.accordion-body {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out;
+    background-color: var(--accordion-body-bg);
+}
+
+.accordion-layout-wrapper.accordion-body.active {
+    max-height: 500px; /* This might need adjustment based on content */
+}
+
+.accordion-layout-wrapper.accordion-body li a {
+    display: block;
+    padding: 10px 20px 10px 35px;
+    color: var(--nav-link);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.accordion-layout-wrapper.accordion-body li a:hover,
+.accordion-layout-wrapper.accordion-body li a.active {
+    background-color: var(--accordion-header-active);
+    color: var(--nav-link-hover);
+    border-left-color: var(--nav-link-hover);
+}
+
+.accordion-layout-wrapper.content-area {
+    flex-grow: 1;
+    padding: 30px;
+    max-width: 960px;
+    margin: 30px auto;
+    background-color: var(--content-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--content-shadow);
+}
+
+.accordion-layout-wrapper section {
+    margin-bottom: 50px;
+    padding-top: 20px;
+    border-bottom: 1px solid var(--section-border);
+    padding-bottom: 30px;
+}
+
+.accordion-layout-wrapper section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.accordion-layout-wrapper h2 {
+    color: var(--accordion-nav-bg);
+    font-size: 2rem;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--accordion-nav-brand);
+    padding-left: 15px;
+}
+
+.accordion-layout-wrapper ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.accordion-layout-wrapper li {
+    margin-bottom: 10px;
+}
+
+.accordion-layout-wrapper li strong {
+    color: var(--strong-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .accordion-layout-wrapper {
+        flex-direction: column;
+    }
+   .accordion-layout-wrapper #accordionNav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+   .accordion-layout-wrapper.nav-brand {
+        margin-bottom: 1rem;
+    }
+   .accordion-layout-wrapper.accordion-menu {
+        display: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+    }
+   .accordion-layout-wrapper.accordion-menu.active {
+        display: block;
+        max-height: 1000px;
+    }
+   .accordion-layout-wrapper.menu-toggle {
+        display: block;
+    }
+   .accordion-layout-wrapper.content-area {
+        margin-top: 20px;
+        padding: 20px;
+    }
+}
+
+/* ========================================================================== */
+/* SCROLL-SNAP LAYOUT STYLES (Scoped for dynamic injection) */
+/* ========================================================================== */
+.scrollsnap-layout-wrapper {
+    height: calc(100vh - 80px); /* Adjust for top-controls height */
+    overflow: hidden; /* Hide default scrollbars */
+    position: relative; /* For fixed nav */
+}
+
+.scrollsnap-layout-wrapper #dotsNav {
+    position: fixed;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 25px;
+    padding: 15px 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.scrollsnap-layout-wrapper.nav-brand {
+    color: var(--nav-link);
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.scrollsnap-layout-wrapper.nav-dots {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.scrollsnap-layout-wrapper.nav-dots li {
+    margin-bottom: 10px;
+}
+
+.scrollsnap-layout-wrapper.nav-dots li:last-child {
+    margin-bottom: 0;
+}
+
+.scrollsnap-layout-wrapper.nav-dots a {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background-color: var(--scroll-dots-bg);
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-indent: -9999px;
+}
+
+.scrollsnap-layout-wrapper.nav-dots a:hover {
+    background-color: var(--nav-link-hover);
+    transform: scale(1.1);
+}
+
+.scrollsnap-layout-wrapper.nav-dots a.active {
+    background-color: var(--scroll-dots-active);
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px var(--scroll-dots-active-ring);
+}
+
+.scrollsnap-layout-wrapper.scroll-container {
+    height: 100%; /* Take full height of its parent (.scrollsnap-layout-wrapper) */
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.scrollsnap-layout-wrapper.scroll-snap-section {
+    height: 100%; /* Each section takes full height of scroll-container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    background-color: var(--bg-color); /* Default background */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Specific background colors for sections for visual distinction */
+.scrollsnap-layout-wrapper #gen1 { background-color: #e0f2f7; }
+.scrollsnap-layout-wrapper #gen2 { background-color: #ffe0b2; }
+.scrollsnap-layout-wrapper #gen3 { background-color: #e8f5e9; }
+.scrollsnap-layout-wrapper #gen4 { background-color: #fce4ec; }
+.scrollsnap-layout-wrapper #gen5 { background-color: #fff3e0; }
+.scrollsnap-layout-wrapper #gen6 { background-color: #e1f5fe; }
+.scrollsnap-layout-wrapper #gen7 { background-color: #fffde7; }
+.scrollsnap-layout-wrapper #gen8 { background-color: #ede7f6; }
+.scrollsnap-layout-wrapper #gen9 { background-color: #f1f8e9; }
+
+/* Dark mode specific backgrounds for scrollsnap sections */
+body.dark-mode.scrollsnap-layout-wrapper #gen1 { background-color: #1a2a3e; }
+body.dark-mode.scrollsnap-layout-wrapper #gen2 { background-color: #291a3a; }
+body.dark-mode.scrollsnap-layout-wrapper #gen3 { background-color: #1f3a2b; }
+body.dark-mode.scrollsnap-layout-wrapper #gen4 { background-color: #3e1a2a; }
+body.dark-mode.scrollsnap-layout-wrapper #gen5 { background-color: #3a2e1a; }
+body.dark-mode.scrollsnap-layout-wrapper #gen6 { background-color: #1a3e3e; }
+body.dark-mode.scrollsnap-layout-wrapper #gen7 { background-color: #2e3a1a; }
+body.dark-mode.scrollsnap-layout-wrapper #gen8 { background-color: #3a1a3e; }
+body.dark-mode.scrollsnap-layout-wrapper #gen9 { background-color: #1a3a2e; }
+
+.scrollsnap-layout-wrapper.section-content {
+    max-width: 700px;
+    padding: 40px;
+    background-color: var(--scroll-content-bg);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px var(--scroll-content-shadow);
+    transform: translateY(0px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+    opacity: 1;
+}
+
+/* Hide content for non-active scroll snap sections for animation */
+.scrollsnap-layout-wrapper.scroll-snap-section:not(.active).section-content {
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.scrollsnap-layout-wrapper h2 {
+    color: var(--scroll-heading);
+    font-size: 2.5rem;
+    margin-top: 0;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--section-border);
+    padding-bottom: 15px;
+}
+
+.scrollsnap-layout-wrapper ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.scrollsnap-layout-wrapper li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 25px;
+    text-align: left;
+}
+
+.scrollsnap-layout-wrapper li::before {
+    content: '🎮';
+    position: absolute;
+    left: 0;
+    color: var(--scroll-bullet);
+}
+
+.scrollsnap-layout-wrapper li strong {
+    color: var(--strong-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+   .top-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+   .scrollsnap-layout-wrapper #dotsNav {
+        right: 10px;
+        top: auto;
+        bottom: 20px;
+        transform: none;
+        flex-direction: row;
+        padding: 10px 15px;
+    }
+   .scrollsnap-layout-wrapper.nav-brand {
+        display: none;
+    }
+   .scrollsnap-layout-wrapper.nav-dots li {
+        margin-right: 8px;
+        margin-bottom: 0;
+    }
+   .scrollsnap-layout-wrapper.nav-dots li:last-child {
+        margin-right: 0;
+    }
+   .scrollsnap-layout-wrapper.nav-dots a {
+        width: 10px;
+        height: 10px;
+    }
+   .scrollsnap-layout-wrapper.section-content {
+        padding: 30px 20px;
+        max-width: 90%;
+    }
+   .scrollsnap-layout-wrapper h2 {
+        font-size: 2rem;
+    }
+   .scrollsnap-layout-wrapper li {
+        font-size: 1rem;
+    }
+}

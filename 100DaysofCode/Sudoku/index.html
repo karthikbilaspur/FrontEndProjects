@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- SEO Meta Tags -->
+    <title>Advanced Sudoku: Master the Grid!</title>
+    <meta name="description" content="Play an advanced Sudoku game with multiple difficulty levels, hints, undo/redo, real-time validation, and note-taking. Built with HTML5, CSS3, and JavaScript.">
+    <meta name="keywords" content="Sudoku, HTML5 game, JavaScript game, web game, puzzle game, brain teaser, logic game, responsive design, dark mode, note-taking, hints, undo redo">
+    <meta name="author" content="Your Name or Meta AI">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/sudoku.html"> <!-- Replace with your actual URL -->
+
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Advanced Sudoku: Master the Grid!">
+    <meta property="og:description" content="Play an advanced Sudoku game with multiple difficulty levels, hints, undo/redo, real-time validation, and note-taking.">
+    <meta property="og:type" content="game">
+    <meta property="og:url" content="https://yourwebsite.com/sudoku.html"> <!-- Replace with your actual URL -->
+    <meta property="og:image" content="https://yourwebsite.com/path/to/sudoku-og-image.jpg"> <!-- 1200x630px recommended -->
+    <meta property="og:image:alt" content="Screenshot of the Advanced Sudoku game board">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Advanced Sudoku: Master the Grid!">
+    <meta name="twitter:description" content="Play an advanced Sudoku game with multiple difficulty levels, hints, undo/redo, real-time validation, and note-taking.">
+    <meta name="twitter:image" content="https://yourwebsite.com/path/to/sudoku-twitter-image.jpg"> <!-- Similar to og:image -->
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Optional: Google Fonts (Example) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    
+    <!-- Optional: Font Awesome for social icons. Link this if you plan to use it. -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> -->
+</head>
+<body class="light-theme">
+    <div id="game-container">
+        <h1>Sudoku Master</h1>
+
+        <div class="header-controls">
+            <button id="theme-toggle-btn" title="Toggle between light and dark theme">🌙</button>
+            <div class="difficulty-select">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty" aria-label="Select game difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                    <option value="expert">Expert</option>
+                </select>
+            </div>
+            <button id="new-game-btn" title="Start a new game">New Game</button>
+            <button id="pause-btn" title="Pause/Resume game">Pause</button>
+            <button id="solve-btn" title="Reveal the solution for the current puzzle">Solve</button>
+        </div>
+
+        <div class="game-info">
+            <div id="timer" class="info-box" role="timer" aria-live="off">00:00</div>
+            <div id="message" class="info-box" role="status" aria-live="polite"></div>
+            <div class="info-box info-display" title="Count of incorrect entries">
+                Errors: <span id="error-count">0</span>/<span id="max-errors">5</span>
+            </div>
+        </div>
+
+        <div id="sudoku-grid" class="sudoku-grid" role="grid">
+            <!-- Sudoku cells will be generated here by JavaScript -->
+        </div>
+
+        <div class="controls">
+            <div id="number-input" class="number-input">
+                <button data-value="1" aria-label="Enter number 1">1</button>
+                <button data-value="2" aria-label="Enter number 2">2</button>
+                <button data-value="3" aria-label="Enter number 3">3</button>
+                <button data-value="4" aria-label="Enter number 4">4</button>
+                <button data-value="5" aria-label="Enter number 5">5</button>
+                <button data-value="6" aria-label="Enter number 6">6</button>
+                <button data-value="7" aria-label="Enter number 7">7</button>
+                <button data-value="8" aria-label="Enter number 8">8</button>
+                <button data-value="9" aria-label="Enter number 9">9</button>
+                <button data-value="0" class="clear-button" aria-label="Clear selected cell or note">Clear</button>
+            </div>
+            <div class="action-buttons">
+                <button id="undo-btn" title="Undo last move" disabled aria-label="Undo last move">Undo</button>
+                <button id="redo-btn" title="Redo last undone move" disabled aria-label="Redo last undone move">Redo</button>
+                <button id="hint-btn" title="Get a hint" aria-label="Get a hint">Hint</button>
+                <button id="reset-btn" title="Reset current game to original state" aria-label="Reset game">Reset</button>
+                <button id="pencil-mode-toggle" title="Toggle pencil (note-taking) mode" aria-label="Toggle pencil mode">Pencil (OFF)</button>
+                <button id="error-check-toggle" title="Toggle real-time error highlighting" aria-label="Toggle error checking">Errors: ON</button>
+                
+                <!-- NEW: Extra Features & Social Sharing -->
+                <button id="share-puzzle-btn" title="Share the current puzzle with a friend" aria-label="Share current puzzle">Share Puzzle</button>
+                <button id="report-bug-btn" title="Report an issue or send feedback" aria-label="Report bug">Report Bug</button>
+            </div>
+        </div>
+
+        <!-- Pause Overlay - This will be dynamically added/removed by JS, but good to envision -->
+        <div class="pause-overlay"  none;">Game Paused</div>
+
+    </div>
+
+    <!-- NEW: Footer with Social Media Icons -->
+    <footer id="main-footer">
+        <p>&copy; 2024 Advanced Sudoku. Built with ❤️ by Meta AI.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Follow us on X (formerly Twitter)" title="Follow us on X">
+                <!-- Replace with Font Awesome icon or SVG -->
+                <span class="icon">🐦</span>
+            </a>
+            <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Find us on Facebook" title="Find us on Facebook">
+                <span class="icon">f</span>
+            </a>
+            <a href="https://github.com/yourrepo" target="_blank" rel="noopener noreferrer" aria-label="View source code on GitHub" title="View source code on GitHub">
+                <span class="icon">🐙</span>
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Connect with us on LinkedIn" title="Connect with us on LinkedIn">
+                <span class="icon">in</span>
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

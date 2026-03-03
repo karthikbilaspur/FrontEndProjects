@@ -1,0 +1,732 @@
+/* --- 0. Root Variables & Defaults --- */
+:root {
+    /* Light Theme */
+    --light-bg-primary: #f8f8f8; /* Body background */
+    --light-bg-secondary: #ffffff; /* Game container background */
+    --light-text-primary: #333;
+    --light-text-secondary: #666; /* For notes/info boxes */
+    --light-border-primary: #ccc; /* General borders */
+    --light-grid-border-bold: #666;
+    --light-grid-border-thin: #ddd;
+    --light-cell-bg: #fff; /* Default cell background */
+    --light-cell-given-bg: #e9ecef; /* Pre-filled cells */
+    --light-cell-hover-bg: #f0f8ff; /* AliceBlue */
+    --light-cell-selected-bg: #cce5ff; /* Light blue */
+    --light-cell-highlight-bg: #fff3cd; /* Light yellow for related cells */
+    --light-cell-error-bg: #ffe0e0; /* Background for cells with incorrect values */
+    --light-cell-error-text: #dc3545; /* Text for incorrect values */
+    --light-button-bg: #007bff;
+    --light-button-text: #fff;
+    --light-button-hover-bg: #0056b3;
+    --light-button-disabled-bg: #6c757d;
+    --light-button-active-bg: #4caf50; /* For active pencil mode */
+    --light-info-success: #28a745;
+    --light-info-error: #dc3545;
+    --light-info-general: #007bff;
+    --light-pause-overlay-bg: rgba(255, 255, 255, 0.8);
+    --light-notes-color: #999; /* Color for pencil marks */
+
+    /* Dark Theme */
+    --dark-bg-primary: #2c2c2c;
+    --dark-bg-secondary: #3c3c3c;
+    --dark-text-primary: #eee;
+    --dark-text-secondary: #bbb;
+    --dark-border-primary: #555;
+    --dark-grid-border-bold: #bbb;
+    --dark-grid-border-thin: #777;
+    --dark-cell-bg: #444;
+    --dark-cell-given-bg: #343a40;
+    --dark-cell-hover-bg: #5a5a5a;
+    --dark-cell-selected-bg: #004085; /* Dark blue */
+    --dark-cell-highlight-bg: #665000; /* Darker yellow */
+    --dark-cell-error-bg: #602020;
+    --dark-cell-error-text: #ff6060;
+    --dark-button-bg: #66ccff;
+    --dark-button-text: #222;
+    --dark-button-hover-bg: #33bbff;
+    --dark-button-disabled-bg: #495057;
+    --dark-button-active-bg: #4CAF50; /* For active pencil mode */
+    --dark-info-success: #28a745;
+    --dark-info-error: #ff6060;
+    --dark-info-general: #66ccff;
+    --dark-pause-overlay-bg: rgba(0, 0, 0, 0.8);
+    --dark-notes-color: #888;
+
+    /* Universal */
+    --transition-duration: 0.3s;
+    --border-radius-primary: 8px;
+    --box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --box-shadow-dark: 0 6px 12px rgba(0, 0, 0, 0.3);
+    --font-family-primary: 'Roboto', sans-serif;
+    --font-family-secondary: 'Open Sans', sans-serif;
+}
+
+/* --- Base Styles --- */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color var(--transition-duration) ease-in-out, color var(--transition-duration) ease-in-out;
+}
+
+/* --- Theme Application --- */
+body.light-theme {
+    background-color: var(--light-bg-primary);
+    color: var(--light-text-primary);
+}
+
+body.dark-theme {
+    background-color: var(--dark-bg-primary);
+    color: var(--dark-text-primary);
+}
+
+/* Elements that adapt to theme */
+#game-container {
+    background-color: var(--light-bg-secondary);
+    color: var(--light-text-primary);
+    box-shadow: var(--box-shadow-light);
+    transition: background-color var(--transition-duration), color var(--transition-duration), box-shadow var(--transition-duration);
+}
+body.dark-theme #game-container {
+    background-color: var(--dark-bg-secondary);
+    color: var(--dark-text-primary);
+    box-shadow: var(--box-shadow-dark);
+}
+
+h1 {
+    color: var(--light-text-primary);
+    transition: color var(--transition-duration);
+}
+body.dark-theme h1 {
+    color: var(--dark-text-primary);
+}
+
+.info-box {
+    border: 1px solid var(--light-border-primary);
+    background-color: var(--light-cell-given-bg); /* Use a light background for info boxes */
+    color: var(--light-text-primary);
+    transition: border-color var(--transition-duration), background-color var(--transition-duration), color var(--transition-duration);
+}
+body.dark-theme .info-box { /* More specific selector */
+    border-color: var(--dark-border-primary);
+    background-color: var(--dark-cell-given-bg);
+    color: var(--dark-text-primary);
+}
+
+/* Messages in info-box */
+.info-box.success-message { color: var(--light-info-success); }
+.info-box.error-message { color: var(--light-info-error); animation: shake 0.5s; }
+.info-box.info-message { color: var(--light-info-general); }
+body.dark-theme .info-box.success-message { color: var(--dark-info-success); }
+body.dark-theme .info-box.error-message { color: var(--dark-info-error); }
+body.dark-theme .info-box.info-message { color: var(--dark-info-general); }
+
+.sudoku-cell {
+    background-color: var(--light-cell-bg);
+    color: var(--light-text-primary);
+    transition: background-color 0.1s ease, color var(--transition-duration);
+}
+body.dark-theme .sudoku-cell {
+    background-color: var(--dark-cell-bg);
+    color: var(--dark-text-primary);
+}
+
+.sudoku-cell.given {
+    background-color: var(--light-cell-given-bg);
+    color: var(--light-text-primary); /* Still show text */
+    font-weight: bold;
+}
+body.dark-theme .sudoku-cell.given {
+    background-color: var(--dark-cell-given-bg);
+    color: var(--dark-text-primary);
+}
+
+.sudoku-cell:hover:not(.given):not(.selected) {
+    background-color: var(--light-cell-hover-bg);
+}
+body.dark-theme .sudoku-cell:hover:not(.given):not(.selected) {
+    background-color: var(--dark-cell-hover-bg);
+}
+
+.sudoku-cell.selected {
+    background-color: var(--light-cell-selected-bg);
+}
+body.dark-theme .sudoku-cell.selected {
+    background-color: var(--dark-cell-selected-bg);
+}
+
+.sudoku-cell.highlighted {
+    background-color: var(--light-cell-highlight-bg);
+}
+body.dark-theme .sudoku-cell.highlighted {
+    background-color: var(--dark-cell-highlight-bg);
+}
+
+.sudoku-cell.error-cell { /* For incorrect entries */
+    background-color: var(--light-cell-error-bg);
+    color: var(--light-cell-error-text);
+    animation: flashRed 0.6s;
+}
+body.dark-theme .sudoku-cell.error-cell {
+    background-color: var(--dark-cell-error-bg);
+    color: var(--dark-cell-error-text);
+}
+
+/* For numbers that are invalid *in context*, even if not in an error-cell */
+.sudoku-cell.invalid-text {
+    color: var(--light-cell-error-text);
+}
+body.dark-theme .sudoku-cell.invalid-text {
+    color: var(--dark-cell-error-text);
+}
+
+.header-controls button, .number-input button, .action-buttons button {
+    background-color: var(--light-button-bg);
+    color: var(--light-button-text);
+    transition: background-color var(--transition-duration), transform 0.1s ease;
+}
+body.dark-theme .header-controls button, body.dark-theme .number-input button, body.dark-theme .action-buttons button {
+    background-color: var(--dark-button-bg);
+    color: var(--dark-button-text);
+}
+
+.header-controls button:hover:not(:disabled), .number-input button:hover:not(:disabled), .action-buttons button:hover:not(:disabled) {
+    background-color: var(--light-button-hover-bg);
+}
+body.dark-theme .header-controls button:hover:not(:disabled), body.dark-theme .number-input button:hover:not(:disabled), body.dark-theme .action-buttons button:hover:not(:disabled) {
+    background-color: var(--dark-button-hover-bg);
+}
+
+button:disabled {
+    background-color: var(--light-button-disabled-bg);
+    cursor: not-allowed;
+}
+body.dark-theme button:disabled {
+    background-color: var(--dark-button-disabled-bg);
+}
+
+/* Active Pencil Mode Button */
+button.active-toggle {
+    background-color: var(--light-button-active-bg);
+    color: white;
+}
+body.dark-theme button.active-toggle {
+    background-color: var(--dark-button-active-bg);
+    color: var(--dark-button-text);
+}
+
+/* --- General Layout --- */
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border-radius: var(--border-radius-primary);
+    max-width: 600px;
+    width: 95%; /* Responsive width */
+    position: relative; /* For pause overlay */
+    z-index: 1; /* Ensure it's above body content if any */
+}
+
+h1 {
+    font-family: var(--font-family-primary);
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.header-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.difficulty-select, .info-display { /* info-display for error count etc */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1em;
+}
+
+.difficulty-select select {
+    padding: 8px 12px;
+    border-radius: var(--border-radius-primary);
+    border: 1px solid var(--light-border-primary);
+    background-color: var(--light-bg-secondary);
+    color: var(--light-text-primary);
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color var(--transition-duration), border-color var(--transition-duration), color var(--transition-duration);
+}
+body.dark-theme .difficulty-select select {
+    border-color: var(--dark-border-primary);
+    background-color: var(--dark-bg-secondary);
+    color: var(--dark-text-primary);
+}
+.difficulty-select select:focus {
+    outline: none;
+    border-color: var(--light-button-bg);
+    box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap; /* Allow info boxes to wrap */
+}
+
+.info-box {
+    flex: 1;
+    min-width: 120px; /* Ensure info boxes don't get too small */
+    padding: 10px 15px;
+    border-radius: var(--border-radius-primary);
+    text-align: center;
+    font-family: var(--font-family-primary);
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px; /* Ensure consistent height */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); /* Subtle inner shadow */
+}
+
+/* --- Sudoku Grid --- */
+.sudoku-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 100%;
+    max-width: 540px; /* Max width for a good square grid aspect ratio */
+    aspect-ratio: 1 / 1; /* Keep grid square */
+    border: 3px solid var(--light-grid-border-bold);
+    border-radius: var(--border-radius-primary);
+    overflow: hidden; /* For cell border rendering */
+    transition: border-color var(--transition-duration);
+    position: relative; /* For pause overlay */
+}
+body.dark-theme .sudoku-grid {
+    border-color: var(--dark-grid-border-bold);
+}
+
+.sudoku-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-family-primary);
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 1px solid var(--light-grid-border-thin);
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    position: relative; /* For notes */
+}
+body.dark-theme .sudoku-cell {
+    border-color: var(--dark-grid-border-thin);
+}
+
+.sudoku-cell.given { /* Overrides default cell font for given numbers */
+    font-weight: bold;
+}
+
+/* Notes (Pencil Marks) styling */
+.sudoku-cell .cell-notes {
+    font-size: 0.5em; /* Smaller font for notes */
+    color: var(--light-notes-color);
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    line-height: 1; /* Compact line height */
+    gap: 1px;
+    align-items: center;
+    justify-items: center;
+    font-weight: normal; /* Notes are not bold */
+}
+body.dark-theme .sudoku-cell .cell-notes {
+    color: var(--dark-notes-color);
+}
+.sudoku-cell.has-notes {
+    font-size: 0; /* Hide main cell text if it has notes (only show notes) */
+}
+.sudoku-cell.has-notes::before { /* Make sure no stray text shows up */
+    content: '';
+    font-size: 1.5em; /* Restore original font size to center empty content */
+}
+
+/* --- Sudoku Grid Border Overrides (Thick borders for 3x3 subgrids) --- */
+/*
+  This section ensures proper border rendering for the 3x3 blocks within the 9x9 grid.
+  It's a bit verbose due to CSS's limitations on `nth-child` selection for grid layout.
+*/
+
+/* General cell borders */
+.sudoku-grid > div {
+    border: 1px solid var(--light-grid-border-thin);
+}
+body.dark-theme .sudoku-grid > div {
+    border-color: var(--dark-grid-border-thin);
+}
+
+/* Bold vertical borders */
+.sudoku-grid > div:nth-child(3n):not(:nth-child(9n)) { /* 3rd, 6th cell of each row (not last cell) */
+    border-right-width: 2px;
+    border-right-color: var(--light-grid-border-bold);
+}
+body.dark-theme .sudoku-grid > div:nth-child(3n):not(:nth-child(9n)) {
+    border-right-color: var(--dark-grid-border-bold);
+}
+
+/* Bold horizontal borders */
+/* Select cells in the 3rd and 6th row (counting from 1), across all columns */
+.sudoku-grid > div:nth-child(n + 19):nth-child(-n + 27), /* 3rd row of cells (index 18-26) */
+.sudoku-grid > div:nth-child(n + 46):nth-child(-n + 54) { /* 6th row of cells (index 45-53) */
+    border-bottom-width: 2px;
+    border-bottom-color: var(--light-grid-border-bold);
+}
+body.dark-theme .sudoku-grid > div:nth-child(n + 19):nth-child(-n + 27),
+body.dark-theme .sudoku-grid > div:nth-child(n + 46):nth-child(-n + 54) {
+    border-bottom-color: var(--dark-grid-border-bold);
+}
+
+/* Correct the last row's cells so they only have the main grid border */
+.sudoku-grid > div:nth-child(n + 73) { /* Cells from the 7th row onwards (index 72-80) */
+    border-bottom-width: 1px;
+}
+body.dark-theme .sudoku-grid > div:nth-child(n + 73) {
+    border-bottom-color: var(--dark-grid-border-thin);
+}
+
+/* --- Controls --- */
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.number-input {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 buttons per row */
+    gap: 10px;
+}
+.number-input button {
+    padding: 15px;
+    font-family: var(--font-family-primary);
+    font-size: 1.2em;
+    border-radius: var(--border-radius-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--box-shadow-light);
+    transform: scale(1); /* For animation */
+}
+
+.number-input button.clear-button {
+    grid-column: span 2; /* Make clear button span 2 columns */
+    background-color: #f0ad4e; /* Orange for clear */
+    color: var(--light-button-text);
+}
+.number-input button.clear-button:hover {
+    background-color: #ec971f;
+}
+body.dark-theme .number-input button.clear-button {
+    background-color: #ffc107;
+    color: var(--dark-button-text);
+}
+body.dark-theme .number-input button.clear-button:hover {
+    background-color: #e0a800;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.action-buttons button, .header-controls button { /* Combine styling for all buttons */
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: var(--border-radius-primary);
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--box-shadow-light);
+    transform: scale(1); /* For animation */
+}
+
+/* Button Hover/Active Feedback */
+button:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: var(--box-shadow-dark);
+}
+button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+/* --- Pause Overlay --- */
+.pause-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--light-pause-overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: var(--light-text-primary);
+    z-index: 10; /* Above the grid */
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+}
+body.dark-theme .pause-overlay {
+    background-color: var(--dark-pause-overlay-bg);
+    color: var(--dark-text-primary);
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.sudoku-cell.fade-in { /* For new numbers appearing */
+    animation: fadeIn 0.3s ease-out;
+}
+
+
+.sudoku-cell.hint {
+    animation: highlightHint 1.2s ease-out; /* Longer hint animation */
+}
+
+@keyframes undoRedoFlash {
+    0% { background-color: rgba(255, 255, 0, 0.7); } /* Yellow flash */
+    100% { background-color: inherit; }
+}
+.sudoku-cell.undo-redo-flash {
+    animation: undoRedoFlash 0.4s ease-out;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+.info-box.error-message {
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes flashRed {
+    0%, 100% { background-color: var(--light-cell-error-bg); }
+    50% { background-color: rgba(255, 0, 0, 0.7); }
+}
+@keyframes flashRed-dark {
+    0%, 100% { background-color: var(--dark-cell-error-bg); }
+    50% { background-color: rgba(255, 0, 0, 0.7); }
+}
+.sudoku-cell.error-cell {
+    animation: flashRed 0.6s ease-out;
+}
+body.dark-theme .sudoku-cell.error-cell {
+    animation: flashRed-dark 0.6s ease-out;
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Small screens (e.g., phones in portrait) */
+@media (max-width: 576px) {
+    #game-container {
+        padding: 15px;
+        gap: 10px;
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: 100vh;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .header-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .header-controls button, .difficulty-select {
+        width: 100%;
+    }
+    .difficulty-select select {
+        width: 100%;
+    }
+
+    .game-info {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+
+    .info-box {
+        font-size: 1em;
+        min-height: 35px;
+    }
+
+    .sudoku-grid {
+        width: 100%;
+        max-width: 300px; /* Adjust max-width for very small screens */
+        aspect-ratio: 1 / 1;
+        border-radius: 0;
+    }
+
+    .sudoku-cell {
+        font-size: 1.2em;
+    }
+    .sudoku-cell .cell-notes {
+        font-size: 0.4em; /* Adjust notes size for smaller cells */
+    }
+    
+    .controls {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .number-input {
+        grid-template-columns: repeat(3, 1fr); /* 3 buttons per row on small screens */
+    }
+    .number-input button {
+        padding: 12px;
+        font-size: 1em;
+    }
+    .number-input button.clear-button {
+        grid-column: span 3; /* Clear button spans 3 columns */
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .action-buttons button {
+        width: 100%;
+    }
+}
+
+/* Medium screens (e.g., tablets, phones in landscape) */
+@media (min-width: 577px) and (max-width: 991px) {
+    #game-container {
+        padding: 25px;
+        gap: 15px;
+        width: 90%;
+    }
+
+    h1 {
+        font-size: 2.4em;
+    }
+
+    .header-controls {
+        gap: 10px;
+    }
+
+    .game-info {
+        gap: 10px;
+    }
+
+    .sudoku-cell {
+        font-size: 1.4em;
+    }
+    .sudoku-cell .cell-notes {
+        font-size: 0.45em;
+    }
+
+    .number-input {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .number-input button {
+        padding: 15px;
+        font-size: 1.1em;
+    }
+    .number-input button.clear-button {
+        grid-column: span 2;
+    }
+}
+
+/* Landscape orientation for very small devices */
+@media (max-height: 400px) and (max-width: 800px) and (orientation: landscape) {
+    body {
+        align-items: flex-start;
+        padding: 10px 0;
+        min-height: 100vh;
+    }
+    #game-container {
+        flex-direction: row; /* Layout side-by-side */
+        flex-wrap: wrap;
+        width: 98%;
+        max-width: none;
+        padding: 10px;
+        gap: 10px;
+        min-height: 95vh;
+        align-items: flex-start;
+    }
+    h1 {
+        width: 100%;
+        text-align: center;
+        font-size: 2em;
+        margin-bottom: 5px;
+    }
+    .header-controls, .game-info {
+        width: calc(50% - 15px); /* Half width for controls and info */
+        flex-direction: column;
+        gap: 5px;
+        margin-bottom: 0;
+    }
+    .header-controls button, .difficulty-select, .info-display {
+        width: 100%;
+    }
+    .difficulty-select select {
+        width: 100%;
+    }
+    .sudoku-grid {
+        width: calc(50% - 15px); /* Half width for grid */
+        max-width: 350px; /* Limit size */
+        margin-left: 10px;
+    }
+    .controls {
+        width: calc(50% - 15px); /* Half width for controls */
+        margin-top: 0;
+    }
+    .number-input {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .number-input button.clear-button {
+        grid-column: span 3;
+    }
+    .sudoku-cell {
+        font-size: 1em;
+    }
+    .sudoku-cell .cell-notes {
+        font-size: 0.35em;
+    }
+}
