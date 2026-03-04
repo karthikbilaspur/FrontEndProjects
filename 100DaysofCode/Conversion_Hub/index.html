@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>All-in-One Converter Hub - Universal Unit & Currency Converter</title>
+    <meta name="description" content="Your ultimate online tool for converting units of length, weight, temperature, currency, data storage, area, volume, speed, time, and resolution. Fast, accurate, and easy to use.">
+    <meta name="keywords" content="unit converter, currency converter, length, weight, temperature, data, area, volume, speed, time, resolution, calculator, free converter, online tool, universal converter">
+    <meta name="author" content="Your Name or Project Name">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/converter-hub"> <!-- Replace with your actual URL -->
+    <meta property="og:title" content="All-in-One Converter Hub - Universal Unit & Currency Converter">
+    <meta property="og:description" content="Your ultimate online tool for converting units of length, weight, temperature, currency, data storage, area, volume, speed, time, and resolution. Fast, accurate, and easy to use.">
+    <meta property="og:image" content="https://yourwebsite.com/converter-hub/preview.jpg"> <!-- Replace with a preview image for social media -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/converter-hub"> <!-- Replace with your actual URL -->
+    <meta property="twitter:title" content="All-in-One Converter Hub - Universal Unit & Currency Converter">
+    <meta property="twitter:description" content="Your ultimate online tool for converting units of length, weight, temperature, currency, data storage, area, volume, speed, time, and resolution. Fast, accurate, and easy to use.">
+    <meta property="twitter:image" content="https://yourwebsite.com/converter-hub/preview.jpg"> <!-- Replace with a preview image for social media -->
+
+    <!-- Favicon (Recommended: Use a favicon generator for multiple sizes) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#667eea"> <!-- Matches your primary gradient start color -->
+
+    <!-- Preconnect to CDN domains for faster loading of external resources -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Bootstrap CSS (always load first for proper overriding) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Google Fonts (Optional: if you want to use a custom font, e.g., 'Poppins') -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"> -->
+
+    <!-- Custom CSS (always load last to override Bootstrap styles) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="d-flex justify-content-center align-items-center min-vh-100 bg-gradient">
+
+<div class="container py-5">
+    <h1 class="text-center text-white mb-4">🌍 All-in-One Converter Hub</h1>
+
+    <div class="card p-4 shadow-lg bg-light-translucent">
+        <ul class="nav nav-pills mb-3 justify-content-center" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-length-tab" data-bs-toggle="pill" data-bs-target="#pills-length" type="button" role="tab" aria-controls="pills-length" aria-selected="true" onclick="showSection('length')">Length</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-weight-tab" data-bs-toggle="pill" data-bs-target="#pills-weight" type="button" role="tab" aria-controls="pills-weight" aria-selected="false" onclick="showSection('weight')">Weight</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-temperature-tab" data-bs-toggle="pill" data-bs-target="#pills-temperature" type="button" role="tab" aria-controls="pills-temperature" aria-selected="false" onclick="showSection('temperature')">Temp</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-currency-tab" data-bs-toggle="pill" data-bs-target="#pills-currency" type="button" role="tab" aria-controls="pills-currency" aria-selected="false" onclick="showSection('currency')">Currency</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-data-tab" data-bs-toggle="pill" data-bs-target="#pills-data" type="button" role="tab" aria-controls="pills-data" aria-selected="false" onclick="showSection('data')">Data</button>
+            </li>
+            <!-- NEW TABS START -->
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-area-tab" data-bs-toggle="pill" data-bs-target="#pills-area" type="button" role="tab" aria-controls="pills-area" aria-selected="false" onclick="showSection('area')">Area</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-volume-tab" data-bs-toggle="pill" data-bs-target="#pills-volume" type="button" role="tab" aria-controls="pills-volume" aria-selected="false" onclick="showSection('volume')">Volume</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-speed-tab" data-bs-toggle="pill" data-bs-target="#pills-speed" type="button" role="tab" aria-controls="pills-speed" aria-selected="false" onclick="showSection('speed')">Speed</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-time-tab" data-bs-toggle="pill" data-bs-target="#pills-time" type="button" role="tab" aria-controls="pills-time" aria-selected="false" onclick="showSection('time')">Time</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-resolution-tab" data-bs-toggle="pill" data-bs-target="#pills-resolution" type="button" role="tab" aria-controls="pills-resolution" aria-selected="false" onclick="showSection('resolution')">Resolution</button>
+            </li>
+            <!-- NEW TABS END -->
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <!-- LENGTH -->
+            <div class="tab-pane fade show active" id="pills-length" role="tabpanel" aria-labelledby="pills-length-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="lengthInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="lengthInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="lengthFrom" class="form-select">
+                            <option value="m">Meters</option>
+                            <option value="km">Kilometers</option>
+                            <option value="mile">Miles</option>
+                            <option value="ft">Feet</option>
+                            <option value="yard">Yards</option>
+                            <option value="cm">Centimeters</option>
+                            <option value="in">Inches</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('lengthFrom','lengthTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="lengthTo" class="form-select">
+                            <option value="m">Meters</option>
+                            <option value="km">Kilometers</option>
+                            <option value="mile">Miles</option>
+                            <option value="ft">Feet</option>
+                            <option value="yard">Yards</option>
+                            <option value="cm">Centimeters</option>
+                            <option value="in">Inches</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertLength()">Convert</button>
+                <p id="lengthResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="lengthResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="length" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- WEIGHT -->
+            <div class="tab-pane fade" id="pills-weight" role="tabpanel" aria-labelledby="pills-weight-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="weightInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="weightInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="weightFrom" class="form-select">
+                            <option value="kg">Kilograms</option>
+                            <option value="g">Grams</option>
+                            <option value="lb">Pounds</option>
+                            <option value="oz">Ounces</option>
+                            <option value="ton">Tons (metric)</option>
+                            <option value="mg">Milligrams</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('weightFrom','weightTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="weightTo" class="form-select">
+                            <option value="kg">Kilograms</option>
+                            <option value="g">Grams</option>
+                            <option value="lb">Pounds</option>
+                            <option value="oz">Ounces</option>
+                            <option value="ton">Tons (metric)</option>
+                            <option value="mg">Milligrams</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertWeight()">Convert</button>
+                <p id="weightResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="weightResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="weight" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- TEMPERATURE -->
+            <div class="tab-pane fade" id="pills-temperature" role="tabpanel" aria-labelledby="pills-temperature-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="tempInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="tempInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="tempFrom" class="form-select">
+                            <option value="c">Celsius</option>
+                            <option value="f">Fahrenheit</option>
+                            <option value="k">Kelvin</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('tempFrom','tempTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="tempTo" class="form-select">
+                            <option value="c">Celsius</option>
+                            <option value="f">Fahrenheit</option>
+                            <option value="k">Kelvin</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertTemp()">Convert</button>
+                <p id="tempResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="tempResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="temperature" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- CURRENCY -->
+            <div class="tab-pane fade" id="pills-currency" role="tabpanel" aria-labelledby="pills-currency-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="currencyInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="currencyInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="currencyFrom" class="form-select">
+                            <option value="USD">USD</option>
+                            <option value="INR">INR</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="CAD">CAD</option>
+                            <option value="AUD">AUD</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('currencyFrom','currencyTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="currencyTo" class="form-select">
+                            <option value="USD">USD</option>
+                            <option value="INR">INR</option>
+                            <option value="EUR">EUR</option>
+                            <option value="GBP">GBP</option>
+                            <option value="JPY">JPY</option>
+                            <option value="CAD">CAD</option>
+                            <option value="AUD">AUD</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertCurrency()">Convert</button>
+                <p id="currencyResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="currencyResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="currency" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- DATA -->
+            <div class="tab-pane fade" id="pills-data" role="tabpanel" aria-labelledby="pills-data-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="dataInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="dataInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="dataFrom" class="form-select">
+                            <option value="b">Bytes</option>
+                            <option value="kb">Kilobytes</option>
+                            <option value="mb">Megabytes</option>
+                            <option value="gb">Gigabytes</option>
+                            <option value="tb">Terabytes</option>
+                            <option value="pb">Petabytes</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('dataFrom','dataTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="dataTo" class="form-select">
+                            <option value="b">Bytes</option>
+                            <option value="kb">Kilobytes</option>
+                            <option value="mb">Megabytes</option>
+                            <option value="gb">Gigabytes</option>
+                            <option value="tb">Terabytes</option>
+                            <option value="pb">Petabytes</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertData()">Convert</button>
+                <p id="dataResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="dataResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="data" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- NEW SECTIONS START -->
+
+            <!-- AREA -->
+            <div class="tab-pane fade" id="pills-area" role="tabpanel" aria-labelledby="pills-area-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="areaInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="areaInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="areaFrom" class="form-select">
+                            <option value="sqm">Square Meters</option>
+                            <option value="sqkm">Square Kilometers</option>
+                            <option value="sqmile">Square Miles</option>
+                            <option value="sqft">Square Feet</option>
+                            <option value="sqyard">Square Yards</option>
+                            <option value="acre">Acres</option>
+                            <option value="hectare">Hectares</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('areaFrom','areaTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="areaTo" class="form-select">
+                            <option value="sqm">Square Meters</option>
+                            <option value="sqkm">Square Kilometers</option>
+                            <option value="sqmile">Square Miles</option>
+                            <option value="sqft">Square Feet</option>
+                            <option value="sqyard">Square Yards</option>
+                            <option value="acre">Acres</option>
+                            <option value="hectare">Hectares</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertArea()">Convert</button>
+                <p id="areaResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="areaResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="area" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- VOLUME -->
+            <div class="tab-pane fade" id="pills-volume" role="tabpanel" aria-labelledby="pills-volume-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="volumeInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="volumeInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="volumeFrom" class="form-select">
+                            <option value="ml">Milliliters</option>
+                            <option value="l">Liters</option>
+                            <option value="cuin">Cubic Inches</option>
+                            <option value="cuft">Cubic Feet</option>
+                            <option value="gal">US Gallons</option>
+                            <option value="qt">US Quarts</option>
+                            <option value="cup">US Cups</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('volumeFrom','volumeTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="volumeTo" class="form-select">
+                            <option value="ml">Milliliters</option>
+                            <option value="l">Liters</option>
+                            <option value="cuin">Cubic Inches</option>
+                            <option value="cuft">Cubic Feet</option>
+                            <option value="gal">US Gallons</option>
+                            <option value="qt">US Quarts</option>
+                            <option value="cup">US Cups</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertVolume()">Convert</button>
+                <p id="volumeResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="volumeResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="volume" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- SPEED -->
+            <div class="tab-pane fade" id="pills-speed" role="tabpanel" aria-labelledby="pills-speed-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="speedInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="speedInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="speedFrom" class="form-select">
+                            <option value="mps">Meters/second</option>
+                            <option value="kmph">Kilometers/hour</option>
+                            <option value="mph">Miles/hour</option>
+                            <option value="knot">Knots</option>
+                            <option value="fps">Feet/second</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('speedFrom','speedTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="speedTo" class="form-select">
+                            <option value="mps">Meters/second</option>
+                            <option value="kmph">Kilometers/hour</option>
+                            <option value="mph">Miles/hour</option>
+                            <option value="knot">Knots</option>
+                            <option value="fps">Feet/second</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertSpeed()">Convert</button>
+                <p id="speedResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="speedResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="speed" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- TIME -->
+            <div class="tab-pane fade" id="pills-time" role="tabpanel" aria-labelledby="pills-time-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="timeInput" class="form-label text-white">Enter value:</label>
+                    <input type="number" class="form-control" id="timeInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="timeFrom" class="form-select">
+                            <option value="sec">Seconds</option>
+                            <option value="min">Minutes</option>
+                            <option value="hr">Hours</option>
+                            <option value="day">Days</option>
+                            <option value="week">Weeks</option>
+                            <option value="month">Months</option>
+                            <option value="year">Years</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('timeFrom','timeTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="timeTo" class="form-select">
+                            <option value="sec">Seconds</option>
+                            <option value="min">Minutes</option>
+                            <option value="hr">Hours</option>
+                            <option value="day">Days</option>
+                            <option value="week">Weeks</option>
+                            <option value="month">Months</option>
+                            <option value="year">Years</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertTime()">Convert</button>
+                <p id="timeResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="timeResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="time" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- RESOLUTION -->
+            <div class="tab-pane fade" id="pills-resolution" role="tabpanel" aria-labelledby="pills-resolution-tab" tabindex="0">
+                <div class="mb-3">
+                    <label for="resolutionInput" class="form-label text-white">Enter value (e.g., megapixels, pixels):</label>
+                    <input type="number" class="form-control" id="resolutionInput" placeholder="0">
+                </div>
+                <div class="row g-2 mb-3 align-items-center">
+                    <div class="col-5">
+                        <select id="resolutionFrom" class="form-select">
+                            <option value="mp">Megapixels</option>
+                            <option value="px">Pixels</option>
+                        </select>
+                    </div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-warning btn-sm" onclick="swapUnits('resolutionFrom','resolutionTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
+                    </div>
+                    <div class="col-5">
+                        <select id="resolutionTo" class="form-select">
+                            <option value="mp">Megapixels</option>
+                            <option value="px">Pixels</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn btn-info w-100 mb-2" onclick="convertResolution()">Convert</button>
+                <p id="resolutionResult" class="result text-white text-center fs-5 mb-2"></p>
+                <button class="btn btn-success w-100 mb-2 copy-btn" data-result-id="resolutionResult" data-tippy-content="Copied!" data-tippy-delay="[0, 500]">Copy Result</button>
+                <button class="btn btn-danger w-100 reset-btn" data-section-id="resolution" data-tippy-content="Reset!" data-tippy-delay="[0, 500]">Reset</button>
+            </div>
+
+            <!-- NEW SECTIONS END -->
+        </div>
+    </div>
+</div>
+
+<!-- Notification Toast Container -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="liveToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                <!-- Message will be injected here -->
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle (popper included) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- Axios -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<!-- Tippy.js (and Popper.js as its dependency) -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
+<!-- Numeral.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+<!-- Custom JavaScript -->
+<script src="script.js"></script>
+</body>
+</html>

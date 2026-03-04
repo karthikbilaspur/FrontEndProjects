@@ -8,8 +8,8 @@
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Getting Started](#getting-started)
- - [Prerequisites](#prerequisites)
-    - [Installation](#installation)
+[Prerequisites](#prerequisites)
+ [Installation](#installation)
 - [Usage](#usage)
 - [Educational Disclaimer](#educational-disclaimer)
 - [Future Enhancements (Ideas)](#future-enhancements-ideas)
@@ -71,7 +71,6 @@ You only need a web browser to view this application. No special server setup is
 cd multi-form-utility-app
 
 2. **Navigate to the project directory:**
-
 
 ## Usage
 

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Good practice for responsiveness -->
+    <title>Ultimate Word Scramble Arena</title>
+
+    <!-- Meta Description for Search Engines -->
+    <meta name="description" content="Challenge your brain with Ultimate Word Scramble Arena! Play classic, timed, or 2-player modes across various categories like animals, countries, and programming. Improve your vocabulary and climb the leaderboard!">
+
+    <!-- Keywords for Search Engines (less important now, but still useful) -->
+    <meta name="keywords" content="word scramble, word game, vocabulary, brain game, multiplayer, timed challenge, classic mode, animals, countries, programming, online game, free game">
+
+    <!-- Open Graph Protocol Tags for Social Media Sharing (Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Ultimate Word Scramble Arena">
+    <meta property="og:description" content="Challenge your brain with Ultimate Word Scramble Arena! Play classic, timed, or 2-player modes across various categories like animals, countries, and programming. Improve your vocabulary and climb the leaderboard!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourgameurl.com/"> <!-- Replace with your actual game URL -->
+    <meta property="og:image" content="https://www.yourwebsite.com/your-game-thumbnail.jpg"> <!-- Replace with a URL to an attractive image (e.g., screenshot) -->
+    <meta property="og:image:alt" content="Screenshot of Ultimate Word Scramble Arena game interface">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Tags for Twitter Sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@yourtwitterhandle"> <!-- Replace with your Twitter handle -->
+    <meta name="twitter:creator" content="@yourtwitterhandle"> <!-- Replace with your Twitter handle -->
+    <meta name="twitter:title" content="Ultimate Word Scramble Arena">
+    <meta name="twitter:description" content="Challenge your brain with Ultimate Word Scramble Arena! Play classic, timed, or 2-player modes across various categories like animals, countries, and programming. Improve your vocabulary and climb the leaderboard!">
+    <meta name="twitter:image" content="https://www.yourwebsite.com/your-game-thumbnail.jpg"> <!-- Must be an absolute URL -->
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- HOME SCREEN -->
+    <div id="home-screen" class="screen active">
+        <h1>Word Scramble Arena</h1>
+
+        <input type="text" id="playerName" placeholder="Enter Your Name">
+        <p id="playerNameError" class="error-message"></p>
+
+        <select id="modeSelect" title="Select Game Type ">Please  Select Game Type To Play 
+            <option value="classic">Classic Mode</option>
+            <option value="timed">Timed Challenge (60s)</option>
+            <option value="multiplayer">2 Player Mode</option>
+        </select>
+
+        <select id="categorySelect" title="Select Word Category">Please Select Word Category To Play
+            <option value="animals">Animals</option>
+            <option value="countries">Countries</option>
+            <option value="programming">Programming</option>
+            <option value="movies">Movies</option>
+            <option value="cricket">Cricket</option>
+        </select>
+
+        <select id="difficultySelect" title="Select Difficulty Level">Please Select Difficulty Level To Play
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <button id="startBtn">Start Game</button>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="screen">
+        <div class="top-bar">
+            <span id="score">Score: 0</span>
+            <span id="lives">❤️❤️❤️</span>
+            <span id="timer">Time: 30</span>
+            <button id="muteBtn" class="mute-button">🔇</button>
+            <button id="musicToggleBtn" class="music-button">🎶</button>
+        </div>
+
+        <h2 id="categoryTitle"></h2>
+        <p id="playerTurnDisplay" class="player-turn-display"></p>
+
+        <div id="scrambledWord"></div>
+        <p id="correctWordDisplay" class="correct-word-display"></p>
+
+        <div id="dragContainer" class="drag-container"></div>
+
+        <input type="text" id="answerInput" placeholder="Type your answer">
+
+        <div class="buttons">
+            <button id="revealLetterBtn">Reveal Letter (0)</button> <!-- Changed from hintBtn -->
+            <button id="nextBtn">Next</button>
+            <button id="toggleDragModeBtn">Toggle Drag Mode</button>
+            <button id="checkBtn">Check</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="game-over-screen" class="screen">
+        <h2>Game Over</h2>
+        <p id="finalScore"></p>
+        <p id="gameOverMessage"></p>
+        <canvas id="confetti-canvas"></canvas>
+        <button id="restartBtn">Restart</button>
+        <button id="leaderboardBtn">Leaderboard</button>
+    </div>
+
+    <!-- LEADERBOARD -->
+    <div id="leaderboard-screen" class="screen">
+        <h2>Leaderboard</h2>
+        <ul id="leaderboardList"></ul>
+        <button id="backHomeBtn">Back</button>
+    </div>
+
+</div>
+
+<footer class="game-footer">
+    <p>&copy; 2026 Ultimate Word Scramble Arena.</p>
+    <p>Made with ❤️ by [Your Name/Company Name]</p>
+</footer>
+
+<audio id="backgroundMusic" loop>
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-opener-2200.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script src="script.js"></script>
+</body>
+</html>
