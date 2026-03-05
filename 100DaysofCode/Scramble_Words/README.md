@@ -90,5 +90,3 @@ This project is open source and available under the [MIT License](LICENSE). <! C
 If you have any questions or feedback, please reach out to [youremail@example.com](mailto:youremail@example.com).
 
 Made with ❤️ by [Your Name/Company Name]
-
-

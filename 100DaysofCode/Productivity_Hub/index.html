@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>My Smart Productivity Hub</title>
+    <meta name="title" content="My Smart Productivity Hub - All-in-One Productivity Tool">
+    <meta name="description" content="Manage your tasks, notes, calendar, and focus with a powerful Pomodoro timer. Your ultimate productivity companion.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.yourdomain.com/"> <!-- IMPORTANT: Replace with your actual domain -->
+    <meta property="og:title" content="My Smart Productivity Hub - All-in-One Productivity Tool">
+    <meta property="og:description" content="Manage your tasks, notes, calendar, and focus with a powerful Pomodoro timer. Your ultimate productivity companion.">
+    <meta property="og:image" content="https://www.yourdomain.com/social-share.jpg"> <!-- IMPORTANT: Create and replace with a relevant image URL -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.yourdomain.com/"> <!-- IMPORTANT: Replace with your actual domain -->
+    <meta property="twitter:title" content="My Smart Productivity Hub - All-in-One Productivity Tool">
+    <meta property="twitter:description" content="Manage your tasks, notes, calendar, and focus with a powerful Pomodoro timer. Your ultimate productivity companion.">
+    <meta property="twitter:image" content="https://www.yourdomain.com/social-share.jpg"> <!-- IMPORTANT: Create and replace with a relevant image URL -->
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- IMPORTANT: Create a favicon.png file -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png"> <!-- For iOS devices -->
+
+    <!-- Preconnect to Font Awesome for faster loading -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rljxVzN5Jp5d6F5v5g+zX03p8/e5n1h3j3a2h2a2g2h2h2h2a2g2g2h2h2h2"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- IMPORTANT: Link to DOMPurify for XSS protection in notes -->
+    <!-- You would typically include this from a CDN:
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+    For this code execution environment, I'll add a mock DOMPurify object in script.js.
+    -->
+
+    <!-- Your custom stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="app-header">
+    <h1>Productivity Hub</h1>
+    <div class="header-actions">
+        <button id="dark-mode-toggle" class="control-btn">
+            <i class="fas fa-moon"></i> Dark Mode
+        </button>
+    </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav class="main-nav">
+    <button class="nav-item active" data-view="pomodoro" aria-label="Go to Pomodoro Timer">
+        <i class="fas fa-clock"></i> Pomodoro
+    </button>
+    <button class="nav-item" data-view="todo" aria-label="Go to Todo List">
+        <i class="fas fa-check"></i> Todo
+    </button>
+    <button class="nav-item" data-view="notes" aria-label="Go to Notes">
+        <i class="fas fa-note-sticky"></i> Notes
+    </button>
+    <button class="nav-item" data-view="calendar" aria-label="Go to Calendar">
+        <i class="fas fa-calendar"></i> Calendar
+    </button>
+</nav>
+
+<main class="app-container">
+
+    <!-- ==================== POMODORO ==================== -->
+    <section id="pomodoro-view" class="app-view active">
+        <h2>Pomodoro Timer</h2>
+        <h3 id="pomodoro-task">No task selected</h3>
+        <div class="pomodoro-timer">
+            <div class="timer-display" id="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button id="start-timer" class="control-btn"><i class="fas fa-play"></i> Start</button>
+                <button id="pause-timer" class="control-btn" disabled><i class="fas fa-pause"></i> Pause</button>
+                <button id="reset-timer" class="control-btn"><i class="fas fa-rotate"></i> Reset</button>
+            </div>
+            <div class="timer-modes">
+                <button class="mode-btn active" data-mode-name="pomodoro">Pomodoro</button>
+                <button class="mode-btn" data-mode-name="short-break">Short Break</button>
+                <button class="mode-btn" data-mode-name="long-break">Long Break</button>
+            </div>
+            <h3>Custom Times (minutes)</h3>
+            <div class="custom-timer-settings">
+                <label for="custom-pomodoro-time">Pomodoro:</label>
+                <input id="custom-pomodoro-time" type="number" min="1" aria-label="Custom Pomodoro time in minutes">
+                <label for="custom-short-break-time">Short Break:</label>
+                <input id="custom-short-break-time" type="number" min="1" aria-label="Custom Short Break time in minutes">
+                <label for="custom-long-break-time">Long Break:</label>
+                <input id="custom-long-break-time" type="number" min="1" aria-label="Custom Long Break time in minutes">
+                <button id="save-custom-times" class="action-btn">Save</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== TODO ==================== -->
+    <section id="todo-view" class="app-view">
+        <h2>Todo List</h2>
+        <div class="todo-input-container">
+            <label for="new-todo-input" class="sr-only">New Todo Task</label>
+            <input id="new-todo-input" type="text" placeholder="Add new task">
+            <button id="add-todo-btn" class="action-btn add-btn">Add</button>
+        </div>
+        <ul id="todo-list" class="task-list" role="list"></ul>
+    </section>
+
+    <!-- ==================== NOTES ==================== -->
+    <section id="notes-view" class="app-view">
+        <h2>Notes</h2>
+        <div class="note-input-container">
+            <label for="new-note-title" class="sr-only">Note Title</label>
+            <input id="new-note-title" type="text" placeholder="Note Title">
+            <div class="rich-text-toolbar" role="toolbar" aria-label="Rich text editor controls">
+                <button class="rte-btn" data-command="bold" aria-label="Bold text"><b>B</b></button>
+                <button class="rte-btn" data-command="italic" aria-label="Italic text"><i>I</i></button>
+                <button class="rte-btn" data-command="underline" aria-label="Underline text"><u>U</u></button>
+                <button class="rte-btn" data-command="insertUnorderedList" aria-label="Unordered list">• List</button>
+                <button class="rte-btn" data-command="createLink" aria-label="Insert link">Link</button>
+            </div>
+            <div id="new-note-content" contenteditable="true" class="note-editor" role="textbox" aria-multiline="true" aria-label="Note content editor"></div>
+            <button id="add-note-btn" class="action-btn add-btn">Save Note</button>
+        </div>
+        <div id="notes-list" class="notes-grid"></div>
+    </section>
+
+    <!-- ==================== CALENDAR ==================== -->
+    <section id="calendar-view" class="app-view">
+        <div class="calendar-header">
+            <button id="prev-month-btn" class="nav-month-btn" aria-label="Previous Month">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <h2 id="current-month-year"></h2>
+            <button id="next-month-btn" class="nav-month-btn" aria-label="Next Month">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <button id="today-btn" class="nav-month-btn" aria-label="Go to Today">Today</button>
+        </div>
+        <div id="calendar-grid"></div>
+    </section>
+
+    <!-- ==================== DATA MANAGEMENT ==================== -->
+    <section id="data-management-view" class="app-view">
+        <h2>Data Management</h2>
+        <div class="data-actions">
+            <button id="export-data-btn" class="action-btn">Export All Data</button>
+            <button id="import-data-btn" class="action-btn">Import Data</button>
+            <input type="file" id="import-data-input" accept=".json" title="Data">
+        </div>
+    </section>
+
+</main>
+
+<!-- ==================== EVENT MODAL ==================== -->
+<div id="event-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+        <span class="close-button" aria-label="Close modal">&times;</span>
+        <h3 id="modal-title">Events for <span id="modal-date"></span></h3>
+
+        <div id="event-list-container"></div>
+
+        <div id="event-form-container">
+            <label for="event-title-input" class="sr-only">Event Title</label>
+            <input id="event-title-input" type="text" placeholder="Event title" aria-required="true">
+
+            <label for="event-time-input">Time:</label>
+            <input id="event-time-input" type="time">
+
+            <label for="event-description-input" class="sr-only">Event Description</label>
+            <textarea id="event-description-input" placeholder="Description"></textarea>
+
+            <label for="event-color-input">Event Color:</label>
+            <input type="color" id="event-color-input" value="#4CAF50">
+
+            <label for="event-recurrence">Repeat:</label>
+            <select id="event-recurrence">
+                <option value="none">No Repeat</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+            </select>
+
+            <div id="recurrence-end-date-wrapper">
+                <label for="recurrence-end-date">Repeat Until:</label>
+                <input id="recurrence-end-date" type="date">
+            </div>
+
+            <button id="save-event-btn" class="action-btn add-btn">Save Event</button>
+            <button id="delete-event-btn" class="action-btn delete-btn">Delete Event</button>
+        </div>
+
+        <button id="add-new-event-btn" class="action-btn add-btn">Add New Event</button>
+        <button id="back-to-list-btn" class="action-btn">Back to List</button>
+    </div>
+</div>
+
+<!-- Local audio file for Pomodoro timer -->
+<audio id="pomodoro-audio-finish" src="ding.mp3" preload="auto"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>

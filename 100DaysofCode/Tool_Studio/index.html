@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Utility Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Text Utility Studio</h1>
+            <button id="themeToggle" class="theme-toggle-button">🌙</button>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#input-output-section">Input & Output</a></li>
+                <li><a href="#word-char-tools">Word/Char</a></li>
+                <li><a href="#text-manipulation">Text Tools</a></li>
+                <li><a href="#line-operations">Line Tools</a></li>
+                <li><a href="#tab-space-tools">Tab/Space</a></li>
+                <li><a href="#content-generation">Generate</a></li>
+                <li><a href="#format-conversion">Convert</a></li>
+                <li><a href="#data-encoding-decoding">Encode/Decode</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="input-output-container">
+            <div id="input-output-section" class="section-card">
+                <h2>Input Text</h2>
+                <textarea id="inputText" placeholder="Paste your text here..."></textarea>
+                <div class="stats">
+                    <p>Words: <span id="wordCount">0</span></p>
+                    <p>Characters: <span id="charCount">0</span></p>
+                </div>
+                <div class="action-buttons input-actions">
+                    <button id="pasteInputBtn">Paste</button>
+                    <button id="swapTextBtn">Swap ⇅</button>
+                    <button id="undoBtn" disabled>Undo</button>
+                    <button id="redoBtn" disabled>Redo</button>
+                </div>
+
+                <h2>Output Text</h2>
+                <textarea id="outputText" readonly></textarea>
+                <div class="action-buttons output-actions">
+                    <button id="copyOutputBtn">Copy Output</button>
+                    <button id="clearInputOutputBtn" class="clear-button">Clear All</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tools-grid">
+            <div id="word-char-tools" class="tool-category section-card">
+                <h3>Word/Character Tools</h3>
+                <button id="slugGeneratorBtn">Generate Slug</button>
+            </div>
+
+            <div id="text-manipulation" class="tool-category section-card">
+                <h3>Text Manipulation</h3>
+                <button id="upperCaseBtn">Uppercase</button>
+                <button id="lowerCaseBtn">Lowercase</button>
+                <button id="titleCaseBtn">Title Case</button>
+                <button id="sentenceCaseBtn">Sentence Case</button>
+                <button id="removeExtraSpacesBtn">Remove Extra Spaces</button>
+                <button id="trimWhitespaceBtn">Trim Whitespace</button> <!-- New -->
+                <button id="reverseTextBtn">Reverse Text</button>
+                <button id="findReplaceBtn">Find & Replace</button>
+                <button id="textDiffBtn">Compare Text (Diff)</button> <!-- Still coming soon -->
+            </div>
+
+            <div id="line-operations" class="tool-category section-card">
+                <h3>Line Operations</h3>
+                <button id="textSorterAscBtn">Sort Lines (A-Z)</button>
+                <button id="textSorterDescBtn">Sort Lines (Z-A)</button>
+                <button id="removeDuplicateLinesBtn">Remove Duplicate Lines</button>
+                <button id="removeEmptyLinesBtn">Remove Empty Lines</button>
+                <button id="removeDuplicateWordsBtn">Remove Duplicate Words per Line</button> <!-- New -->
+                <button id="shuffleLinesBtn">Shuffle Lines</button> <!-- New -->
+                <button id="addLineNumbersBtn">Add Line Numbers</button>
+                <button id="removeLineNumbersBtn">Remove Line Numbers</button>
+                <button id="addPrefixSuffixBtn">Add Prefix/Suffix to Lines</button>
+                <button id="joinLinesBtn">Join Lines</button>
+                <button id="splitLinesBtn">Split Lines</button>
+            </div>
+
+            <div id="tab-space-tools" class="tool-category section-card">
+                <h3>Tab & Space Tools</h3>
+                <button id="convertTabsToSpacesBtn">Tabs to Spaces</button> <!-- New -->
+                <button id="convertSpacesToTabsBtn">Spaces to Tabs</button> <!-- New -->
+            </div>
+
+            <div id="content-generation" class="tool-category section-card">
+                <h3>Content Generation</h3>
+                <button id="loremIpsumBtn">Generate Lorem Ipsum</button>
+            </div>
+
+            <div id="format-conversion" class="tool-category section-card">
+                <h3>Format Conversion</h3>
+                <button id="markdownToHtmlBtn">Markdown to HTML</button>
+                <button id="htmlToMarkdownBtn">HTML to Markdown</button>
+            </div>
+
+            <div id="data-encoding-decoding" class="tool-category section-card">
+                <h3>Data Encoding/Decoding</h3>
+                <button id="urlEncodeBtn">URL Encode</button>
+                <button id="urlDecodeBtn">URL Decode</button>
+                <button id="base64EncodeBtn">Base64 Encode</button>
+                <button id="base64DecodeBtn">Base64 Decode</button>
+                <button id="htmlEntityEncodeBtn">HTML Entity Encode</button>
+                <button id="htmlEntityDecodeBtn">HTML Entity Decode</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Text Utility Studio</p>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container"></div>
+
+    <!-- Modal Structure -->
+    <div id="toolModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modalTitle">Modal Title</h3>
+            <div id="modalBody" class="modal-body">
+                <!-- Dynamic content goes here -->
+            </div>
+            <div class="modal-buttons">
+                <button id="modalCancel" class="clear-button">Cancel</button>
+                <button id="modalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

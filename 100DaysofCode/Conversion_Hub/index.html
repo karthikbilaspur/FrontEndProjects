@@ -30,8 +30,6 @@
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#667eea"> <!-- Matches your primary gradient start color -->
-
     <!-- Preconnect to CDN domains for faster loading of external resources -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://unpkg.com">
@@ -97,7 +95,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="lengthFrom" class="form-select">
+                        <select id="lengthFrom" class="form-select" title="Conversion"> Enter the values for Conversions
                             <option value="m">Meters</option>
                             <option value="km">Kilometers</option>
                             <option value="mile">Miles</option>
@@ -111,7 +109,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('lengthFrom','lengthTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="lengthTo" class="form-select">
+                        <select id="lengthTo" class="form-select" title="Conversion"> Enter the vaues for Conversions
                             <option value="m">Meters</option>
                             <option value="km">Kilometers</option>
                             <option value="mile">Miles</option>
@@ -136,7 +134,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="weightFrom" class="form-select">
+                        <select id="weightFrom" class="form-select" title="Conversion"> Enter the values for Conversions
                             <option value="kg">Kilograms</option>
                             <option value="g">Grams</option>
                             <option value="lb">Pounds</option>
@@ -149,7 +147,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('weightFrom','weightTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="weightTo" class="form-select">
+                        <select id="weightTo" class="form-select" title="Conversion"> Enter the values for Conversions
                             <option value="kg">Kilograms</option>
                             <option value="g">Grams</option>
                             <option value="lb">Pounds</option>
@@ -173,7 +171,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="tempFrom" class="form-select">
+                        <select id="tempFrom" class="form-select " title="Conversion"> Enter the values for Temperature 
                             <option value="c">Celsius</option>
                             <option value="f">Fahrenheit</option>
                             <option value="k">Kelvin</option>
@@ -183,7 +181,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('tempFrom','tempTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="tempTo" class="form-select">
+                        <select id="tempTo" class="form-select" title="Conversion"> Enter the values for Temperature
                             <option value="c">Celsius</option>
                             <option value="f">Fahrenheit</option>
                             <option value="k">Kelvin</option>
@@ -204,7 +202,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="currencyFrom" class="form-select">
+                        <select id="currencyFrom" class="form-select" title="Currency">
                             <option value="USD">USD</option>
                             <option value="INR">INR</option>
                             <option value="EUR">EUR</option>
@@ -218,7 +216,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('currencyFrom','currencyTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="currencyTo" class="form-select">
+                        <select id="currencyTo" class="form-select" title="Currency">
                             <option value="USD">USD</option>
                             <option value="INR">INR</option>
                             <option value="EUR">EUR</option>
@@ -243,7 +241,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="dataFrom" class="form-select">
+                        <select id="dataFrom" class="form-select" title="Data Storage"> Data Storage Conversions 
                             <option value="b">Bytes</option>
                             <option value="kb">Kilobytes</option>
                             <option value="mb">Megabytes</option>
@@ -256,7 +254,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('dataFrom','dataTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="dataTo" class="form-select">
+                        <select id="dataTo" class="form-select" title="Data Storage"> Data Storage Conversions
                             <option value="b">Bytes</option>
                             <option value="kb">Kilobytes</option>
                             <option value="mb">Megabytes</option>
@@ -282,7 +280,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="areaFrom" class="form-select">
+                        <select id="areaFrom" class="form-select" title="Area"> Area Conversions
                             <option value="sqm">Square Meters</option>
                             <option value="sqkm">Square Kilometers</option>
                             <option value="sqmile">Square Miles</option>
@@ -296,7 +294,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('areaFrom','areaTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="areaTo" class="form-select">
+                        <select id="areaTo" class="form-select" title="Area"> Enter the values for Area Conversions
                             <option value="sqm">Square Meters</option>
                             <option value="sqkm">Square Kilometers</option>
                             <option value="sqmile">Square Miles</option>
@@ -321,7 +319,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="volumeFrom" class="form-select">
+                        <select id="volumeFrom" class="form-select" title="Volume"> Volume Conversions
                             <option value="ml">Milliliters</option>
                             <option value="l">Liters</option>
                             <option value="cuin">Cubic Inches</option>
@@ -335,7 +333,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('volumeFrom','volumeTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="volumeTo" class="form-select">
+                        <select id="volumeTo" class="form-select" title="Volume"> Volume Conversions
                             <option value="ml">Milliliters</option>
                             <option value="l">Liters</option>
                             <option value="cuin">Cubic Inches</option>
@@ -360,7 +358,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="speedFrom" class="form-select">
+                        <select id="speedFrom" class="form-select" title="Speed"> Speed Conversions
                             <option value="mps">Meters/second</option>
                             <option value="kmph">Kilometers/hour</option>
                             <option value="mph">Miles/hour</option>
@@ -372,7 +370,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('speedFrom','speedTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="speedTo" class="form-select">
+                        <select id="speedTo" class="form-select" title="Speed"> Speed Conversions
                             <option value="mps">Meters/second</option>
                             <option value="kmph">Kilometers/hour</option>
                             <option value="mph">Miles/hour</option>
@@ -395,7 +393,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="timeFrom" class="form-select">
+                        <select id="timeFrom" class="form-select" title="Time"> Time Conversions
                             <option value="sec">Seconds</option>
                             <option value="min">Minutes</option>
                             <option value="hr">Hours</option>
@@ -409,7 +407,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('timeFrom','timeTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="timeTo" class="form-select">
+                        <select id="timeTo" class="form-select" title="Time"> Time Conversions
                             <option value="sec">Seconds</option>
                             <option value="min">Minutes</option>
                             <option value="hr">Hours</option>
@@ -434,7 +432,7 @@
                 </div>
                 <div class="row g-2 mb-3 align-items-center">
                     <div class="col-5">
-                        <select id="resolutionFrom" class="form-select">
+                        <select id="resolutionFrom" class="form-select" title="Resolution"> Resolution Conversions
                             <option value="mp">Megapixels</option>
                             <option value="px">Pixels</option>
                         </select>
@@ -443,7 +441,7 @@
                         <button class="btn btn-warning btn-sm" onclick="swapUnits('resolutionFrom','resolutionTo')" data-bs-toggle="tooltip" title="Swap Units">⇄</button>
                     </div>
                     <div class="col-5">
-                        <select id="resolutionTo" class="form-select">
+                        <select id="resolutionTo" class="form-select" title="Resolution"> Resolution Conversions
                             <option value="mp">Megapixels</option>
                             <option value="px">Pixels</option>
                         </select>

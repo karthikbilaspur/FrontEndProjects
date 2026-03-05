@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- SEO Meta Tags -->
+<title>Generator Hub - Lorem Ipsum, Password, QR Code, File Generator & More</title>
+<meta name="description" content="Your ultimate online toolkit for generating Lorem Ipsum, strong passwords, QR codes, random numbers, hex colors, emojis, and various file types (TXT, CSV, JSON, HTML). Fast, free, and easy to use!">
+<meta name="keywords" content="generator, lorem ipsum, password generator, QR code, file generator, text file, csv, json, html, random number, color generator, emoji, online tools, free generator">
+<meta name="author" content="Generator Hub Team">
+
+<!-- Open Graph / Social Media Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.yourwebsite.com/generator-hub/"> <!-- **IMPORTANT: Replace with your actual URL** -->
+<meta property="og:title" content="Generator Hub - Your All-in-One Online Generator Toolkit">
+<meta property="og:description" content="Generate Lorem Ipsum, strong passwords, QR codes, random numbers, hex colors, emojis, and various file types (TXT, CSV, JSON, HTML) effortlessly. Fast, free, and intuitive!">
+<meta property="og:image" content="https://www.yourwebsite.com/images/generator-hub-social-share.jpg"> <!-- **IMPORTANT: Replace with your actual image URL** (recommended size: 1200x630px) -->
+<meta property="og:image:alt" content="Screenshot of the Generator Hub application interface">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://www.yourwebsite.com/generator-hub/"> <!-- **IMPORTANT: Replace with your actual URL** -->
+<meta name="twitter:title" content="Generator Hub - Your All-in-One Online Generator Toolkit">
+<meta name="twitter:description" content="Generate Lorem Ipsum, strong passwords, QR codes, random numbers, hex colors, emojis, and various file types (TXT, CSV, JSON, HTML) effortlessly. Fast, free, and intuitive!">
+<meta name="twitter:image" content="https://www.yourwebsite.com/images/generator-hub-twitter-share.jpg"> <!-- **IMPORTANT: Replace with your actual image URL** (recommended size: 1200x675px) -->
+<meta name="twitter:creator" content="@YourTwitterHandle"> <!-- Optional: Replace with your Twitter handle -->
+
+<!-- Favicon -->
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<!-- Apple Touch Icon -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- Preload critical resources -->
+<link rel="preload" href="styles.css" as="style">
+<link rel="preload" href="script.js" as="script">
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" as="script">
+
+<!-- Font Awesome for social media icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+
+<body>
+
+<div class="layout">
+
+<!-- SIDEBAR -->
+<div class="sidebar">
+    <h2>Generator Hub</h2>
+
+    <button id="navLorem">Lorem</button>
+    <button id="navPassword">Password</button>
+    <button id="navColor">Color</button>
+    <button id="navEmoji">Emoji</button>
+    <button id="navQr">QR Code</button>
+    <button id="navRandom">Random</button>
+    <button id="navFile">File</button>
+    <button id="navHistory">History</button>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+    <!-- LOREM -->
+    <div id="lorem" class="tool">
+        <h2>Lorem Ipsum Generator</h2>
+
+        <div class="info-section">
+            <p>
+                The Lorem Ipsum Generator creates placeholder text, often used in design and publishing to fill space when the final copy isn't ready. It helps designers focus on layout and typography without being distracted by meaningful content.
+            </p>
+            <p class="expandable-content">
+                Traditionally, Lorem Ipsum is derived from a Latin text by Cicero, making it look like real language without actually being readable. This generator allows you to specify the quantity (paragraphs, sentences, or words) and whether to start with the classic "Lorem ipsum dolor sit amet..." phrase. It's an indispensable tool for mocking up web pages, print layouts, and presentations.
+            </p>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="input-group">
+            <label for="loremCount">Quantity:</label>
+            <input type="number" id="loremCount" placeholder="Number (e.g., 5)" min="1" max="100" value="5">
+        </div>
+        <div class="options-group">
+            <label class="checkbox-container">Paragraphs
+                <input type="radio" id="loremTypeParagraphs" name="loremType" value="paragraphs" checked>
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-container">Sentences
+                <input type="radio" id="loremTypeSentences" name="loremType" value="sentences">
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-container">Words
+                <input type="radio" id="loremTypeWords" name="loremType" value="words">
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-container">Start with "Lorem ipsum"
+                <input type="checkbox" id="loremStartClassic" checked>
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="action-buttons">
+            <button id="generateLoremBtn">Generate</button>
+            <button id="copyLoremBtn">Copy</button>
+            <label class="checkbox-container auto-copy">Auto-copy
+                <input type="checkbox" id="autoCopyLorem">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+        <p id="loremOutput" aria-live="polite"></p>
+
+    </div>
+
+    <!-- PASSWORD -->
+    <div id="password" class="tool hidden">
+
+        <h2>Password Generator</h2>
+
+        <div class="info-section">
+            <p>
+                A strong password is your first line of defense against cyber threats. This generator creates secure, random passwords tailored to your needs.
+            </p>
+            <p class="expandable-content">
+                You can customize the length and choose which character types to include: uppercase, lowercase, numbers, and symbols. There's also an option to exclude similar-looking characters (like 'l' and '1') to reduce confusion. The integrated strength checker provides instant feedback on how robust your generated password is, helping you understand best practices for password security.
+            </p>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="input-group">
+            <label for="passLength">Length:</label>
+            <input type="number" id="passLength" placeholder="Length (e.g., 12)" min="4" max="64" value="12">
+        </div>
+        <div class="options-group grid-options">
+            <label class="checkbox-container">Include Uppercase (A-Z)
+                <input type="checkbox" id="passIncludeUppercase" checked>
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-container">Include Lowercase (a-z)
+                <input type="checkbox" id="passIncludeLowercase" checked>
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-container">Include Numbers (0-9)
+                <input type="checkbox" id="passIncludeNumbers" checked>
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-container">Include Symbols (!@#$)
+                <input type="checkbox" id="passIncludeSymbols" checked>
+                <span class="checkmark"></span>
+            </label>
+            <label class="checkbox-container">Exclude similar (l,1,I,O,0)
+                <input type="checkbox" id="passExcludeSimilar">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="action-buttons">
+            <button id="generatePasswordBtn">Generate</button>
+            <button id="copyPasswordBtn">Copy</button>
+            <label class="checkbox-container auto-copy">Auto-copy
+                <input type="checkbox" id="autoCopyPassword">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+        <input id="passwordOutput" readonly aria-label="Generated Password">
+
+        <div class="strength" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div id="strengthBar"></div>
+        </div>
+
+        <p id="strengthText" aria-live="polite"></p>
+
+    </div>
+
+    <!-- COLOR -->
+    <div id="color" class="tool hidden">
+
+        <h2>Hex Color Generator</h2>
+
+        <div class="info-section">
+            <p>
+                The Hex Color Generator provides random hexadecimal color codes, perfect for web designers, developers, or anyone needing quick color inspiration.
+            </p>
+            <p class="expandable-content">
+                Hex codes are a common way to represent colors in web development (e.g., #FFFFFF for white, #000000 for black). Each code represents a specific mix of red, green, and blue light. You can generate new colors, see them instantly, and save your favorites to a palette that persists even if you close the browser. This is great for building color schemes or finding unique shades.
+            </p>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div id="colorBox"  aria-label="Generated Color Display"></div>
+
+        <p id="colorCode" aria-live="polite"></p>
+
+        <div class="action-buttons">
+            <button id="generateColorBtn">Generate</button>
+            <button id="copyColorBtn">Copy</button>
+            <button id="saveColorBtn">Save Color</button>
+        </div>
+
+        <h3>Saved Colors</h3>
+        <div id="savedColors" aria-label="Saved Colors"></div>
+        <button id="clearSavedColorsBtn" class="secondary-button">Clear Saved Colors</button>
+
+    </div>
+
+    <!-- EMOJI -->
+    <div id="emoji" class="tool hidden">
+
+        <h2>Emoji Generator</h2>
+
+        <div class="info-section">
+            <p>
+                Need a random emoji to spice up your message or just for fun? The Emoji Generator delivers!
+            </p>
+            <p class="expandable-content">
+                Emojis are small digital images or icons used to express ideas, emotions, etc., in electronic communication. This tool quickly cycles through a wide array of popular emojis, giving you a new one with every click. It's a simple way to add some visual flair to your texts, emails, or social media posts, making communication more expressive and engaging.
+            </p>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div id="emojiOutput" role="img" aria-label="Random Emoji">😀</div>
+
+        <div class="action-buttons">
+            <button id="generateEmojiBtn">Generate</button>
+            <button id="copyEmojiBtn">Copy</button>
+            <label class="checkbox-container auto-copy">Auto-copy
+                <input type="checkbox" id="autoCopyEmoji">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+    </div>
+
+    <!-- QR -->
+    <div id="qr" class="tool hidden">
+
+        <h2>QR Code Generator</h2>
+
+        <div class="info-section">
+            <p>
+                Instantly convert text or URLs into scannable QR codes for easy sharing and access.
+            </p>
+            <p class="expandable-content">
+                QR (Quick Response) codes are two-dimensional barcodes that can store information like website addresses, contact details, or plain text. When scanned with a smartphone camera, the information is quickly read. This generator allows you to input any text or URL, generate the corresponding QR code, and even choose the error correction level for greater reliability. Download your custom QR code for use in print, presentations, or digital sharing.
+            </p>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="input-group">
+            <label for="qrInput">Text or URL:</label>
+            <input id="qrInput" placeholder="Enter text or URL to encode">
+        </div>
+        <div class="options-group">
+            <label for="qrErrorCorrection">Error Correction:</label>
+            <select id="qrErrorCorrection">
+                <option value="L">Low (L)</option>
+                <option value="M">Medium (M)</option>
+                <option value="Q">Quartile (Q)</option>
+                <option value="H" selected>High (H)</option>
+            </select>
+        </div>
+        <div class="action-buttons">
+            <button id="generateQrBtn">Generate</button>
+            <button id="downloadQrBtn">Download</button>
+        </div>
+
+        <div id="qrCodeContainer" aria-label="Generated QR Code"></div>
+
+    </div>
+
+    <!-- RANDOM -->
+    <div id="random" class="tool hidden">
+
+        <h2>Random Number Generator</h2>
+
+        <div class="info-section">
+            <p>
+                Generate random numbers within a specified range, perfect for games, simulations, or decision-making.
+            </p>
+            <p class="expandable-content">
+                Whether you need a single random number or a sequence of unique numbers, this tool provides a simple solution. Define your minimum and maximum boundaries, and the generator will produce a number (or numbers) within that range. It's useful for dice rolls, lotteries, scientific experiments, or any scenario where unbiased numerical selection is required.
+            </p>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="input-group split-inputs">
+            <div>
+                <label for="minNum">Min:</label>
+                <input type="number" id="minNum" placeholder="Min (e.g., 1)" value="1">
+            </div>
+            <div>
+                <label for="maxNum">Max:</label>
+                <input type="number" id="maxNum" placeholder="Max (e.g., 100)" value="100">
+            </div>
+        </div>
+        <div class="input-group">
+            <label for="randomNumberCount">How many numbers?</label>
+            <input type="number" id="randomNumberCount" placeholder="Number of results (e.g., 1)" min="1" max="10" value="1">
+        </div>
+        <div class="options-group">
+            <label class="checkbox-container">Unique numbers (if possible)
+                <input type="checkbox" id="randomUnique">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="action-buttons">
+            <button id="generateRandomBtn">Generate</button>
+            <button id="copyRandomBtn">Copy</button>
+            <label class="checkbox-container auto-copy">Auto-copy
+                <input type="checkbox" id="autoCopyRandom">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+        <p id="randomOutput" aria-live="polite"></p>
+
+    </div>
+
+    <!-- FILE GENERATOR -->
+    <div id="file" class="tool hidden">
+        <h2>File Generator</h2>
+
+        <div class="info-section">
+            <p>
+                This versatile tool allows you to create and download various file types directly from your browser.
+            </p>
+            <p class="expandable-content">
+                Whether you need a simple `.txt` document, structured `.csv` data, a `.json` configuration file, or even a basic `.html` page, this generator has you covered. Just input your content, specify a filename, and download! It's incredibly useful for quickly prototyping, testing, or creating boilerplates without needing specialized software.
+            </p>
+            <button class="read-more-btn">Read More</button>
+        </div>
+
+        <div class="file-type-tabs">
+            <button id="fileTypeTxtBtn" class="file-type-tab active">TXT</button>
+            <button id="fileTypeCsvBtn" class="file-type-tab">CSV</button>
+            <button id="fileTypeJsonBtn" class="file-type-tab">JSON</button>
+            <button id="fileTypeHtmlBtn" class="file-type-tab">HTML</button>
+        </div>
+
+        <!-- TXT Generator -->
+        <div id="fileTxtGenerator" class="file-sub-generator">
+            <h3>Plain Text File (.txt)</h3>
+            <div class="input-group">
+                <label for="txtContent">Content:</label>
+                <textarea id="txtContent" rows="10" placeholder="Enter text content for your TXT file."></textarea>
+            </div>
+            <div class="input-group">
+                <label for="txtFilename">Filename:</label>
+                <input type="text" id="txtFilename" placeholder="my-document" value="my-document">.txt
+            </div>
+            <div class="action-buttons">
+                <button id="downloadTxtBtn">Download TXT</button>
+            </div>
+        </div>
+
+        <!-- CSV Generator -->
+        <div id="fileCsvGenerator" class="file-sub-generator hidden">
+            <h3>CSV File (.csv)</h3>
+            <div class="input-group">
+                <label for="csvHeader">Headers (comma-separated):</label>
+                <input type="text" id="csvHeader" placeholder="Name,Email,Age" value="Name,Email,Age">
+            </div>
+            <div class="input-group">
+                <label for="csvData">Data (one row per line, comma-separated):</label>
+                <textarea id="csvData" rows="10" placeholder="John Doe,john@example.com,30&#10;Jane Smith,jane@example.com,25">John Doe,john@example.com,30
+Jane Smith,jane@example.com,25</textarea>
+            </div>
+            <div class="input-group">
+                <label for="csvFilename">Filename:</label>
+                <input type="text" id="csvFilename" placeholder="my-data" value="my-data">.csv
+            </div>
+            <div class="action-buttons">
+                <button id="downloadCsvBtn">Download CSV</button>
+            </div>
+        </div>
+
+        <!-- JSON Generator -->
+        <div id="fileJsonGenerator" class="file-sub-generator hidden">
+            <h3>JSON File (.json)</h3>
+            <div class="input-group">
+                <label for="jsonContent">JSON Content:</label>
+                <textarea id="jsonContent" rows="10" placeholder='{"key": "value", "number": 123, "array": [1,2,3]}' class="code-input">{
+  "name": "Example Data",
+  "version": "1.0",
+  "items": [
+    {"id": 1, "description": "First item"},
+    {"id": 2, "description": "Second item"}
+  ]
+}</textarea>
+            </div>
+            <div class="input-group">
+                <label for="jsonFilename">Filename:</label>
+                <input type="text" id="jsonFilename" placeholder="my-object" value="my-object">.json
+            </div>
+            <div class="action-buttons">
+                <button id="downloadJsonBtn">Download JSON</button>
+                <button id="formatJsonBtn" class="secondary-button">Format JSON</button>
+            </div>
+        </div>
+
+        <!-- HTML Generator -->
+        <div id="fileHtmlGenerator" class="file-sub-generator hidden">
+            <h3>HTML File (.html)</h3>
+            <div class="input-group">
+                <label for="htmlTitle">Page Title:</label>
+                <input type="text" id="htmlTitle" placeholder="My Awesome Page" value="My Awesome Page">
+            </div>
+            <div class="input-group">
+                <label for="htmlBody">Body Content:</label>
+                <textarea id="htmlBody" rows="10" placeholder="<h1>Hello!</h1><p>This is my generated HTML page.</p>" class="code-input"><h1>Welcome to my Page!</h1>
+<p>This HTML file was generated using the Generator Hub.</p>
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+</ul></textarea>
+            </div>
+            <div class="input-group">
+                <label for="htmlFilename">Filename:</label>
+                <input type="text" id="htmlFilename" placeholder="my-page" value="my-page">.html
+            </div>
+            <div class="action-buttons">
+                <button id="downloadHtmlBtn">Download HTML</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- HISTORY -->
+    <div id="history" class="tool hidden">
+
+        <h2>History</h2>
+
+        <ul id="historyList" aria-label="Generation History"></ul>
+        <button id="clearHistoryBtn" class="secondary-button">Clear History</button>
+
+    </div>
+
+</div>
+</div>
+
+<footer class="main-footer">
+    <p>This Generator Hub is provided for educational purposes and personal use. All generators create client-side content; no data is sent to a server.</p>
+    <div class="social-icons">
+        <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <!-- Add more social media icons as needed -->
+    </div>
+    <p>&copy; <span id="currentYear"></span> Generator Hub. </p>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

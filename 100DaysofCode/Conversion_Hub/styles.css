@@ -84,7 +84,6 @@ body {
     font-family: var(--font-family-sans);
     color: var(--color-text-dark);
     line-height: 1.6; /* Improved readability */
-    -webkit-font-smoothing: antialiased; /* Smoother fonts */
     -moz-osx-font-smoothing: grayscale;
 }
 
@@ -118,7 +117,6 @@ h1 {
 /* ===================================== */
 .card {
     background-color: var(--glass-card-bg);
-    backdrop-filter: blur(var(--glass-blur-strength));
     border-radius: var(--border-radius-xxl); /* More rounded corners */
     box-shadow: var(--box-shadow-strong);
     padding: var(--spacing-xxl);
@@ -361,7 +359,6 @@ h1 {
 
 .toast {
     animation: slideInUp 0.5s var(--transition-ease-in-out) forwards; /* Use 'forwards' to stay at end state */
-    backdrop-filter: blur(8px); /* Subtle blur for toasts */
     background-color: rgba(0, 0, 0, 0.75) !important; /* Darker, more solid background for readability */
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: var(--border-radius-md);
