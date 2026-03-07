@@ -1,0 +1,8 @@
+/* ===================================== */
+/* Objects: Layout (Container) */
+/* ===================================== */
+.container {
+    width: 95%;
+    max-width: 960px; /* Slightly wider container */
+    padding: var(--spacing-xxl) var(--spacing-lg); /* Vertical padding increased */
+}

@@ -1,0 +1,18 @@
+/* ===================================== */
+/* Elements: Headings */
+/* ===================================== */
+h1 {
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xxl); /* More space below title */
+    font-size: var(--font-size-h1-desktop);
+    font-weight: 700; /* Bolder title */
+    letter-spacing: -0.05em; /* Slightly tighter letter spacing */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    animation: pulse 2s infinite alternate ease-in-out; /* Smoother animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.9; }
+    100% { transform: scale(1.02); opacity: 1; }
+}

@@ -1,0 +1,25 @@
+/* ===================================== */
+/* Components: Result Display */
+/* ===================================== */
+.result {
+    text-align: center;
+    font-size: var(--font-size-result-desktop);
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md); /* Consistent margin */
+    color: var(--color-light-accent); /* Brighter color for result */
+    min-height: calc(var(--font-size-result-desktop) * 1.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    word-break: break-all; /* Prevent long numbers from overflowing */
+}
+
+/* Media Queries for Results */
+@media (max-width: 575.98px) {
+   .result {
+        font-size: var(--font-size-result-mobile);
+        min-height: calc(var(--font-size-result-mobile) * 1.5);
+    }
+}

@@ -1,0 +1,46 @@
+/* ===================================== */
+/* Elements: Forms (Labels, Inputs, Selects) */
+/* ===================================== */
+.form-label {
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-xs);
+    font-weight: 500;
+}
+
+.form-control,.form-select {
+    width: 100%;
+    padding: var(--spacing-md); /* Increased padding */
+    border-radius: var(--border-radius-lg); /* More rounded */
+    border: 1px solid var(--glass-border-color);
+    background-color: var(--glass-input-bg);
+    color: var(--color-text-dark);
+    margin-bottom: var(--spacing-md);
+    transition: border-color var(--transition-speed-normal) var(--transition-ease-in-out),
+                box-shadow var(--transition-speed-normal) var(--transition-ease-in-out),
+                background-color var(--transition-speed-normal) var(--transition-ease-in-out);
+    font-size: var(--font-size-base);
+}
+
+.form-control::placeholder {
+    color: var(--placeholder-color, #777); /* Fallback color */
+    opacity: 0.7;
+}
+
+.form-control:focus,.form-select:focus {
+    border-color: var(--btn-convert-bg);
+    box-shadow: 0 0 0 0.25rem rgba(0, 198, 255, 0.35); /* Stronger glow */
+    background-color: var(--color-text-light); /* Make input opaque on focus */
+}
+
+.form-control.is-invalid {
+    border-color: var(--btn-reset-bg);
+    box-shadow: 0 0 0 0.25rem rgba(244, 67, 54, 0.35);
+}
+
+/* Specific styling for the row containing selects and swap button */
+.row.g-2.mb-3.align-items-center {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}

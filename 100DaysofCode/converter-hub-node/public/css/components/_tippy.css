@@ -1,0 +1,21 @@
+/* ===================================== */
+/* Components: Tippy.js (Tooltips) */
+/* ===================================== */
+.tippy-box[data-theme~='success'] {
+  background-color: var(--btn-copy-bg);
+  color: var(--color-text-light);
+  border-radius: var(--border-radius-sm);
+  padding: 5px 10px;
+  font-size: 0.875em;
+  font-weight: 500;
+  box-shadow: var(--box-shadow-light);
+}
+.tippy-box[data-theme~='danger'] {
+  background-color: var(--btn-reset-bg);
+  color: var(--color-text-light);
+  border-radius: var(--border-radius-sm);
+  padding: 5px 10px;
+  font-size: 0.875em;
+  font-weight: 500;
+  box-shadow: var(--box-shadow-light);
+}

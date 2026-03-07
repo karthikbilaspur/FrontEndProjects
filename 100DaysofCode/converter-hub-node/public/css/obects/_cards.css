@@ -1,0 +1,13 @@
+/* ===================================== */
+/* Objects: Card (Glassmorphism Effect) */
+/* ===================================== */
+.card {
+    background-color: var(--glass-card-bg);
+    border-radius: var(--border-radius-xxl); /* More rounded corners */
+    box-shadow: var(--box-shadow-strong);
+    padding: var(--spacing-xxl);
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    position: relative; /* For potential pseudo-elements or animations */
+    overflow: hidden; /* Ensure blur doesn't leak */
+    transform: translateZ(0); /* Hardware acceleration */
+}

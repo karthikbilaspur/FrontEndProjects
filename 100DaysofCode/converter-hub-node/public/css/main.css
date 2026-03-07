@@ -1,0 +1,33 @@
+/*
+  ITCSS / 7-1 Pattern:
+    1. Settings: Global variables, config.
+    2. Tools: Mixins, functions (none here).
+    3. Generic: Resets, box-sizing.
+    4. Elements: Base HTML tag styles.
+    5. Objects: Undecorated design patterns (e.g.,.container,.card).
+    6. Components: Specific UI components (e.g.,.nav-link,.btn).
+    7. Trumps: Utilities, helpers, overrides.
+*/
+
+/* 1. Settings */
+@import 'settings/_variables.css';
+
+/* 3. Generic */
+@import 'generic/_base.css';
+
+/* 4. Elements */
+@import 'elements/_headings.css';
+@import 'elements/_forms.css';
+
+/* 5. Objects */
+@import 'objects/_layout.css';
+@import 'objects/_card.css';
+
+/* 6. Components */
+@import 'components/_tabs.css';
+@import 'components/_buttons.css';
+@import 'components/_results.css';
+@import 'components/_toast.css';
+@import 'components/_tippy.css';
+
+/* 7. Trumps (Optional for overrides, none explicitly needed now) */

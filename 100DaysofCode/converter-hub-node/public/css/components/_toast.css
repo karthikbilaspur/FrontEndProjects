@@ -1,0 +1,31 @@
+/* ===================================== */
+/* Components: Notification Toast */
+/* ===================================== */
+.toast-container {
+    z-index: 1080; /* Ensure toast is above other elements, e.g., Bootstrap Modals */
+}
+
+.toast {
+    animation: slideInUp 0.5s var(--transition-ease-in-out) forwards; /* Use 'forwards' to stay at end state */
+    background-color: rgba(0, 0, 0, 0.75)!important; /* Darker, more solid background for readability */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-md);
+    color: var(--color-text-light)!important;
+}
+
+.toast.toast-body {
+    color: var(--color-text-light); /* Ensure message text is light */
+    font-weight: 500;
+}
+
+/* Custom toast backgrounds for Bootstrap types */
+.toast.text-bg-primary { background-color: var(--color-primary-start)!important; }
+.toast.text-bg-success { background-color: var(--btn-copy-bg)!important; }
+.toast.text-bg-danger { background-color: var(--btn-reset-bg)!important; }
+.toast.text-bg-warning { background-color: var(--btn-swap-bg)!important; }
+.toast.text-bg-info { background-color: var(--btn-convert-bg)!important; }
+
+@keyframes slideInUp {
+    0% { transform: translateY(100%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}

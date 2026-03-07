@@ -1,0 +1,67 @@
+/* ===================================== */
+/* 1. CSS Variables (Root) */
+/* ===================================== */
+:root {
+    /* Colors */
+    --color-primary-start: #667eea;
+    --color-primary-end: #764ba2;
+    --color-text-light: #ffffff;
+    --color-text-dark: #333333;
+    --color-light-accent: #f0f8ff; /* AliceBlue for subtle highlights */
+
+    /* Glassmorphism / Transparency */
+    --glass-card-bg: rgba(255, 255, 255, 0.15);
+    --glass-input-bg: rgba(255, 255, 255, 0.9);
+    --glass-border-color: rgba(255, 255, 255, 0.5);
+    --glass-blur-strength: 15px; /* Increased blur */
+
+    /* Buttons */
+    --btn-swap-bg: #ff9800;
+    --btn-swap-hover-bg: #e68900;
+    --btn-convert-bg: #00c6ff;
+    --btn-convert-hover-bg: #0072ff;
+    --btn-copy-bg: #4CAF50;
+    --btn-copy-hover-bg: #2e7d32;
+    --btn-reset-bg: #f44336;
+    --btn-reset-hover-bg: #d32f2f;
+
+    /* Tabs */
+    --tab-inactive-bg: rgba(255, 255, 255, 0.2);
+    --tab-inactive-hover-bg: rgba(255, 255, 255, 0.4);
+    --tab-active-bg: var(--color-text-light);
+    --tab-active-text: var(--color-primary-end);
+
+    /* Spacing */
+    --spacing-xs: 0.25rem; /* 4px */
+    --spacing-sm: 0.5rem; /* 8px */
+    --spacing-md: 1rem; /* 16px */
+    --spacing-lg: 1.5rem; /* 24px */
+    --spacing-xl: 2rem; /* 32px */
+    --spacing-xxl: 3rem; /* 48px */
+
+    /* Typography */
+    --font-family-sans: 'Segoe UI', -apple-system, BlinkMacMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-size-base: 1rem;
+    --font-size-h1-desktop: 2.75rem; /* ~44px */
+    --font-size-h1-mobile: 2rem; /* ~32px */
+    --font-size-result-desktop: 1.5rem; /* ~24px */
+    --font-size-result-mobile: 1.125rem; /* ~18px */
+
+    /* Border Radius */
+    --border-radius-sm: 0.25rem; /* 4px */
+    --border-radius-md: 0.5rem; /* 8px */
+    --border-radius-lg: 0.75rem; /* 12px */
+    --border-radius-xl: 1rem; /* 16px */
+    --border-radius-xxl: 1.5rem; /* 24px */
+
+    /* Shadow */
+    --box-shadow-light: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+    --box-shadow-medium: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+    --box-shadow-strong: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+
+    /* Transitions */
+    --transition-speed-fast: 0.2s;
+    --transition-speed-normal: 0.3s;
+    --transition-speed-slow: 0.5s;
+    --transition-ease-in-out: ease-in-out;
+}
