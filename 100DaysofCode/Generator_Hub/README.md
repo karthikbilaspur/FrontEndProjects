@@ -2,7 +2,8 @@
 
 ![Generator Hub Screenshot](https://www.yourwebsite.com/images/generator-hub-screenshot.png)
 (Replace with an actual screenshot of your Generator Hub)
- Project Overview
+
+Project Overview
 Generator Hub is a versatile, client-side web application designed to provide a collection of useful online generators. From creating placeholder text to generating structured data files, this tool aims to be a quick, accessible, and intuitive resource for developers, designers, writers, and anyone needing instant generated content.
 This project emphasizes clean code, a user-friendly interface, responsiveness, and educational value, ensuring that users not only utilize the tools but also understand their purpose and utility.
  Features
@@ -54,9 +55,9 @@ Cross-Cutting Enhancements:
  Setup and Usage
 To run this project locally:
 
-1.Clone the repository:
+1 Clone the repository:
 
-git clone https://github.com/yourusername/generator-hub.git
+`git clone https://github.com/yourusername/generator-hub.git`
 
 2.Navigate to the project directory:
 

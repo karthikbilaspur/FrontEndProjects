@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>CSS Art Studio</title>
+
+<!-- Meta Tags for SEO -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Create stunning CSS art with our interactive studio. Design custom shapes, apply advanced effects, filters, gradients, animations, and manage presets easily.">
+<meta name="keywords" content="CSS art, CSS shapes, web design, front-end development, graphic design, interactive tool, creative coding, CSS generator, animations, gradients, filters, HTML, JavaScript">
+<meta name="author" content="Meta AI">
+
+<!-- OpenGraph Tags for Social Media Sharing -->
+<meta property="og:title" content="CSS Art Studio - Create Unique Designs">
+<meta property="og:description" content="An interactive online tool to generate and customize CSS shapes and effects. Perfect for web designers and developers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://yourwebsite.com/css-art-studio"> <!-- IMPORTANT: Replace with your actual URL -->
+<meta property="og:image" content="https://yourwebsite.com/css-art-studio-preview.jpg"> <!-- IMPORTANT: Replace with a high-quality preview image URL -->
+<meta property="og:image:alt" content="Screenshot of the CSS Art Studio with various shapes and effects">
+
+<!-- Link to external CSS stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="controls">
+
+<h3 id="studio-title">CSS Art Studio</h3>
+
+<fieldset class="control-group">
+    <legend>Basic Properties</legend>
+    <label for="color1">Color 1</label>
+    <input type="color" id="color1" value="#3498db" aria-label="First gradient color">
+
+    <label for="color2">Color 2</label>
+    <input type="color" id="color2" value="#9b59b6" aria-label="Second gradient color">
+
+    <label for="radius">Border Radius (%)</label>
+    <input type="range" id="radius" min="0" max="50" value="20" aria-valuemin="0" aria-valuemax="50" aria-valuenow="20" aria-label="Shape border radius percentage">
+
+    <label for="rotate">Rotation (deg)</label>
+    <input type="range" id="rotate" min="0" max="360" value="0" aria-valuemin="0" aria-valuemax="360" aria-valuenow="0" aria-label="Shape rotation in degrees">
+</fieldset>
+
+<fieldset class="control-group">
+    <legend>Effects & Shape Type</legend>
+    <label for="effect">Effect</label>
+    <select id="effect" aria-label="Select visual effect">
+        <option value="none">None</option>
+        <option value="glass">Glassmorphism</option>
+        <option value="neon">Neon Glow</option>
+        <option value="blob">Blob Shape</option>
+        <option value="pattern">Background Pattern</option>
+    </select>
+
+    <label for="shapeType">Shape</label>
+    <select id="shapeType" aria-label="Select shape type">
+        <option value="square">Square</option>
+        <option value="rectangle">Rectangle</option>
+        <option value="rounded-rectangle">Rounded Rectangle</option>
+        <option value="circle">Circle</option>
+        <option value="triangle-up">Triangle Up</option>
+        <option value="triangle-down">Triangle Down</option>
+        <option value="triangle-left">Triangle Left</option>
+        <option value="triangle-right">Triangle Right</option>
+        <option value="pentagon">Pentagon</option>
+        <option value="hexagon">Hexagon</option>
+        <option value="octagon">Octagon</option>
+        <option value="star">Star</option>
+        <option value="diamond">Diamond</option>
+        <option value="parallelogram">Parallelogram</option>
+        <option value="trapezoid">Trapezoid</option>
+    </select>
+
+    <label id="widthLabel" for="width">Width (px)</label>
+    <input type="range" id="width" min="50" max="300" value="220" aria-valuemin="50" aria-valuemax="300" aria-valuenow="220" aria-label="Shape width in pixels">
+
+    <label id="heightLabel" for="height">Height (px)</label>
+    <input type="range" id="height" min="50" max="300" value="220" aria-valuemin="50" aria-valuemax="300" aria-valuenow="220" aria-label="Shape height in pixels">
+</fieldset>
+
+<fieldset class="control-group">
+    <legend>Filters</legend>
+    <label for="filterSaturate">Saturate (%)</label>
+    <input type="range" id="filterSaturate" min="0" max="200" value="100" aria-valuemin="0" aria-valuemax="200" aria-valuenow="100" aria-label="Color saturation percentage">
+
+    <label for="filterContrast">Contrast (%)</label>
+    <input type="range" id="filterContrast" min="0" max="200" value="100" aria-valuemin="0" aria-valuemax="200" aria-valuenow="100" aria-label="Color contrast percentage">
+
+    <label for="filterSepia">Sepia (%)</label>
+    <input type="range" id="filterSepia" min="0" max="100" value="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Sepia filter percentage">
+
+    <label for="filterGrayscale">Grayscale (%)</label>
+    <input type="range" id="filterGrayscale" min="0" max="100" value="0" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Grayscale filter percentage">
+
+    <label for="filterHueRotate">Hue-Rotate (deg)</label>
+    <input type="range" id="filterHueRotate" min="0" max="360" value="0" aria-valuemin="0" aria-valuemax="360" aria-valuenow="0" aria-label="Hue rotation in degrees">
+</fieldset>
+
+<fieldset class="control-group">
+    <legend>Gradients</legend>
+    <label for="gradientType">Gradient Type</label>
+    <select id="gradientType" aria-label="Select gradient type">
+        <option value="linear">Linear</option>
+        <option value="radial">Radial</option>
+        <option value="conic">Conic</option>
+    </select>
+
+    <label id="gradientDirectionLabel" for="gradientDirection">Linear Direction (deg)</label>
+    <input type="range" id="gradientDirection" min="0" max="360" value="135" aria-valuemin="0" aria-valuemax="360" aria-valuenow="135" aria-label="Linear gradient direction in degrees">
+</fieldset>
+
+<fieldset class="control-group">
+    <legend>Advanced Effects</legend>
+    <label class="checkbox-label" for="enableMultiShadow">
+        <input type="checkbox" id="enableMultiShadow" aria-label="Enable multiple box shadows"> Enable Multiple Shadows
+    </label>
+    <div id="multiShadowControls" class="hidden">
+        <label for="numShadows">Number of Shadows</label>
+        <input type="number" id="numShadows" min="1" max="5" value="1" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1" aria-label="Number of box shadows">
+    </div>
+
+    <label class="checkbox-label" for="enableAnimation">
+        <input type="checkbox" id="enableAnimation" aria-label="Enable animation"> Enable Animation
+    </label>
+    <div id="animationControls" class="hidden">
+        <label for="animationType">Animation Type</label>
+        <select id="animationType" aria-label="Select animation type">
+            <option value="none">None</option>
+            <option value="pulse">Pulse</option>
+            <option value="rotateContinuous">Continuous Rotate</option>
+        </select>
+        <label for="animationDuration">Duration (s)</label>
+        <input type="range" id="animationDuration" min="0.5" max="10" step="0.1" value="2" aria-valuemin="0.5" aria-valuemax="10" aria-valuenow="2" aria-label="Animation duration in seconds">
+    </div>
+
+    <label class="checkbox-label" for="enablePseudo">
+        <input type="checkbox" id="enablePseudo" aria-label="Enable pseudo elements for layering"> Enable Layered Elements
+    </label>
+    <div id="pseudoElementControls" class="hidden">
+        <label for="pseudoOffset">Offset (px)</label>
+        <input type="range" id="pseudoOffset" min="1" max="50" value="10" aria-valuemin="1" aria-valuemax="50" aria-valuenow="10" aria-label="Layered element offset in pixels">
+        <label for="pseudoColor">Layer Color</label>
+        <input type="color" id="pseudoColor" value="#cccccc" aria-label="Layered element color">
+    </div>
+</fieldset>
+
+<fieldset class="control-group">
+    <legend>Presets</legend>
+    <label for="presetName">Preset Name</label>
+    <input type="text" id="presetName" placeholder="My Awesome Design" aria-label="Name for saving or loading a preset">
+    <div class="preset-buttons">
+        <button type="button" onclick="savePreset(document.getElementById('presetName').value)" aria-label="Save current design as a preset">Save Preset</button>
+        <button type="button" onclick="loadPreset(document.getElementById('presetName').value)" aria-label="Load a preset by name">Load Preset</button>
+    </div>
+    <div id="presetList" aria-live="polite">
+        <!-- Presets will be dynamically listed here -->
+    </div>
+</fieldset>
+
+<div class="action-buttons">
+    <button type="button" onclick="randomDesign()" aria-label="Generate a random design">Random Design (R)</button>
+    <button type="button" onclick="copyCSS()" aria-label="Copy generated CSS to clipboard">Copy CSS (C)</button>
+    <button type="button" onclick="resetPositionAndZoom()" aria-label="Reset shape position and zoom">Reset Position/Zoom (X)</button>
+    <button type="button" onclick="resetAllControls()" aria-label="Reset all controls to default values">Reset All Controls (Z)</button>
+</div>
+
+</div>
+
+<div class="preview" role="img" aria-label="Interactive preview area for the CSS shape">
+    <div id="positionDisplay" class="display-overlay" aria-live="polite">Position: (0px, 0px)</div>
+    <div id="zoomDisplay" class="display-overlay" aria-live="polite">Zoom: 100%</div>
+    <div id="shape" aria-grabbed="false" tabindex="0"></div>
+</div>
+
+<div class="code" role="region" aria-labelledby="code-heading">
+    <h4 id="code-heading">Generated CSS Code</h4>
+    <pre id="cssCode"></pre>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
