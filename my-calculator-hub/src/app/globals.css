@@ -1,0 +1,6 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Any global custom styles can go here later if needed, but Tailwind is preferred. */
