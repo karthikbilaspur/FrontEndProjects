@@ -1,0 +1,472 @@
+/* =========================================================
+   CSS ARCHITECTURE
+   reset → base → layout → components → themes → utilities → responsive
+========================================================= */
+
+@layer reset, base, layout, components, themes, utilities, responsive;
+
+/* =========================================================
+   RESET
+========================================================= */
+@layer reset {
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+}
+
+/* =========================================================
+   BASE VARIABLES
+========================================================= */
+@layer base {
+
+:root {
+
+    /* colors */
+    --bg-color: #f4f4f4;
+    --text-color: #333;
+    --header-bg: #111;
+    --header-text: #fff;
+
+    --browser-border: #222;
+    --browser-bg: #fff;
+
+    --card-bg: #fdfdfd;
+    --card-border: #eee;
+
+    --sidebar-bg: #f0f0f0;
+
+    --info-bg: #222;
+    --info-text: #fff;
+
+    --code-bg: #282c34;
+    --code-text: #abb2bf;
+
+    --link-color: #007bff;
+
+    /* layout */
+    --radius: 8px;
+    --radius-small: 5px;
+
+    --shadow-soft: 0 2px 6px rgba(0,0,0,0.08);
+    --shadow-medium: 0 4px 12px rgba(0,0,0,0.12);
+
+    /* animation */
+    --transition: 0.3s ease;
+
+    /* fonts */
+    --font-main: Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* headings */
+
+h1,h2,h3 {
+    margin:0;
+}
+
+button {
+
+    cursor:pointer;
+    padding:8px 14px;
+    border:none;
+    border-radius:var(--radius-small);
+
+    background:var(--header-bg);
+    color:var(--header-text);
+
+    transition: transform var(--transition);
+}
+
+button:hover{
+    transform:translateY(-2px);
+}
+
+}
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+@layer layout {
+
+.wrapper{
+    max-width:1200px;
+    margin:auto;
+    padding:20px;
+}
+
+.controls{
+    background:var(--header-bg);
+    color:var(--header-text);
+    padding:20px;
+}
+
+.top-controls{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.layout{
+    display:flex;
+    gap:20px;
+}
+
+.sidebar{
+    width:220px;
+    padding:10px;
+    background:var(--sidebar-bg);
+    border-radius:var(--radius);
+}
+
+.content{
+    flex:1;
+    background:var(--browser-bg);
+    border-radius:var(--radius);
+}
+
+}
+
+/* =========================================================
+   COMPONENTS
+========================================================= */
+@layer components {
+
+.browser{
+
+    margin-top:20px;
+    border:3px solid var(--browser-border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--browser-bg);
+
+}
+
+.browser-bar{
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    padding:6px 10px;
+    font-family:monospace;
+    background:#ddd;
+    border-bottom:1px solid #ccc;
+
+}
+
+.dot{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.dot.red{background:#ff5f56;}
+.dot.yellow{background:#ffbd2e;}
+.dot.green{background:#27c93f;}
+
+.browser-content{
+    padding:15px;
+    min-height:400px;
+}
+
+.card{
+
+    padding:12px;
+    margin-top:10px;
+
+    background:var(--card-bg);
+    border:1px solid var(--card-border);
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow-soft);
+}
+
+/* sidebar links */
+
+.sidebar p{
+
+    margin:0;
+    padding:6px 0;
+    cursor:pointer;
+
+}
+
+.sidebar p:hover{
+
+    color:var(--link-color);
+    text-decoration:underline;
+
+}
+
+/* code area */
+
+.code-display{
+
+    border:1px solid var(--card-border);
+    border-radius:var(--radius-small);
+    background:var(--code-bg);
+    margin-top:20px;
+
+}
+
+.code-display pre{
+    margin:0;
+    padding:15px;
+    overflow-x:auto;
+}
+
+.code-display code{
+
+    color:var(--code-text);
+    font-family:'Fira Code','Cascadia Code',monospace;
+    font-size:0.9em;
+    line-height:1.4;
+
+}
+
+/* tabs */
+
+.code-tabs{
+    display:flex;
+}
+
+.tab-button{
+
+    padding:10px 15px;
+    border:1px solid var(--card-border);
+    border-bottom:none;
+    background:#eee;
+
+}
+
+.tab-button.active{
+    background:#fff;
+    font-weight:bold;
+}
+
+/* live preview */
+
+.live-preview-wrapper{
+
+    margin-top:10px;
+    border:1px solid var(--card-border);
+
+    height:250px;
+    resize:vertical;
+    overflow:hidden;
+
+}
+
+.live-preview-wrapper iframe{
+
+    width:100%;
+    height:100%;
+    border:none;
+
+}
+
+/* loading screen */
+
+#loadingScreen{
+
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.8);
+    color:#fff;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+.loader{
+
+    border:8px solid #f3f3f3;
+    border-top:8px solid #3498db;
+
+    width:60px;
+    height:60px;
+
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+0%{transform:rotate(0)}
+100%{transform:rotate(360deg)}
+
+}
+
+}
+
+/* =========================================================
+   THEMES
+========================================================= */
+@layer themes {
+
+/* 1995 */
+
+.era1995{
+
+--bg-color:#c0c0c0;
+--text-color:#000;
+--header-bg:#555;
+--header-text:#fff;
+
+font-family:'MS Sans Serif',Tahoma,sans-serif;
+
+}
+
+/* 2000 */
+
+.era2000{
+
+--bg-color:#d8e4ef;
+--header-bg:#4a678d;
+
+}
+
+/* 2010 */
+
+.era2010{
+
+--bg-color:#e0f2f7;
+--header-bg:#2f4961;
+
+}
+
+/* 2015 */
+
+.era2015{
+
+--bg-color:#f6f6f6;
+--header-bg:#333;
+
+}
+
+/* 2020 */
+
+.era2020{
+
+--bg-color:#f7f7f7;
+--header-bg:#1f2a37;
+
+}
+
+/* 2025 */
+
+.era2025{
+
+--color-primary:#00f2fe;
+--color-secondary:#4facfe;
+
+--bg-color:linear-gradient(
+135deg,
+var(--color-secondary),
+var(--color-primary)
+);
+
+--text-color:#e0e0e0;
+
+font-family:'Poppins',sans-serif;
+
+}
+
+}
+
+/* =========================================================
+   UTILITIES
+========================================================= */
+@layer utilities {
+
+.hidden{
+display:none;
+}
+
+.rounded{
+border-radius:var(--radius);
+}
+
+.shadow{
+box-shadow:var(--shadow-soft);
+}
+
+.center{
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@layer responsive {
+
+@media (max-width:1024px){
+
+.layout{
+flex-direction:column;
+}
+
+.sidebar{
+width:100%;
+}
+
+}
+
+@media (max-width:768px){
+
+.wrapper{
+padding:10px;
+}
+
+h2{
+font-size:clamp(1.4rem,3vw,2rem);
+}
+
+.browser-bar{
+font-size:12px;
+}
+
+}
+
+}
+
+/* accessibility */
+
+@media (prefers-reduced-motion: reduce){
+
+*{
+animation:none !important;
+transition:none !important;
+}
+
+}

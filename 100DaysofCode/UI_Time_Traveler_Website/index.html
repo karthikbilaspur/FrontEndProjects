@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolution of Web Technologies: HTML, CSS, JavaScript Through the Eras</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore the historical evolution of HTML, CSS, and JavaScript from 1995 to 2025. See code examples, design changes, and key technological shifts through an interactive time-travel simulator.">
+    <meta name="keywords" content="web development, HTML history, CSS evolution, JavaScript history, web design eras, front-end development, web technology, code examples, web simulator, 1995, 2000, 2005, 2010, 2015, 2020, 2025">
+    <meta name="author" content="Your Name or Project Name">
+    <meta name="robots" content="index, follow"> <!-- Allows search engines to index and follow links -->
+
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="Evolution of Web Technologies: HTML, CSS, JavaScript Through the Eras">
+    <meta property="og:description" content="Explore the historical evolution of HTML, CSS, and JavaScript from 1995 to 2025. See code examples, design changes, and key technological shifts through an interactive time-travel simulator.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-url.com"> <!-- Replace with your actual URL -->
+    <meta property="og:image" content="https://your-website-url.com/preview-image.jpg"> <!-- Replace with a good preview image URL -->
+    <meta property="og:image:alt" content="Screenshot of the Web Technologies Evolution Simulator">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Evolution of Web Technologies: HTML, CSS, JavaScript Through the Eras">
+    <meta name="twitter:description" content="Explore the historical evolution of HTML, CSS, and JavaScript from 1995 to 2025. See code examples, design changes, and key technological shifts through an interactive time-travel simulator.">
+    <meta name="twitter:image" content="https://your-website-url.com/preview-image.jpg"> <!-- Same as og:image -->
+    <meta name="twitter:creator" content="@YourTwitterHandle"> <!-- Optional: your Twitter handle -->
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Highlight.js CSS Theme (choose your favorite, atom-one-dark is good) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+
+    <div id="loadingScreen" class="hidden">
+        <div class="loader"></div>
+        <p>Warping through web history...</p>
+    </div>
+
+    <div class="controls wrapper">
+        <div class="top-controls">
+            <h1>Evolution of Web Technologies</h1>
+            <button id="darkModeToggle" aria-label="Toggle Dark Mode">🌙</button>
+        </div>
+        <p>Explore the journey of HTML, CSS, and JavaScript through time.</p>
+
+        <div class="timeline">
+            <input type="range" min="0" max="6" value="4" id="yearSlider" title="SelectYear"> Select a year and see the magic happening in front of your own eyes!!
+        </div>
+
+        <div class="modeButtons">
+            <button onclick="setPreview('desktop')">Desktop</button>
+            <button onclick="setPreview('tablet')">Tablet</button>
+            <button onclick="setPreview('mobile')">Mobile</button>
+            <button onclick="randomEra()">Random Era</button>
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <div class="browser">
+            <div class="browser-bar">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <div class="browser-address">http://webtech.evolution/</div>
+            </div>
+
+            <div class="browser-content">
+                <div class="layout">
+                    <div class="sidebar">
+                        <h3>Concepts</h3>
+                        <p onclick="event.preventDefault(); loadConcept('html')">HTML Structure</p>
+                        <p onclick="event.preventDefault(); loadConcept('css')">CSS Styling</p>
+                        <p onclick="event.preventDefault(); loadConcept('js')">JS Interactivity</p>
+                    </div>
+
+                    <div class="content">
+                        <h2 id="mainConceptTitle"></h2> 
+
+                        <div class="card">
+                            <h3 id="eraIntroTitle"></h3>
+                            <p id="eraIntroText"></p>
+                        </div>
+
+                        <div class="code-tabs">
+                            <button class="tab-button active" onclick="showCodeTab('html-code')">HTML</button>
+                            <button class="tab-button" onclick="showCodeTab('css-code')">CSS</button>
+                            <button class="tab-button" onclick="showCodeTab('js-code')">JavaScript</button>
+                        </div>
+
+                        <div class="code-display">
+                            <pre><code id="html-code" class="language-html tab-content active"></code></pre>
+                            <pre><code id="css-code" class="language-css tab-content"></code></pre>
+                            <pre><code id="js-code" class="language-javascript tab-content"></code></pre>
+                        </div>
+
+                        <div class="card why-changed-card">
+                            <h3>Why This Changed: <span id="whyChangedTitle"></span></h3>
+                            <div id="whyChangedContent"></div>
+                        </div>
+
+                        <div class="card live-preview-card">
+                            <h3>Live Preview:</h3>
+                            <div class="live-preview-wrapper" id="livePreviewWrapper">
+                                <!-- Dynamic content will be injected here for live preview -->
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="infoPanel" id="infoPanel"></div>
+    </div>
+    
+    <!-- Footer for disclaimer -->
+    <footer class="main-footer wrapper">
+        <p>Disclaimer: This simulator is created for fun and educational purposes only. Code examples are illustrative and may not be exhaustive or perfectly accurate for all edge cases of each era. It aims to demonstrate general trends and key evolutionary points in web technologies.</p>
+    </footer>
+
+    <!-- Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <!-- Highlight.js Language Specifics (optional, but good for accuracy) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/xml.min.js"></script> <!-- For HTML -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

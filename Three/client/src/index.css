@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;600;900&display=swap"); /* Removed unused italic weight */
+@import url("https://rsms.me/inter/inter.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Base Styles & Typography --- */
+html {
+  font-family: "Inter", sans-serif;
+  /* New: Smooth scrolling for better UX when navigating */
+  scroll-behavior: smooth;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+body {
+  /* New: Ensure full viewport height and prevent overflow issues from default browser margins */
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll from layout shifts */
+}
+
+/* --- Global App Layout --- */
+.app {
+  @apply relative w-full h-screen overflow-hidden;
+  /* New: Subtle background for the app if no 3D scene is present, or to blend */
+  background: linear-gradient(to bottom right, #f0f0f0, #e0e0e0);
+}
+
+/* --- Glassmorphism Effect --- */
+/* Centralized glassmorphism definition with slight tweaks */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.2); /* Slightly less opaque for a softer look */
+  box-shadow: 0 4px 30px rgba(31, 38, 135, 0.1); /* Stronger, more diffused shadow */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly stronger border */
+  border-radius: 12px; /* Slightly more rounded corners for consistency */
+}
+
+/* --- Home Section --- */
+.home {
+  @apply w-fit xl:h-full flex xl:justify-between justify-start items-start flex-col
+  xl:py-8 xl:px-36 sm:p-8 p-6 max-xl:gap-7 absolute z-10;
+  /* New: Added a slight background gradient for visual depth on the home page */
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  /* New: Ensure header and content align better */
+  @apply max-w-full;
+}
+
+.home-content {
+  @apply flex-1 xl:justify-center justify-start flex flex-col gap-10;
+  /* New: Max-width to prevent content from stretching too wide on very large screens */
+  @apply max-w-5xl xl:max-w-7xl mx-auto xl:mx-0;
+}
+
+.head-text {
+  /* Adjusted font sizes and line heights for better readability and impact */
+  @apply xl:text-[10.5rem] text-[5.5rem] xl:leading-[10.8rem] leading-[6rem] font-extrabold text-gray-900; /* Stronger font weight and color */
+  font-family: "Nunito Sans", sans-serif; /* Applied Nunito Sans for headline */
+  /* New: Add a subtle text shadow for depth */
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* --- Download Button (if separate from CustomButton) --- */
+.download-btn {
+  @apply w-14 h-14 flex justify-center items-center rounded-full cursor-pointer outline-none;
+  /* New: Applied glassmorphism */
+  @apply glassmorphism;
+  /* New: Subtle scale effect on hover */
+  @apply transform transition-transform duration-200 hover:scale-110;
+}
+
+/* --- Editor Tabs Container --- */
+.editortabs-container {
+  @apply w-16 border-[1px] rounded-lg flex flex-col justify-start items-center ml-1 py-4 gap-4; /* Adjusted border width, justify-start for top alignment */
+  @apply glassmorphism; /* Ensure glassmorphism is applied */
+  /* New: Added some margin-top to avoid being too close to the top edge */
+  margin-top: 1.5rem; /* ~p-6 equivalent */
+  min-height: calc(100vh - 3rem); /* Ensure it takes up most of the vertical space */
+}
+
+/* --- Filter Tabs Container --- */
+.filtertabs-container {
+  @apply absolute z-10 bottom-5 right-0 left-0 w-full flex justify-center items-center flex-wrap gap-4;
+  /* New: Added some padding-x for better spacing on mobile */
+  @apply px-4;
+}
+
+/* --- AI Picker Container --- */
+.aipicker-container {
+  /* Removed fixed height and width - will now expand based on content and internal styling */
+  @apply absolute left-full ml-3 glassmorphism p-3 rounded-md flex flex-col gap-4;
+  /* New: Max width to keep it from getting too wide, min-width for usability */
+  @apply max-w-xs min-w-[195px];
+  /* New: Increased z-index to ensure it overlays other elements correctly */
+  z-index: 20;
+}
+
+/* AI Picker Textarea - No changes as Customizer component handles focus/error styling */
+.aipicker-textarea {
+  @apply w-full bg-transparent text-sm p-2 outline-none flex-1;
+  /* Ensure a base border color */
+  @apply border border-gray-300 rounded-md resize-none;
+}
+
+/* --- File Picker Container --- */
+.filepicker-container {
+  /* Removed fixed height and width - will now expand based on content and internal styling */
+  @apply absolute left-full ml-3 glassmorphism p-3 flex flex-col rounded-md;
+  /* New: Max width to keep it from getting too wide, min-width for usability */
+  @apply max-w-xs min-w-[195px];
+  /* New: Increased z-index */
+  z-index: 20;
+}
+
+/* File Picker Label - No changes as Customizer component handles focus/error styling */
+.filepicker-label {
+  @apply border border-gray-300 py-1.5 px-2 rounded-md shadow-sm text-xs text-gray-700 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 cursor-pointer w-fit;
+  /* New: Ensure it looks like an active button/label */
+  @apply hover:bg-gray-100 transition-colors duration-150;
+}
+
+/* --- Tab Button --- */
+.tab-btn {
+  @apply w-14 h-14 flex justify-center items-center cursor-pointer select-none;
+  /* New: Applied glassmorphism effect */
+  @apply glassmorphism;
+  /* New: Subtle shadow for depth */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  /* New: Transform for interactive feedback */
+  @apply transform transition-all duration-200 ease-in-out;
+}
+
+/* --- Hidden File Input --- */
+input[type="file"] {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+
+/* --- React Color Sketch Picker Overrides --- */
+.sketch-picker {
+  /* Ensured glassmorphism styling is applied */
+  @apply glassmorphism;
+  width: 170px!important;
+  border-radius: 6px!important; /* Consistent with other rounded elements */
+  padding: 10px!important; /* Added padding inside the picker */
+  /* Remove specific background, box-shadow, backdrop-filter, border declarations here
+     as they are now covered by the.glassmorphism class applied above */
+}
+
+/* Hide the alpha input from SketchPicker if you only want solid colors */
+.sketch-picker > div:nth-child(3) {
+  display: none!important;
+}
+
+/* New: General Button Styling for better base look (if not handled by CustomButton already) */
+button {
+  /* Ensures buttons have a default look before custom styling */
+  @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
+}
+
+/* New: Responsive adjustments for smaller screens */
+@media (max-width: 640px) { /* Tailwind's sm breakpoint */
+ .home {
+    @apply px-4 py-4 max-w-full;
+  }
+ .head-text {
+    @apply text-[4rem] leading-[4.5rem];
+  }
+ .editortabs-container {
+    @apply w-12 ml-0; /* Slightly smaller on very small screens */
+  }
+  /* Center the aipicker and filepicker on smaller screens */
+ .aipicker-container,.filepicker-container {
+    @apply absolute left-1/2 -translate-x-1/2 ml-0 w-[calc(100vw-2rem)] max-w-none; /* Centered, full width minus padding */
+    top: auto; /* Allow content to push it up from bottom */
+    bottom: 80px; /* Position above filter tabs */
+  }
+}
+
+@media (max-width: 1280px) { /* Tailwind's xl breakpoint */
+  .home {
+    @apply justify-center items-center text-center; /* Center content on larger mobile/tablet */
+  }
+  .home-content {
+    @apply items-center;
+  }
+}
