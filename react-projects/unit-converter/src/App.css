@@ -1,0 +1,151 @@
+/* src/App.css */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.unit-converter-app {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 750px; /* Slightly wider to accommodate new buttons */
+  box-sizing: border-box;
+}
+
+.converter-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  flex-grow: 1;
+}
+
+.input-group label {
+  font-weight: bold;
+  color: #555;
+}
+
+.input-group input[type="text"],
+.input-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007bff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%00-13.2-6.4H18.8c-7.6%200-13.2%206.4-13.2%2013.2%200%202.8%201.2%205.6%203.2%207.2l128%20128c4.4%204.4%2010%206.8%2016%206.8s11.6-2.4%2016-6.8l128-128c3.2-3.6%204.8-7.2%204.8-11.6z%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+.input-group input[type="text"]:focus,
+.input-group select:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.category-select-group {
+  max-width: 250px; /* Limit width of category select */
+  margin-bottom: 20px;
+}
+
+.conversion-row {
+  display: flex;
+  gap: 15px; /* Adjust gap for better spacing */
+  align-items: flex-start; /* Align items to the top */
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-section,.output-section {
+  flex: 1; /* Allow these sections to grow and shrink */
+  min-width: 280px; /* Minimum width before wrapping */
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Gap for error message below input group */
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center buttons vertically */
+  gap: 10px;
+  align-self: center; /* Align buttons to the center of the row */
+  padding: 10px 0; /* Some padding to give space around buttons */
+}
+
+.swap-button,.clear-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 45px; /* Fixed width for buttons */
+  height: 45px; /* Fixed height for buttons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swap-button:hover,.clear-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.swap-button:active,.clear-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.85rem;
+  margin-top: -5px; /* Adjust spacing with input */
+  margin-left: 5px;
+  text-align: left;
+}
+
+@media (min-width: 768px) { /* Adjust breakpoint for larger screens */
+ .conversion-row {
+    flex-wrap: nowrap;
+    justify-content: space-between; /* Distribute space between items */
+    gap: 20px;
+  }
+
+ .action-buttons {
+    margin: 0; /* Reset margin for larger screens */
+  }
+}

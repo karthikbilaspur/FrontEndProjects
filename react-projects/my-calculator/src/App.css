@@ -1,0 +1,153 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #282c34;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px; /* Add some padding for smaller screens */
+  box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+h1 {
+  color: #61dafb;
+  margin-bottom: 20px;
+}
+
+.calculator {
+  border: 2px solid #61dafb;
+  border-radius: 12px;
+  padding: 20px;
+  background-color: #333;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  width: 320px; /* Fixed width for a classic calculator feel */
+}
+
+.calculator-expression { /* नई: छोटा एक्सप्रेशन डिस्प्ले */
+  background-color: #555;
+  color: #a0a0a0; /* हल्का ग्रे टेक्स्ट */
+  font-size: 0.9em;
+  padding: 8px 10px;
+  text-align: right;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  min-height: 1.2em;
+  overflow-x: auto;
+  white-space: nowrap; /* सुनिश्चित करें कि एक्सप्रेशन एक ही लाइन में रहे */
+}
+
+.calculator-display {
+  background-color: #444;
+  color: white;
+  font-size: 3em;
+  padding: 10px;
+  text-align: right;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow-x: auto;
+  white-space: nowrap; /* सुनिश्चित करें कि नंबर एक ही लाइन में रहे */
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.calculator-buttons button {
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 8px; /* Slightly more rounded */
+  padding: 18px; /* Slightly less padding */
+  font-size: 1.4em; /* Slightly smaller font */
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease; /* Add transform for press effect */
+}
+
+.calculator-buttons button:hover {
+  background-color: #777;
+}
+
+.calculator-buttons button:active { /* Add active state for visual feedback */
+  transform: translateY(1px);
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+}
+
+/* ऑपरेटर बटन स्टाइलिंग */
+.calculator-buttons .operator {
+  background-color: #f7923b; /* नारंगी ऑपरेटर */
+}
+.calculator-buttons .operator:hover {
+  background-color: #e08331;
+}
+.calculator-buttons .operator.active { /* नई: सक्रिय ऑपरेटर के लिए स्टाइल */
+  background-color: #fff; /* सफेद पृष्ठभूमि */
+  color: #f7923b; /* नारंगी टेक्स्ट */
+  font-weight: bold;
+}
+
+.calculator-buttons .equal-sign {
+  background-color: #1a73e8; /* नीला बराबर चिह्न */
+  grid-column: span 1; /* यह महत्वपूर्ण है कि यह केवल एक कॉलम लेता है */
+}
+.calculator-buttons .equal-sign:hover {
+  background-color: #155bb5;
+}
+
+/* AC और CE बटन स्टाइलिंग */
+.calculator-buttons .all-clear {
+  background-color: #d9534f; /* लाल AC */
+  grid-column: span 1; /* यह महत्वपूर्ण है कि यह केवल एक कॉलम लेता है */
+}
+.calculator-buttons .all-clear:hover {
+  background-color: #c9302c;
+}
+
+.calculator-buttons .clear-entry { /* नई: CE बटन */
+  background-color: #ffc107; /* पीला CE */
+  color: #333; /* काला टेक्स्ट */
+}
+.calculator-buttons .clear-entry:hover {
+  background-color: #e0a800;
+}
+
+/* 0 बटन को बड़ा बनाने के लिए (यदि आवश्यक हो तो) */
+.calculator-buttons .zero-btn {
+  grid-column: span 1; /* यह महत्वपूर्ण है कि यह केवल एक कॉलम लेता है */
+}
+
+.instructions {
+  background-color: #333;
+  padding: 15px 25px;
+  border-radius: 8px;
+  border: 1px solid #61dafb;
+  max-width: 400px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+.instructions h2 {
+  color: #61dafb;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.instructions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.instructions li {
+  margin-bottom: 8px;
+  font-size: 1.1em;
+  line-height: 1.4;
+}

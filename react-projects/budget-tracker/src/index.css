@@ -1,0 +1,145 @@
+/* src/index.css */
+/* Global CSS variables */
+:root {
+  --bg-body-light: #f0f2f5;
+  --bg-container-light: #ffffff;
+  --text-color-light: #333;
+  --text-color-light-secondary: #666;
+  --border-color-light: #e0e0e0;
+  --header-bg-light: #fdfdfd;
+  --card-bg-light: #ffffff;
+  --input-bg-light: #ffffff;
+  --input-border-light: #ccc;
+  --button-primary: #007bff;
+  --button-primary-hover: #0056b3;
+  --button-secondary: #6c757d;
+  --button-secondary-hover: #5a6268;
+  --button-danger: #dc3545;
+  --button-danger-hover: #c82333;
+  --income-color: #28a745; /* Green */
+  --expense-color: #dc3545; /* Red */
+  --balance-color: #007bff; /* Blue */
+  --empty-state-color: #888;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='dark'] {
+  --bg-body-light: #1a202c;
+  --bg-container-light: #2d3748;
+  --text-color-light: #e2e8f0;
+  --text-color-light-secondary: #a0aec0;
+  --border-color-light: #4a5568;
+  --header-bg-light: #2c3440;
+  --card-bg-light: #4a5568;
+  --input-bg-light: #2d3748;
+  --input-border-light: #4a5568;
+  --button-secondary: #a0aec0; /* Lighter button for dark mode */
+  --button-secondary-hover: #cbd5e0;
+  --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-body-light);
+  color: var(--text-color-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color-light);
+}
+
+button, select, input[type="text"], input[type="number"], input[type="date"] {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid var(--input-border-light);
+  background-color: var(--input-bg-light);
+  color: var(--text-color-light);
+  transition: all 0.2s ease-in-out;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-color-light-secondary);
+  opacity: 0.7;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--button-primary);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--button-secondary);
+  color: white;
+  border-color: var(--button-secondary);
+}
+
+button:hover {
+  background-color: var(--button-secondary-hover);
+  border-color: var(--button-secondary-hover);
+}
+
+.button-primary {
+  background-color: var(--button-primary);
+  border-color: var(--button-primary);
+  color: white;
+}
+.button-primary:hover {
+  background-color: var(--button-primary-hover);
+  border-color: var(--button-primary-hover);
+}
+
+.button-danger {
+  background-color: var(--button-danger);
+  border-color: var(--button-danger);
+  color: white;
+}
+.button-danger:hover {
+  background-color: var(--button-danger-hover);
+  border-color: var(--button-danger-hover);
+}
+
+.income-text {
+  color: var(--income-color);
+  font-weight: bold;
+}
+.expense-text {
+  color: var(--expense-color);
+  font-weight: bold;
+}
+.balance-text {
+  color: var(--balance-color);
+  font-weight: bold;
+}
+
+.card {
+  background-color: var(--card-bg-light);
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: var(--shadow-light);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--empty-state-color);
+  font-style: italic;
+  font-size: 1.1em;
+  border: 1px dashed var(--border-color-light);
+  border-radius: 8px;
+  margin-top: 20px;
+}

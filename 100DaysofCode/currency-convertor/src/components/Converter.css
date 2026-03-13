@@ -1,0 +1,41 @@
+.converter{
+  background:#ffffff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  width:300px;
+  margin:auto;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  font-size:16px;
+}
+
+.dropdowns{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+select{
+  padding:8px;
+  font-size:16px;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  font-size:16px;
+  background:#4CAF50;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#45a049;
+}

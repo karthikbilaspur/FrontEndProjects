@@ -1,0 +1,96 @@
+    /* src/components/ReservationForm.css */
+   .reservation-form {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: left;
+    }
+
+   .reservation-form.form-group {
+      margin-bottom: 1.5rem;
+    }
+
+   .reservation-form label {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+   .reservation-form input[type="text"],
+   .reservation-form input[type="email"],
+   .reservation-form input[type="tel"],
+   .reservation-form input[type="number"],
+   .reservation-form select,
+   .reservation-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      box-sizing: border-box; /* Ensure padding and border are included in width */
+    }
+
+   .reservation-form input[type="text"]:focus,
+   .reservation-form input[type="email"]:focus,
+   .reservation-form input[type="tel"]:focus,
+   .reservation-form input[type="number"]:focus,
+   .reservation-form select:focus,
+   .reservation-form textarea:focus,
+   .reservation-form.react-datepicker__input-container input {
+      border-color: #a0522d;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(160, 82, 45, 0.2);
+    }
+
+    /* Style the react-datepicker input */
+   .reservation-form.react-datepicker__input-container input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+   .reservation-form button[type="submit"] {
+      width: auto;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+      background-color: #a0522d;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      display: block; /* Make button full width if needed or adjust margin */
+      margin-top: 1.5rem;
+    }
+
+   .reservation-form button[type="submit"]:hover {
+      background-color: #8b4513;
+    }
+
+   .submission-message {
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+   .submission-message.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #badbcc;
+    }
+
+   .submission-message.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }

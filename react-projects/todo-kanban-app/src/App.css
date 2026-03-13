@@ -1,0 +1,80 @@
+.app-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color-light);
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  flex-grow: 1;
+  text-align: center;
+  min-width: 200px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.kanban-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  flex-grow: 1;
+  align-items: flex-start; /* Keep columns at the top */
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--empty-state-color);
+  font-style: italic;
+  font-size: 1.1em;
+  border: 1px dashed var(--border-color-light);
+  border-radius: 8px;
+  margin-top: 30px;
+  grid-column: 1 / -1; /* Span all columns */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+ .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ .app-header h1 {
+    text-align: left;
+    margin-bottom: 10px;
+  }
+ .controls {
+    width: 100%;
+    justify-content: flex-end;
+  }
+ .filter-bar {
+    flex-direction: column;
+  }
+}

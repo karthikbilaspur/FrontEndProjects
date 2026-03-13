@@ -1,0 +1,171 @@
+/* App Container and Header Styles */
+.app-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--light-bg-container);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--light-shadow);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 15px; /* Space between items on wrap */
+}
+
+h1 {
+  text-align: center;
+  color: var(--light-text-color);
+  margin: 0;
+  flex-grow: 1; /* Allow h1 to take up available space */
+  transition: color 0.3s ease;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.sort-label {
+  font-size: 0.9em;
+  color: var(--light-char-count); /* Using char-count color for secondary text */
+}
+
+.dark-mode-toggle {
+  background-color: #6c757d;
+  color: white;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #5a6268;
+}
+
+/* Filter/Search input styles */
+.filter-notes {
+  margin-bottom: 20px;
+}
+
+.filter-notes input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--light-input-border);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: var(--light-input-bg);
+  color: var(--light-text-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-notes input::placeholder {
+  color: var(--light-char-count);
+}
+
+/* Note List styles */
+.note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--light-empty-state-text);
+  font-style: italic;
+  font-size: 1.1em;
+  border: 1px dashed var(--light-empty-state-border);
+  border-radius: 8px;
+  margin-top: 30px;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.note-item {
+  background-color: var(--light-note-item-bg);
+  border: 1px solid var(--light-note-item-border);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: var(--light-note-item-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push buttons to bottom */
+}
+
+.note-item h3 {
+  margin-top: 0;
+  color: #007bff; /* Accent color, generally stays the same */
+  font-size: 1.2em;
+  word-wrap: break-word; /* Prevent long titles from overflowing */
+}
+
+.note-item p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  color: var(--light-note-item-text);
+  margin-bottom: 15px;
+  word-wrap: break-word;
+  flex-grow: 1; /* Allow content to take up space */
+}
+
+.note-item.timestamps {
+  font-size: 0.8em;
+  color: var(--light-char-count);
+  margin-bottom: 10px;
+  border-top: 1px solid var(--light-note-item-border);
+  padding-top: 8px;
+  margin-top: auto; /* Push timestamps to the bottom */
+}
+
+.note-item.timestamps span {
+  display: block; /* Each timestamp on new line */
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.note-item.delete-button {
+  background-color: #dc3545;
+}
+
+.note-item.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+ .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+ .controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 600px) {
+ .app-container {
+    padding: 15px;
+  }
+  body {
+    padding: 10px;
+  }
+ .note-list {
+    grid-template-columns: 1fr; /* Single column on small screens */
+  }
+ .app-header h1 {
+    font-size: 1.8em;
+  }
+}

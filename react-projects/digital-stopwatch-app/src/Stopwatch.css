@@ -1,0 +1,333 @@
+/* src/Stopwatch.css */
+
+.stopwatch-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Theme specific styles for container */
+.stopwatch-container.dark {
+  background-color: #3a3a3a;
+  color: #f0f2f5;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.stopwatch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.stopwatch-title {
+  font-size: 2.2em;
+  margin: 0;
+  color: #1e3a8a;
+  transition: color 0.3s;
+}
+
+.stopwatch-container.dark.stopwatch-title { /* Corrected selector */
+  color: #8cafff;
+}
+
+.theme-toggle-button {
+  background: none;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.theme-toggle-button:hover {
+  background-color: #e0e0e0;
+}
+
+.stopwatch-container.dark.theme-toggle-button { /* Corrected selector */
+  border-color: #555;
+  background-color: #444;
+}
+.stopwatch-container.dark.theme-toggle-button:hover { /* Corrected selector */
+  background-color: #555;
+}
+
+.time-display {
+  font-size: 4em;
+  font-family: 'DSEG7 Classic', monospace; /* Use a cool digital font if available, otherwise generic monospace */
+  /* If DSEG7 Classic isn't available, include it via @font-face or use: 'Lucida Console', Monaco, monospace; */
+  letter-spacing: 2px;
+  margin: 20px 0;
+  color: #0d47a1; /* Dark blue for time */
+  transition: color 0.3s;
+}
+
+.stopwatch-container.dark.time-display { /* Corrected selector */
+  color: #b3d4fc; /* Lighter blue for time in dark theme */
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+  justify-content: center;
+  width: 100%;
+}
+
+.control-button {
+  flex: 1 1 auto; /* Allow buttons to grow and shrink */
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: white;
+  min-width: 120px;
+}
+
+.control-button.start {
+  background-color: #28a745; /* Green */
+}
+.control-button.start:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.control-button.pause {
+  background-color: #ffc107; /* Yellow/Orange */
+  color: #333; /* Dark text for pause button */
+}
+.control-button.pause:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
+
+.control-button.lap-button {
+  background-color: #17a2b8; /* Cyan */
+}
+.control-button.lap-button:hover:not(:disabled) {
+  background-color: #138496;
+  transform: translateY(-2px);
+}
+
+.control-button.reset-button {
+  background-color: #dc3545; /* Red */
+}
+.control-button.reset-button:hover:not(:disabled) {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.control-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  transform: none; /* No transform when disabled */
+  box-shadow: none;
+}
+
+.control-button:active {
+  transform: translateY(0);
+}
+
+.settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  flex-wrap: wrap; /* Allow settings to wrap */
+  gap: 10px;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+  font-size: 1em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.stopwatch-container.dark.checkmark { /* Corrected selector */
+  background-color: #555;
+}
+
+.checkbox-container:hover input ~.checkmark {
+  background-color: #ccc;
+}
+.stopwatch-container.dark.checkbox-container:hover input ~.checkmark { /* Corrected selector */
+  background-color: #666;
+}
+
+.checkbox-container input:checked ~.checkmark {
+  background-color: #2196F3;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~.checkmark:after {
+  display: block;
+}
+
+.checkbox-container.checkmark:after { /* Removed redundant.checkbox-container */
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.export-laps-button {
+  background-color: #6c757d; /* Grey */
+  color: white;
+}
+.export-laps-button:hover:not(:disabled) {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+.laps-container {
+  width: 100%;
+  margin-top: 20px;
+  max-height: 250px; /* Limit height for scrollability */
+  overflow-y: auto; /* Enable scrolling for many laps */
+  border-top: 1px solid #e0e0e0;
+  padding-top: 15px;
+  transition: border-color 0.3s;
+}
+
+.stopwatch-container.dark.laps-container { /* Corrected selector */
+  border-top-color: #555;
+}
+
+.laps-title {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1e3a8a;
+  transition: color 0.3s;
+}
+
+.stopwatch-container.dark.laps-title { /* Corrected selector */
+  color: #8cafff;
+}
+
+.laps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lap-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px dashed #e0e0e0;
+  font-size: 1.05em;
+  transition: border-color 0.3s;
+}
+
+.stopwatch-container.dark.lap-item { /* Corrected selector */
+  border-bottom-color: #555;
+}
+
+.lap-item:last-child {
+  border-bottom: none;
+}
+
+.lap-number {
+  font-weight: bold;
+  color: #0d47a1;
+  transition: color 0.3s;
+}
+.stopwatch-container.dark.lap-number { /* Corrected selector */
+  color: #b3d4fc;
+}
+
+.lap-time {
+  font-family: 'Courier New', monospace;
+  color: #555;
+  transition: color 0.3s;
+}
+.stopwatch-container.dark.lap-time { /* Corrected selector */
+  color: #ccc;
+}
+
+.total-time {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  color: #777;
+  transition: color 0.3s;
+}
+.stopwatch-container.dark.total-time { /* Corrected selector */
+  color: #aaa;
+}
+
+/* Scrollbar styling for laps container */
+.laps-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.laps-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.stopwatch-container.dark.laps-container::-webkit-scrollbar-track { /* Corrected selector */
+  background: #444;
+}
+
+.laps-container::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.stopwatch-container.dark.laps-container::-webkit-scrollbar-thumb { /* Corrected selector */
+  background: #777;
+}
+
+.laps-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
